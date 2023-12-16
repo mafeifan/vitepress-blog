@@ -1,0 +1,103 @@
+ansible的安装有很多方式，这里以Mac为例
+1. 安装 `brew install ansible`或者使用`pip3 install ansible`
+
+```
+➜ ansible --version
+ansible [core 2.12.2]
+  config file = None
+  configured module search path = ['/Users/mafei/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.9/site-packages/ansible
+  ansible collection location = /Users/mafei/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/local/bin/ansible
+  python version = 3.9.5 (default, May  4 2021, 03:36:27) [Clang 12.0.0 (clang-1200.0.32.29)]
+  jinja version = 3.0.3
+  libyaml = True
+```
+2. 创建主机清单文件
+`/etc/ansible/hosts`
+3. 添加要连接的 host 主机节点信息
+
+![](http://pek3b.qingstor.com/hexo-blog/20220213201658.png)
+
+
+格式如下：
+[主机组名称]
+ip:端口 ansible_user=登录的用户名
+内容如下：
+```
+[cloud]
+140.122.182.183:1234 ansible_user=ubuntu
+```
+
+更高级的写法:
+
+```
+[dbs]
+db-[a-f].example.com
+
+[web]
+www[1:100].example.com
+```
+
+4. `ansible <host-pattern> [options]` 为一组主机运行单一task
+下面的命令检查指定主机的连通性
+`ansible all -m ping -vvv`
+看能否访问到所有主机
+也可以用指定主机 `ansible cloud -m ping -vvv`
+
+-m 等于 --module-name
+ping 就是模块名
+
+> 可以使用 `ansible-doc <模块名>` 查看模块的帮助信息。 如 `ansible-doc ping` 非常方便。
+
+使用ping模块测试被管节点。能成功，说明ansible能控制该节点。
+
+> 如果要指定非root用户运行ansible命令，则加上"--sudo"或"-s"来提升为sudo_user配置项所指定用户的权限。`ansible webservers -m ping -u ubuntu --sudo` ；或者使用 become 提升权限 `ansible webservers -m ping -b --become-user=root --become-method=sudo`
+
+5. 我们更新下host文件，添加一组主机
+```shell script
+[cloud]
+140.122.182.183:1234 ansible_user=ubuntu
+[fxa]
+145.130.287.79:22 ansible_user=devuser
+145.130.287.79:25 ansible_user=devuser
+145.130.287.79:31 ansible_user=devuser
+```
+也可以用下面的写法
+```shell script
+[cloud]
+40.122.182.183  ansible_port=1234 ansible_user=ubuntu
+
+[merch]
+mer22 ansible_host=145.130.287.79 ansible_port=22 ansible_user=devuser
+mer25 ansible_host=145.130.287.79 ansible_port=25 ansible_user=devuser
+mer31 ansible_host=145.130.287.79 ansible_port=31 ansible_user=devuser
+
+[fuelx]
+135.104.35.167 ansible_port=22 ansible_user=maf ansible_private_key_file=~/.ssh/github_id_rsa
+```
+然后针对某主机进行操作
+```
+➜ ansible mer31 -a uptime
+mer31 | CHANGED | rc=0 >>
+ 11:14:38 up 485 days, 15:52,  2 users,  load average: 1.57, 0.58, 0.28
+ 
+# 指定特定的hosts文件
+ansible -i ~/.ansible/hosts cloud -a uptime 
+```
+
+### 相关工具
+
+![](http://pek3b.qingstor.com/hexo-blog/20220213201635.png)
+
+ansible安装完成后自带了很多工具，默认都保存在/usr/bin目录下
+后面会介绍几个常用的
+
+* ansible 主程序，临时命令执行工具
+* ansible-playbook 命令，执行playbook
+* ansible-doc 查看配置文档及模块使用
+* ansible-galaxy 下载/上传优秀或Roles模块的官网平台 https://galaxy.ansible.com/
+* ansible-playbook 定制自动化任务，编排剧本工具
+* ansible-pull 远程执行命令的工具
+* ansible-vault 文件加密工具
+* ansible-console 基于Console界面与用户交互的工具

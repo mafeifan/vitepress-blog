@@ -1,0 +1,35 @@
+# https://docs.aws.amazon.com/zh_cn/zh_cn/AWSCloudFormation/latest/UserGuide/pseudo-parameter-reference.html
+
+AWSTemplateFormatVersion: "2010-09-09"
+
+Parameters:
+  # 下拉，选择环境
+  EnvironmentType:
+    Description: The environment type
+    Type: String
+    Default: test
+    AllowedValues:
+      - prod
+      - test
+    ConstraintDescription: must be a prod or test
+
+# 映射关系
+Mappings:
+  RegionMap:
+    ap-northeast-1:
+      test: "ap-northeast-1-test"
+      prod: "ap-northeast-1-prod"
+    ap-northeast-2:
+      test: "ap-northeast-2-test"
+      prod: "ap-northeast-2-prod"
+Resources:
+  myBucket:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      # every Fn::FindInMap object requires three parameters, the map name, map key and the attribute for return value
+      BucketName: !FindInMap [RegionMap, !Ref "AWS::Region", !Ref "EnvironmentType"]
+
+Outputs:
+  TestOutput:
+    Description: Return the name of the bucket name that matches the region and environment type keys
+    Value: !FindInMap [RegionMap, !Ref "AWS::Region", !Ref EnvironmentType]

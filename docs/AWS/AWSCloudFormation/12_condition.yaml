@@ -1,0 +1,38 @@
+# https://docs.aws.amazon.com/zh_cn/zh_cn/AWSCloudFormation/latest/UserGuide/conditions-section-structure.html
+
+AWSTemplateFormatVersion: "2010-09-09"
+
+Parameters:
+  EnvType:
+    Type: String
+    AllowedValues:
+      - prod
+      - test
+  BucketName:
+    Default: ''
+    Type: String
+Conditions:
+  # !Equals 是 Fn::Equals 的简写
+  IsProduction: !Equals
+    - !Ref EnvType
+    - prod
+  # 不等于空才创建
+  CreateBucket: !Not
+    - !Equals
+      - !Ref BucketName
+      - ''
+  CreateBucketPolicy: !And
+    - !Condition IsProduction
+    - !Condition CreateBucket
+Resources:
+  Bucket:
+    Type: 'AWS::S3::Bucket'
+    Condition: CreateBucket
+    Properties:
+      BucketName: !Ref BucketName
+#   Policy:
+#     Type: 'AWS::S3::BucketPolicy'
+#     Condition: CreateBucketPolicy
+#     Properties:
+#       Bucket: !Ref Bucket
+#       PolicyDocument:

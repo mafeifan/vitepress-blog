@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Resources:
+  MyEC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      AvailabilityZone: 'ap-northeast-1a'
+      KeyName: 'aws-ty-2022'
+      ImageId: ami-032d6db78f84e8bf5
+      InstanceType: t2.micro
+  # add elastic ip to instance
+  MyEIP:
+    Type: AWS::EC2::EIP
+    Properties:
+      InstanceId: !Ref MyEC2Instance

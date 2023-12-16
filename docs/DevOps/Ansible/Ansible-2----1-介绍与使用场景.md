@@ -1,0 +1,42 @@
+[[toc]]
+
+Ansible是用Python写的自动化运维工具，你如果需要管理维护好多主机，需要做批量操作，部署，任务等，他是个不错的选择。
+Ansible是基于模块工作的，Ansible本身没有批量部署的能力。真正具有批量部署的是ansible所运行的模块。模块的内容会在后面重点介绍。
+
+![](http://pek3b.qingstor.com/hexo-blog/20220213201541.png)
+
+### 必备知识
+想要高效的学习Ansible，必须熟悉某一发行的 Linux 系统 (Ubuntu, CentOS)，至少需要了解以下内容。
+* SSH连接远程服务器
+* 基本的Bash命令
+* 文件权限及处理
+* 环境变量相关
+* 简单的编写shell脚本
+
+你还需要一台服务器，如果没有可以在本地新建虚拟机，我建议搭建至少两台，以便了解的Ansible的批处理能力。
+搭建虚拟机非常简单，你可以搜一下VirtualBox和Vagrant。
+### Ansible特点
+
+1. 简单易学
+2. 使用SSH协议与受控机器进行通信，一般服务器默认有SSH服务，Ansible也被成为agentless(去客户端的)
+3. Ansible主要使用YAML格式作为自己的DSL格式及配置文件格式。
+4. Ansible自带很多模块，基于模块工作
+
+Ansible将部署逻辑放在一个称为"playbook”的YAML文件中。通常，文件名是playbook.yml。
+组织受控机器的逻辑被放在inventory文件中。它是ini格式的，默认文件名为hosts。
+这两个文件构成了Ansible自动化部署的基础。
+只要运行`ansible-playbook --inventory hosts --user vagrant --ask pass playbook.ymI`命令，输入SSH登录时用户vagrant的密码，就可以执行我们描述好的部署逻辑了。
+为简单起见，我们使用用户名和密码的方式登录。更安全的方式是使用SSH密钥登录。
+以上就是对Ansible的基本介绍。
+如果想更深入地学习，请前往Ansible官网。
+
+### Ansible的隐喻
+了解Ansible的隐喻对于了解Ansible背后的设计有一定的帮助。Ansible的隐喻很简单:
+Ansible是导演，受控机器列表(inventory) 为演员列表，开发者则是编剧。开发者只要把剧本(playbook.yml) 写好，Ansible拿着剧本与inventory一对上号，演员就会按照剧本如实表演，不会有任何个人发挥。
+
+
+### 参考
+* https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html?highlight=ansible_user
+* [官方提供的playbook的大量例子](https://github.com/ansible/ansible-examples)
+* https://www.kancloud.cn/willseecloud/ansible/1595973
+* http://www.uml.org.cn/itil/201907233.asp

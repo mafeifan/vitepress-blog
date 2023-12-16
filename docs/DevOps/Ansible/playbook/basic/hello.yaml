@@ -1,0 +1,18 @@
+- hosts: cloud
+  remote_user: root
+  vars:
+    ports:
+    - 8001
+    - 8002
+    nginx_conf_path: 'etc/nginx/nginx.conf'
+  tasks:
+  - name: hello
+    tags: demo
+    shell: echo "hello world"
+  - name: date
+    tags: date
+    shell: date -R
+  - name: jinja2 test
+    template: 
+      src: demo.j2 
+      dest: demo.conf

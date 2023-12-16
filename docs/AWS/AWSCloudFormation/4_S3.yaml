@@ -1,0 +1,14 @@
+# https://docs.aws.amazon.com/zh_cn/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html
+
+AWSTemplateFormatVersion: "2010-09-09"
+
+Resources:
+  S3BucketForWebsiteContent:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: "finley-demo-website-content"
+      AccessControl: PublicRead
+      # 开启静态网站托管
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: error.html

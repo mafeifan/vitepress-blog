@@ -1,0 +1,9 @@
+- hosts: aws
+  remote_user: ubuntu
+  # 等同于添加 ‘sudo:’ 或 ‘su:’, 默认为sudo,被授权的用户可以使用sudo命令
+  become: yes
+  vars:
+    nginx_version: 1.18.0
+  # 调用角色
+  roles:
+    - role: finley

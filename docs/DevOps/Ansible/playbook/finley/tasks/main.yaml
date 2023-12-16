@@ -1,0 +1,15 @@
+- name: Include OS-specific variables
+  # 根据操作系统加载变量
+  include_vars: "{{ ansible_os_family }}.yaml"
+# setup nginx
+- include_tasks: nginx-debian.yaml
+  when: ansible_os_family == 'Debian'
+
+- name: Ensure Nginx configuration dir exists.
+  file:
+    path: "{{ nginx_conf_path | dirname }}"
+    state: directory
+    mode: 0755  
+
+# setup nmap  
+- include_tasks: nmap.yaml

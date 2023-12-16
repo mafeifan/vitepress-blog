@@ -1,0 +1,41 @@
+# ubuntu 20.04 安装nginx并修改index.html内容为主机名
+---
+- name: "apt update"
+  apt:
+    # 当这个参数为yes的时候等于apt-get update
+    update_cache: yes
+- name: "Install nginx"
+  # ansible-playbook –t install,conf nginx.yml   指定执行install,conf 两个标签
+  tags: install
+  apt:
+    name: nginx
+    # name: nginx={{nginx_version}}
+    state: present
+    allow_downgrade: yes
+- name: "Service nginx start"
+  service:
+    # 引用变量
+    name: nginx
+    state: started
+    enabled: yes
+- name: "Update index.html"
+  tags: conf
+  shell: "hostname > /var/www/html/index.html"
+  # 触发对应的 handler，比如每次修改完配置文件，需要重启nginx
+  notify: restart nginx
+- name: "Copy index2.html to nginx root path"
+  tags: file
+  copy: 
+    src: files/index2.html
+    dest: /var/www/html
+    mode: '0755'
+    owner: ubuntu
+    group: ubuntu
+  # 触发对应的 handler，比如每次修改完配置文件，需要重启nginx
+  notify: restart nginx  
+- name: Copy template config to remote hosts
+  template: 
+    src: nginx.conf.j2 
+    dest: /etc/nginx/nginx.conf
+- name: "Update timezone"
+  shell: "cp /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime && date -R"

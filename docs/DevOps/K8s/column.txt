@@ -1,0 +1,2 @@
+Pod的IP        启动时间
+.status.podIP .status.startTime

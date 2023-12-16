@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kucc6
+  labels:
+    app: myapp
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  - name: redis
+    image: redis
+  - name: memcached
+    image: memcached
+  - name: consul
+    image: consu

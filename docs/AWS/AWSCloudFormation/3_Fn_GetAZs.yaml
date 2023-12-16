@@ -1,0 +1,41 @@
+# 内部函数 Fn::GetAZs 返回一个数组，该数组按字母顺序列出指定区域的可用区。
+# 内部函数 Fn::Select 通过索引返回对象列表中的单个对象。
+
+AWSTemplateFormatVersion: "2010-09-09"
+
+Resources:
+  MyEC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t2.micro
+      # 尽量不要使用硬编码
+      # AvailabilityZone: 'ap-northeast-1a'
+      # 使用select函数取到下标为0的内容返回给AvailabilityZone
+      AvailabilityZone: !Select
+        - 0
+        # 根据当前region返回所有AZ
+        # https://docs.aws.amazon.com/zh_cn/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getavailabilityzones.html
+        - Fn::GetAZs: !Ref 'AWS::Region'
+      KeyName: 'aws-ty-2022'
+      ImageId: ami-032d6db78f84e8bf5
+      SecurityGroups:
+        - !Ref MySecurityGroup
+  MySecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Enable SSH access via port 22
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          # change me
+          CidrIp: 0.0.0.0/0
+  # add elastic ip to instance
+  MyEIP:
+    Type: AWS::EC2::EIP
+    Properties:
+      InstanceId: !Ref MyEC2Instance

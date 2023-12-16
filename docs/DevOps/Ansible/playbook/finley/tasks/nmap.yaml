@@ -1,0 +1,8 @@
+# 扫描端口 `nmap localhost`
+---
+- name: "Install nmap"
+  tags: nmap
+  apt:
+    name: nmap
+    state: present
+

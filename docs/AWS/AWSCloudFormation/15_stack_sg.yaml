@@ -1,0 +1,40 @@
+# https://docs.aws.amazon.com/zh_cn/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html
+
+# https://cf-templates-di0bi6u8wmb-ap-northeast-1.s3.ap-northeast-1.amazonaws.com/15_stack_sg.yaml
+AWSTemplateFormatVersion: "2010-09-09"
+
+Parameters:
+  TemplateURL:
+    Type: String
+    Description: URL of the template to use
+
+Resources:
+  MySecurityGroupStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: !Ref TemplateURL
+      Parameters:
+        AppName: !Ref AWS::StackName
+      TimeoutInMinutes: 5
+
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-03d79d440297083e3
+      InstanceType: t2.micro
+      SecurityGroupIds:
+        - !GetAtt MySecurityGroupStack.Outputs.MySecurityGroupId
+      KeyName: 'aws-ty-2022'
+      Tags:
+        - Key: Name
+          Value: !Ref AWS::StackName
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          sudo yum update -y
+          sudo yum install -y httpd
+          sudo service httpd start
+          sudo chkconfig httpd on
+          sudo touch /var/www/html/index.html
+          sudo chmod 777 /var/www/html/index.html
+          sudo echo '<html><h1>Hello, world!</h1></html>' > /var/www/html/index.html

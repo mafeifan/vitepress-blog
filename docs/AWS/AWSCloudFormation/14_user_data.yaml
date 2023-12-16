@@ -1,0 +1,33 @@
+# https://docs.aws.amazon.com/zh_cn/zh_cn/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-rules.html
+
+# 防止用户选择错误内容参数
+
+# 每个模板规则由两个属性组成：
+
+# 规则条件（可选）— 确定规则的生效时间。
+
+# 断言（必选）— 描述用户可为特定参数指定的值。
+
+AWSTemplateFormatVersion: "2010-09-09"
+
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: 't2.micro'
+      AvailabilityZone: 'ap-northeast-1a'
+      KeyName: 'aws-ty-2022'
+      ImageId: ami-03d79d440297083e3
+      UserData:
+        # 内部函数 Fn::Sub 将输入字符串中的变量替换为您指定的值
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          yum update -y
+          yum install -y httpd
+          systemctl start httpd.service
+          systemctl enable httpd.service
+          sudo amazon-linux-extras install -y php7.4
+      Tags:
+        - Key: Name
+          # Jack---Jones
+          Value: !Join ['-', ['Jack', '-', 'Jones']]

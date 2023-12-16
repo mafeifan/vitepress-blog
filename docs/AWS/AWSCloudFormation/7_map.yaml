@@ -1,0 +1,39 @@
+# https://docs.aws.amazon.com/zh_cn/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html
+# 举例 如果是在 ap-northeast-1 的region, 选择 prod, 则创建名为 ap-northeast-1-prod 的存储桶
+# 如果是在 ap-northeast-2 的region, 选择 test, 则创建名为 ap-northeast-2-test 的存储桶
+
+# 注意 mappings 要使用内置函数 FindInMap
+
+AWSTemplateFormatVersion: "2010-09-09"
+
+Parameters:
+  # 下拉，选择环境
+  EnvironmentType:
+    Description: The environment type
+    Type: String
+    Default: test
+    AllowedValues:
+      - prod
+      - test
+    ConstraintDescription: must be a prod or test
+
+# 映射关系
+Mappings:
+  RegionMap:
+    ap-northeast-1:
+      test: "ap-northeast-1-test"
+      prod: "ap-northeast-1-prod"
+    ap-northeast-2:
+      test: "ap-northeast-2-test"
+      prod: "ap-northeast-2-prod"
+Resources:
+  myBucket:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      # 从 RegionMap 中跟据当前region和环境的选择返回对应的存储桶名
+      BucketName: !FindInMap [RegionMap, !Ref "AWS::Region", !Ref "EnvironmentType"]
+
+Outputs:
+  TestOutput:
+    Description: Return the name of the bucket name that matches the region and environment type keys
+    Value: !FindInMap [RegionMap, !Ref "AWS::Region", !Ref EnvironmentType]

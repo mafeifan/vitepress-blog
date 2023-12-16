@@ -1,0 +1,39 @@
+# https://docs.aws.amazon.com/zh_cn/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html
+
+# 根模板，定义一个 SecurityGroup 资源
+    # 上传到S3获取地址
+    # https://cf-templates-di0bi6u8wmb-ap-northeast-1.s3.ap-northeast-1.amazonaws.com/15_stack_root.yaml
+
+# 打开CF，上传，templates url 填写上面的地址
+# 子模板，引用根模板，创建EC2实例
+
+
+AWSTemplateFormatVersion: "2010-09-09"
+
+Parameters:
+  AppName:
+    Type: String
+    Description: The application name
+
+Resources:
+  MySecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: !Sub 'Security group for ${AppName}'
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 3306
+          ToPort: 3306
+          CidrIp: 0.0.0.0/0
+Outputs:
+  MySecurityGroupId:
+    Description: Id for the security group
+    Value: !Ref MySecurityGroup

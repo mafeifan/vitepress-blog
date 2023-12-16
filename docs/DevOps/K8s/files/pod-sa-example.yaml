@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-sa-example
+spec:
+  serviceAccountName: sa-example
+  containers:
+    - image: nginx:alpine
+      name: container-0
+      resources:
+        limits:
+          cpu: 100m
+          memory: 200Mi
+        requests:
+          cpu: 100m
+          memory: 200Mi

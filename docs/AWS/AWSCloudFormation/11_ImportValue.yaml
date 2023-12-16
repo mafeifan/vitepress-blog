@@ -1,0 +1,17 @@
+# https://docs.aws.amazon.com/zh_cn/zh_cn/AWSCloudFormation/latest/UserGuide/pseudo-parameter-reference.html
+# 输出output - 引入安全组资源
+
+AWSTemplateFormatVersion: "2010-09-09"
+
+Resources:
+  MyEC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t2.micro
+      AvailabilityZone: !Select
+        - 0
+        - Fn::GetAZs: !Ref 'AWS::Region'
+      KeyName: 'aws-ty-2022'
+      ImageId: ami-032d6db78f84e8bf5
+      SecurityGroups:
+        - !ImportValue "outout-SecurityGroup"

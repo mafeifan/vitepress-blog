@@ -1,0 +1,31 @@
+# https://docs.aws.amazon.com/zh_cn/zh_cn/AWSCloudFormation/latest/UserGuide/pseudo-parameter-reference.html
+# 定义一个安全组资源，供EC2使用ImportValue资源引用
+
+AWSTemplateFormatVersion: "2010-09-09"
+
+Resources:
+  MySecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Enable SSH access via port 22
+      # 关联VPC
+      # VpcId: !Ref pVPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+Outputs:
+  # 定义 key
+  OutputSSHSecurityGroup:
+    Description: The security group created by this template
+    Value: !Ref MySecurityGroup
+    Export:
+      # 内部函数 Fn::Sub 将输入字符串中的变量替换为您指定的值
+      # 导出名称
+      # 可以使用 !ImportValue "OutputName" 导入
+      Name: !Sub '${AWS::StackName}-SecurityGroup'

@@ -1,0 +1,19 @@
+# ubuntu 20.04 安装nginx并修改index.html内容为主机名
+
+- hosts: aws
+  remote_user: ubuntu
+  # 等同于添加 ‘sudo:’ 或 ‘su:’, 默认为sudo,被授权的用户可以使用sudo命令
+  become: yes
+  vars:
+    nginx_version: 1.18.0
+  tasks:
+  - name: "Stop nginx"
+    tags: nginx
+    service:
+      name: nginx
+      state: stopped
+  - name: "Uninstall nginx"
+    tags: nginx
+    apt:
+      name: nginx
+      state: absent

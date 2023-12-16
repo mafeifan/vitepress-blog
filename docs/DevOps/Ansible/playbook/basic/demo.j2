@@ -1,0 +1,31 @@
+# {{ "hello world" | reverse | upper }}
+
+<p>{{ 'hello every one' | truncate(9)}}</p>
+
+Hi, {{ name | default("mafei")}}
+
+{# 我是注释 #}
+{% filter upper %}
+  hello world
+{% endfilter %}
+
+worker_processes {{ ansible_processor_vcpus }};
+
+{# nginx.conf #}
+{{nginx_conf_path | basename}}
+
+{# etc/nginx #}
+{{nginx_conf_path | dirname}}
+
+{{ range(1, 51) | random }}
+
+{% for port in ports %}
+server {
+	listen localhost:{{ port }};
+}
+{% endfor %}
+
+{% if ansible_os_family == 'Debian' %}
+# This is a debian system
+{% endif %}
+

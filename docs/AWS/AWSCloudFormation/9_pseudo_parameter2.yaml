@@ -1,0 +1,23 @@
+# https://docs.aws.amazon.com/zh_cn/zh_cn/AWSCloudFormation/latest/UserGuide/pseudo-parameter-reference.html
+
+AWSTemplateFormatVersion: "2010-09-09"
+
+# 映射关系
+# 根据不同region创建不同的bucket
+Mappings:
+  RegionMap:
+    ap-northeast-1:
+      bucket: "ap-northeast-1-test"
+    ap-northeast-2:
+      bucket: "ap-northeast-2-test"
+Resources:
+  myBucket:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      # every Fn::FindInMap object requires three parameters, the map name, map key and the attribute for return value
+      BucketName: !FindInMap [RegionMap, !Ref "AWS::Region", bucket]
+
+Outputs:
+  TestOutput:
+    Description: Return the name of the bucket name that matches the region and environment type keys
+    Value: !FindInMap [RegionMap, !Ref "AWS::Region", bucket]

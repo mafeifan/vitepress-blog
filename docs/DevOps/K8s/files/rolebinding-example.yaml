@@ -1,0 +1,19 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: rolebinding-example
+  namespace: default
+subjects:                                 # 指定用户
+  - kind: User                              # 普通用户
+    name: user-example
+    apiGroup: rbac.authorization.k8s.io
+  - kind: ServiceAccount                    # ServiceAccount
+    name: sa-example
+    namespace: default
+  - kind: ServiceAccount                    # ServiceAccount
+    name: sa-example
+    namespace: kube-system
+roleRef:                                  # 指定角色
+  kind: Role
+  name: role-pod-reader
+  apiGroup: rbac.authorization.k8s.io

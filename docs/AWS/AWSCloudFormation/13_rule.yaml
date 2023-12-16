@@ -1,0 +1,59 @@
+# https://docs.aws.amazon.com/zh_cn/zh_cn/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-rules.html
+
+# 防止用户选择错误内容参数
+
+# 每个模板规则由两个属性组成：
+
+# 规则条件（可选）— 确定规则的生效时间。
+
+# 断言（必选）— 描述用户可为特定参数指定的值。
+
+AWSTemplateFormatVersion: "2010-09-09"
+
+Parameters:
+  EnvType:
+    Description: Environment Name
+    Type: String
+    Default: dev
+    AllowedValues:
+      - prod
+      - dev
+  InstanceType:
+    Default: 't2.micro'
+    Type: String
+    AllowedValues:
+      - t2.nano
+      - t2.micro
+      - t2.small
+
+Rules:
+  # 当选择prod环境时，规则生效，并且参数InstanceType的值必须为t2.small
+  ProdInstanceType:
+    RuleCondition: !Equals
+      - !Ref EnvType
+      - prod
+    Assertions:
+      - Assert:
+          !Equals [!Ref InstanceType, 't2.small']
+        AssertDescription: 'For a prod environment, InstanceType must be t2.small'
+  DevInstanceType:
+    RuleCondition: !Equals
+      - !Ref EnvType
+      - dev
+    Assertions:
+      - Assert:
+          'Fn::Or':
+            - !Equals [!Ref InstanceType, 't2.nano']
+            - !Equals [!Ref InstanceType, 't2.micro']
+        AssertDescription: 'For a dev environment, InstanceType must be t2.nano or t2.micro'
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: !Ref InstanceType
+      AvailabilityZone: 'ap-northeast-1a'
+      KeyName: 'aws-ty-2022'
+      ImageId: ami-032d6db78f84e8bf5
+      Tags:
+        - Key: Name
+          Value: !Join ['-', [!Ref EnvType, '-', !Ref InstanceType]]

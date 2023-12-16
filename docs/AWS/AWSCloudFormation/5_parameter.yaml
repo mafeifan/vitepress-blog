@@ -1,0 +1,60 @@
+# https://docs.aws.amazon.com/zh_cn/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html
+AWSTemplateFormatVersion: "2010-09-09"
+
+Parameters:
+  pInstanceTypeParameter:
+    Type: String
+    Default: t2.micro
+    AllowedValues:
+      - t2.micro
+      - m1.small
+      - m1.large
+    Description: Enter t2.micro, m1.small, or m1.large. Default is t2.micro.
+
+  pSecurityGroupPort:
+    Description: "Security Group Port (Web: 80, SSH: 22)"
+    Type: Number
+    Default: 80
+    MinValue: 1
+    # fixme
+    # https://docs.aws.amazon.com/zh_cn/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html
+    # 但当您在模板中的其他位置使用该参数时（例如，通过使用 Ref 内部函数），该参数值将变成字符串。
+    MaxValue: 1024
+
+  pKeyNameParameter:
+    Description: "Name of EC2 Key Pair"
+    # 列出所有密钥对
+    Type: AWS::EC2::KeyPair::KeyName
+    Default: "aws-ty-2022"
+    ConstraintDescription: "must be the name of an existing EC2 KeyPair."
+
+Resources:
+  MyEC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      AvailabilityZone: 'ap-northeast-1a'
+      ImageId: ami-032d6db78f84e8bf5
+      InstanceType: !Ref pInstanceTypeParameter
+      KeyName: !Ref pKeyNameParameter
+      SecurityGroups:
+        - !Ref MySecurityGroup
+
+  # add elastic ip to instance
+  MyEIP:
+    Type: AWS::EC2::EIP
+    Properties:
+      InstanceId: !Ref MyEC2Instance
+
+  MySecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Enable SSH access via port 22
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: !Ref pSecurityGroupPort
+          ToPort: !Ref pSecurityGroupPort
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
