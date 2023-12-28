@@ -3,23 +3,23 @@
 layout: home
 
 hero:
-  name: "My Personal Blog"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: "hello world!"
+  text: ""
+  tagline: 我的编程技术博客
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Jenkins2-学习系列
+      link: /Jenkins2-学习系列1----使用Docker方式安装最新版Jenkins.html
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Docker系列
+      link: /Docker/Docker-学习系列1--使用-Docker-快速实现多版本PHP切换
 
 features:
-  - title: Feature A
+  - title: Open
+    details: ~
+  - title: Share
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
+  - title: Value
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 

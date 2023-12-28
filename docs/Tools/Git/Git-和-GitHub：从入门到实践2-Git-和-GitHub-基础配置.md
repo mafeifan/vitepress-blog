@@ -1,8 +1,6 @@
-[原文地址](https://www.ibm.com/developerworks/cn/opensource/os-cn-git-and-github-2/index.html)
-
 ## 前言
 
-在本系列的[第一篇](https://www.ibm.com/developerworks/cn/opensource/os-cn-git-and-github-1/index.html)文章中着重介绍了 Git 的基础特性。本文作为本系列的第二篇文章将介绍 Git 和 GitHub 的基础配置，包括 Git 安装、使用 Git 克隆 GitHub 上的代码库、使用 Git 克隆远端代码仓库、Git 的基本配置和设置忽略提交规则。您在阅读完本文将有能力完成本地 Git 环境的基础配置，为接下来的 Git 日常使用做基础。
+在本系列的[第一篇](/Tools/Git/Git-和-GitHub：从入门到实践1-Git-和-GitHub-基础简介.html#前言)文章中着重介绍了 Git 的基础特性。本文作为本系列的第二篇文章将介绍 Git 和 GitHub 的基础配置，包括 Git 安装、使用 Git 克隆 GitHub 上的代码库、使用 Git 克隆远端代码仓库、Git 的基本配置和设置忽略提交规则。您在阅读完本文将有能力完成本地 Git 环境的基础配置，为接下来的 Git 日常使用做基础。
 
 GitHub 是一个代码托管平台，如果开发者想要在本地进行开发工作，那么就需要使用到 Git 的客户端工具来连接到 GitHub，再克隆代码到本地。如果您是重度的 GUI 使用者，那么有很多 GUI 客户端可以选择，在 Git 的官网就专门有个页面列出了业内的[ GUI 客户端](https://git-scm.com/downloads/guis/)。
 
@@ -20,7 +18,6 @@ GitHub 是一个代码托管平台，如果开发者想要在本地进行开发�
 
 > ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-8fbb7bd4ddd34b12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-[点击查看大图](https://www.ibm.com/developerworks/cn/opensource/os-cn-git-and-github-2/index.html#N10089)
 
 对于 Mac 和 Linux 用户，只需通过对应的包管理工具安装即可，如清单 1 所示：
 清单 1. Mac 和 Linux 下安装 Git
@@ -39,13 +36,11 @@ GitHub 提供了两种克隆方式：HTTPS 和 SSH。我们可以点击仓库页
 
 > ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-363a4b5bc4090d80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-[点击查看大图](https://www.ibm.com/developerworks/cn/opensource/os-cn-git-and-github-2/index.html#N100B1)
 
 ##### 图 3\. 查看 SSH 克隆链接
 
 > ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-df49141b06c7bf3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-[点击查看大图](https://www.ibm.com/developerworks/cn/opensource/os-cn-git-and-github-2/index.html#N100BB)
 
 由此我们可以获得两个 URL：
 
@@ -91,7 +86,6 @@ To https://github.com/caozhi/repo-for-developerworks.git
 
 > ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-d661d82aee2699bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-[点击查看大图](https://www.ibm.com/developerworks/cn/opensource/os-cn-git-and-github-2/index.html#N100FB)
 
 先将 `id_rsa.pub` 公钥文件的内容复制到剪贴板，如图 5 所示，使用 `cat id_rsa.pub` 命令可以查看公钥内容，随后将该公钥导入到 GitHub 里的账户之下。
 
@@ -99,7 +93,6 @@ To https://github.com/caozhi/repo-for-developerworks.git
 
 > ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-4be399c862e5e47e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-[点击查看大图](https://www.ibm.com/developerworks/cn/opensource/os-cn-git-and-github-2/index.html#N1010D)
 
 在 GitHub 页面右上角的头像里点击展开一个下拉菜单，点击 **Settings** 可以打开个设置页面，如图 6 所示：
 
@@ -107,7 +100,6 @@ To https://github.com/caozhi/repo-for-developerworks.git
 
 > ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-4b9c763f68af2725.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-[点击查看大图](https://www.ibm.com/developerworks/cn/opensource/os-cn-git-and-github-2/index.html#N1011C)
 
 打开 **SSH and GPG keys **的配置页面，点击右上角的 **New SSH key** 按钮，如图 7 所示：
 
@@ -115,7 +107,6 @@ To https://github.com/caozhi/repo-for-developerworks.git
 
 > ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-0062406fdac85fac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-[点击查看大图](https://www.ibm.com/developerworks/cn/opensource/os-cn-git-and-github-2/index.html#N1012E)
 
 在打开的页面中先设置一个您想导入的公钥的名称，再将前面复制的公钥内容粘贴到大文本框中，点击 **Add SSH key** 即可，如图 8 所示：
 
@@ -129,7 +120,6 @@ To https://github.com/caozhi/repo-for-developerworks.git
 
 > ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-63956f5dea65ec3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-[点击查看大图](https://www.ibm.com/developerworks/cn/opensource/os-cn-git-and-github-2/index.html#N1014C)
 
 此时我们可以使用 SSH 的方式进行代码克隆，还可以使用 `ssh -T` 命令检测是否配置成功, 如清单 4 和 5 所示：
 
@@ -177,7 +167,6 @@ Hi caozhi! You've successfully authenticated, but GitHub does not provide shell 
 
 > ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-01f1cea644abbc4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-[点击查看大图](https://www.ibm.com/developerworks/cn/opensource/os-cn-git-and-github-2/index.html#N101BC)
 
 从截图可以看到，`git clone` 命令在 `clone_demo` 目录中创建了一个 `repo-for-developerworks` 的代码库目录。
 
@@ -187,7 +176,6 @@ Hi caozhi! You've successfully authenticated, but GitHub does not provide shell 
 
 > ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-ed1d0d5f68062f17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-[点击查看大图](https://www.ibm.com/developerworks/cn/opensource/os-cn-git-and-github-2/index.html#N101D9)
 
 从截图可以看到，`git clone` 命令在 `clone_demo` 目录中新建了一个我们指定的 `local_dev-repo` 目录，并将其作为本地代码库的根目录。
 
@@ -197,7 +185,6 @@ Hi caozhi! You've successfully authenticated, but GitHub does not provide shell 
 
 > ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-d1db7788f850cbfa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-[点击查看大图](https://www.ibm.com/developerworks/cn/opensource/os-cn-git-and-github-2/index.html#N101F6)
 
 我们知道一般操作系统将一个英文句点表示当前目录，因此从截图可以看出，当 `local_path` 指定为当前目录时，`git clone`命令会直接将当前目录作为本地代码库的根目录。
 
@@ -209,7 +196,6 @@ Hi caozhi! You've successfully authenticated, but GitHub does not provide shell 
 
 > ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-593ee8304b605e81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-[点击查看大图](https://www.ibm.com/developerworks/cn/opensource/os-cn-git-and-github-2/index.html#N10215)
 
 ## Git 的基本配置
 
@@ -251,7 +237,6 @@ Git 提供了很多有用的命令，我们可以将一些比较常用的命令�
 
 > ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-fb2eba79af6f3d71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-[点击查看大图](https://www.ibm.com/developerworks/cn/opensource/os-cn-git-and-github-2/index.html#N1028B)
 
 当然还可以设置一些其它的别名，如清单 7 所示:
 
@@ -270,7 +255,6 @@ git config --global alias.cm "commit"
 
 > ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-12dd3b3b603e5fb1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-[点击查看大图](https://www.ibm.com/developerworks/cn/opensource/os-cn-git-and-github-2/index.html#N102AC)
 
 ### 使用 Config 文件进行配置
 
@@ -322,7 +306,6 @@ web.xml` |
 
 > ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-9d9e0ed5a39de51c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-[点击查看大图](https://www.ibm.com/developerworks/cn/opensource/os-cn-git-and-github-2/index.html#N10385)
 
 *   GitHub 有一个十分详细的针对数十种项目及语言的 `.gitignore` 文件列表模板，可以在 [https://github.com/github/gitignore](https://github.com/github/gitignore) 找到它。
 

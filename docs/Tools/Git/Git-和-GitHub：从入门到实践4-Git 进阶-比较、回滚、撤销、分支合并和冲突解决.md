@@ -1,6 +1,3 @@
-[原文地址](https://developer.ibm.com/zh/articles/os-cn-git-and-github-4/)
-
-
 本系列的 第三篇 介绍了使用 Git 和 GitHub 进行日常操作。在这篇文章中，我将介绍 Git 在日常工作中的经常使用的进阶操作，包括比较操作、回滚、撤销、分支合并和冲突解决。这些操作也都是在实际项目中我们会经常遇见同时相信也是很多读者经常感到头疼和容易混淆的操作。Git 针对这些操作也提供了很好的支持。
 
 ### 比较
@@ -10,34 +7,34 @@
 Diff 命令的基本格式是 `git diff <src> <dst>` 。其作用是相比 src ，列出目标对象 dst 的差异。例如图 1 和图 2 所示，分别执行 `git diff dev master` 和 `git diff master dev` 来查看 dev 分支和 master 分支的差异，两次执行结果显示的是相反的结果。
 
 图 1. 执行 git diff dev master
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image001.png)
+![](https://pek3b.qingstor.com/hexo-blog/202312161903509.png)
 
 图 2. 执行 git diff master dev
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image002.png)
+![](https://pek3b.qingstor.com/hexo-blog/202312161903946.png)
 
 Git 中 Tag 和分支本质上都是指向对应 commit 的指针。因此 Tag、分支、commit 三者之间可以很平滑的进行比较操作。
 例如图 3 进行了 tag 和分支之间的比较、图 4 进行了 Tag 和 Tag 之间的比较、图 5 进行了分支和 commit 之间的比较。
 
 图 3. tag 和分支的比较
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image003.png)
+![](https://pek3b.qingstor.com/hexo-blog/202312161903096.png)
 
 图 4. Tag 和 Tag 之间的比较
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image004.png)
+![](https://pek3b.qingstor.com/hexo-blog/202312161904969.png)
 
 图 5. 分支和 Commit 之间的比较
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image005.png)
+![](https://pek3b.qingstor.com/hexo-blog/202312161904113.png)
 
 使用 git diff 也可以查看单个文件的差异。例如图 6 所示：
 
 图 6. 比较单个文件的差异
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image006.png)
+![](https://pek3b.qingstor.com/hexo-blog/202312161904480.png)
 
 在实际项目中，只通过命令行的方式来展示差异在某些场景下可能不是特别友好，比如想要比较两个相隔时间较远、差异特别多的分支，通过命令行的方式可能较难定位到我们关心的修改。因此我在实际项目中也会使用 IDE 或其它图形化 Git 客户端进行比较。例如图 7 展示了如果在 Eclipse 的 EGit 插件中比较两个 commit：
 
 图 7. Eclipse EGit 中比较两个 commit
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image007.jpg)
+![](https://pek3b.qingstor.com/hexo-blog/202312161904610.jpg)
 
 ## 回滚和撤销
 
@@ -49,13 +46,13 @@ Git 中 Tag 和分支本质上都是指向对应 commit 的指针。因此 Tag�
 
 图 8. 提交 commit
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image008.png)
+![](https://pek3b.qingstor.com/hexo-blog/202312161905712.png)
 
 然后我们再利用 git revert 进行回滚，如图 9 所示。可以看到回滚之后，Git 生成了一条新的 commit，这条 commit 的提交内容与被回滚的 commit 完全相反：
 
 图 9. 执行 revert 操作
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image009.png)
+![](https://pek3b.qingstor.com/hexo-blog/202312161905847.png)
 
 ## 撤销
 撤销操作指的是丢弃我们的代码修改。实际开发中撤销通常包含多种情况：
@@ -72,13 +69,13 @@ Git 中 Tag 和分支本质上都是指向对应 commit 的指针。因此 Tag�
 
 图 10. 撤销单个文件的修改
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image010.png)
+![](https://pek3b.qingstor.com/hexo-blog/202312161905107.png)
 
 本地修改太多，我们又想完全丢弃掉本地修改时，使用 git checkout -- filepath 命令会显得十分麻烦。此时可以使用 git reset -- hard HEAD 命令来丢弃本地所有修改，如图 11 所示：
 
 图 11. 丢弃本地修改
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image011.png)
+![](https://pek3b.qingstor.com/hexo-blog/202312161906397.png)
 
 对于下面两种情况，我们也都可以使用 git reset 命令结合不同的选项来进行操作。
 
@@ -87,23 +84,20 @@ Git 中 Tag 和分支本质上都是指向对应 commit 的指针。因此 Tag�
 
 图 12. 从暂存区恢复到工作区
 
-
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image012.png)
-
+![](https://pek3b.qingstor.com/hexo-blog/202312161906813.png)
 
 撤销已提交到本地代码库但还未 push 到远端进行同步的代码
 例如我们已经将修改 commit 到了本地代码库，如图 13 所示，可以看到 HEAD 指针已经指向了本地最新的修改。当我们想要撤销掉该 commit 时，可以使用 git reset [–hard] commit_id 命令来操作。同样的，如果我们只是想保留修改，我们可以使用 git reset commit_id 命令来使得 HEAD 指针指向对应的 commit，这样在其之后 commit 的代码修改会被撤销到工作区，如图 13 所示：
 
 图 13. 将已提交 commit 恢复到工作区
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image013.png)
-
+![](https://pek3b.qingstor.com/hexo-blog/202312161906083.png)
 
 当我们不需要保留修改，而想要完全丢弃掉 commit 时，我们可以使用 git reset --hard commit_id 命令，这样对应 commit 之后的 commit 将会完全被丢弃。如图 14 所示：
 
 图 14. 完全丢弃已提交 commit
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image014.png)
+![](https://pek3b.qingstor.com/hexo-blog/202312161907154.jpg)
 
 #### 撤销已提交到远端的代码
 而对于已经提交到远端的 commit，此时我们没有办法再使用 reset 命令撤销掉原先的 commit，即使在本地用 reset 进行了撤销，再进行同步拉取代码时，仍然会将远端的 commit 拉回本地。因此这种情况我们只有通过 revert 进行回滚。
@@ -120,20 +114,19 @@ Reset 命令本质上是重置工作区的 HEAD 指针使其指向对应位置�
 
 图 15. 执行 reset 前的两个 commit
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image015.png)
+![](https://pek3b.qingstor.com/hexo-blog/202312161907729.png)
 
 图 16. 使用 –mixed 选项执行 reset
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image016.png)
-
+![](https://pek3b.qingstor.com/hexo-blog/os-cn-git-and-github-4_images_image016.png)
 
 图 17. 使用 –soft 选项执行 reset
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image017.png)
+![](https://pek3b.qingstor.com/hexo-blog/os-cn-git-and-github-4_images_image017.png)
 
 图 18. 使用 –hard 选项执行 reset
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image018.png)
+![](https://pek3b.qingstor.com/hexo-blog/os-cn-git-and-github-4_images_image018.png)
 
 合并分支
 在本系列 第三篇 文章中已经介绍了分支的基本操作，包括创建分支、删除分支等。本节将会介绍实际开发中分支的另一个重要操作：合并分支。
@@ -142,19 +135,19 @@ Reset 命令本质上是重置工作区的 HEAD 指针使其指向对应位置�
 
 图 19. 同步 master 和 dev 代码
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image019.png)
+![](https://pek3b.qingstor.com/hexo-blog/os-cn-git-and-github-4_images_image019.png)
 
 然后我在 dev 分支上进行一次提交，如图 20 所示：
 
 图 20. 在 dev 分支进行一次提交
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image020.png)
+![](https://pek3b.qingstor.com/hexo-blog/os-cn-git-and-github-4_images_image020.png)
 
 接下来我们切换到 master 分支使用 git merge branchname 命令进行合并，如下图 21 所示：
 
 图 21. 将 dev 分支合并到 master
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image021.png)
+![](https://pek3b.qingstor.com/hexo-blog/os-cn-git-and-github-4_images_image021.png)
 
 可以看到 master 分支成功合并了 dev 分支的那条 commit。
 
@@ -162,41 +155,42 @@ Fast-forward
 观察可以看到上面的实验 Git 是以 Fast-forward 方式进行的合并。Fast-forward 是指快进合并，它是直接将 master 分支指针直接指向了 dev 分支的 commit，而并没有在 master 分支上产生新的 merge commit。我们再执行一次相同的操作来演示非快进合并模式的效果。执行 git merge 命令时通过加上 --no-ff 选项来禁止 Fast-forward。如图 22 示，可以看到非快进合并模式下，git 会产生一条新的 merge commit 。使用 Fast-forward 模式的好处是可以快速的进行合并且不会产生 merge commit，但其缺点在于它不会保留合并分支的信息，因此当合并分支被删除时，也就不知道对应的提交是来自于哪个分支。
 
 图 22. 非快进方式合并
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image022.png)
+
+![](https://pek3b.qingstor.com/hexo-blog/os-cn-git-and-github-4_images_image022.jpg)
 
 Squash 选项
 有时候我们实际项目中在自己的开发分支上可能会提交很多跟业务意义关系不大的 commit，例如格式修改、删除空格、撤销前次提交等等，执行 git merge 操作时默认情况下会将合并分支上这些原始 commit 直接合并过来，在目标分支上保留了详细的提交历史，往往这些无意义的提交历史会导致主分支的历史显得杂乱。这种情况下我们可以使用 squash 选项将待合并的所以 commit 重新替换成一条新的 commit。如图 23-24 所示，我们将 dev 分支的三条 commit 合并成了一条 commit。
 
 图 23. Dev 分支上的三个 commit
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image023.png)
+![](https://pek3b.qingstor.com/hexo-blog/os-cn-git-and-github-4_images_image023.png)
 
 图 24. 将 dev 分支使用 Squash 方式合并到 master
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image024.png)
+![](https://pek3b.qingstor.com/hexo-blog/os-cn-git-and-github-4_images_image024.png)
 
 图 25. 查看 master 上的 squashed commit
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image025.png)
+![](https://pek3b.qingstor.com/hexo-blog/os-cn-git-and-github-4_images_image025.png)
 
 Cherry-pick
 除了使用 git merge 命令来合并分支之外，我们还可以通过 cherry-pick 命令来检出特定的一个或多个 commit 进行合并。首先我们先在 dev 分支上提交 3 条 commit，如图 26 所示：
 
 图 26. Dev 分支上的三个 commit
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image026.png)
+![](https://pek3b.qingstor.com/hexo-blog/os-cn-git-and-github-4_images_image026.png)
 
 然后我们切换到 master 分支使用 cherry-pick 来合并第二个 commit，如图 27 所示：
 
 图 27. 在 master 上 cherry-pick dev 分支的 commit
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image027.png)
+![](https://pek3b.qingstor.com/hexo-blog/os-cn-git-and-github-4_images_image027.png)
 
 查看 log 发现第二个 commit 被合并到了 master 分支，如图 28 所示：
 
 图 28. 查看 cherry-pick 结果
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image028.png)
+![](https://pek3b.qingstor.com/hexo-blog/os-cn-git-and-github-4_images_image028.png)
 
 冲突的产生与解决冲突
 冲突的产生
@@ -204,35 +198,34 @@ Cherry-pick
 
 图 29. dev 分支中的代码修改
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image029.png)
+![](https://pek3b.qingstor.com/hexo-blog/os-cn-git-and-github-4_images_image029.png)
 
 图 30. master 分支中的代码修改
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image030.png)
+![](https://pek3b.qingstor.com/hexo-blog/os-cn-git-and-github-4_images_image030.png)
 
 图 31. 合并时产生冲突
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image031.png)
+![](https://pek3b.qingstor.com/hexo-blog/os-cn-git-and-github-4_images_image031.png)
 
 解决冲突
 无论是什么情况下产生的冲突，Git 一般会直接将冲突信息输出到冲突文件中，并使用 <<<<<< 、 ===== 、 >>>>>> 符号来标注产生冲突的位置以及两个分支的冲突代码。我们需要解决冲突再进行下一步合并或者代码提交的操作，如图 32 所示：
 
 图 32. 源文件中显示冲突位置
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image032.png)
+![](https://pek3b.qingstor.com/hexo-blog/os-cn-git-and-github-4_images_image032.jpg)
 
 我们可以直接编辑该冲突文件，保留我们感兴趣的内容，同时删除 Git 自动生成的标识行 <<<<<< 、 ===== 、 >>>>>> 。也可以借用 GUI Git 客户端、IDE 或者其它合并工具进行冲突解决。下图展示了 Eclipse（图 33）、VSCode（图 34）和 GitHub Desktop（图 35）的冲突解决。=
 
 图 33. Eclipse 里解决冲突
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image033.png)
+![](https://pek3b.qingstor.com/hexo-blog/os-cn-git-and-github-4_images_image033.png)
 
 图 34. VSCode 里解决冲突
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image034.png)
+![](https://pek3b.qingstor.com/hexo-blog/os-cn-git-and-github-4_images_image034.png)
 
 图 35. GitHub Desktop 里解决冲突
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/developer/default/articles/os-cn-git-and-github-4/images/image035.png)
-
+![](https://pek3b.qingstor.com/hexo-blog/os-cn-git-and-github-4_images_image035.png)
 
 当在代码中解决了冲突之后，我们需要将修改后的代码重新使用 git add/rm/mv 提交到暂存区，并重新 commit 到代码库中。
 
