@@ -24,6 +24,7 @@ export default defineConfig({
         text: 'Tools',
         items: [
           {text: 'Git学习系列',   link: '/Tools/Git/Git-和-GitHub：从入门到实践1-Git-和-GitHub-基础简介'},
+          {text: 'Other',   link: '/Tools/Other/当有个服务器可以干哪些事情'},
         ]
       },
       {text: 'Markdown Page', link: '/markdown-examples'},
@@ -32,6 +33,22 @@ export default defineConfig({
       // {text: 'Other', link: '/markdown-examples'},
     ],
     sidebar: {
+      '/Tools/Other/': [
+        {
+          text: 'Other',
+          collapsed: false,
+          items: [
+            {link:'/Tools/Other/当有个服务器可以干哪些事情',  text:'当有个服务器可以干哪些事情?'},
+            {link:'/Tools/Other/Firebase消息推送',  text:'Firebase消息推送'},
+            {link:'/Tools/Other/使用frp内网穿透工具',  text:'使用frp内网穿透工具'},
+            {link:'/Tools/Other/storybook-介绍和使用-比较火的响应式UI开发及测试环境',  text:'storybook-介绍和使用-响应式UI开发及测试环境'},
+            {link:'/Tools/Other/强大的Postman-----API管理工具',  text:'强大的Postman--API管理工具'},
+            {link:'/Tools/Other/网络-下载youtube视频-yt-dlp',  text:'网络-下载youtube视频-yt-dlp'},
+            {link:'/Tools/Other/说下browserslist',  text:'说下browserslist'},
+            {link:'/Tools/Other/Nginx',  text:'Nginx知识点总结'},
+          ]
+        }
+      ],
       '/Tools/Git/': [
         {
           text: 'Git学习系列',
@@ -45,7 +62,6 @@ export default defineConfig({
           ]
         }
       ],
-
       '/DevOps/Terraform/': [
         {
           text: 'Terraform',
