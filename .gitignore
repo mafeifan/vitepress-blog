@@ -1,2 +1,4 @@
 .vitepress
 node_modules
+cache
+dist

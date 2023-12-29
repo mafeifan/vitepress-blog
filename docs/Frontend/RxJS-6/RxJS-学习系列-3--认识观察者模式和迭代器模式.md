@@ -30,7 +30,7 @@
 ####  DOM 事件
 实际上，只要我们曾经在 DOM 节点上面绑定过事件函数，那我们就曾经使用过发布—订阅
 模式，来看看下面这两句简单的代码发生了什么事情： 
-```
+```javascript
 document.body.addEventListener( 'click', function(){ 
     alert(2); 
 }, false ); 
@@ -39,7 +39,7 @@ document.body.click();    // 模拟用户点击
 ```
 在这里需要监控用户点击 document.body 的动作，但是我们没办法预知用户将在什么时候点击。所以我们订阅 document.body 上的 click 事件，当 body 节点被点击时，body 节点便会向订阅者发布这个消息。这很像购房的例子，购房者不知道房子什么时候开售，于是他在订阅消息后等待售楼处发布消息。 
 当然我们还可以随意增加或者删除订阅者，增加任何订阅者都不会影响发布者代码的编写：
-``` 
+```javascript
 document.body.addEventListener( 'click', function(){ 
     alert(2); 
 }, false ); 
@@ -58,7 +58,7 @@ document.body.click();    // 模拟用户点击
 #### 实现 观察者模式
 分别用 es5 和 es6 实现
 下面是es5写法
-```
+```javascript
 function Producer() {
 
     // 这个 if 只是避免使用者不小心把 Producer 当作函式来调用
@@ -92,7 +92,7 @@ Producer.prototype.notify = function(message) {
 }
 ```
 es6版本
-```
+```javascript
 class Producer {
     constructor() {
         this.listeners = [];
@@ -115,7 +115,7 @@ class Producer {
 }
 ```
 有了上面的方法，可以实例化了
-```
+```javascript
 var egghead = new Producer(); 
 // new 出一个 Producer 实例叫 egghead
 
@@ -155,7 +155,7 @@ Iterator 的遍历过程是这样的。
 （3）第二次调用指针对象的next方法，指针就指向数据结构的第二个成员。
 （4）不断调用指针对象的next方法，直到它指向数据结构的结束位置。
 先让我们来看看原生的 JS 要怎么建立 iterator
-```
+```javascript
 var arr = [1, 2, 3];
 
 var iterator = arr[Symbol.iterator]();
@@ -171,7 +171,7 @@ iterator.next();
 ```
 
 #### 自己实现 Iterator
-```
+```javascript
 function IteratorFromArray(arr) {
     if(!(this instanceof IteratorFromArray)) {
         throw new Error('请用 new IteratorFromArray()!');
@@ -187,7 +187,7 @@ IteratorFromArray.prototype.next = function() {
 }
 ```
 es6版本
-```
+```javascript
 class IteratorFromArray {
     constructor(arr) {
         this._array = arr;
@@ -202,7 +202,7 @@ class IteratorFromArray {
 }
 ```
 迭代器模式虽然很单纯，但同时带来了两个优势，第一它渐进式取得数据的特性可以拿来做延迟运算(Lazy evaluation)，让我们能用它来处理数据结构。第二因为 iterator 本身是序列，所以可以实现所有数组的运算方法像 map, filter... 等！
-```
+```javascript
 class IteratorFromArray {
     constructor(arr) {
         this._array = arr;
@@ -242,7 +242,7 @@ newIterator.next();
 #### 补充: 延迟运算(Lazy evaluation)
 延迟运算，或说 call-by-need，是一种运算策略(evaluation strategy)，简单来说我们延迟一个表达式的运算时机直到真正需要它的值在做运算。
 以下我们用 generator 实作 iterator 来举一个例子
-```
+```javascript
 function* getNumbers(words) {
         for (let word of words) {
             if (/^[0-9]+$/.test(word)) {

@@ -1,7 +1,7 @@
 ### 响应式表单
- [`FormControl`](https://angular.cn/api/forms/FormControl) 的 `valueChanges` 属性和 `statusChanges` 属性包含了会发出变更事件的可观察对象。
+[`FormControl`](https://angular.cn/api/forms/FormControl) 的 `valueChanges` 属性和 `statusChanges` 属性包含了会发出变更事件的可观察对象。
 [例子](https://stackblitz.com/edit/angular-form-rxjs-demo)
-```
+```javascript
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl, AbstractControl } from '@angular/forms';
 import { concat, merge, zip, combineLatest, race } from 'rxjs/index';
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
 ```
 
 HTML
-```
+```html
 <form [formGroup]="form">
     username: <input type="text" name="username" formControlName="username">
     hobby: 
@@ -44,7 +44,7 @@ HTML
 ```
 完善验证，只有通过验证才输出内容 filter 是rxjs提供的运算符
 
-```
+```javascript
     this.form.valueChanges
     .pipe(
       filter(() => this.form.valid)
@@ -53,7 +53,7 @@ HTML
 ```
 
 如果需要额外的逻辑，只需要在pipe添加相应的运算符。比如这里在结果里追加上次更新时间，字段名为lastTime
-```
+```javascript
     this.form.valueChanges
     .pipe(
       filter(() => this.form.valid)，
@@ -66,7 +66,7 @@ HTML
 ```
 
 另一种写法，监听各个元素
-```
+```javascript
     // 如果要监听单个表单元素
     const username$ = this.form.get('username').pipe(startWith(this.form.get('username').value))
     const hobby$ = this.form.get('hobby').pipe(startWith(this.form.get('hobby').value))
@@ -86,14 +86,14 @@ HTML
 他提供的组件有些方法返回的是Observable，比如Dialog的afterAllClosed，SnackBar的afterOpened, afterDismissed
 比如某需要，提示消失1s后跳转页面
 优化前的代码：
-```
+```javascript
 this.snackbar.success(response);
 setTimeout(function () {
     this.router.navigate([`/login`]);
 }, 1000);
 ```
 优化后的代码：
-```
+```typescript
 import { delay } from 'rxjs/operators';
 ...
 this.snack.success(response).afterDismissed()

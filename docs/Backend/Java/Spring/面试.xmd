@@ -5,7 +5,7 @@
 1、每个Bean可以有一个id属性，并可以根据该id在IoC容器中查找该Bean，该id属性值必须在IoC容器中唯一；
 
 2、可以不指定id属性，只指定全限定类名，如：`<bean class = "com.zyh.spring3.hello.StaticBeanFactory"></bean>`
-> 此时需要通过接口 getBean(Class<T> requiredType) 来获取Bean；
+此时需要通过接口 `getBean(Class<T> requiredType)` 来获取Bean；
 
 3、如果不指定id，只指定name，那么name为Bean的标识符，并且需要在容器中**唯一**；
 
@@ -14,8 +14,8 @@
 5、可以指定多个name，之间可以用分号（“；”）、空格（“ ”）或逗号（“，”）分隔开，如果没有指定id，那么第一个name为标识符，其余的为别名；若指定了id属性，则id为标识符，所有的name均为别名。如：
 
 ```xml
-<bean name="alias1 alias2;alias3,alias4" id="hello1" class="com.zyh.spring3.hello.HelloWorld">  
-     <constructor-arg index="0" value="Red"></constructor-arg>  
+<bean name="alias1 alias2;alias3,alias4" id="hello1" class="com.zyh.spring3.hello.HelloWorld">
+  <constructor-arg index="0" value="Red"></constructor-arg>
 </bean>
 ```
 
@@ -107,8 +107,5 @@ UserService userService2 = context.getBean("userService", UserService.class);
 </beans>
 ```
 
-
-
 ## 注解
-
 * @Controller=@RestController+@ResponseBody

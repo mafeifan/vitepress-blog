@@ -1,8 +1,8 @@
 ansible的安装有很多方式，这里以Mac为例
 1. 安装 `brew install ansible`或者使用`pip3 install ansible`
 
-```
-➜ ansible --version
+```bash
+ansible --version
 ansible [core 2.12.2]
   config file = None
   configured module search path = ['/Users/mafei/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
@@ -19,7 +19,6 @@ ansible [core 2.12.2]
 
 ![](http://pek3b.qingstor.com/hexo-blog/20220213201658.png)
 
-
 格式如下：
 [主机组名称]
 ip:端口 ansible_user=登录的用户名
@@ -31,7 +30,7 @@ ip:端口 ansible_user=登录的用户名
 
 更高级的写法:
 
-```
+```bash
 [dbs]
 db-[a-f].example.com
 
@@ -77,8 +76,8 @@ mer31 ansible_host=145.130.287.79 ansible_port=31 ansible_user=devuser
 135.104.35.167 ansible_port=22 ansible_user=maf ansible_private_key_file=~/.ssh/github_id_rsa
 ```
 然后针对某主机进行操作
-```
-➜ ansible mer31 -a uptime
+```bash
+ansible mer31 -a uptime
 mer31 | CHANGED | rc=0 >>
  11:14:38 up 485 days, 15:52,  2 users,  load average: 1.57, 0.58, 0.28
  

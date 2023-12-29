@@ -1,0 +1,11 @@
+这是记录的是我的编程技术技术文章，你看到的页面是基于 [vitepress](https://vitepress.dev/) 工具生成的。
+
+我对技术比较有热情。对CI/CD，容器化，云原生，微服务架构，自动化都有一定的了解。
+
+目前在某传统行业外企担任 DevOps Specialist，10余年开发+运维经验
+
+<!-- 工作中用到的技术 AWS, k8s, gitlab pipeline, terraform -->
+
+对文章有疑问的，欢迎加v讨论问题，也欢迎提issue
+
+![](https://pek3b.qingstor.com/hexo-blog/202312161827476.jpg#img-responsive)

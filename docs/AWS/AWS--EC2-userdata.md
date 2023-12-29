@@ -6,9 +6,9 @@
 * user data 是以 root 身份执行，所以不要用 sudo, 当然创建的目录或文件的 owner 也是 root，需要 ec2-user 用* 户访问的话需要 chmod 修改文件权限，或者直接用 chown ec2-user:ec2-user -R abc 修改文件的所有者()
 * 脚本不能交互，有交互时必须想办法跳过用户输入，如 apt install -y xzy, 带个  -y 标记
 * 如果脚本中需访问 AWS 资源，权限由 Instance Profile 所指定的 IAM role 决定
-* user data 中的脚本会被存储在  /var/lib/cloud/instances/<instance-id>/user-data.txt 文件中，因此也* 可以从这里验证 user data 是否设置正确。或者在 EC2 实例上访问 http://169.254.169.254/latest/* user-data 也能看到 user data 的内容。并且在 EC2 实例初始化后不被删除，所以以此实例为基础来创建一个新的 * AMI 需把它删除了
+* user data 中的脚本会被存储在  `/var/lib/cloud/instances/<instance-id>/user-data.txt` 文件中，因此也* 可以从这里验证 user data 是否设置正确。或者在 EC2 实例上访问 http://169.254.169.254/latest/* user-data 也能看到 user data 的内容。并且在 EC2 实例初始化后不被删除，所以以此实例为基础来创建一个新的 * AMI 需把它删除了
 * user data 的大小限制为 16 KB, 指 base64 编码前的大小
-* cloud-init 的输出日志在 /var/log/cloud-init-output.log, 它会捕获 cloud-init 控制台的输出内容
+* cloud-init 的输出日志在 `/var/log/cloud-init-output.log`, 它会捕获 cloud-init 控制台的输出内容
 
 user data 的内容通常在创建好实例后，还得等一会才完全生效，马上用 SSH 登陆新创建后的实例一般还看不到效果，有可能得等分把钟。
 

@@ -52,7 +52,7 @@ var handler = (e) => {
 document.body.addEventListener('click', handler);
 
 **使用 Rx 大概的样子**
-```
+```javascript
 Rx.Observable
     .fromEvent(document.body, 'click') // 注册监听
     .take(1) // 只取一次

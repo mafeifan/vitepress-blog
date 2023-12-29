@@ -1,11 +1,11 @@
 ## 第一个示例
 注册事件监听器的常规写法。
-```
+```javascript
 var button = document.querySelector('button');
 button.addEventListener('click', () => console.log('Clicked!'));
 ```
 使用 RxJS 的话，创建一个 observable 来代替（基于最新的Rxjs6版本写法）
-```
+```html
 <script src='https://cdn.bootcss.com/rxjs/6.5.1/rxjs.umd.js'></script>
 <script>
 const { fromEvent } = rxjs;
@@ -22,7 +22,7 @@ fromEvent(button, 'click')
 
 使用`Create`操作符从头开始创建一个Observable， 这个接收一个回调函数，把observer作为参数
 
-```
+```javascript
   // Observer 是一个对象，这个对象具有三个方法，分别是 next, error, complete
   // 建立 Observable 最简单方法是用 create 方法
   // create 接收一个回调函数，把 observer 作为参数
@@ -55,7 +55,7 @@ fromEvent(button, 'click')
 
 `from`操作符：将对象、字符串，数组，promise 等其他类型转换为Observable。
 请自己敲一遍看结果。
-```
+```javascript
   const {from} = rxjs;
 
   function f() {

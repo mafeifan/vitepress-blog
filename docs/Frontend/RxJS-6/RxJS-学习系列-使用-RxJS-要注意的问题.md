@@ -3,7 +3,7 @@ Promise 不多解释，这俩对象都可以处理异步数据，Observable 因�
 Observable 提供的 toPromise 方法，将 Observable 转换为 Promise
 
 例1：
-```
+```javascript
   async testOf() {
     return await this.service.getUserList().toPromise().then(res => {
       return res;
@@ -12,7 +12,7 @@ Observable 提供的 toPromise 方法，将 Observable 转换为 Promise
 
 ```
 读数据
-```
+```javascript
 ngOnInit() {
     this.testOf().then(res => {
       console.log(res);
@@ -21,7 +21,7 @@ ngOnInit() {
 ```
 
 例2
-```
+```javascript
 ngOnInit() {
   this.initData(response.creativeId)
 }

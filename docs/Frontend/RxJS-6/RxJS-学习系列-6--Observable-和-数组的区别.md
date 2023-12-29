@@ -6,7 +6,7 @@ Observable  和 数组都有filter, map 等运算操作operators，具体的区�
 
 ## 延迟运算
 延迟运算很好理解，所有 Observable 一定会等到订阅后才开始对元素做运算，如果没有订阅就不会有运算的行为
-```
+```javascript
 var source = Rx.Observable.from([1,2,3,4,5]);
 var example = source.map(x => x + 1);
 ```
@@ -23,7 +23,7 @@ var example = source.map(x => x + 1);
 
 数组的 operators 都必须完整的运算出每个元素的返回值并组成一个数组，再做下一个 operator 的运算，我们看下面这段程式码
 
-```
+```javascript
 var source = [1,2,3];
 var example = source
   .filter(x => x % 2 === 0) // 这裡会运算并返回一个完整的数组
@@ -32,7 +32,7 @@ var example = source
 
 上面这段代码，相信读者们都很熟悉了，大家应该都有注意到 `source.filter(...)`就会返回一整个新数组，再接下一个 operator 又会再返回一个新的数组，这一点其实在我们实现 map 跟 filter 时就能观察到
 
-```
+```javascript
 Array.prototype.map = function(callback) {
     var result = []; // 建立新数组
     this.forEach(function(item, index, array) {
@@ -48,7 +48,7 @@ Array.prototype.map = function(callback) {
 
 Observable operator 的运算方式跟数组的是完全的不同，虽然 Observable 的 operator 也都会回传一个新的 observable，但因为元素是渐进式取得的关系，所以每次的运算是一个元素运算到底，而不是运算完全部的元素再返回。
 
-```
+```javascript
 var source = Rx.Observable.from([1,2,3]);
 var example = source
   .filter(x => x % 2 === 0)
@@ -66,7 +66,7 @@ example.subscribe(console.log);
 
 每个元素送出后就是运算到底，在这个过程中不会等待其他的元素运算。这就是渐进式取值的特性，不知道读者们还记不记得我们在讲 Iterator 跟 Observer 时，就特别强调这两个 Pattern 的共同特性是渐进式取值，而我们在实现 Iterator 的过程中其实就能看出这个特性的运作方式
 
-```
+```javascript
 class IteratorFromArray {
     constructor(arr) {
         this._array = arr;

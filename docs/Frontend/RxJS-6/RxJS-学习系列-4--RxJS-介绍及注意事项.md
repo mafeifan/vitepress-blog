@@ -25,7 +25,7 @@ ReactiveX 结合了 [观察者模式](https://en.wikipedia.org/wiki/Observer_pa
 * http://reactivex.io/documentation
 * https://rxjs-dev.firebaseapp.com/guide/overview
 可结合中文文档 (注意例子中的版本)
-https://mcxiaoke.gitbooks.io/rxdocs/content/
-[https://rxjs-cn.github.io](https://rxjs-cn.github.io/)
+* https://mcxiaoke.gitbooks.io/rxdocs/content/
+* [https://rxjs-cn.github.io](https://rxjs-cn.github.io/)
 
 下节介绍如何创建 Observable

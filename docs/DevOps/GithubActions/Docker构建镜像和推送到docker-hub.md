@@ -49,6 +49,6 @@ jobs:
 
 ## 参考
 
-https://docs.docker.com/ci-cd/github-actions/
-https://segmentfault.com/a/1190000021166703
-https://github.com/docker/build-push-action
+* https://docs.docker.com/ci-cd/github-actions/
+* https://segmentfault.com/a/1190000021166703
+* https://github.com/docker/build-push-action

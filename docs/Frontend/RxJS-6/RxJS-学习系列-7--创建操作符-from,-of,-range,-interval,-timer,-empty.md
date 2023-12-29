@@ -4,7 +4,7 @@
 下面介绍几个可以创建 Observable 的运算符，具体的介绍请问官网
 例子：https://codepen.io/mafeifan/pen/eQKNvN
 
-```
+```javascript
   const {from, of, range, interval, timer, empty} = rxjs;
 
   function f() {

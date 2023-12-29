@@ -88,14 +88,11 @@ POST /api/v1/query_range
 ```
 
 该接口支持如下参数查询：
-
-```
 * query=<string>：Prometheus 表达式查询字符串。
 * start=<rfc3339 | unix_timestamp>：开始时间戳。
 * end=<rfc3339 | unix_timestamp> ：结束时间戳。
 * step=<duration | float>：查询分辨率步长。
 * timeout=<duration>：查询超时设置，可选参数，默认将使用-query.timeout的全局参数。
-```
 
 ### 示例：
 
@@ -103,9 +100,7 @@ POST /api/v1/query_range
 
 请求的参数如下:
 
-```
 curl http://localhost:9090/api/v1/query_range?query=node_load5{instance="192.168.214.108:9100"}&start=2022-10-28T02:10:10.000Z&end=2022-10-28T02:13:00.000Z&step=60s
-```
 
 返回数据:
 

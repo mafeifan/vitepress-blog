@@ -41,7 +41,7 @@ Events:              <none>
 
 继续探究token
 
-```basg
+```bash
 $ kubectl get secret default-token-6r7dm -o yaml
 apiVersion: v1
 data:

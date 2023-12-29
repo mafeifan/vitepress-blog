@@ -1,7 +1,7 @@
 #### BehaviorSubject 
 BehaviorSubject 是 Subject 的一个变种，他的特点是会存储当前值，
 
-```
+```javascript
 const subject = new rxjs.Subject();
 subject.subscribe((next => {
   console.log(next);
@@ -11,7 +11,7 @@ subject.subscribe((next => {
 ```
 而 BehaviorSubject  一旦 subscribe 就会执行，可以在定义时要初始化值。
 
-```
+```javascript
 const subject = new rxjs.BehaviorSubject(0);
 // 会输出 0
 subject.subscribe((next => {
@@ -21,7 +21,7 @@ subject.subscribe((next => {
 
 #### ReplaySubject
 在某些时候我们会希望 Subject 代表事件，但又能在新订阅时重新发送最后的几个元素，这时我们就可以用 ReplaySubject，范例如下
-```
+```javascript
   const count = 1;
   const subject = new rxjs.ReplaySubject(count);
 
@@ -56,7 +56,7 @@ ReplaySubject(1) 不等同于 BehaviorSubject，BehaviorSubject 在建立时就�
 
 #### AsyncSubject
 AsyncSubject 是最怪的一个变形，他有点像是 operator last，会在 subject 结束后送出最后一个值，范例如下
-```
+```javascript
   const subject = new rxjs.AsyncSubject();
 
   var observerA = {
@@ -87,5 +87,5 @@ AsyncSubject 是最怪的一个变形，他有点像是 operator last，会在 s
 AsyncSubject 会在 Subject 结束后才送出最后一个值，其实这个行为跟 Promise 很像，都是等到事情结束后送出一个值，实际上我们非常少用到 AsyncSubject，绝大部分的时候都是使用 BehaviorSubject 跟 ReplaySubject 或 Subject。
 
 #### 参考：
-https://segmentfault.com/a/1190000005069851
-https://ithelp.ithome.com.tw/articles/10188677
+* https://segmentfault.com/a/1190000005069851
+* https://ithelp.ithome.com.tw/articles/10188677

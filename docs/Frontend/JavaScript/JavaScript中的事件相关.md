@@ -12,8 +12,7 @@
 
 然后效果如下：
 
-![image.png](https://www.mafeifan.com/images/0821_event/1.png)
-
+![](https://pek3b.qingstor.com/hexo-blog/202312310910954.png)
 
 如果点击了最里面的outC，那么外层的outB和outC算不算被点击了呢？很显然算，不然就没有必要区分事件冒泡和事件捕获了，这一点各个浏览器厂家也没有什么疑义。假如outA、outB、outC都注册了click类型事件处理函数，当点击outC的时候，触发顺序是A-->B-->C，还是C-->B-->A呢？
 
@@ -64,9 +63,9 @@
 点击C
 
 分析：
-捕获阶段：从最外层到元素C，先执行各个元素上的点击事件capture1->capture2
-目标阶段：C上绑定了两个单击事件，按绑定顺序依次执行target2->target1
-冒泡阶段：从内到外bubble2->bubble1
+* 捕获阶段：从最外层到元素C，先执行各个元素上的点击事件capture1->capture2
+* 目标阶段：C上绑定了两个单击事件，按绑定顺序依次执行target2->target1
+* 冒泡阶段：从内到外bubble2->bubble1
 
 最终的执行顺序: capture1->capture2->target2->target1->bubble2->bubble1
 
@@ -157,7 +156,7 @@ $("p").click(function(event) {
 stopImmediatePropagation比stopPropagation多做了第一件事情，这就是他们之间的区别。
 
 ::: warning
-注意：不要用return false;来阻止event的默认行为，原因[见](http://www.cnblogs.com/dannyxie/p/5642727.html)
+注意：不要用return false;来阻止event的默认行为，原因[请见](http://www.cnblogs.com/dannyxie/p/5642727.html)
 
 :::
 
@@ -195,5 +194,5 @@ window.onload = function(){
 关于addEventListener的第三个参数，true代表捕获阶段处理, false代表冒泡阶段处理。不写默认false。
 
 ### 参考
-https://developer.mozilla.org/zh-CN/docs/Web/API/event
-http://www.cnblogs.com/dannyxie/p/5642727.html
+* https://developer.mozilla.org/zh-CN/docs/Web/API/event
+* http://www.cnblogs.com/dannyxie/p/5642727.html

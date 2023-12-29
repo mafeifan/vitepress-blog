@@ -16,7 +16,7 @@ throttleTime： 接收毫秒数，经过指定的这个时间后发出最新值�
 
 
 
-```
+```javascript
     const { interval, timer } = rxjs;
     const { debounce } = rxjs.operators;
 
@@ -34,7 +34,7 @@ throttleTime： 接收毫秒数，经过指定的这个时间后发出最新值�
 ```
 
 debounceTime 例子
-```
+```html
 <body>
     <input type="text" id="example">
 </body>

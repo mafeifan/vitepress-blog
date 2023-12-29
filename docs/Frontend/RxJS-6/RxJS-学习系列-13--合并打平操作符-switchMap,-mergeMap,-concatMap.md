@@ -7,7 +7,7 @@ mergeMap  = map + mergeMap
 concatMap = map + concatMap
 
 我们可以使用mergeMap优化上节的例子
-```
+```javascript
   fromEvent(document.body, 'click')
     .pipe(
       map(e => {

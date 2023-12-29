@@ -15,7 +15,7 @@
 * mergeAll：并且能够同时**并行处理所有的 observable**
 
 看下面的例子，我们可以切换为 concatAll，mergeAll，switchAll 体验区别
-```
+```javascript
   const example = fromEvent(document.body, 'click')
     .pipe(
       // map 把送出的event事件转换为 Observable

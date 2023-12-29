@@ -1,9 +1,10 @@
 {
   "devDependencies": {
+    "postcss": "^8.4.32",
     "vitepress": "^1.0.0-rc.22"
   },
   "scripts": {
-    "start": "vitepress dev docs",
+    "start": "vitepress dev docs --host",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"

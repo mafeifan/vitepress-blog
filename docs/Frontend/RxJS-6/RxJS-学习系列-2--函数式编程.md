@@ -6,7 +6,7 @@
 `(5 + 6) - 1 * 3`
 
 我们可以写成
-```
+```javascript
 const add = (a, b) => a + b
 const mul = (a, b) => a * b
 const sub = (a, b) => a - b
@@ -23,7 +23,7 @@ sub(add(5, 6), mul(1, 3))
 2. 函数能被当作参数传入
 `fetch('www.google.com').then(function(response) {}) // 匿名 function 被传入 then()`
 3. 函数能被当作返回值
-```
+```javascript
 var a = function(a) {
     return function(b) {
       return a + b;
@@ -33,7 +33,7 @@ var a = function(a) {
 ```
 4. 函数式编程强调 function 要保持纯粹，只做运算并返回一个值，没有其他额外的行为。
 **纯函数** (Pure function 是指 一个 function 给予相同的参数，永远会回传相同的返回值，并且没有任何显著的副作用(Side Effect))
-```
+```javascript
 var arr = [1, 2, 3, 4, 5];
 
 arr.slice(0, 3); // [1, 2, 3]
@@ -43,7 +43,7 @@ arr.slice(0, 3); // [1, 2, 3]
 arr.slice(0, 3); // [1, 2, 3]
 ```
 这里可以看到 slice 不管执行几次，返回值都是相同的，并且除了返回一个值(value)之外并没有做任何事，所以 slice 就是一个 pure function。
-```
+```javascript
 var arr = [1, 2, 3, 4, 5];
 
 arr.splice(0, 3); // [1, 2, 3]
@@ -56,7 +56,7 @@ arr.slice(0, 3); // []
 
 ##  函数式编程好处
 * 可读性高
-```
+```javascript
 [9, 4]
 .concat([8, 7]) // 合并数组
 .sort()  // 排序

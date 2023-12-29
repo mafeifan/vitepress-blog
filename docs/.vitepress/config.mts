@@ -4,48 +4,313 @@ import {defineConfig} from 'vitepress'
 export default defineConfig({
   title: "mafeifan 的编程技术分享",
   lastUpdated: true,
-  description: "DevOps,K8s,Prometheus,Terraform,Laravel,Laravel教程,Jenkins系列教程,Docker系列教程",
+  ignoreDeadLinks: true,
+  description: "DevOps,K8s,Prometheus,Terraform,Laravel,Jenkins系列教程,Docker系列教程",
   themeConfig: {
+    search: {
+      provider: 'local'
+    },
+    editLink: {
+      pattern: 'https://github.com/mafeifan/vitepress-blog/edit/main/docs/:path',
+      text: 'Edit this page on GitHub'
+    },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       {text: 'Home', link: '/'},
       {
         text: 'DevOps',
         items: [
-          {text: 'Jenkins2系列',   link: '/DevOps/Jenkins/Jenkins2-学习系列1----使用Docker方式安装最新版Jenkins'},
-          {text: 'Docker系列',     link: '/DevOps/Docker/Docker-学习系列1--使用-Docker-快速实现多版本PHP切换'},
-          {text: 'Prometheus系列', link: '/DevOps//Prometheus/1.产品介绍'},
-          {text: 'Ansible2系列',   link: '/DevOps/Ansible/Ansible-2----1-介绍与使用场景'},
-          {text: 'Terraform',     link: '/DevOps/Terraform/tip'},
-          {text: 'Gitlab系列',     link: '/Gitlab/tips'},
+          {text: 'Jenkins2系列', link: '/DevOps/Jenkins/Jenkins2-学习系列1----使用Docker方式安装最新版Jenkins'},
+          {text: 'Docker系列', link: '/DevOps/Docker/Docker-学习系列1--使用-Docker-快速实现多版本PHP切换'},
+          {text: 'Kubernetes系列', link: '/DevOps/K8s/k8s-理论-快速入门'},
+          {text: 'GithubActions系列', link: '/DevOps/GithubActions/入门'},
+          {text: 'Prometheus系列', link: '/DevOps/Prometheus/1.产品介绍'},
+          {text: 'Ansible2系列', link: '/DevOps/Ansible/Ansible-2----1-介绍与使用场景'},
+          {text: 'Terraform', link: '/DevOps/Terraform/tip'},
+          {text: 'Gitlab系列', link: '/Gitlab/pipeline-技巧总结'},
         ]
       },
       {
         text: 'Tools',
         items: [
-          {text: 'Git学习系列',   link: '/Tools/Git/Git-和-GitHub：从入门到实践1-Git-和-GitHub-基础简介'},
-          {text: 'Other',   link: '/Tools/Other/当有个服务器可以干哪些事情'},
+          {text: 'Git学习系列', link: '/Tools/Git/Git-和-GitHub：从入门到实践1-Git-和-GitHub-基础简介'},
+          {text: 'Other', link: '/Tools/Other/当有个服务器可以干哪些事情'},
+        ]
+      },
+      {
+        text: 'Frontend',
+        items: [
+          {text: 'JavaScript', link: '/Frontend/JavaScript/ES6技巧总结'},
+          {text: 'HTML5', link: '/Frontend/HTML5/CSS3实现未知宽高元素的垂直居中和水平居中'},
+          {text: 'GraphQL', link: '/Frontend/GraphQL/GraphQL-分享-理论篇'},
+          {text: 'RxJS-6', link: '/Frontend/RxJS-6/RxJS-学习系列-1--认识-RxJS'},
+          {text: 'Angular', link: '/Frontend/Angular/Angular-共享数据'},
         ]
       },
       {text: 'Markdown Page', link: '/markdown-examples'},
-      // {text: 'Frontend', link: '/markdown-examples'},
       // {text: 'Backend', link: '/markdown-examples'},
       // {text: 'Other', link: '/markdown-examples'},
     ],
     sidebar: {
+      '/Frontend/Angular/': [
+        {
+          text: 'Angular',
+          collapsed: false,
+          items: [
+            {
+              "text": "Angular-共享数据",
+              "link": "/Frontend/Angular/Angular-共享数据"
+            },
+            {
+              "text": "Angular-样式使用注意事项",
+              "link": "/Frontend/Angular/Angular-样式使用注意事项"
+            },
+            {
+              "text": "Angular-模板变量",
+              "link": "/Frontend/Angular/Angular-模板变量"
+            },
+            {
+              "text": "Angular-pipe管道介绍及使用",
+              "link": "/Frontend/Angular/Angular-pipe管道介绍及使用"
+            },
+            {
+              "text": "Angular-component-组件内使用原生pipe",
+              "link": "/Frontend/Angular/Angular-component-组件内使用原生pipe"
+            },
+            {
+              "text": "Angular-使用-RxJS-优化处理Http请求",
+              "link": "/Frontend/Angular/Angular-使用-RxJS-优化处理Http请求"
+            },
+            {
+              "text": "Angular-表单1--响应式表单",
+              "link": "/Frontend/Angular/Angular-表单1--响应式表单"
+            },
+            {
+              "text": "Angular-表单2--响应式表单-处理异步数据",
+              "link": "/Frontend/Angular/Angular-表单2--响应式表单-处理异步数据"
+            },
+            {
+              "text": "Angular-表单3--响应式表单-复杂验证",
+              "link": "/Frontend/Angular/Angular-表单3--响应式表单-复杂验证"
+            },
+            {
+              "text": "Angular-依赖注入-初认",
+              "link": "/Frontend/Angular/Angular-依赖注入-初认"
+            },
+            {
+              "text": "Angular-依赖注入-运用",
+              "link": "/Frontend/Angular/Angular-依赖注入-运用"
+            },
+            {
+              "text": "Angular-实现一个Dialog组件",
+              "link": "/Frontend/Angular/Angular-实现一个Dialog组件"
+            },
+            {
+              "text": "Angular-修改build后的静态资源目录路径",
+              "link": "/Frontend/Angular/Angular-修改build后的静态资源目录路径"
+            },
+            {
+              "text": "使用CircleCI持续集成Angular项目",
+              "link": "/Frontend/Angular/使用CircleCI持续集成Angular项目"
+            }
+          ]
+        }],
+      '/Frontend/RxJS-6/': [
+        {
+          text: 'RxJS-6',
+          collapsed: false,
+          items: [
+            {
+              "text": "1--认识-RxJS",
+              "link": "/Frontend/RxJS-6/RxJS-学习系列-1--认识-RxJS"
+            },
+            {
+              "text": "2--函数式编程",
+              "link": "/Frontend/RxJS-6/RxJS-学习系列-2--函数式编程"
+            },
+            {
+              "text": "3--认识观察者模式和迭代器模式",
+              "link": "/Frontend/RxJS-6/RxJS-学习系列-3--认识观察者模式和迭代器模式"
+            },
+            {
+              "text": "4--RxJS-介绍及注意事项",
+              "link": "/Frontend/RxJS-6/RxJS-学习系列-4--RxJS-介绍及注意事项"
+            },
+            {
+              "text": "5--创建-Observable",
+              "link": "/Frontend/RxJS-6/RxJS-学习系列-5--创建-Observable"
+            },
+            {
+              "text": "6--Observable-和-数组的区别",
+              "link": "/Frontend/RxJS-6/RxJS-学习系列-6--Observable-和-数组的区别"
+            },
+            {
+              "text": "7--创建操作符",
+              "link": "/Frontend/RxJS-6/RxJS-学习系列-7--创建操作符-from,-of,-range,-interval,-timer,-empty"
+            },
+            {
+              "text": "8--过滤操作符3-1",
+              "link": "/Frontend/RxJS-6/RxJS-学习系列-8--过滤操作符-startWith,filter,-last,-first,-skip,-take"
+            },
+            {
+              "text": "9--过滤操作符3-2",
+              "link": "/Frontend/RxJS-6/RxJS-学习系列-9--过滤操作符-takeUntil，takeWhile，skipUntil，skipWhile"
+            },
+            {
+              "text": "10--过滤操作符3-3",
+              "link": "/Frontend/RxJS-6/RxJS-学习系列-10--过滤操作符-debounce，debounceTime，throttle，throttleTime"
+            },
+            {
+              "text": "11--合并操作符3-1",
+              "link": "/Frontend/RxJS-6/RxJS-学习系列-11--合并操作符-concat,-merge,-concatAll"
+            },
+            {
+              "text": "12--合并操作符3-2",
+              "link": "/Frontend/RxJS-6/RxJS-学习系列-12--合并操作符-concatAll,-mergeAll,-switchAll"
+            },
+            {
+              "text": "13--合并操作符3-3",
+              "link": "/Frontend/RxJS-6/RxJS-学习系列-13--合并打平操作符-switchMap,-mergeMap,-concatMap"
+            },
+            {
+              "text": "14--Subject基本概念",
+              "link": "/Frontend/RxJS-6/RxJS-学习系列-14--Subject-基本概念"
+            },
+            {
+              "text": "15--Subject示例",
+              "link": "/Frontend/RxJS-6/RxJS-学习系列-15--Subject-示例"
+            },
+            {
+              "text": "16--Subject的变形",
+              "link": "/Frontend/RxJS-6/RxJS-学习系列-16--Subject-的变形,-BehaviorSubject,-ReplaySubject,-AsyncSubject"
+            },
+            {
+              "text": "RxJS-5-到-6迁移指导",
+              "link": "/Frontend/RxJS-6/RxJS-学习系列-RxJS-5-到-6迁移指导"
+            },
+            {
+              "text": "RxJS在Angular中的使用",
+              "link": "/Frontend/RxJS-6/RxJS-学习系列-RxJS-在-Angular-中的使用"
+            },
+            {
+              "text": "使用RxJS要注意的问题",
+              "link": "/Frontend/RxJS-6/RxJS-学习系列-使用-RxJS-要注意的问题"
+            },
+            {
+              "text": "资料推荐",
+              "link": "/Frontend/RxJS-6/RxJS-学习系列-资料推荐"
+            }
+          ]
+        }],
+      '/Frontend/GraphQL/': [
+        {
+          text: 'GraphQL',
+          collapsed: false,
+          items: [
+            {
+              "text": "GraphQL-分享-理论篇",
+              "link": "/Frontend/GraphQL/GraphQL-分享-理论篇"
+            },
+            {
+              "text": "GraphQL-分享-实战篇",
+              "link": "/Frontend/GraphQL/GraphQL-分享-实战篇"
+            },
+          ]
+        }],
+      '/Frontend/JavaScript/': [
+        {
+          text: 'JavaScript总结',
+          collapsed: false,
+          items: [
+            {
+              "text": "ES6技巧总结",
+              "link": "/Frontend/JavaScript/ES6技巧总结"
+            },
+            {
+              "text": "JavaScript中reduce的使用",
+              "link": "/Frontend/JavaScript/JavaScript中reduce的使用"
+            },
+            {
+              "text": "JavaScript中的事件相关",
+              "link": "/Frontend/JavaScript/JavaScript中的事件相关"
+            },
+            {
+              "text": "说下JavaScript中的bind",
+              "link": "/Frontend/JavaScript/说下JavaScript中的bind"
+            },
+            {
+              "text": "说说JSON和JSONP，也许你会豁然开朗",
+              "link": "/Frontend/JavaScript/说说JSON和JSONP，也许你会豁然开朗"
+            },
+            {
+              "text": "解决setTimeout中的this指向问题",
+              "link": "/Frontend/JavaScript/解决setTimeout中的this指向问题"
+            },
+            {
+              "text": "使用StorageEvent解决浏览器标签页数据同步问题",
+              "link": "/Frontend/JavaScript/使用StorageEvent解决浏览器标签页数据同步问题"
+            },
+            {
+              "text": "关于JS中的循环",
+              "link": "/Frontend/JavaScript/关于JS中的循环"
+            },
+            {
+              "text": "JS-面试总结-理论篇",
+              "link": "/Frontend/JavaScript/JS-面试总结-理论篇"
+            },
+            {
+              "text": "前端路由原理之 hash 模式和 history 模式",
+              "link": "/Frontend/JavaScript/前端路由原理之 hash 模式和 history 模式"
+            },
+            {
+              "text": "Typescript-技巧(补充中)",
+              "link": "/Frontend/JavaScript/Typescript-技巧(补充中)"
+            }
+          ]
+        }],
+      '/Frontend/HTML5/': [
+        {
+          text: 'HTML5',
+          collapsed: false,
+          items: [
+            {
+              "text": "CSS3实现未知宽高元素的垂直居中和水平居中",
+              "link": "/Frontend/HTML5/CSS3实现未知宽高元素的垂直居中和水平居中"
+            },
+            {
+              "text": "巧解checkbox未选中不提交数据",
+              "link": "/Frontend/HTML5/巧解checkbox未选中不提交数据"
+            },
+            {
+              "text": "禁止内部元素的事件响应",
+              "link": "/Frontend/HTML5/禁止内部元素的事件响应"
+            },
+            {
+              "text": "前端安全总结",
+              "link": "/Frontend/HTML5/前端安全总结"
+            },
+            {
+              "text": "前端项目打包总结",
+              "link": "/Frontend/HTML5/前端项目打包总结"
+            }
+          ]
+        }],
       '/Tools/Other/': [
         {
           text: 'Other',
           collapsed: false,
           items: [
-            {link:'/Tools/Other/当有个服务器可以干哪些事情',  text:'当有个服务器可以干哪些事情?'},
-            {link:'/Tools/Other/Firebase消息推送',  text:'Firebase消息推送'},
-            {link:'/Tools/Other/使用frp内网穿透工具',  text:'使用frp内网穿透工具'},
-            {link:'/Tools/Other/storybook-介绍和使用-比较火的响应式UI开发及测试环境',  text:'storybook-介绍和使用-响应式UI开发及测试环境'},
-            {link:'/Tools/Other/强大的Postman-----API管理工具',  text:'强大的Postman--API管理工具'},
-            {link:'/Tools/Other/网络-下载youtube视频-yt-dlp',  text:'网络-下载youtube视频-yt-dlp'},
-            {link:'/Tools/Other/说下browserslist',  text:'说下browserslist'},
-            {link:'/Tools/Other/Nginx',  text:'Nginx知识点总结'},
+            {link: '/Tools/Other/当有个服务器可以干哪些事情', text: '当有个服务器可以干哪些事情?'},
+            {link: '/Tools/Other/Firebase消息推送', text: 'Firebase消息推送'},
+            {link: '/Tools/Other/使用frp内网穿透工具', text: '使用frp内网穿透工具'},
+            {
+              link: '/Tools/Other/storybook-介绍和使用-比较火的响应式UI开发及测试环境',
+              text: 'storybook-介绍和使用-响应式UI开发及测试环境'
+            },
+            {link: '/Tools/Other/强大的Postman-----API管理工具', text: '强大的Postman--API管理工具'},
+            {link: '/Tools/Other/网络-下载youtube视频-yt-dlp', text: '网络-下载youtube视频-yt-dlp'},
+            {link: '/Tools/Other/说下browserslist', text: '说下browserslist'},
+            {link: '/Tools/Other/Nginx', text: 'Nginx知识点总结'},
           ]
         }
       ],
@@ -54,11 +319,164 @@ export default defineConfig({
           text: 'Git学习系列',
           collapsed: false,
           items: [
-            {link: '/Tools/Git/Git-和-GitHub：从入门到实践1-Git-和-GitHub-基础简介', text:'Git-和-GitHub-基础简介'},
-            {link: '/Tools/Git/Git-和-GitHub：从入门到实践2-Git-和-GitHub-基础配置', text:'Git-和-GitHub-基础配置'},
-            {link: '/Tools/Git/Git-和-GitHub：从入门到实践3-Git-分支简介、Git-和-GitHub-日常操作', text:'Git-分支简介、Git-和-GitHub-日常操作'},
-            {link: '/Tools/Git/Git-和-GitHub：从入门到实践4-Git 进阶-比较、回滚、撤销、分支合并和冲突解决', text:'Git 进阶：比较、回滚、撤销、分支合并和冲突解决'},
-            {link: '/Tools/Git/Git-和-GitHub：从入门到实践5-分支策略管理', text:'Git 进阶：分支策略管理'},
+            {link: '/Tools/Git/Git-和-GitHub：从入门到实践1-Git-和-GitHub-基础简介', text: 'Git-和-GitHub-基础简介'},
+            {link: '/Tools/Git/Git-和-GitHub：从入门到实践2-Git-和-GitHub-基础配置', text: 'Git-和-GitHub-基础配置'},
+            {
+              link: '/Tools/Git/Git-和-GitHub：从入门到实践3-Git-分支简介、Git-和-GitHub-日常操作',
+              text: 'Git-分支简介、Git-和-GitHub-日常操作'
+            },
+            {
+              link: '/Tools/Git/Git-和-GitHub：从入门到实践4-Git 进阶-比较、回滚、撤销、分支合并和冲突解决',
+              text: 'Git 进阶：比较、回滚、撤销、分支合并和冲突解决'
+            },
+            {link: '/Tools/Git/Git-和-GitHub：从入门到实践5-分支策略管理', text: 'Git 进阶：分支策略管理'},
+          ]
+        }
+      ],
+      '/Gitlab/': [
+        {
+          text: 'Gitlab 系列',
+          collapsed: false,
+          items: [
+            // {text: 'docker方式安装gitlab', link: '/Gitlab/mgt/install-docker方式安装gitlab'},
+            {text: 'pipeline-技巧总结', link: '/Gitlab/pipeline-技巧总结'},
+            {text: 'runner的executor该如何选择', link: '/Gitlab/runner-runner的executor该如何选择'},
+            {text: 'pipeline-自己执行git-commit', link: '/Gitlab/pipeline-自己执行git-commit'},
+            {text: 'pipeline-flutter流水线制作', link: '/Gitlab/pipeline-flutter流水线制作'},
+          ]
+        }
+      ],
+      '/DevOps/K8s/': [{
+        text: "K8s 系列",
+        collapsed: false,
+        items: [
+          {
+            "text": "k8s-快速入门",
+            "link": "/DevOps/K8s/k8s-理论-快速入门"
+          },
+          {
+            "text": "k8s-理论-知识点总结",
+            "link": "/DevOps/K8s/k8s-理论-知识点总结"
+          },
+          {
+            "text": "k8s-总结-命令行",
+            "link": "/DevOps/K8s/k8s-总结-命令行"
+          },
+          {
+            "text": "k8s-基础-部署容器化Web应用",
+            "link": "/DevOps/K8s/k8s-基础-部署容器化Web应用"
+          },
+          {
+            "text": "k8s-基础-PV&PVC理论",
+            "link": "/DevOps/K8s/k8s-基础-PV&PVC理论"
+          },
+          {
+            "text": "k8s-基础-安装metrics-server",
+            "link": "/DevOps/K8s/k8s-基础-安装metrics-server"
+          },
+          {
+            "text": "k8s-基础-安装OpenEBS",
+            "link": "/DevOps/K8s/k8s-基础-安装OpenEBS"
+          },
+          {
+            "text": "k8s-基础-搭建EFK日志系统",
+            "link": "/DevOps/K8s/k8s-基础-搭建EFK日志系统"
+          },
+          {
+            "text": "k8s-基础-使用Velero备份恢复集群",
+            "link": "/DevOps/K8s/k8s-基础-使用Velero备份恢复集群"
+          },
+          {
+            "text": "k8s-基础-NetworkPolicy网络策略",
+            "link": "/DevOps/K8s/k8s-基础-NetworkPolicy网络策略"
+          },
+          {
+            "text": "k8s-基础-nginx-ingress的使用",
+            "link": "/DevOps/K8s/k8s-基础-nginx-ingress的使用"
+          },
+          {
+            "text": "k8s-基础-Horizontal-Pod-Autoscaler练习",
+            "link": "/DevOps/K8s/k8s-基础-Horizontal-Pod-Autoscaler练习"
+          },
+          {
+            "text": "k8s-基础-使用argocd",
+            "link": "/DevOps/K8s/k8s-基础-使用argocd"
+          },
+          {
+            "text": "k8s-考证-CKA心得",
+            "link": "/DevOps/K8s/k8s-考证-CKA心得"
+          },
+          {
+            "text": "k8s-工具-使用Kubernetes-Dashboard",
+            "link": "/DevOps/K8s/k8s-工具-使用Kubernetes-Dashboard"
+          },
+          {
+            "text": "k8s-发布-红蓝部署",
+            "link": "/DevOps/K8s/k8s-发布-红蓝部署"
+          },
+          {
+            "text": "k8s-发布-滚动发布",
+            "link": "/DevOps/K8s/k8s-发布-滚动发布"
+          },
+          {
+            "text": "Kubesphere添加新agent",
+            "link": "/DevOps/K8s/Kubesphere添加新agent"
+          },
+          {
+            "text": "Kubesphere修改logo",
+            "link": "/DevOps/K8s/Kubesphere修改logo"
+          },
+          {
+            "text": "Kubesphere调整Jenkins时区",
+            "link": "/DevOps/K8s/Kubesphere调整Jenkins时区"
+          },
+          {
+            "text": "Kubesphere公有云添加额外ks-console的LB",
+            "link": "/DevOps/K8s/Kubesphere公有云添加额外ks-console的LB"
+          }
+        ]
+      }],
+      '/DevOps/GithubActions/': [
+        {
+          text: 'GithubActions',
+          collapsed: false,
+          items: [
+            {
+              "text": "入门",
+              "link": "/DevOps/GithubActions/入门"
+            },
+            {
+              "text": "如何手动触发构建",
+              "link": "/DevOps/GithubActions/如何手动触发构建"
+            },
+            {
+              "text": "GitHub-Actions的徽章图标",
+              "link": "/DevOps/GithubActions/GitHub-Actions的徽章图标"
+            },
+            {
+              "text": "GitHub-Actions编译安卓",
+              "link": "/DevOps/GithubActions/GitHub-Actions编译安卓"
+            },
+            {
+              "text": "自用GitHub-Actions-Workflow",
+              "link": "/DevOps/GithubActions/自用GitHub-Actions-Workflow"
+            },
+            {
+              "text": "只针对某些提交触发构建",
+              "link": "/DevOps/GithubActions/只针对某些提交触发构建"
+            },
+            {
+              "text": "如何调试Github-Actions",
+              "link": "/DevOps/GithubActions/如何调试Github-Actions"
+            },
+            {
+              "text": "Docker构建镜像和推送到docker-hub",
+              "link": "/DevOps/GithubActions/Docker构建镜像和推送到Docker-Hub"
+            },
+            {
+              "text": "相关资源",
+              "link": "/DevOps/GithubActions/相关资源"
+            }
           ]
         }
       ],
@@ -130,17 +548,32 @@ export default defineConfig({
               link: '/DevOps/Jenkins/Jenkins2-学习系列19----使用-Script-Console-批量修改Jenkins任务',
               text: '19 使用 Script-Console 批量修改Jenkins任务'
             },
-            {link: '/DevOps/Jenkins/Jenkins2-学习系列20----通过SSH方法添加Slave节点', text: '20 通过SSH方法添加Slave节点'},
-            {link: '/DevOps/Jenkins/Jenkins2-学习系列21----通过JNLP协议添加Slave节点', text: '21 通过JNLP协议添加Slave节点'},
-            {link: '/DevOps/Jenkins/Jenkins2-学习系列22----pipeline-中-agent-使用介绍', text: '22 pipeline 中 agent 使用介绍'},
+            {
+              link: '/DevOps/Jenkins/Jenkins2-学习系列20----通过SSH方法添加Slave节点',
+              text: '20 通过SSH方法添加Slave节点'
+            },
+            {
+              link: '/DevOps/Jenkins/Jenkins2-学习系列21----通过JNLP协议添加Slave节点',
+              text: '21 通过JNLP协议添加Slave节点'
+            },
+            {
+              link: '/DevOps/Jenkins/Jenkins2-学习系列22----pipeline-中-agent-使用介绍',
+              text: '22 pipeline 中 agent 使用介绍'
+            },
             {link: '/DevOps/Jenkins/Jenkins2-学习系列23----Jenkins-定期备份', text: '23 Jenkins 定期备份'},
-            {link: '/DevOps/Jenkins/Jenkins2-学习系列24----Electron-应用的流水线设计', text: '24 Electron-应用的流水线设计'},
+            {
+              link: '/DevOps/Jenkins/Jenkins2-学习系列24----Electron-应用的流水线设计',
+              text: '24 Electron-应用的流水线设计'
+            },
             {
               link: '/DevOps/Jenkins/Jenkins2-学习系列25----添加-Docker-Cloud-并构建镜像',
               text: '25 添加 Docker Cloud 并构建镜像'
             },
             {link: '/DevOps/Jenkins/Jenkins2-学习系列26----使用阿里云容器镜像服务', text: '26 使用阿里云容器镜像服务'},
-            {link: '/DevOps/Jenkins/Jenkins2-学习系列27----pipeline-中-Docker-操作', text: '27 pipeline 中 Docker 操作'},
+            {
+              link: '/DevOps/Jenkins/Jenkins2-学习系列27----pipeline-中-Docker-操作',
+              text: '27 pipeline 中 Docker 操作'
+            },
             {link: '/DevOps/Jenkins/Jenkins2-学习系列28----优化多分支流水线任务', text: '28 优化多分支流水线任务'},
             {link: '/DevOps/Jenkins/Jenkins2-学习系列29----安装指定版本插件', text: '29 安装指定版本插件'},
             {
@@ -149,31 +582,27 @@ export default defineConfig({
             },
             {link: '/DevOps/Jenkins/Jenkins2-学习系列31---DockerInDocker', text: '31 DockerInDocker'},
             {link: '/DevOps/Jenkins/Jenkins2-学习系列32---访问宿主机并执行命令', text: '32 访问宿主机并执行命令'},
-            {link: '/DevOps/Jenkins/Jenkins2-学习系列33---根据git-message中的内容触发构建', text: '33 根据git提交内容触发构建'},
-            {link: '/DevOps/Jenkins/Jenkins2-学习系列34---配置仅合并代码后触发流水线', text: '34 配置仅合并代码后触发流水线'},
+            {
+              link: '/DevOps/Jenkins/Jenkins2-学习系列33---根据git-message中的内容触发构建',
+              text: '33 根据git提交内容触发构建'
+            },
+            {
+              link: '/DevOps/Jenkins/Jenkins2-学习系列34---配置仅合并代码后触发流水线',
+              text: '34 配置仅合并代码后触发流水线'
+            },
             {link: '/DevOps/Jenkins/Jenkins-学习资源', text: 'Jenkins资源收集'},
             {link: '/DevOps/Jenkins/Jenkins-sh-step', text: 'Jenkins内置sh详讲'},
           ]
         }
       ],
-      '/Gitlab/': [
-        {
-          text: 'Gitlab 系列',
-          collapsed: false,
-          items: [
-            {text: 'install-docker方式安装gitlab', link: '/Gitlab/mgt/install-docker方式安装gitlab'},
-            {text: 'runner的executor该如何选择', link: '/Gitlab/runner/runner-runner的executor该如何选择'},
-            {text: 'pipeline-自己执行git-commit', link: '/Gitlab/pipeline-自己执行git-commit'},
-            {text: 'pipeline-flutter流水线制作', link: '/Gitlab/pipeline-flutter流水线制作'},
-            {text: 'pipeline-技巧总结', link: '/Gitlab/tips'},
-          ]
-        }
-      ],
-      '/DevOps/Docker':  [{
+      '/DevOps/Docker': [{
         text: 'Docker 系列',
         collapsed: false,
         items: [
-          {link: '/Devops/Docker/Docker-学习系列1--使用-Docker-快速实现多版本PHP切换', text: '1 使用-Docker-快速实现多版本PHP切换'},
+          {
+            link: '/Devops/Docker/Docker-学习系列1--使用-Docker-快速实现多版本PHP切换',
+            text: '1 使用-Docker-快速实现多版本PHP切换'
+          },
           {link: '/Devops/Docker/Docker-学习系列2--保存对容器的修改', text: '2 保存对容器的修改'},
           {link: '/Devops/Docker/Docker-学习系列3--提交并分享自己的镜像', text: '3 提交并分享自己的镜像'},
           {link: '/Devops/Docker/Docker-学习系列4--简单总结-docker-curriculum', text: '4 简单总结 docker-curriculum'},
@@ -188,8 +617,14 @@ export default defineConfig({
           {link: '/Devops/Docker/Docker-学习系列10-开源图形化管理系统', text: '10 开源图形化管理系统'},
           {link: '/Devops/Docker/Docker-学习系列11-多阶段镜像构建', text: '11 多阶段镜像构建'},
           {link: '/Devops/Docker/Docker-学习系列12-轻松实现-MySQL-主从同步', text: '12 轻松实现MySQL主从同步'},
-          {link: '/Devops/Docker/Docker-学习系列13-实现-基于pxc-的mysql-多节点主主同步', text: '13 实现基于pxc的mysql多节点主主同步'},
-          {link: '/Devops/Docker/Docker-学习系列14-使用haproxy实现mysql集群的负载均衡', text: '14 使用haproxy实现mysql集群的负载均衡'},
+          {
+            link: '/Devops/Docker/Docker-学习系列13-实现-基于pxc-的mysql-多节点主主同步',
+            text: '13 实现基于pxc的mysql多节点主主同步'
+          },
+          {
+            link: '/Devops/Docker/Docker-学习系列14-使用haproxy实现mysql集群的负载均衡',
+            text: '14 使用haproxy实现mysql集群的负载均衡'
+          },
           {
             link: '/Devops/Docker/Docker-学习系列15-Docker使用xdebug配合PHPStorm调试PHP',
             text: '15 Docker使用xdebug配合PHPStorm调试PHP'
@@ -198,15 +633,24 @@ export default defineConfig({
           {link: '/Devops/Docker/Docker-学习系列17-镜像和容器的导入导出', text: '17 镜像和容器的导入导出'},
           {link: '/Devops/Docker/Docker-学习系列18-关于PHP5-6', text: '18 关于PHP5.6'},
           {link: '/Devops/Docker/Docker-学习系列19-容器化Angular项目', text: '19 容器化Angular项目'},
-          {link: '/Devops/Docker/Docker-学习系列20-工具推荐，dive--分析镜像层的工具', text: '20 工具推荐，dive--分析镜像层的工具'},
+          {
+            link: '/Devops/Docker/Docker-学习系列20-工具推荐，dive--分析镜像层的工具',
+            text: '20 工具推荐，dive--分析镜像层的工具'
+          },
           {link: '/Devops/Docker/Docker-学习系列21-配置远程访问Docker', text: '21 配置远程访问Docker'},
           {link: '/Devops/Docker/Docker-学习系列22-Docker-Layer-Caching.md', text: '22 Docker-Layer-Caching.md'},
           {
             link: '/Devops/Docker/Docker-学习系列23-推荐一款自动更新 Docker 镜像与容器的神器 Watchtower.md',
             text: '23 推荐一款自动更新 Docker 镜像与容器的神器 Watchtower'
           },
-          {link: '/Devops/Docker/Docker-学习系列24-Docker-及-docker-compose-使用总结', text: '24 Docker 及 Docker-compose 使用总结'},
-          {link: '/Devops/Docker/Docker-学习系列25-Dockerfile-中的-COPY-与-ADD-命令', text: '25 Dockerfile 中的 COPY 与 ADD 命令'},
+          {
+            link: '/Devops/Docker/Docker-学习系列24-Docker-及-docker-compose-使用总结',
+            text: '24 Docker 及 Docker-compose 使用总结'
+          },
+          {
+            link: '/Devops/Docker/Docker-学习系列25-Dockerfile-中的-COPY-与-ADD-命令',
+            text: '25 Dockerfile 中的 COPY 与 ADD 命令'
+          },
           {link: '/Devops/Docker/Docker-学习系列26-hub-tool', text: '26-hub-tool工具介绍'},
           {link: '/Devops/Docker/Docker-学习系列27-Docker-in-Docker', text: '27-Docker-in-Docker'},
           {
@@ -228,7 +672,7 @@ export default defineConfig({
           {link: '/Devops/Docker/Docker-常见问题', text: 'Docker常见问题'}
         ]
       }],
-      '/DevOps/Prometheus/':  [{
+      '/DevOps/Prometheus/': [{
         text: 'Prometheus 系列',
         collapsed: false,
         items: [

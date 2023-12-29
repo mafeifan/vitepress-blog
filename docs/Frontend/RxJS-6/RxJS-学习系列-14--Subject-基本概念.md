@@ -1,6 +1,6 @@
 终于进到了 RxJS 的第二个重点 Subject，不知道读者们有没有发现？ 我们在这篇文章之前的范例，每个 observable 都只订阅了一次，而实际上 observable 是可以多次订阅的
 
-```
+```javascript
  const source = rxjs.interval(1000).pipe(take(3));
 
   // observer 其实就是实现了next方法，error 方法和 complete 方法的对象

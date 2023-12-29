@@ -9,7 +9,7 @@ skipUntil 接收的是 Observable 类型，当这个Observable发出值才完成
 skipWhile 接收的是 function ，一旦返回值为false 就完成
 
 总结：take 和 skip 互逆
-```
+```html
 <script src='../lib/rxjs6.3.3.umd.js'></script>
 <script>
     // https://rxjs-cn.github.io/learn-rxjs-operators/operators/filtering/filter.html
@@ -41,7 +41,7 @@ skipWhile 接收的是 function ，一旦返回值为false 就完成
 ```
 
 来看下skip操作，我们只替换take为skip，显示的内容刚好相反
-```
+```javascript
     const { from, interval, timer } = rxjs;
     const { filter, take, last, startWith, skip, takeUntil, takeWhile, skipWhile, skipUntil } = rxjs.operators;
 

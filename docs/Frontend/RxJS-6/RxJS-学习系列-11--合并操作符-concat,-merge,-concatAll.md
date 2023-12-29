@@ -12,7 +12,7 @@ source3: (456)|
 example: ----0----1----2(3456)|
 ```
 例子：
-```
+```javascript
     const { concat } = rxjs.operators;
     const { of } = rxjs;
 
@@ -43,7 +43,7 @@ example: ----0----1----2(3456)|
 特点：merge 把多个 observable 同时处理，这跟 concat 一次处理一个 observable 是完全不一样的，由于是同时处理行为会变得较为复杂。
 merge 的逻辑有点像是 OR(||)，就是当两个 observable 其中一个被触发时都可以被处理，这很常用在一个以上的按钮具有部分相同的行为。
 同样 既有静态方法，又有实例方法
-```
+```javascript
     rxjs
       .merge(
         interval(500).pipe(take(3)),
@@ -70,7 +70,7 @@ source2: --0--1--2--3--4--5|
 example: --0-01--21-3--(24)--5|
 ```
 例如一个影片播放器有两个按钮，一个是暂停(II)，另一个是结束播放(口)。这两个按钮都具有相同的行为就是影片会被停止，只是结束播放会让影片回到 00 秒，这时我们就可以把这两个按钮的事件 merge 起来处理影片暂停这件事。
-```
+```javascript
 var stopVideo = rxjs.merge(stopButton, endButton);
 stopVideo.subscribe(() => {
     // 暂停播放影片
@@ -80,7 +80,7 @@ stopVideo.subscribe(() => {
 ### concatAll
 有时我们的 Observable 送出的元素又是一个 observable，就像是二维数组，数组里面的元素是数组，这时我们就可以用 concatAll 把它摊平成一维数组，大家也可以直接把 concatAll 想成把所有元素 concat 起来。
 特点：摊平 Observable
-```
+```javascript
     // 我们每点击一次 body 就会立刻送出 1,2,3
     fromEvent(document.body, 'click')
       .pipe(

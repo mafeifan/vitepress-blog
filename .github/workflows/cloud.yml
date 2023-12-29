@@ -13,7 +13,7 @@ env:
   GKE_CLUSTER: cluster-1    # Add your cluster name here.
   GKE_ZONE: asia-east2-c  # Add your cluster zone here.
   DEPLOYMENT_NAME: deployment-blog-vuepress # Add your deployment name here.
-  IMAGE: finleyma/blog-vuepress
+  IMAGE: finleyma/blog-vitepress
   IMAGE_TAG: $GITHUB_SHA
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -30,7 +30,7 @@ jobs:
     - name: setup github branch
       run: |
         BRANCH=${GITHUB_REF##*/}
-        if [ "$BRANCH" == "master" ]; then
+        if [ "$BRANCH" == "main" ]; then
           TAGS="latest"
         else
           TAGS="$BRANCH"
@@ -68,7 +68,7 @@ jobs:
       env:
         SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY2 }}
         ARGS: "-rltgoDzvO --delete"
-        SOURCE: "docs/.vuepress/dist/"
+        SOURCE: "docs/.vitepress/dist/"
         REMOTE_PORT : ${{ secrets.PORT2 }}
         REMOTE_HOST: ${{ secrets.HOST2 }}
         REMOTE_USER: ${{ secrets.USERNAME }}

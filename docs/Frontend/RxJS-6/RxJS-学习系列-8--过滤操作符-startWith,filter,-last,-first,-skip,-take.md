@@ -5,7 +5,7 @@ take:  传入数字，只取N个数的元素
 skip:  传入数字，跳过N个元素
 last:  取最后一个元素
 first:  取最后一个元素
- ```
+```html
 <script src='https://cdn.bootcss.com/rxjs/6.5.1/rxjs.umd.js'></script>
 <script>
     const { from } = rxjs;

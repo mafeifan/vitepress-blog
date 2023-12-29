@@ -4,7 +4,7 @@ bind的受体是对象，返回的是个新的函数。
 这就是bind的作用。
 
 ### 语法
-fun.bind(thisArg[, arg1[, arg2[, ...]]])
+`fun.bind(thisArg[, arg1[, arg2[, ...]]])`
 
 ##### 参数
 `thisArg`
@@ -111,6 +111,5 @@ document.querySelector('button').addEventListener('click', logger.updateCount.bi
 
 
 ### 参考
-https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
-
-https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/#what-problem-are-we-actually-looking-to-solve
+* https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+* https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/#what-problem-are-we-actually-looking-to-solve

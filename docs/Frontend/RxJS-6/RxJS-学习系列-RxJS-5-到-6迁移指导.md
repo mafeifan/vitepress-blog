@@ -36,7 +36,7 @@ import { map, filter, catchError, mergeMap } from 'rxjs/operators';
 * **使用pipe()包裹所有的操作符方法**。确保所有操作符间的.被移除，转而使用,连接。
 记住！！！有些操作符的名称变了！！！
 以下为升级示例：
-```
+```javascript
 // Rxjs5写法，操作符链
 source
   .map(x => x + x)
@@ -66,7 +66,7 @@ Observable.if and Observable.throw
 Observable.if已被iif()取代，Observable.throw已被throwError()取代。您可使用rxjs-tslint将这些废弃的成员方法修改为函数调用。
 
 代码示例如下：
-```
+```javascript
 OBSERVABLE.IF > IIF()
 // deprecated
 Observable.if(test, a$, b$);
@@ -86,7 +86,7 @@ throwError(new Error());
 根据迁移指南，以下方法已被弃用或重构：
 
 * merge
-```
+```javascript
 import { merge } from 'rxjs/operators';
 a$.pipe(merge(b$, c$));
 // becomes
@@ -94,7 +94,7 @@ import { merge } from 'rxjs';
 merge(a$, b$, c$);
 ```
 * concat
-```
+```javascript
 import { concat } from 'rxjs/operators';
 a$.pipe(concat(b$, c$));
 // becomes
@@ -102,7 +102,7 @@ import { concat } from 'rxjs';
 concat(a$, b$, c$);
 ```
 * combineLatest
-```
+```javascript
 import { combineLatest } from 'rxjs/operators';
 a$.pipe(combineLatest(b$, c$));
 // becomes
@@ -110,7 +110,7 @@ import { combineLatest } from 'rxjs';
 combineLatest(a$, b$, c$);
 ```
 * race
-```
+```javascript
 import { race } from 'rxjs/operators';
 a$.pipe(race(b$, c$));
 // becomes
@@ -118,7 +118,7 @@ import { race } from 'rxjs';
 race(a$, b$, c$);
 ```
 * zip
-```
+```javascript
 import { zip } from 'rxjs/operators';
 a$.pipe(zip(b$, c$));
 // becomes

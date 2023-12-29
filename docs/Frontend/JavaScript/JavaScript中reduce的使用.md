@@ -66,7 +66,7 @@ console.log(sum) // 60
 ```
 
 3. 聚合
-```
+```javascript
 // 已知
 let data = [
    {id: 1, name: 'jack'},
@@ -107,7 +107,7 @@ console.log(result)
 
 已知,源数据，三列分别表示 中心编号，受试者代码，受试结果
 
-```
+```javascript
 var data = [
   ['CHN001', 'CHN001014', true ],
   ['CHN002', 'CHN002001', true ],
@@ -144,7 +144,7 @@ var data = [
 **要求：**
 按照，中心编号和受试者代码分组，
 比如 CHN005 下面包含了4个受试者，为CHN005001，CHN005002，CHN005003，CHN005004
-```
+```javascript
   ['CHN005', 'CHN005001', true ],
   ['CHN005', 'CHN005001', false ],
   ['CHN005', 'CHN005002', true ],
@@ -152,7 +152,7 @@ var data = [
   ['CHN005', 'CHN005004', true ],
 ```
 CHN005001 下面又有两条记录，只有同时都是true，才按累加1处理
-```
+```javascript
   ['CHN005', 'CHN005001', true ],
   ['CHN005', 'CHN005001', false ],
 ```
@@ -162,7 +162,7 @@ CHN005002，CHN005003，CHN005004都为1，最终
 CHN005结果 为3
 
 **期望输出结果：**
-```
+```javascript
 "CHN001"	"1"
 "CHN002"	"3"
 "CHN005"	"3"
@@ -171,7 +171,7 @@ CHN005结果 为3
 
 求解：
 
-```
+```javascript
 function computeScore(list) {
   const results = list.reduce((res, [no,code,result]) => {
     res[no] = res[no]||{};

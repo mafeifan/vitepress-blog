@@ -1,7 +1,7 @@
 这节举几个例子来加强 Subject  的理解
 
 ### 例1 理解 Subject 的组播
-```
+```javascript
 const subject = new rxjs.Subject();
 
 // subject.subscribe 可以理解成 Event.AddListener 注意只是注册不会去执行
@@ -22,7 +22,7 @@ subject.next(Math.random());
 >  Subject 是一个特殊的对象，即可以是数据生产者也同时是消费者，通过使用 Subject 作为数据消费者，可以使用它们将 Observables  从单播转换为多播。下面是一个例子:
 
 ### 例2 使用 Subject 将 Observables  从单播转换为多播
-```
+```javascript
 const observable = rxjs.Observable
     .create((observer) => {
       observer.next(Math.random());
@@ -49,7 +49,7 @@ observable.subscribe(subject);
 实现文本框传送输入内容并防抖
 
 部分关键代码, TS 部分
-```
+```javascript
 nameChange$ = new Subject<string>();
 // val 就是 input 输入的值
 this.nameChange$.pipe(debounceTime(800)).subscribe(val => {
@@ -61,7 +61,7 @@ this.nameChange$.pipe(debounceTime(800)).subscribe(val => {
 ```
 
 模板
-```
+```html
  <input matInput type="text" placeholder="Search Keyword" name="keyword"
                (input)="nameChange$.next($event.target.value)" [(ngModel)]="formData.keyword">
 ```
@@ -70,7 +70,7 @@ Subject 实际上就是 Observer Pattern 的实现，他会在内部管理一份
 #####  例2
 使用 subject 可以实现局部刷新页面功能，假设有一List列表组件，单击列表中的某按钮弹出Model，操作完Model要刷新List数据。
 我们可以按如下操作：
-```
+```javascript
 // 第一步 先在 service 文件中定义一个 subject
 export class ListService {
   listUpdated$ = new Subject();
