@@ -8,8 +8,6 @@ on:
 env:
   CI: true
   NODE: 18.x
-  IMAGE: finleyma/blog-vitepress
-  IMAGE_TAG: $GITHUB_SHA
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -34,19 +32,16 @@ jobs:
         echo "TAGS=${TAGS}" >> $GITHUB_ENV
         echo "GITHUB_BRANCH=${BRANCH}" >> $GITHUB_ENV
 
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Install Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: "${{ env.NODE }}"
         cache: 'yarn'
-
     - name: Install Node dependencies
       run: yarn install
-
     - name: Run build task
       run: yarn build
-
     - name: Deploy to Server Cloud 2
       uses: easingthemes/ssh-deploy@v2
       env:
