@@ -7,12 +7,7 @@ on:
     branches: [ main ]
 env:
   CI: true
-  NODE: 16.x
-  # google cloud kubernates cluster (GKE)
-  PROJECT_ID: ivory-strategy-313903
-  GKE_CLUSTER: cluster-1    # Add your cluster name here.
-  GKE_ZONE: asia-east2-c  # Add your cluster zone here.
-  DEPLOYMENT_NAME: deployment-blog-vuepress # Add your deployment name here.
+  NODE: 18.x
   IMAGE: finleyma/blog-vitepress
   IMAGE_TAG: $GITHUB_SHA
 
@@ -73,33 +68,6 @@ jobs:
         REMOTE_HOST: ${{ secrets.HOST2 }}
         REMOTE_USER: ${{ secrets.USERNAME }}
         TARGET: "/home/ubuntu/blog"
-
-#       # Setup gcloud CLI
-#     - uses: google-github-actions/setup-gcloud@94337306dda8180d967a56932ceb4ddcf01edae7
-#       with:
-#         service_account_key: ${{ secrets.GKE_SA_KEY }}
-#         project_id: ${{ env.PROJECT_ID }}
-
-#       # Configure docker to use the gcloud command-line tool as a credential helper
-#     - run: |-
-#         gcloud --quiet auth configure-docker
-
-#       # Get the GKE credentials so we can deploy to the cluster
-#     - uses: google-github-actions/get-gke-credentials@fb08709ba27618c31c09e014e1d8364b02e5042e
-#       with:
-#         cluster_name: ${{ env.GKE_CLUSTER }}
-#         location: ${{ env.GKE_ZONE }}
-#         credentials: ${{ secrets.GKE_SA_KEY }}
-
-      # Deploy the Docker image to the GKE cluster
-      # kubectl set image deployment deployment-blog-vuepress blog-vuepress=finleyma/blog-vuepress:master-87 --record
-      #        ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE:TAG=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
-      #        ./kustomize build . | kubectl apply -f -
-#    - name: Deploy
-#      run: |-
-#        kubectl get services -o wide
-#        kubectl set image deployment deployment-blog-vuepress blog-vuepress=finleyma/blog-vuepress:${GITHUB_SHA:0:7} --record
-#        kubectl rollout history deployment deployment-blog-vuepress
 
       # Slack Notification
     - name: Slack Notification
