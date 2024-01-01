@@ -47,17 +47,6 @@ jobs:
     - name: Run build task
       run: yarn build
 
-    - name: Build the Docker image
-      run: docker build --file Dockerfile .
-
-    - name: publish docker image to dockerhub
-      uses: elgohr/Publish-Docker-Github-Action@master
-      with:
-        name: ${{ env.IMAGE }}
-        username: finleyma
-        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-        tags: ${{ env.TAGS }}
-
     - name: Deploy to Server Cloud 2
       uses: easingthemes/ssh-deploy@v2
       env:
