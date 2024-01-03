@@ -3,9 +3,27 @@ import {defineConfig} from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "mafeifan 的编程技术分享",
+  description: "DevOps,K8s,Prometheus,Terraform,Laravel,Jenkins系列教程,Docker系列教程",
+  lang: "zh-CN",
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ["meta", {name: "apple-mobile-web-app-capable", content: "yes"}],
+    [
+      "script",
+      {},
+      `
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?b446f22728efd98e5f4247e4816ef8c9";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      `
+    ]
+  ],
   lastUpdated: true,
   ignoreDeadLinks: true,
-  description: "DevOps,K8s,Prometheus,Terraform,Laravel,Jenkins系列教程,Docker系列教程",
   themeConfig: {
     search: {
       provider: 'local'
