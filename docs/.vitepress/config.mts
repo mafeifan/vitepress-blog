@@ -47,7 +47,12 @@ export default defineConfig({
           {text: 'Angular', link: '/Frontend/Angular/Angular-共享数据'},
         ]
       },
-      {text: 'Markdown Page', link: '/markdown-examples'},
+      {
+        text: 'Links',
+        items: [
+           {text: 'Markdown测试页', link: '/markdown-examples'},
+           {text: '友情链接', link: '/friend-links'},
+        ]},
       // {text: 'Backend', link: '/markdown-examples'},
       // {text: 'Other', link: '/markdown-examples'},
     ],
