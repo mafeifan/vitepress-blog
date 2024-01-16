@@ -3,7 +3,7 @@ import {defineConfig} from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "mafeifan 的编程技术分享",
-  description: "DevOps,K8s,Prometheus,Terraform,Laravel,Jenkins系列教程,Docker系列教程",
+  description: "DevOps,K8s,云原生,Prometheus,Terraform,Laravel,Jenkins系列教程,Docker系列教程",
   lang: "zh-CN",
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
@@ -36,13 +36,18 @@ export default defineConfig({
     nav: [
       {text: 'Home', link: '/'},
       {
+        text: 'Cloud Native',
+        items: [
+          {text: 'Docker系列', link: '/DevOps/Docker/Docker-学习系列1--为什么要使用Docker'},
+          {text: 'Kubernetes系列', link: '/DevOps/K8s/k8s-理论-快速入门'},
+          {text: 'Prometheus系列', link: '/DevOps/Prometheus/1.产品介绍'},
+        ]
+      },
+      {
         text: 'DevOps',
         items: [
           {text: 'Jenkins2系列', link: '/DevOps/Jenkins/Jenkins2-学习系列1----使用Docker方式安装最新版Jenkins'},
-          {text: 'Docker系列', link: '/DevOps/Docker/Docker-学习系列1--使用-Docker-快速实现多版本PHP切换'},
-          {text: 'Kubernetes系列', link: '/DevOps/K8s/k8s-理论-快速入门'},
           {text: 'GithubActions系列', link: '/DevOps/GithubActions/入门'},
-          {text: 'Prometheus系列', link: '/DevOps/Prometheus/1.产品介绍'},
           {text: 'Ansible2系列', link: '/DevOps/Ansible/Ansible-2----1-介绍与使用场景'},
           {text: 'Terraform', link: '/DevOps/Terraform/tip'},
           {text: 'Gitlab系列', link: '/Gitlab/pipeline-技巧总结'},
@@ -623,8 +628,8 @@ export default defineConfig({
         collapsed: false,
         items: [
           {
-            link: '/Devops/Docker/Docker-学习系列1--使用-Docker-快速实现多版本PHP切换',
-            text: '1 使用-Docker-快速实现多版本PHP切换'
+            link: '/Devops/Docker/Docker-学习系列1--为什么要使用Docker',
+            text: '1 为什么要使用Docker'
           },
           {link: '/Devops/Docker/Docker-学习系列2--保存对容器的修改', text: '2 保存对容器的修改'},
           {link: '/Devops/Docker/Docker-学习系列3--提交并分享自己的镜像', text: '3 提交并分享自己的镜像'},

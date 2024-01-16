@@ -1,13 +1,14 @@
-多谢此文：https://blog.eriksen.com.br/en/docker-image-multi-version-php-development
+通过一个实际例子说下使用Docker的好处
 
-最近一个新的后台API项目需要运行在PHP5.3环境中，软件行业有个特点，版本更新快，工具层出不穷。PHP5.3至少是5年前的版本了。
+最近有一个新的后台API项目需要运行在PHP5.3环境中，软件行业有个特点，版本更新快，工具层出不穷。PHP5.3至少是5年前的版本了。
 PHP官方早已不维护，虽然提供源码，但是安装配置也很麻烦，又不想污染目前机器上PHP7环境。
 
-所以想到了Docker
+所以想到了Docker，通过这篇[文章](https://blog.eriksen.com.br/en/docker-image-multi-version-php-development)
+我很快的就利用Docker解决了我的问题，我直接利用别人提供好的Docker镜像，可以快速实现PHP版本切换
 
 我觉得Docker适合以下情况：
 
-1. 运行特定的开发环境，比如要运行两个项目。一个要求PHP5.6，一个PHP7.0。不想来回切换。
+1. 运行特定的开发环境，比如要运行两个项目。一个要求PHP5.6，一个PHP7.0。不想来回切换。或者同时运行多个Node版本等等。
 2. 喜欢尝鲜，折腾，docker有很强的隔离性。在docker里搞坏也不会破坏本地，用到的时候docker run 启动镜像和容器，不想用了`docker rm [容器名]`删掉即可。
 
 以ThinkPHP3.2框架为例，通过docker跑起来，可以按如下步骤：
@@ -56,7 +57,7 @@ Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies
     with Zend OPcache v7.0.3, Copyright (c) 1999-2014, by Zend Technologies
     with Xdebug v2.2.6, Copyright (c) 2002-2014, by Derick Rethans
 ```
-启动nginx
+启动 nginx
 ```shell
 # webserver start
 Starting PHP-FPM (PHP version 5.3) server.

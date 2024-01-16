@@ -2,7 +2,9 @@
 
 Docker官方提供了类似 github的平台，叫 https://hub.docker.com
 可以 pull 官方或第三方提供的镜像，当然也可以发布自己的镜像供别人下载，互相学习。
+
 大致流程：
+
 docker hub 平台注册账号 -> `docker login` (登录) -> `docker image ls`  (查看本地镜像)  -> `docker push` （如 docker push finleyma/phpenv:tp3.2）
 
 注册完成后如果要发布本地自己制作好的镜像，要执行命令 
@@ -14,5 +16,5 @@ docker hub 平台注册账号 -> `docker login` (登录) -> `docker image ls`  (
 `https://hub.docker.com/r/finleyma/phpenv/`
 
 这样的话其他项目成员可以直接执行
-`docker run -t -i -p 8089:80 -v [他的项目路径]:/var/www "finleyma/phpenv:tp3.2" /bin/bash`
+`docker run -it -p 8089:80 -v [本地项目路径]:/var/www "finleyma/phpenv:tp3.2" /bin/bash`
 进到终端只需 `webserver start` 启动服务。

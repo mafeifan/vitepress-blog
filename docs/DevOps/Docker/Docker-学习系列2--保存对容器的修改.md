@@ -1,4 +1,4 @@
-[接上篇](https://www.jianshu.com/p/0dedba35e922)
+[接上篇](/DevOps/Docker/Docker-学习系列1--使用-Docker-快速实现多版本PHP切换)
 
 Docker容器虽然运行起来了。
 

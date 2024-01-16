@@ -15,8 +15,8 @@ hero:
       link: /DevOps/Docker/Docker-学习系列1--使用-Docker-快速实现多版本PHP切换
 
 features:
-  - title: Post
-    details: 分享是一种快乐
+  - title: Home
+    details: 技术改变世界
     icon: 🛠️
   - title: Comment
     details: 来留言吧

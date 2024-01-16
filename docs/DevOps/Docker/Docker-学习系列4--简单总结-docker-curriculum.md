@@ -2,7 +2,7 @@
 这篇文章不错，可以作为第一篇 docker 的入门，我简单总结了下。顺便重温下之前的内容。
 如果你是刚学docker，最好跟着敲一遍。
 
-1. 安装Docker，略，自己去官方文档查
+1. 安装Docker，略过，请自行去官方文档查
 2. 执行 `docker pull busybox` 去官方拉镜像
 BusyBox 是一个集成了三百多个最常用Linux命令和工具的软件。
 简单的说BusyBox就好像是个大工具箱，它集成压缩了 Linux 的许多工具和命令，也包含了 Android 系统的自带的shell。
@@ -27,7 +27,7 @@ BusyBox 是一个集成了三百多个最常用Linux命令和工具的软件。
 
 8. 一些术语：
 * Docker Daemon - Docker为C/S架构，服务端为docker daemon，在后台运行，用于管理，构建，分发容器
-* Docker Client - 就是咱们用的命令行工具，还有 GUI 图形化的[Kitematic](https://kitematic.com/)
+* Docker Client - 就是经常用的命令行工具
 * Docker Hub - 分享，查找镜像资源的网站
 
 ## WEBAPPS WITH DOCKER
@@ -53,7 +53,7 @@ BusyBox 是一个集成了三百多个最常用Linux命令和工具的软件。
 11. 暂停容器用 `docker stop static-site` static-site 是我们给运行时给容器起的名字，也可以用ID
 12. 后面内容是使用 Dockerfile 构建自己的镜像并上传到AWS。由于之前讲过而且aws国内使用不方便，此处略过。
 13. 当docker安装后，会自动创建三个网络
-```
+```bash
 $ docker network ls
 NETWORK ID          NAME                DRIVER              SCOPE
 c2c695315b3a        bridge              bridge              local
@@ -61,6 +61,7 @@ a875bec5d6fd        host                host                local
 ead0e804a67b        none                null                local
 ```
 默认使用的是 bridge 桥接。使用 `docker network inspect bridge` 在 Containers 下面看到正在使用该网络方式的所有容器。默认所有的容器都会使用bridge，通过刚才的命令还可以看到每个容器分配到的内部IP。 一般是 172.17.0.xx。 为了安全及方便，我们需要使某几个容器之间使用自己的桥接网络，如何做到呢？
+
 14. 使用 `docker network` 创建一个新的bridge网络，比如 `docker network create foodtrucks-net`
 > ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-91bd41ce9bebd25f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 15. 运行 Elasticsearch 容器并把刚创建的网络分配给他
@@ -68,8 +69,9 @@ ead0e804a67b        none                null                local
 16. 然后运行Python Flask 容器，并进到bash终端
 `docker run -it --rm --net foodtrucks-net finleyma/foodtrucks-web bash`
 来测试下能否访问到 Elasticsearch 容器
-`curl es:9200`  
-tips: 访问容器网络没有输入容器的IP地址，用的容器名称表示，这种能力叫 automatic service discovery，自动服务发现，原理也比较简单
+`curl es:9200` 
+::: tip
+访问容器网络没有输入容器的IP地址，用的容器名称表示，这种能力叫 automatic service discovery，自动服务发现，原理也比较简单
 /etc/hosts 里有条记录，es为键名，值就是实际IP，由于IP是动态的，使用名字更不容易出错。
-
+:::
 备注：elasticsearch挺占内存的，我服务器4G内存，在docker运行启动后出现了警告

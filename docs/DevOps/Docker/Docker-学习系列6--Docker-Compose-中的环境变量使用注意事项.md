@@ -1,7 +1,8 @@
 学习技能光看不做是不行的，强烈推荐按照教程敲一遍
 https://docs.docker.com/compose/gettingstarted/
 
-Compose项目由 Python编写 ，实现上调用了 Docker服务提供的 API来对容器进行管理。 因此只要所操作的平台支持 Docker，就可以在其上利用 Compose来进行编排管理。
+Compose项目由 Python 编写 ，实现上调用了 Docker服务提供的 API 来对容器进行管理。 
+因此只要所操作的平台支持 Docker，就可以在其上利用 Compose 来进行编排管理。
 
 本人提炼出了几点技巧：
 
