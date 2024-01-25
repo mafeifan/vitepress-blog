@@ -118,13 +118,9 @@ helm upgrade --version $HELM_CHART_VERSION \
   $MODULE_NAME $HELM_REPO_NAME/$MODULE_NAME
 ```
 
-
-
-
 1. 在实际的chart中，所有的静态默认值应该设置在 values.yaml 文件中，且不应该重复使用 default 命令 (否则会出现冗余)。
 2. 使用 `--set`覆盖默认值 `helm install solid-vulture ./mychart --dry-run --debug --set favoriteDrink=slurm`
-3. 使用`-f`参数(helm install -f myvals.yaml ./mychart)传递到 helm install 或 helm upgrade 的 values文件
-
+3. 使用`-f`参数(helm install -f myvals.yaml ./mychart)传递到 helm install 或 helm upgrade 的 values 文件
 
 ## 参考
 
