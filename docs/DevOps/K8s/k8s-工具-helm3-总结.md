@@ -98,6 +98,36 @@ helm install --debug --dry-run full-coral ./my-nginx
 helm install --debug --dry-run funny my-nginx
 ```
 
+## 关于 Helm upgrade
+
+实际工作中，CICD流水线，实现k8s滚动更新的核心命令就是 `helm upgrade`
+解释下各个flag
+
+* --install 如果集群没这个chart就安装，否则执行更新操作
+* --version 指定 Helm chart 版本
+* --wait 等待直到容器状态变为running才结束, --timeout 5m 最大等待时间
+* --set 覆盖默认参数，每次更新其实就是更新image.tag
+
+
+```bash
+helm upgrade --version $HELM_CHART_VERSION \
+  --namespace $EKS_NS --install \
+  --wait --timeout 5m \
+  --set podAnnotations.profile=$CI_ENVIRONMENT_NAME \
+  --set image.tag=$ACR_IMAGE_TAG \
+  $MODULE_NAME $HELM_REPO_NAME/$MODULE_NAME
+```
+
+
+
+
 1. 在实际的chart中，所有的静态默认值应该设置在 values.yaml 文件中，且不应该重复使用 default 命令 (否则会出现冗余)。
 2. 使用 `--set`覆盖默认值 `helm install solid-vulture ./mychart --dry-run --debug --set favoriteDrink=slurm`
-3. 使用 使用-f参数(helm install -f myvals.yaml ./mychart)传递到 helm install 或 helm upgrade的values文件
+3. 使用`-f`参数(helm install -f myvals.yaml ./mychart)传递到 helm install 或 helm upgrade 的 values文件
+
+
+## 参考
+
+https://helm.sh/docs/chart_best_practices/
+
+

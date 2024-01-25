@@ -439,6 +439,10 @@ export default defineConfig({
             "link": "/DevOps/K8s/k8s-工具-使用Kubernetes-Dashboard"
           },
           {
+            "text": "k8s-工具-helm3-总结",
+            "link": "/DevOps/K8s/k8s-工具-helm3-总结"
+          },
+          {
             "text": "k8s-发布-红蓝部署",
             "link": "/DevOps/K8s/k8s-发布-红蓝部署"
           },
