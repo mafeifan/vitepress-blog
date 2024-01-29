@@ -632,76 +632,76 @@ export default defineConfig({
         collapsed: false,
         items: [
           {
-            link: '/Devops/Docker/Docker-学习系列1--为什么要使用Docker',
+            link: '/DevOps/Docker/Docker-学习系列1--为什么要使用Docker',
             text: '1 为什么要使用Docker'
           },
-          {link: '/Devops/Docker/Docker-学习系列2--保存对容器的修改', text: '2 保存对容器的修改'},
-          {link: '/Devops/Docker/Docker-学习系列3--提交并分享自己的镜像', text: '3 提交并分享自己的镜像'},
-          {link: '/Devops/Docker/Docker-学习系列4--简单总结-docker-curriculum', text: '4 简单总结 docker-curriculum'},
-          {link: '/Devops/Docker/Docker-学习系列5--nginx-容器', text: '5 Nginx-容器'},
+          {link: '/DevOps/Docker/Docker-学习系列2--保存对容器的修改', text: '2 保存对容器的修改'},
+          {link: '/DevOps/Docker/Docker-学习系列3--提交并分享自己的镜像', text: '3 提交并分享自己的镜像'},
+          {link: '/DevOps/Docker/Docker-学习系列4--简单总结-docker-curriculum', text: '4 简单总结 docker-curriculum'},
+          {link: '/DevOps/Docker/Docker-学习系列5--nginx-容器', text: '5 Nginx-容器'},
           {
-            link: '/Devops/Docker/Docker-学习系列6--Docker-Compose-中的环境变量使用注意事项',
+            link: '/DevOps/Docker/Docker-学习系列6--Docker-Compose-中的环境变量使用注意事项',
             text: '6 Docker Compose 中的环境变量使用注意事项'
           },
-          {link: '/Devops/Docker/Docker-学习系列7--容器化Node项目', text: '7 容器化Node项目'},
-          {link: '/Devops/Docker/Docker-学习系列8--结合daocloud实现持续集成', text: '8 结合daocloud实现持续集成'},
-          {link: '/Devops/Docker/Docker-学习系列9--Docker的技术原理介绍', text: '9 Docker的技术原理介绍'},
-          {link: '/Devops/Docker/Docker-学习系列10-开源图形化管理系统', text: '10 开源图形化管理系统'},
-          {link: '/Devops/Docker/Docker-学习系列11-多阶段镜像构建', text: '11 多阶段镜像构建'},
-          {link: '/Devops/Docker/Docker-学习系列12-轻松实现-MySQL-主从同步', text: '12 轻松实现MySQL主从同步'},
+          {link: '/DevOps/Docker/Docker-学习系列7--容器化Node项目', text: '7 容器化Node项目'},
+          {link: '/DevOps/Docker/Docker-学习系列8--结合daocloud实现持续集成', text: '8 结合daocloud实现持续集成'},
+          {link: '/DevOps/Docker/Docker-学习系列9--Docker的技术原理介绍', text: '9 Docker的技术原理介绍'},
+          {link: '/DevOps/Docker/Docker-学习系列10-开源图形化管理系统', text: '10 开源图形化管理系统'},
+          {link: '/DevOps/Docker/Docker-学习系列11-多阶段镜像构建', text: '11 多阶段镜像构建'},
+          {link: '/DevOps/Docker/Docker-学习系列12-轻松实现-MySQL-主从同步', text: '12 轻松实现MySQL主从同步'},
           {
-            link: '/Devops/Docker/Docker-学习系列13-实现-基于pxc-的mysql-多节点主主同步',
+            link: '/DevOps/Docker/Docker-学习系列13-实现-基于pxc-的mysql-多节点主主同步',
             text: '13 实现基于pxc的mysql多节点主主同步'
           },
           {
-            link: '/Devops/Docker/Docker-学习系列14-使用haproxy实现mysql集群的负载均衡',
+            link: '/DevOps/Docker/Docker-学习系列14-使用haproxy实现mysql集群的负载均衡',
             text: '14 使用haproxy实现mysql集群的负载均衡'
           },
           {
-            link: '/Devops/Docker/Docker-学习系列15-Docker使用xdebug配合PHPStorm调试PHP',
+            link: '/DevOps/Docker/Docker-学习系列15-Docker使用xdebug配合PHPStorm调试PHP',
             text: '15 Docker使用xdebug配合PHPStorm调试PHP'
           },
-          {link: '/Devops/Docker/Docker-学习系列16-使用过程的一些经验总结', text: '16 使用过程的一些经验总结'},
-          {link: '/Devops/Docker/Docker-学习系列17-镜像和容器的导入导出', text: '17 镜像和容器的导入导出'},
-          {link: '/Devops/Docker/Docker-学习系列18-关于PHP5-6', text: '18 关于PHP5.6'},
-          {link: '/Devops/Docker/Docker-学习系列19-容器化Angular项目', text: '19 容器化Angular项目'},
+          {link: '/DevOps/Docker/Docker-学习系列16-使用过程的一些经验总结', text: '16 使用过程的一些经验总结'},
+          {link: '/DevOps/Docker/Docker-学习系列17-镜像和容器的导入导出', text: '17 镜像和容器的导入导出'},
+          {link: '/DevOps/Docker/Docker-学习系列18-关于PHP5-6', text: '18 关于PHP5.6'},
+          {link: '/DevOps/Docker/Docker-学习系列19-容器化Angular项目', text: '19 容器化Angular项目'},
           {
-            link: '/Devops/Docker/Docker-学习系列20-工具推荐，dive--分析镜像层的工具',
+            link: '/DevOps/Docker/Docker-学习系列20-工具推荐，dive--分析镜像层的工具',
             text: '20 工具推荐，dive--分析镜像层的工具'
           },
-          {link: '/Devops/Docker/Docker-学习系列21-配置远程访问Docker', text: '21 配置远程访问Docker'},
-          {link: '/Devops/Docker/Docker-学习系列22-Docker-Layer-Caching.md', text: '22 Docker-Layer-Caching.md'},
+          {link: '/DevOps/Docker/Docker-学习系列21-配置远程访问Docker', text: '21 配置远程访问Docker'},
+          {link: '/DevOps/Docker/Docker-学习系列22-Docker-Layer-Caching.md', text: '22 Docker-Layer-Caching.md'},
           {
-            link: '/Devops/Docker/Docker-学习系列23-推荐一款自动更新 Docker 镜像与容器的神器 Watchtower.md',
+            link: '/DevOps/Docker/Docker-学习系列23-推荐一款自动更新 Docker 镜像与容器的神器 Watchtower.md',
             text: '23 推荐一款自动更新 Docker 镜像与容器的神器 Watchtower'
           },
           {
-            link: '/Devops/Docker/Docker-学习系列24-Docker-及-docker-compose-使用总结',
+            link: '/DevOps/Docker/Docker-学习系列24-Docker-及-docker-compose-使用总结',
             text: '24 Docker 及 Docker-compose 使用总结'
           },
           {
-            link: '/Devops/Docker/Docker-学习系列25-Dockerfile-中的-COPY-与-ADD-命令',
+            link: '/DevOps/Docker/Docker-学习系列25-Dockerfile-中的-COPY-与-ADD-命令',
             text: '25 Dockerfile 中的 COPY 与 ADD 命令'
           },
-          {link: '/Devops/Docker/Docker-学习系列26-hub-tool', text: '26-hub-tool工具介绍'},
-          {link: '/Devops/Docker/Docker-学习系列27-Docker-in-Docker', text: '27-Docker-in-Docker'},
+          {link: '/DevOps/Docker/Docker-学习系列26-hub-tool', text: '26-hub-tool工具介绍'},
+          {link: '/DevOps/Docker/Docker-学习系列27-Docker-in-Docker', text: '27-Docker-in-Docker'},
           {
-            link: '/Devops/Docker/Docker-学习系列28-网络故障调试工具的瑞士军刀-netshoot',
+            link: '/DevOps/Docker/Docker-学习系列28-网络故障调试工具的瑞士军刀-netshoot',
             text: '28-网络故障调试工具的瑞士军刀-netshoot'
           },
           {
-            link: '/Devops/Docker/Docker-学习系列29-使用 Docker Buildx 构建多种系统架构镜像',
+            link: '/DevOps/Docker/Docker-学习系列29-使用 Docker Buildx 构建多种系统架构镜像',
             text: '29-使用 Docker Buildx 构建多种系统架构镜像'
           },
-          {link: '/Devops/Docker/Docker-学习系列30-镜像同步的几种方式', text: '30-镜像同步的几种方式'},
-          {link: '/Devops/Docker/Docker-学习系列31-如何制作一个高质量image', text: '31-如何制作一个高质量image'},
-          {link: '/Devops/Docker/Docker-学习系列32-误删容器后恢复数据', text: '32-误删容器后恢复数据'},
-          {link: '/Devops/Docker/Docker-学习系列33-镜像制作最佳实践', text: '33-镜像制作最佳实践'},
-          {link: '/Devops/Docker/Docker-学习系列34-使用kaniko构建镜像', text: '34-使用kaniko构建镜像'},
-          {link: '/Devops/Docker/Docker-学习系列35-日志驱动及处理', text: '35-日志驱动及处理'},
-          {link: '/Devops/Docker/Docker-学习系列36-编写高效的Dockerfile', text: '35-编写高效的Dockerfile'},
-          {link: '/Devops/Docker/Docker-学习资源', text: 'Docker学习资源'},
-          {link: '/Devops/Docker/Docker-常见问题', text: 'Docker常见问题'}
+          {link: '/DevOps/Docker/Docker-学习系列30-镜像同步的几种方式', text: '30-镜像同步的几种方式'},
+          {link: '/DevOps/Docker/Docker-学习系列31-如何制作一个高质量image', text: '31-如何制作一个高质量image'},
+          {link: '/DevOps/Docker/Docker-学习系列32-误删容器后恢复数据', text: '32-误删容器后恢复数据'},
+          {link: '/DevOps/Docker/Docker-学习系列33-镜像制作最佳实践', text: '33-镜像制作最佳实践'},
+          {link: '/DevOps/Docker/Docker-学习系列34-使用kaniko构建镜像', text: '34-使用kaniko构建镜像'},
+          {link: '/DevOps/Docker/Docker-学习系列35-日志驱动及处理', text: '35-日志驱动及处理'},
+          {link: '/DevOps/Docker/Docker-学习系列36-编写高效的Dockerfile', text: '35-编写高效的Dockerfile'},
+          {link: '/DevOps/Docker/Docker-学习资源', text: 'Docker学习资源'},
+          {link: '/DevOps/Docker/Docker-常见问题', text: 'Docker常见问题'}
         ]
       }],
       '/DevOps/Prometheus/': [{

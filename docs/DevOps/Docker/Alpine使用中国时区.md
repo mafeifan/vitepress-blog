@@ -1,4 +1,4 @@
-```
+```docker
 FROM alpine:lts
 
 # 替换为阿里源
@@ -14,7 +14,7 @@ RUN apk add tzdata && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 
 K8s的写法是
 
-```
+```yaml
 volumes:
   - name: host-time
     hostPath:
