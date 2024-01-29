@@ -98,6 +98,12 @@ helm install --debug --dry-run full-coral ./my-nginx
 helm install --debug --dry-run funny my-nginx
 ```
 
+## Helm debug 命令
+
+* helm template --debug
+* helm install --dry-run --debug
+* helm get manifest
+
 ## 关于 Helm upgrade
 
 实际工作中，CICD流水线，实现k8s滚动更新的核心命令就是 `helm upgrade`
@@ -108,12 +114,10 @@ helm install --debug --dry-run funny my-nginx
 * --wait 等待直到容器状态变为running才结束, --timeout 5m 最大等待时间
 * --set 覆盖默认参数，每次更新其实就是更新image.tag
 
-
 ```bash
 helm upgrade --version $HELM_CHART_VERSION \
   --namespace $EKS_NS --install \
   --wait --timeout 5m \
-  --set podAnnotations.profile=$CI_ENVIRONMENT_NAME \
   --set image.tag=$ACR_IMAGE_TAG \
   $MODULE_NAME $HELM_REPO_NAME/$MODULE_NAME
 ```
