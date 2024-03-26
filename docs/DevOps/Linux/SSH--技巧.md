@@ -226,7 +226,6 @@ $ autossh -M 7788 -NfR 1234:127.0.0.1:22 root@ip_B
 
 -N 和 -f 参数是让 autossh 不打印信息, 在后台运行. (ssh同样可以加上这两个参数.)
 
-
 ### 参考：
 
 http://www.openssh.com/
@@ -235,10 +234,6 @@ https://wangdoc.com/ssh/
 
 https://www.cnblogs.com/sparkdev/p/6842805.html
 
-https://www.zcfy.cc/article/top-20-openssh-server-best-security-practices
-
 https://www.zhihu.com/question/28793890
-
-https://pullp.github.io/2020/09/13/8-ssh-tips/
 
 https://www.cnblogs.com/liqiuhao/p/9031803.html

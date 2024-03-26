@@ -8,4 +8,8 @@
 
 对文章有疑问的，欢迎加v讨论问题，也欢迎提issue
 
+## 关于本站
+
+* 2024.12.31 从vuepress转移到vitepress，更快的构建速度
+
 ![](https://pek3b.qingstor.com/hexo-blog/202312161827476.jpg#img-responsive)

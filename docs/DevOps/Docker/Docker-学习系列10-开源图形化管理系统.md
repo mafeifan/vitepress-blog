@@ -67,5 +67,5 @@ cAdvisor提供的页面非常简洁。
 lazydocker，一个简单的 docker 和 docker-compose 终端用户界面，用更懒惰的方式来管理所有的 docker。
 
 其界面采用 gocui 开发。
-> ![image.png](https://static.oschina.net/uploads/space/2019/0630/141740_uL43_3734192.gif)
+> ![](https://pek3b.qingstor.com/hexo-blog/141740_uL43_3734192.webp)
 

@@ -73,9 +73,15 @@ skip-name-resolve
 3. 基于官方mysql镜像，运行两个容器并指定一些参数
 启动 名称为mysql_master的容器作为master数据库
 
-`docker run --name mysql_master -d -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123456 -v D:/docker/mysql-master-slave/master/data:/var/lib/mysql -v D:/docker/mysql-master-slave/master/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf  mysql:5.7`
-
-`docker run --name mysql_slave -d -p 3308:3306 -e MYSQL_ROOT_PASSWORD=123456 -v D:/docker/mysql-master-slave/slave/data:/var/lib/mysql -v D:/docker/mysql-master-slave/slave/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf  mysql:5.7`
+```bash
+docker run --name mysql_master -d -p 3307:3306 -e MYSQL_ROOT_PASSWORD=123456 \
+    -v D:/docker/mysql-master-slave/master/data:/var/lib/mysql \
+    -v D:/docker/mysql-master-slave/master/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf  mysql:5.7
+    
+docker run --name mysql_slave -d -p 3308:3306 -e MYSQL_ROOT_PASSWORD=123456 \
+  -v D:/docker/mysql-master-slave/slave/data:/var/lib/mysql \
+  -v D:/docker/mysql-master-slave/slave/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf  mysql:5.7
+```
 
 这个时候宿主机的 Navicat 应该可以连上容器里的两个数据库了。
 

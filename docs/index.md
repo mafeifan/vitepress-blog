@@ -24,7 +24,7 @@ features:
     icon: 📮
   - title: About me
     details: 关于本站和我
-    link: /about-me
+    link: /about
     icon: 🤔
 
 ## https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.mjs
