@@ -57,7 +57,7 @@ export default defineConfig({
         text: 'Tools',
         items: [
           {text: 'Git学习系列', link: '/Tools/Git/Git-和-GitHub：从入门到实践1-Git-和-GitHub-基础简介'},
-          {text: 'Other', link: '/Tools/Other/当有个服务器可以干哪些事情'},
+          {text: 'Other', link: '/Tools/优质免费软件推荐'},
         ]
       },
       {
