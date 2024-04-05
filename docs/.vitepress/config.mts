@@ -329,16 +329,16 @@ export default defineConfig({
           collapsed: false,
           items: [
             {link: '/Tools/Other/当有个服务器可以干哪些事情', text: '当有个服务器可以干哪些事情?'},
-            {link: '/Tools/Other/Firebase消息推送', text: 'Firebase消息推送'},
-            {link: '/Tools/Other/使用frp内网穿透工具', text: '使用frp内网穿透工具'},
+            {link: '/Tools/Other/优质免费软件推荐', text: '优质免费软件推荐'},
+            {link: '/Tools/Other/前端-说下browserslist', text: '说下browserslist'},
             {
-              link: '/Tools/Other/storybook-介绍和使用-比较火的响应式UI开发及测试环境',
+              link: '/Tools/Other/前端-storybook-介绍和使用-比较火的响应式UI开发及测试环境',
               text: 'storybook-介绍和使用-响应式UI开发及测试环境'
             },
-            {link: '/Tools/Other/强大的Postman-----API管理工具', text: '强大的Postman--API管理工具'},
+            {link: '/Tools/Other/后端-强大的Postman--API管理工具', text: '强大的Postman--API管理工具'},
             {link: '/Tools/Other/网络-下载youtube视频-yt-dlp', text: '网络-下载youtube视频-yt-dlp'},
-            {link: '/Tools/Other/说下browserslist', text: '说下browserslist'},
-            {link: '/Tools/Other/Nginx', text: 'Nginx知识点总结'},
+            {link: '/Tools/Other/网络-Nginx', text: 'Nginx知识点总结'},
+            {link: '/Tools/Other/网络-使用frp内网穿透工具', text: '使用frp内网穿透工具'},
           ]
         }
       ],
