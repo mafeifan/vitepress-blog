@@ -25,6 +25,10 @@ export default defineConfig({
   lastUpdated: true,
   ignoreDeadLinks: true,
   themeConfig: {
+    footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2020-present'
+    },
     search: {
       provider: 'local'
     },
@@ -820,7 +824,7 @@ export default defineConfig({
     },
     socialLinks: [
       {icon: 'github', link: 'https://github.com/mafeifan'},
-      {icon: 'twitter', link: 'https://twitter.com/zzfinley'}
+      {icon: 'x', link: 'https://x.com/zzfinley'}
     ]
   }
 })
