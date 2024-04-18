@@ -1,0 +1,14 @@
+faiss-cpu==1.8.0
+transformers==4.40.0
+Pillow==10.3.0
+pypdf==4.2.0
+jq==1.7.0
+anthropic==0.25.6
+langchain==0.1.13
+langchain-aws==0.1.0
+streamlit==1.33.0
+botocore
+boto3
+awscli
+chromadb==0.4.24
+torch
