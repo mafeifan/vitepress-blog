@@ -10,6 +10,6 @@
 
 ## 关于本站
 
-* 2024.12.31 从vuepress转移到vitepress，更快的构建速度
+* 2023.12.31 从vuepress转移到vitepress，更快的构建速度
 
 ![](https://pek3b.qingstor.com/hexo-blog/202312161827476.jpg#img-responsive)
