@@ -2,7 +2,7 @@ PHPStorm整合一些了Docker相关的功能，并有官方的[Docker镜像](htt
 
 下面介绍怎么通过PHPStorm创建并运行一个docker容器项目并启用xdebug，以Windows系统为例
 1. 运行 Docker for Windows，Docker运行成功后桌面右下角有图标，右键选择Settings
-勾选 "Expose daemon on tcp://localhost:2375" 就是暴露守护进程。
+勾选 `"Expose daemon on tcp://localhost:2375"` 就是暴露守护进程。
 
 > ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-32abe015ec6f0d83.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -23,7 +23,7 @@ services:
       #change the line below with your IP address
       XDEBUG_CONFIG: remote_host=host.docker.internal
 ```
-host.docker.internal 指运行IDE的本机IP
+`host.docker.internal` 指运行IDE的本机IP
 4.  PHPStorm 中菜单项 'Run - Edit Configurations' 配置Docker信息。因为之前我们开放了docker的守护进行，可以通过TCP协议，地址localhost:2372进行连接。PHPStorm连接上会显示 success
 
 > ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-11055592fc40363b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -57,7 +57,8 @@ foreach ($arr as $item) {
 ### 总结：
 使用docker大大方便了咱们的环境搭建流程。
 
-这篇文章我是看了[官方的视频](https://www.youtube.com/watch?v=bWbXMy_mxxE)(需翻墙) 后写的。
+这篇文章我是看了[官方的视频](https://www.youtube.com/watch?v=bWbXMy_mxxE) 后写的。
+
 还有配置文件只配置了apache服务器，关于mysql等官方镜像中其实也提供了。请自行修改docker-compose.yml。
 
 PHPStorm官方镜像：

@@ -60,4 +60,4 @@ LXC的基础上, Docker额外提供的Feature包括：标准统一的
 ## Docker和传统虚拟化方式的不同之处
 传统虚拟机技术是虚拟出一套硬件后，在其上运行一个完整操作系统，在该系统上再运行所需应用进程；而容器内的应用进程直接运行于宿主的内核，容器内没有自己的内核，而且也没有进行硬件虚拟。因此容器要比传统虚拟机更为轻便。
 
-参考：https://yeasy.gitbooks.io/docker_practice/content/introduction/what.html
+参考：https://yeasy.gitbook.io/docker_practice/underly

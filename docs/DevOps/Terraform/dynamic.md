@@ -1,5 +1,3 @@
-参考: Practice DRY in Terraform Configurations Using Dynamic Blocks (spacelift.io)
-
 dynamic 可以在 resource 内创建重复的block
 
 dynamic 支持在 resource, data, provider 和 provisioner blocks 内使用

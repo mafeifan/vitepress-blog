@@ -1,4 +1,4 @@
-在 [Docker 学习系列17 镜像和容器的导入导出](https://www.jianshu.com/p/ef1fed775e4a)
+在 [Docker 学习系列17 镜像和容器的导入导出](/DevOps/Docker/Docker-学习系列17-镜像和容器的导入导出)
 我讲过docker镜像是由一层层组成的
 比如如下dockerfile文件
 ```bash

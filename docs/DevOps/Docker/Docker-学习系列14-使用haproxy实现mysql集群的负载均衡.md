@@ -1,4 +1,4 @@
-在[上节](https://www.jianshu.com/p/eae6b12c1cd5)中我们创建了 mysql 集群。
+在[上节](/DevOps/Docker/Docker-学习系列13-实现-基于pxc-的mysql-多节点主主同步)中我们创建了 mysql 集群。
 实际工作中，我们不希望让某一数据库节点处理所有的请求，这样的话单个负载高，性能差。
 
 > ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-6b9dcf8b92b5f9b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

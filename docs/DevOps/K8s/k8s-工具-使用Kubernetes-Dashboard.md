@@ -83,6 +83,5 @@ namespace:  20 bytes
 
 点击登陆，进入Kubernetes Dashboard
 
-![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/692a2f2613664123b050c139bb1dcb30~tplv-k3u1fbpfcp-watermark.image)
-
+![](https://pek3b.qingstor.com/hexo-blog/692a2f2613664123b050c139bb1dcb30~tplv-k3u1fbpfcp-watermark.image)
 

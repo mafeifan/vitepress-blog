@@ -1,6 +1,6 @@
 ## 在线书籍
 
-[Docker —— 从入门到实践](https://yeasy.gitbooks.io/docker_practice)
+[Docker —— 从入门到实践](https://yeasy.gitbook.io/docker_practice)
 
 ## 部署私有仓库
 * https://docs.docker.com/registry/deploying/
@@ -22,11 +22,13 @@
 * [Bitnami](https://github.com/bitnami)，提供wordpress, Laravel, Magento, Sonarqube, Redmine，Joomla 等镜像。
 
 * [CircleCI images](https://github.com/circleci/circleci-images)
-CircleCI 本身提供的是CI/CD服务。针对不同语言和工具，自己维护了一些常用的[镜像](https://circleci.com/docs/2.0/circleci-images/)。
+CircleCI 本身提供的是CI/CD服务。针对不同语言和工具，自己维护了一些常用的[镜像](https://circleci.com/developer/images/)。
 
 而且所有镜像都预装了常用工具，如git, gzip, unzip, sudo, wget, zip 等。
 
 * [thecodingmachine/docker-images-php](https://github.com/thecodingmachine/docker-images-php) 提供了很多PHP相关的镜像
+
+* 鼎鼎有名的JetBrains公司维护的PHP相关镜像 https://github.com/JetBrains/phpstorm-docker-images
 
 * 提供支持很多Laravel版本的PHP+nginx镜像 [https://github.com/dwchiang/nginx-php-fpm](https://github.com/dwchiang/nginx-php-fpm)
 

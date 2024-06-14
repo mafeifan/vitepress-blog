@@ -18,7 +18,7 @@
 1. 自己用虚拟机运行 kubeadm 或 kubekey 搭建集群
 2. 看视频 https://www.bilibili.com/video/BV13Q4y1C7hS
 3. 或买书，只推荐一本《Kubernetes权威指南》
-4. 做[模拟题](https://github.com/kabary/kubernetes-cka/wiki/CKA-Killer-20-Question)，开始感觉会比较难，直到熟练为止
+4. 做模拟题,github 或闲鱼上搜 kubernetes-cka，开始感觉会比较难，直到熟练为止
 
 
 ## 考试中

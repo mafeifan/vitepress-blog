@@ -1,4 +1,4 @@
-[接上篇](/DevOps/Docker/Docker-学习系列1--使用-Docker-快速实现多版本PHP切换)
+[接上篇](/DevOps/Docker/Docker-学习系列1--为什么要使用Docker)
 
 Docker容器虽然运行起来了。
 
@@ -33,4 +33,4 @@ docker commit cb439fb2c714  finleyma/php-dev:tp3.2
 
 问题：
 这个项目的环境是有了，但是是多人开发，我如何将我的配好的镜像分享给他人呢？
-请见下篇
+请见[下篇](/DevOps/Docker/Docker-学习系列3--提交并分享自己的镜像)

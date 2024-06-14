@@ -52,7 +52,7 @@ export default defineConfig({
         items: [
           {text: 'Jenkins2系列', link: '/DevOps/Jenkins/Jenkins2-学习系列1----使用Docker方式安装最新版Jenkins'},
           {text: 'GithubActions系列', link: '/DevOps/GithubActions/入门'},
-          {text: 'Ansible2系列', link: '/DevOps/Ansible/Ansible-2----1-介绍与使用场景'},
+          {text: 'Ansible2系列', link: '/DevOps/Ansible2/Ansible2--1-介绍与使用场景'},
           {text: 'Terraform', link: '/DevOps/Terraform/tip'},
           {text: 'Gitlab系列', link: '/Gitlab/pipeline-技巧总结'},
         ]
@@ -374,7 +374,6 @@ export default defineConfig({
             {text: 'pipeline-技巧总结', link: '/Gitlab/pipeline-技巧总结'},
             {text: 'runner的executor该如何选择', link: '/Gitlab/runner-runner的executor该如何选择'},
             {text: 'pipeline-自己执行git-commit', link: '/Gitlab/pipeline-自己执行git-commit'},
-            {text: 'pipeline-flutter流水线制作', link: '/Gitlab/pipeline-flutter流水线制作'},
           ]
         }
       ],
@@ -455,20 +454,20 @@ export default defineConfig({
             "link": "/DevOps/K8s/k8s-发布-滚动发布"
           },
           {
-            "text": "Kubesphere添加新agent",
-            "link": "/DevOps/K8s/Kubesphere添加新agent"
+            "text": "Kubesphere3.x添加新agent",
+            "link": "/DevOps/K8s/Kubesphere3.x添加新agent"
           },
           {
-            "text": "Kubesphere修改logo",
-            "link": "/DevOps/K8s/Kubesphere修改logo"
+            "text": "Kubesphere3.x修改logo",
+            "link": "/DevOps/K8s/Kubesphere3.x修改logo"
           },
           {
-            "text": "Kubesphere调整Jenkins时区",
-            "link": "/DevOps/K8s/Kubesphere调整Jenkins时区"
+            "text": "Kubesphere3.x调整Jenkins时区",
+            "link": "/DevOps/K8s/Kubesphere3.x调整Jenkins时区"
           },
           {
-            "text": "Kubesphere公有云添加额外ks-console的LB",
-            "link": "/DevOps/K8s/Kubesphere公有云添加额外ks-console的LB"
+            "text": "Kubesphere3.x公有云添加额外ks-console的LB",
+            "link": "/DevOps/K8s/Kubesphere3.x公有云添加额外ks-console的LB"
           }
         ]
       }],
@@ -507,7 +506,7 @@ export default defineConfig({
             },
             {
               "text": "Docker构建镜像和推送到docker-hub",
-              "link": "/DevOps/GithubActions/Docker构建镜像和推送到Docker-Hub"
+              "link": "/DevOps/GithubActions/Docker构建镜像和推送到docker-hub"
             },
             {
               "text": "相关资源",
@@ -527,18 +526,18 @@ export default defineConfig({
           ]
         }
       ],
-      '/DevOps/Ansible/': [
+      '/DevOps/Ansible2/': [
         {
           text: "Ansible2 系列",
           collapsed: false,
           items: [
-            {link: '/Devops/Ansible/Ansible-2----1-介绍与使用场景', text: '1 介绍与使用场景'},
-            {link: '/Devops/Ansible/Ansible-2----2-安装与配置', text: '2 安装与配置'},
-            {link: '/Devops/Ansible/Ansible-2----3-配置文件', text: '3 配置文件'},
-            {link: '/Devops/Ansible/Ansible-2----4-常用模块及常用API', text: '4 常用模块及常用API'},
-            {link: '/Devops/Ansible/Ansible-2----5-playbook-语法', text: '5 playbook 语法'},
-            {link: '/Devops/Ansible/Ansible-2----6-playbook-管理', text: '6 playbook 管理'},
-            {link: '/Devops/Ansible/运维自动化之Ansible', text: '总结-运维自动化之Ansible'},
+            {link: '/Devops/Ansible2/1-介绍与使用场景', text: '1-介绍与使用场景'},
+            {link: '/Devops/Ansible2/2-安装与配置', text: '2-安装与配置'},
+            {link: '/Devops/Ansible2/3-配置文件', text: '3-配置文件'},
+            {link: '/Devops/Ansible2/4-常用模块及常用API', text: '4-常用模块及常用API'},
+            {link: '/Devops/Ansible2/5-playbook-语法', text: '5-playbook 语法'},
+            {link: '/Devops/Ansible2/6-playbook-管理', text: '6-playbook 管理'},
+            {link: '/Devops/Ansible2/运维自动化之Ansible', text: '总结-运维自动化之Ansible'},
           ]
         }
       ],

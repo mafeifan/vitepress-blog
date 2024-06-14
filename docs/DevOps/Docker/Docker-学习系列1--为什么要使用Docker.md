@@ -3,7 +3,7 @@
 最近有一个新的后台API项目需要运行在PHP5.3环境中，软件行业有个特点，版本更新快，工具层出不穷。PHP5.3至少是5年前的版本了。
 PHP官方早已不维护，虽然提供源码，但是安装配置也很麻烦，又不想污染目前机器上PHP7环境。
 
-所以想到了Docker，通过这篇[文章](https://blog.eriksen.com.br/en/docker-image-multi-version-php-development)
+所以想到了Docker，通过这篇 [文章](https://blog.eriksen.com.br/en/docker-image-multi-version-php-development)
 我很快的就利用Docker解决了我的问题，我直接利用别人提供好的Docker镜像，可以快速实现PHP版本切换
 
 我觉得Docker适合以下情况：
@@ -14,7 +14,7 @@ PHP官方早已不维护，虽然提供源码，但是安装配置也很麻烦�
 以ThinkPHP3.2框架为例，通过docker跑起来，可以按如下步骤：
 
 1. 安装 Docker，略
-记得一定要切换为国内源，不然速度巨慢，还容易报错，推荐免费的https://www.daocloud.io/mirror#accelerator-doc，或者搜索阿里docker镜像源。
+记得一定要切换为国内源，不然速度巨慢，还容易报错，推荐免费的 https://www.daocloud.io/mirror#accelerator-doc 或者搜索阿里docker镜像源。
 
 2. 下载镜像
 `docker pull eriksencosta/php-dev`

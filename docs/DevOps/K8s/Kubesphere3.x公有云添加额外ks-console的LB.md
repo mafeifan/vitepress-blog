@@ -17,8 +17,6 @@ metadata:
    app: ks-console-loadbalancer
    tier: frontend
    version: v3.1.0
- finalizers:
-   - service.kubernetes.io/load-balancer-cleanup
 spec:
  ports:
    - name: nginx

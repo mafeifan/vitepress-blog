@@ -1,7 +1,10 @@
 ### 背景
 MySQL本身是开源的，有些公司或社区基于MySQL发布了新的分支，如有名的MariaDB。
+
 在介绍 Percona 之前，首要要介绍的是XtraDB存储引擎，在MYSQL中接触比较多的是MyISAM 和 InnoDB这两个存储引擎。
+
 MySQL 4 和 5 使用默认的 MyISAM 存储引擎安装每个表。从5.5开始，MySQL已将默认存储引擎从 MyISAM 更改为 InnoDB。MyISAM 没有提供事务支持，而 InnoDB 提供了事务支持。与 MyISAM 相比，InnoDB 提供了许多细微的性能改进，并且在处理潜在的数据丢失时提供了更高的可靠性和安全性。
+
 Percona Server由领先的MySQL咨询公司Percona发布。Percona Server是一款独立的数据库产品，其可以完全与MySQL兼容，可以在不更改代码的情况了下将存储引擎更换成XtraDB 。
 
 Percona XtraDB Cluster 完全兼容MySQL。
@@ -46,5 +49,5 @@ Percona XtraDB Cluster 完全兼容MySQL。
 2. 如果停掉某一节点 `docker stop pxc_node1` 再启动时 `docker start pxc_node1` 可能会发现连接不上了。这时候可以删除容器，重新运行，命令类似 `docker run -d -p 33010:3306 -e MYSQL_ROOT_PASSWORD=root -e CLUSTER_NAME=pxc_cluster -e CLUSTER_JOIN=pxc_node2 --name=pxc_node1 --net=pxc-network  --172.18.0.2 pxc`
 
 ### 参考
-https://www.percona.com/doc/percona-xtradb-cluster/LATEST/install/docker.html
-https://www.percona.com/doc/percona-xtradb-cluster/5.7/index.html
+* https://www.percona.com/doc/percona-xtradb-cluster/LATEST/install/docker.html
+* https://www.percona.com/doc/percona-xtradb-cluster/5.7/index.html
