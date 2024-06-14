@@ -52,7 +52,7 @@ export default defineConfig({
         items: [
           {text: 'Jenkins2系列', link: '/DevOps/Jenkins/Jenkins2-学习系列1----使用Docker方式安装最新版Jenkins'},
           {text: 'GithubActions系列', link: '/DevOps/GithubActions/入门'},
-          {text: 'Ansible2系列', link: '/DevOps/Ansible2/Ansible2--1-介绍与使用场景'},
+          {text: 'Ansible2系列', link: '/DevOps/Ansible2/1-介绍与使用场景'},
           {text: 'Terraform', link: '/DevOps/Terraform/tip'},
           {text: 'Gitlab系列', link: '/Gitlab/pipeline-技巧总结'},
         ]
@@ -531,13 +531,13 @@ export default defineConfig({
           text: "Ansible2 系列",
           collapsed: false,
           items: [
-            {link: '/Devops/Ansible2/1-介绍与使用场景', text: '1-介绍与使用场景'},
-            {link: '/Devops/Ansible2/2-安装与配置', text: '2-安装与配置'},
-            {link: '/Devops/Ansible2/3-配置文件', text: '3-配置文件'},
-            {link: '/Devops/Ansible2/4-常用模块及常用API', text: '4-常用模块及常用API'},
-            {link: '/Devops/Ansible2/5-playbook-语法', text: '5-playbook 语法'},
-            {link: '/Devops/Ansible2/6-playbook-管理', text: '6-playbook 管理'},
-            {link: '/Devops/Ansible2/运维自动化之Ansible', text: '总结-运维自动化之Ansible'},
+            {link: '/DevOps/Ansible2/1-介绍与使用场景', text: '1-介绍与使用场景'},
+            {link: '/DevOps/Ansible2/2-安装与配置', text: '2-安装与配置'},
+            {link: '/DevOps/Ansible2/3-配置文件', text: '3-配置文件'},
+            {link: '/DevOps/Ansible2/4-常用模块及常用API', text: '4-常用模块及常用API'},
+            {link: '/DevOps/Ansible2/5-playbook-语法', text: '5-playbook-语法'},
+            {link: '/DevOps/Ansible2/6-playbook-管理', text: '6-playbook-管理'},
+            {link: '/DevOps/Ansible2/总结-运维自动化之Ansible', text: '总结-运维自动化之Ansible'},
           ]
         }
       ],
