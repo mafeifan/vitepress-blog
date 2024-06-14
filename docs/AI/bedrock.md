@@ -2,7 +2,6 @@
 
 https://dev.amazoncloud.cn/experience/cloudlab?id=65fd7f888f852201f9704488
 
-
 Titan Text G1 - Express 就是垃圾，根本不能用
 
 ![](https://pek3b.qingstor.com/hexo-blog/202404221712781.png)
