@@ -7,13 +7,16 @@ hero:
   text: ""
   tagline: 我的编程技术博客
   actions:
-    - theme: brand
+    - theme: alt
       text: Jenkins2-学习系列
       link: /DevOps/Jenkins/Jenkins2-学习系列1----使用Docker方式安装最新版Jenkins
     - theme: alt
       text: Docker系列
       link: /DevOps/Docker/Docker-学习系列1--为什么要使用Docker
-
+    - theme: alt
+      text: Prometheus系列
+      link: /DevOps/Prometheus/1.产品介绍
+      
 features:
   - title: Home
     details: 技术改变世界
