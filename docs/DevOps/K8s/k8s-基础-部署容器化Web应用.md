@@ -43,11 +43,11 @@ GKE 是 Google Kubernetes Engine (GKE) 集群
 查看已创建的Pod
 `kubectl get pods`
 
-![image.png](![](https://pek3b.qingstor.com/hexo-blog/202406151010978.png))
+![](https://pek3b.qingstor.com/hexo-blog/202406151010978.png)
 
 程序跑起来了，google cloud 也可以看到
 
-![image.png](![](https://pek3b.qingstor.com/hexo-blog/202406151010130.png))
+![](https://pek3b.qingstor.com/hexo-blog/202406151010130.png)
 
 虽然 Pod 确实具有单独分配的 IP 地址，但这些 IP 地址只能从集群内部访问。此外，GKE Pod 设计是临时的，可根据扩缩需求启动或关闭。当 Pod 因错误而崩溃时，GKE 会自动重新部署该 Pod，并且每次都会为 Pod 分配新的 IP 地址。
 
@@ -63,7 +63,7 @@ GKE 是 Google Kubernetes Engine (GKE) 集群
 
 `kubectl get service` 或  `kubectl get svc`
 
-![image.png](![](https://pek3b.qingstor.com/hexo-blog/202406151011063.png))
+![](https://pek3b.qingstor.com/hexo-blog/202406151011063.png)
 
 至此部署完成
 
@@ -81,7 +81,7 @@ docker push finleyma/express:v2
 
 docker hub上可以看到我们新的tag名为v2的镜像
 
-![image.png](![](https://pek3b.qingstor.com/hexo-blog/202406151011296.png))
+![](https://pek3b.qingstor.com/hexo-blog/202406151011296.png)
 
 使用 kubectl set image 命令通过镜像更新将滚动更新应用于现有的名为 express-demo-deployment的Deployment
 
@@ -92,7 +92,7 @@ docker hub上可以看到我们新的tag名为v2的镜像
 监控 pods的运行状况, 旧的pod被依次删除，新的被依次创建了，因为连pod的名字都变了
 `kubectl get pods -w`
 
-![image.png](![](https://pek3b.qingstor.com/hexo-blog/202406151011629.png))
+![](https://pek3b.qingstor.com/hexo-blog/202406151011629.png)
 
 再次刷新页面，内容已经变了！滚动更新成功。
 

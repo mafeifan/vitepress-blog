@@ -1,10 +1,22 @@
 import {defineConfig} from 'vitepress'
+import { RSSOptions, RssPlugin } from 'vitepress-plugin-rss'
+
+const baseUrl = 'https://mafeifan.com'
+
+const RSS: RSSOptions = {
+  title: 'mafeifan 的编程技术分享',
+  baseUrl,
+  copyright: 'Copyright © 2020-present',
+}
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "mafeifan 的编程技术分享",
   description: "DevOps,K8s,云原生,Prometheus,Terraform,Laravel,Jenkins系列教程,Docker系列教程",
   lang: "zh-CN",
+  vite: {
+    plugins: [RssPlugin(RSS)]
+  },
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ["meta", {name: "apple-mobile-web-app-capable", content: "yes"}],
