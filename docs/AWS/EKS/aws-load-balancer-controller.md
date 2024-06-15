@@ -46,9 +46,9 @@ metadata:
     alb.ingress.kubernetes.io/success-codes: "200"
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/conditions.rule-header: >
-      [{"field":"http-header","httpHeaderConfig":{"httpHeaderName": "X-KONE-Header2", "values":["202405271135505"]}},{"field":"path-pattern","pathPatternConfig":{"values":["/*"]}}]
+      [{"field":"http-header","httpHeaderConfig":{"httpHeaderName": "X-Customer-Header2", "values":["202405271135505"]}},{"field":"path-pattern","pathPatternConfig":{"values":["/*"]}}]
     alb.ingress.kubernetes.io/conditions.default-header: >
-      {"type":"fixed-response","fixedResponseConfig":{"contentType":"text/plain","statusCode":"403","messageBody":"Access Deny, please contact to cndevops@kone.com"}}
+      {"type":"fixed-response","fixedResponseConfig":{"contentType":"text/plain","statusCode":"403","messageBody":"Access Deny, please contact to cndevops@x.com"}}
   name: alb-demo
   namespace: demo
 spec:

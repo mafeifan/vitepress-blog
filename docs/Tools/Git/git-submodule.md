@@ -1,6 +1,6 @@
 ## 添加 submodule
 ```bash
-git submodule add git@gitlab.prod.devops.dps.kone.cn:cndevops/ci/components.git
+git submodule add git@gitlab.com:cndevops/ci/components.git
 git add .
 git commit -m "init"
 git push --set-upstream origin feature-submodule
@@ -8,7 +8,7 @@ git push --set-upstream origin feature-submodule
 
 ## 使用submodule
 ```bash
-git clone git@gitlab.prod.devops.dps.kone.cn:cndevops/gitlab-pipeline-examples/demo-pipeline.git
+git clone git@gitlab.com:cndevops/gitlab-pipeline-examples/demo-pipeline.git
 cd demo-pipeline
 git checkout feature-submodule
 
