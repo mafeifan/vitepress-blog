@@ -14,10 +14,10 @@ K8s集群对外暴露服务的方式目前只有三种：Loadbalancer；NodePort
 * 比较流行的Ingress 控制器有[nginx-ingress-controller](https://kubernetes.github.io/ingress-nginx/ ) 和 [Traefik & Kubernetes](https://doc.traefik.io/traefik/providers/kubernetes-ingress/)
 * Traefik是用Go编写的边缘路由程序，自带UI界面，有反向代理，负载均衡，自动配置并SSL证书，最近很火，但是官方文档比较垃圾，配置很灵活，使用起来有些难度。
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/186c656921b44f53abdaac7cdb738109~tplv-k3u1fbpfcp-zoom-1.image)
+![](https://pek3b.qingstor.com/hexo-blog/202406151012232.png)
 
 
-![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1675957342cb432bba7ac57197bff22c~tplv-k3u1fbpfcp-watermark.image)
+![](https://pek3b.qingstor.com/hexo-blog/202406151012890.png)
 
 ### 平台
 * MacOS 11.2.3

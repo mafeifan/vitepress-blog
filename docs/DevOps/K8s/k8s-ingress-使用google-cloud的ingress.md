@@ -105,13 +105,11 @@ spec:
 
 选中刚创建的两个service
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2a2e733e3cb044f2927df92faef396eb~tplv-k3u1fbpfcp-watermark.image)
-
+![](https://pek3b.qingstor.com/hexo-blog/202406151016764.png)
 
 配置路径
 
-
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a3363e606ec742c0963a31f95eb4d0e2~tplv-k3u1fbpfcp-watermark.image)
+![](https://pek3b.qingstor.com/hexo-blog/202406151016723.png)
 
 最后我们可以预览yaml
 ```yaml
