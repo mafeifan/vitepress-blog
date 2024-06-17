@@ -16,6 +16,9 @@ hero:
     - theme: alt
       text: Prometheus系列
       link: /DevOps/Prometheus/1.产品介绍
+    - theme: alt
+      text: Ansible2系列
+      link: /DevOps/Ansible2/1-介绍与使用场景
       
 features:
   - title: Home
