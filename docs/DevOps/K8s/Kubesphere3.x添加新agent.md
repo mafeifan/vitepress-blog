@@ -9,7 +9,7 @@ kubesphere自带的本身提供了nodejs,maven,go,base等4种agent，[参见](ht
 ## 前置条件
 * kubesphere管理员
 * kubesphere开启Jenkins界面后台访问
-* 熟悉Jenkins的kubernates插件
+* 熟悉Jenkins的kubernetes插件
 
 ## 制作agent镜像
 

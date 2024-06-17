@@ -714,7 +714,7 @@ export default defineConfig({
           {link: '/DevOps/Docker/Docker-学习系列33-镜像制作最佳实践', text: '33-镜像制作最佳实践'},
           {link: '/DevOps/Docker/Docker-学习系列34-使用kaniko构建镜像', text: '34-使用kaniko构建镜像'},
           {link: '/DevOps/Docker/Docker-学习系列35-日志驱动及处理', text: '35-日志驱动及处理'},
-          {link: '/DevOps/Docker/Docker-学习系列36-编写高效的Dockerfile', text: '35-编写高效的Dockerfile'},
+          {link: '/DevOps/Docker/Docker-学习系列36-编写高效的Dockerfile', text: '36-编写高效的Dockerfile'},
           {link: '/DevOps/Docker/Docker-学习资源', text: 'Docker学习资源'},
           {link: '/DevOps/Docker/Docker-常见问题', text: 'Docker常见问题'}
         ]

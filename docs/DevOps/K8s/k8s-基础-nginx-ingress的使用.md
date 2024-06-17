@@ -23,7 +23,7 @@ K8s集群对外暴露服务的方式目前只有三种：Loadbalancer；NodePort
 * MacOS 11.2.3
 * Docker Desktop 3.3.3
 * Docker Engine: 20.10.6
-* Kubernates: v1.19.7
+* Kubernetes: v1.19.7
 
 ### 坑
 

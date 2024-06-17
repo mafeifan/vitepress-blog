@@ -10,6 +10,7 @@
 
 ## 关于本站
 
+* 2024.06.15 支持生成RSS
 * 2023.12.31 从vuepress转移到vitepress，更快的构建速度
 
 ![](https://pek3b.qingstor.com/hexo-blog/WechatIMG692.jpg#img-responsive)
