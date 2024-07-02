@@ -1,4 +1,4 @@
-## 教程
+## 手把手教程
 
 https://dev.amazoncloud.cn/experience/cloudlab?id=65fd7f888f852201f9704488
 
@@ -31,3 +31,11 @@ streamlit run bedrock/workshop/labs/streaming/streaming_app.py --server.port 808
 
 ## LangChain
 LangChain可以抽象出使用Boto3客户端的许多细节，尤其是当你想专注于文本输入和文本输出时。
+
+## Bedrock Access Gateway
+把 OpenAI API 的调用转发到 Amazon Bedrock，从而获得包括 Claude3 在内的多种 LLM 的优秀能力
+
+[参考](https://aws.amazon.com/cn/blogs/china/quickly-access-multiple-llms-with-the-bedrock-access-gateway-solution/)
+
+
+https://docs.dify.ai/v/zh-hans/getting-started/readme/model-providers
