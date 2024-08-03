@@ -1,207 +1,153 @@
-## 名词
+## 
 
-**蓝绿(blue/green)：**
+springboot 的配置文件是 application.yml
+里面会有连接数据库的配置信息，在仓库里明文显示是不行的
 
-一句话：新版本与旧版本一起存在，然后切换流量
-
-详细说明： 蓝绿发布，是在生产环境稳定集群之外，额外部署一个与稳定集群规模相同的新集群，并通过流量控制，逐步引入流量至新集群直至
-100%，原先稳定集群将与新集群同时保持在线一段时间，期间发生任何异常，可立刻将所有流量切回至原稳定集群，实现快速回滚。直到全部验证成功后，下线老的稳定集群，新集群成为新的稳定集群。
-
-蓝绿部署流程图
-
-![](https://pek3b.qingstor.com/hexo-blog/hexo-blog/20210819175818.png)
-
-蓝绿发布的流程，包括：蓝绿发布开始、蓝绿初始化、蓝绿验证、蓝绿取消或完成上线。
-
-#### K8S中如何实现蓝绿部署
-
-* 通过k8s service label标签来实现蓝绿发布
-* 通过Ingress 控制器来实现蓝绿发布
-* 通过Istio来实现蓝绿发布，或者像Istio类似的服务
+部署到k8s里要替换掉，url, username, password 等
 
 
-#### K8S中如何实现蓝绿部署
 
-service.yaml 文件
 
 ```yaml
+server:
+  port: 8040
+spring:
+  application:
+    name: demo
+  jackson:
+    default-property-inclusion: non_null
+    locale: zh
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:23306/demo?characterEncoding=UTF-8&serverTimezone=GMT%2B8&useSSL=false&allowMultiQueries=true
+      username: root
+      password: root
+
+```
+
+## 使用环境变量替换
+
+1. 首先创建secret，包含键值对，值会自动经过base64处理
+```
+kind: Secret
 apiVersion: v1
-kind: Service
 metadata:
-  name: demo
-  namespace: default
-  labels:
-    app: demo
-spec:
-  ports:
-    - port: 80
-      targetPort: http
-      protocol: TCP
-      name: http
-  # 注意这里我们匹配 app 和 version 标签，当要切换流量的时候，我们更新 version 标签的值，比如：v2
-  selector:
-    app: demo
-    version: v1
+  name: demo-secret
+  namespace: demo
+data:
+  rds_conn_str: >-
+    amRiYzpteXNFyYWN0ZXJFbmNvZGluZz1VVEYtOCZ1c2VTU0w9ZmFsc2UmdXNlSkRCQ0NvbXBsaWFudFRpbWV6b25lU2hpZnQ9dHJ1ZSZhbGxvd011bHRpUXVlcmllcz10cnVl
+  rds_password: aDg2YkNBOUZQOA==
+  rds_username: a2Zwcy1ydw==
+type: Opaque
 ```
 
-蓝 v1-deploy.yaml 文件
+2. 修改 deployment
 
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: demo1-deployment
-  namespace: default
-  labels:
-    app: demo
-    version: v1
-spec:
-  replicas: 1
-  revisionHistoryLimit: 3
-  ## 滚动发布策略
-  strategy:
-    rollingUpdate:
-      maxSurge: 30%
-      maxUnavailable: 30%
-  selector:
-    matchLabels:
-      app: demo
-      version: v1
-  template:
-    metadata:
-      labels:
-        app: demo
-        version: v1
+env 部分是从secret中读取键，对应的值存到环境变量中，这时候登录容器，就是可以查看到环境变量RDS_CONN_STR，RDS_USERNAME和RDS_PASSWORD
+
+然后在args中，使用$(RDS_CONN_STR)，$(RDS_USERNAME)，$(RDS_PASSWORD)覆盖掉application.yml中的值
+
+```
     spec:
       containers:
-        - name: demo1
-          image: mritd/demo
-          ## 存活探针
-          ## https://kubernetes.io/zh/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#configure-probes
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 80
-              scheme: HTTP
-            initialDelaySeconds: 30
-            timeoutSeconds: 5
-            periodSeconds: 30
-            successThreshold: 1
-            failureThreshold: 5
-          # 就绪探针
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 80
-              scheme: HTTP
-            initialDelaySeconds: 30
-            timeoutSeconds: 5
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 5
-          ports:
-            - name: http
-              containerPort: 80
-              protocol: TCP
+        - name: demo
+          image: >-
+            demo-image:latest
+          command:
+            - java
+            - '-jar'
+          args:
+            - '-Dfile.encoding=UTF-8'
+            - '-Dspring.profiles.active=pt'
+            - '-Dspring.datasource.url=$(RDS_CONN_STR)'
+            - '-Dspring.datasource.username=$(RDS_USERNAME)'
+            - '-Dspring.datasource.password=$(RDS_PASSWORD)'
+            - /opt/app/app.jar
+          env:
+            - name: RDS_CONN_STR
+              valueFrom:
+                secretKeyRef:
+                  name: demo-secret
+                  key: rds_conn_str
+            - name: RDS_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: demo-secret
+                  key: rds_username
+            - name: RDS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: demo-secret
+                  key: rds_password
 ```
 
-绿 v2-deploy.yaml
+更进一步
 
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: demo2-deployment
-  namespace: default
-  labels:
-    app: demo
-    version: v2
-spec:
-  replicas: 1
-  revisionHistoryLimit: 3
-  strategy:
-    rollingUpdate:
-      maxSurge: 30%
-      maxUnavailable: 30%
-  selector:
-    matchLabels:
-      app: demo
-      version: v2
-  template:
-    metadata:
-      labels:
-        app: demo
-        version: v2
+```
     spec:
       containers:
-        - name: demo2
-          image: mritd/demo
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 80
-              scheme: HTTP
-            initialDelaySeconds: 30
-            timeoutSeconds: 5
-            periodSeconds: 30
-            successThreshold: 1
-            failureThreshold: 5
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 80
-              scheme: HTTP
-            initialDelaySeconds: 30
-            timeoutSeconds: 5
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 5
-          ports:
-            - name: http
-              containerPort: 80
-              protocol: TCP
+        - name: demo
+          image: >-
+            demo-image:latest
+          command:
+            - java
+            - '-jar'
+          args:
+            - '-Dfile.encoding=UTF-8'
+            - '-Dspring.profiles.active=pt'
+            - /opt/app/app.jar
+          env:
+            - name: SPRING.DATASOURCE.URL
+              valueFrom:
+                secretKeyRef:
+                  name: demo-secret
+                  key: rds_conn_str
+            - name: SPRING.DATASOURCE.USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: demo-secret
+                  key: rds_username
+            - name: SPRING.DATASOURCE.PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: demo-secret
+                  key: rds_password
 ```
 
-上面定义的资源对象中，最重要的就是Service 中 label selector的定义：
+
+
+## 使用新的配置文件替换，配置文件存到secret中
+
+1. 把整个application.yml 存到secret中
+
+2. deployment 添加环境变量
 
 ```yaml
-selector:
-  app: demo
-  version: v1
+  spec:
+    containers:
+      - name: your-app
+        image: your-image:tag
+        command:
+          - java
+          - '-jar'
+        args:
+          - '-Dfile.encoding=UTF-8'
+          - '-Dspring.config_location=$(SPRING_CONFIG_LOCATION)'
+        ports:
+          - containerPort: 8080
+        env:
+          - name: SPRING_CONFIG_LOCATION
+            value: "file:/path/to/application.yaml"
+        volumeMounts:
+            - name: config-volume
+              mountPath: /path/to/application.yaml
+    volumes:
+      - name: config-volume
+        secret:
+          secretName: demo-secret
 ```
 
-#### 部署与测试
 
-部署v1 v2 deploy服务 和 service服务
-
-`$ kubectl  apply -f service.yaml -f v1-deploy.yaml -f v2-deploy.yaml`
-
-测试流量是否到v1版本
-
-```
-# 登陆任意一个pod，向 demo service 发起请求
-$ while sleep 0.3; do curl http://demo; done
-
-# 输出日志
-Host: demo1-deployment-b5bd596d8-dw27b, Version: v1
-Host: demo1-deployment-b5bd596d8-dw27b, Version: v1
-```
-
-切换入口流量从v1 到 v2
-
-`$ kubectl patch service demo -p '{"spec":{"selector":{"version":"v2"}}}'`
-
-测试流量是否到v2版本
-
-```
-# 登陆任意一个pod，向 demo service 发起请求
-$ while sleep 0.3; do curl http://demo; done
-
-# 输出日志
-Host: demo2-deployment-b5bd596d8-dw27b, Version: v2
-Host: demo2-deployment-b5bd596d8-dw27b, Version: v2
-```
-
-## 参考
-
-https://cloud.tencent.com/developer/article/1638413
