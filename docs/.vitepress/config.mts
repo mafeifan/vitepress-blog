@@ -38,8 +38,8 @@ export default defineConfig({
   ignoreDeadLinks: true,
   themeConfig: {
     footer: {
-      message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2020-present'
+      message: '<a href="https://beian.miit.gov.cn/">豫ICP备18017060号-1</a>',
+      copyright: 'Released under the MIT License. Copyright © 2020-present'
     },
     search: {
       provider: 'local'
