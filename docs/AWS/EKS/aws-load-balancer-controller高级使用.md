@@ -72,7 +72,10 @@ spec:
 
 ![](https://pek3b.qingstor.com/hexo-blog/202405271149140.png)
 
-## 修改默认rule
+### 修改默认rule
+default rule 总是一个返回固定响应404的text/plain
+
+下面这个例子
 * 添加一个 rule 并指定 target group
 * 修改默认 rule，404 转为 403，并自定义响应内容
 
@@ -117,7 +120,7 @@ spec:
 ```
 
 
-### 使用 ingressgroup 合并多个 ingress
+### 使用 ingressgroup 合并多个 ingress, 使用支持多种协议
 IngressGroup功能能够将多个Ingress资源分组在一起。
 
 controller将自动合并IngressGroup内所有Ingress的Ingress规则，并创建单个ALB。
@@ -130,7 +133,7 @@ controller将自动合并IngressGroup内所有Ingress的Ingress规则，并创�
 
 要建两个ingress，name不一样，但要有相同的annotation `alb.ingress.kubernetes.io/group.name`
 
-这个 ingress 支持 https
+第一个 ingress 支持 https
 ```yaml
 kind: Ingress
 apiVersion: networking.k8s.io/v1
@@ -164,13 +167,16 @@ spec:
                   number: 80
 ```
 
-这个ingress支持grpc
+第二个 ingress 支持 grpc, 最终只创建一个 ALB
+
+> 这种方法也适用于不同命名空间的ingress
+
 ```yaml
 kind: Ingress
 apiVersion: networking.k8s.io/v1
 metadata:
   name: grpcserver
-  namespace: mafei
+  namespace: demo
   labels:
     app: grpcserver
     environment: dev
@@ -200,7 +206,6 @@ spec:
                   number: 50051
 ```
 
-
 最终生成LB效果如下:
 
 ![](https://pek3b.qingstor.com/hexo-blog/202408152143721.png)
@@ -209,8 +214,57 @@ spec:
 
 ![](https://pek3b.qingstor.com/hexo-blog/202408152144717.png)
 
+
+### https协议不使用443端口
+
+上面的写法中，grpc 和 https 都占用了443端口，导致 https 不得不使用 `/hello` path 前缀，
+
+我们继续优化， 修改 nginx-http 让https走8001端口，grpcserver保持不变
+
+```yaml
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: nginx-http
+  namespace: demo
+  labels:
+    app: grpcserver
+    environment: dev
+  annotations:
+    alb.ingress.kubernetes.io/certificate-arn: >-
+      arn:aws-cn:acm:cn-north-1:xxxxxx:certificate/7010f433-9d60-xxxx-xxxx-ecbcd772e3ad
+    alb.ingress.kubernetes.io/group.name: demo-ingress-group
+    # 注意监听规则的优先级，值越高越靠前
+    alb.ingress.kubernetes.io/group.order: '10'
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":8001}]'
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+spec:
+  ingressClassName: alb
+  rules:
+    - host: grpcserver.dev.mafeifan.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: svc-nginx
+                port:
+                  number: 80
+```
+
+![](https://pek3b.qingstor.com/hexo-blog/202408160001252.png)
+
+
+
+
 ### 参考
+
+https://docs.amazonaws.cn/eks/latest/userguide/aws-load-balancer-controller.html
 
 https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.6/guide/ingress/annotations/#ingressgroup
 
 https://aws.amazon.com/cn/blogs/containers/patterns-for-targetgroupbinding-with-aws-load-balancer-controller/
+
+https://aws.amazon.com/cn/blogs/china/use-aws-load-balancer-controller-s-targetgroupbinding-function-to-realize-flexible-load-balancer-management/
