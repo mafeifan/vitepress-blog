@@ -96,6 +96,16 @@ export default defineConfig({
       // {text: 'Other', link: '/markdown-examples'},
     ],
     sidebar: {
+      '/AWS/': [
+        {
+          text: 'AWS云系列',
+          collapsed: false,
+          items: [
+            {link: '/AWS/AWS--EC2-userdata', text: 'AWS--EC2-userdata'},
+            {link: '/AWS/EKS/aws-load-balancer-controller高级使用', text: 'aws-load-balancer-controller高级使用'},
+          ]
+        }
+      ],
       '/Frontend/Angular/': [
         {
           text: 'Angular',

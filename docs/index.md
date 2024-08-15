@@ -8,6 +8,9 @@ hero:
   tagline: 我的编程技术博客
   actions:
     - theme: alt
+      text: AWS-学习系列
+      link: /AWS/AWS--EC2-userdata
+    - theme: alt
       text: Jenkins2-学习系列
       link: /DevOps/Jenkins/Jenkins2-学习系列1----使用Docker方式安装最新版Jenkins
     - theme: alt
