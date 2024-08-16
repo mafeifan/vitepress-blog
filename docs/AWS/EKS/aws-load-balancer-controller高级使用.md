@@ -257,7 +257,43 @@ spec:
 ![](https://pek3b.qingstor.com/hexo-blog/202408160001252.png)
 
 
+### EKS外的ALB目标指向EKS集群内service对应的IP或Instance
 
+流程：
+
+* 不通过ingress方式创建ALB，绑定安全组 `sg-08d041a8f0b0`
+* 创建ALB的监听，比如80
+* 创建一个目标组,IP类型并绑定到这个ALB，拿到ARN: `arn:aws-cn:elasticloadbalancing:cn-north-1:xxxxx:targetgroup/mafei-demo/dec5f112d848f90c`
+  * 此时目标组的目标为空
+* EKS 已存在service, svc-nginx  
+
+创建一个TargetGroupBinding，这样目标组的目标IP就是EKS中对应Pod的IP，如果扩缩Pod，目标组的IP会相应的发生变化
+
+```yaml
+apiVersion: elbv2.k8s.aws/v1beta1
+kind: TargetGroupBinding
+metadata:
+  namespace: mafei
+  name: mafei-demo-tgb
+spec:
+  serviceRef:
+    # route traffic to the k8s service
+    name: svc-nginx  
+    # the port of service
+    port: 80    
+  targetGroupARN: arn:aws-cn:elasticloadbalancing:cn-north-1:xxxxx:targetgroup/mafei-demo/dec5f112d848f90c
+  networking:
+    ingress:
+      - from:
+          - securityGroup:
+              # 一般写为ALB的SG
+              # EKS所在的安全组会添加一条规则，允许来自这个 ALB SG 的流量
+              groupID: sg-08d041a8f0b0
+        ports:
+          - port: 80
+            # Allow all TCP traffic from ALB SG
+            protocol: TCP
+```
 
 ### 参考
 
