@@ -476,6 +476,10 @@ export default defineConfig({
             "link": "/DevOps/K8s/k8s-发布-滚动发布"
           },
           {
+            "text": "Kubesphere切换为国内镜像源",
+            "link": "/DevOps/K8s/Kubesphere切换为国内镜像源"
+          },
+          {
             "text": "Kubesphere3.x添加新agent",
             "link": "/DevOps/K8s/Kubesphere3.x添加新agent"
           },
