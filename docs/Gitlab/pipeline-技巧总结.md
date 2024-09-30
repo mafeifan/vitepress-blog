@@ -1,3 +1,23 @@
+## artifacts
+动态名称
+
+```yaml
+script:
+    # 动态生成时间戳
+    - export TIMESTAMP=$(date +'%Y%m%d%H%M%S')
+    # 动态生成文件名
+    - export ARTIFACT_NAME="${CI_JOB_NAME}-${TIMESTAMP}"
+artifacts:
+    # 使用动态生成的制品名称
+    # 不生效，实际是 default.zip
+    name: $ARTIFACT_NAME
+    paths:
+      - "/target"
+```
+
+
+参考：https://gitlab.com/gitlab-org/gitlab-runner/-/issues/1664
+
 ## cache
 
 ### Use separate caches for protected branches
@@ -47,3 +67,10 @@ creating environment
 echo running my own command
 deleting environment
 ```
+
+## 限制分支创建
+
+![](https://pek3b.qingstor.com/hexo-blog/202409251721118.png)
+
+* 只有 maintainers 才能合并代码到 develop 分支
+* 只有 开发者才能合并代码到 feature 开头的分支
