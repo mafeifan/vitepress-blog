@@ -393,6 +393,10 @@ export default defineConfig({
           collapsed: false,
           items: [
             // {text: 'docker方式安装gitlab', link: '/Gitlab/mgt/install-docker方式安装gitlab'},
+            {text: '安装-1-首次启动Gitlab', link: '/Gitlab/安装-1-首次启动Gitlab'},
+            {text: '安装-2-结合nginx配置https证书', link: '/Gitlab/安装-2-结合nginx配置https证书'},
+            {text: '安装-3-配置邮件发送', link: '/Gitlab/安装-3-配置邮件发送'},
+            {text: '规范-GitLab工作流快速入门', link: '/Gitlab/规范-GitLab工作流快速入门'},
             {text: 'pipeline-技巧总结', link: '/Gitlab/pipeline-技巧总结'},
             {text: 'runner的executor该如何选择', link: '/Gitlab/runner-runner的executor该如何选择'},
             {text: 'pipeline-自己执行git-commit', link: '/Gitlab/pipeline-自己执行git-commit'},
