@@ -4,7 +4,7 @@
 
 目前在某传统行业外企担任 DevOps Specialist，10余年开发+运维经验
 
-<!-- 工作中用到的技术 AWS, k8s, gitlab pipeline, terraform -->
+<!-- 工作中用到的技术 AWS, K8s, Gitlab Pipeline, Terraform -->
 
 对文章有疑问的，欢迎加v讨论问题，也欢迎提issue
 

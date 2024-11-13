@@ -62,11 +62,11 @@ export default defineConfig({
       {
         text: 'DevOps',
         items: [
+          {text: 'Gitlab系列', link: '/Gitlab/pipeline-技巧总结'},
           {text: 'Jenkins2系列', link: '/DevOps/Jenkins/Jenkins2-学习系列1----使用Docker方式安装最新版Jenkins'},
           {text: 'GithubActions系列', link: '/DevOps/GithubActions/入门'},
           {text: 'Ansible2系列', link: '/DevOps/Ansible2/1-介绍与使用场景'},
           {text: 'Terraform', link: '/DevOps/Terraform/tip'},
-          {text: 'Gitlab系列', link: '/Gitlab/pipeline-技巧总结'},
         ]
       },
       {
