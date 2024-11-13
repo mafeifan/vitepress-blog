@@ -1,6 +1,3 @@
-登录个人服务器，提示我磁盘已经占用70%多了，
-我想有必要分析下哪些文件占用比较多，没用的要清理掉
-
 ### 几个有用的文件大小查看命令
 
 ```bash
@@ -14,11 +11,10 @@ alias duf="du -sh"
 cd /
 du -sh * 
 
-31G  	var
+31G   var
 14G   opt
 
 # 有时候 ISPconfig 开启自动备份，会导致磁盘空间占用过大，请登录 IPSconfig 后台检查
-
 root@jira:/var/backup# du -sh *
 1.7G	web10
 5.4G	web3
@@ -26,44 +22,14 @@ root@jira:/var/backup# du -sh *
 784M	web7
 
 ```
-首先来到 Jenkins 目录，发现占用最多的是 workspace 目录，达到了6.9G
-
-cd /var/lib/jenkins
-
-![](http://pek3b.qingstor.com/hexo-blog/20211015214206.png)
-
-workspace 是 Jenkins 的工作目录，当流水线执行 git pull，项目源码就存放在里面，流水线执行完成后没有及时清理
-
-### 清理Jenkins的workspace
-
-流水线添加清理工作区步骤
-```
-stage('清理工作目录') {
-  steps {
-    cleanWs()
-  }
-}
-```
-或者添加流水线完成钩子
-
-```
-stages {
-  // ...
-}
-post {
-    always {
-      cleanWs()  
-    }
-}
-```
 
 ### 清理Docker镜像及日志
 
-默认情况下,docker的日志是在`/var/lib/docker/containers/<container_id>/<container_id>-json.log中。`
+默认情况下，docker的日志是在`/var/lib/docker/containers/<container_id>/<container_id>-json.log中`
 
-使用 `sudo docker info` 发现日志驱动是`Logging Driver: json-file`,也应证了此点。
+使用`sudo docker info` 发现日志驱动是`Logging Driver: json-file`,也应证了此点
 
-有些json.log文件很大，记得清除掉。
+有些`json.log`文件很大，记得清除掉
 
 执行`docker images`列出本机存在的镜像，最后一列SIZE是镜像大小
 
@@ -76,7 +42,7 @@ post {
 删除 24 小时前下载的镜像
 `docker image prune -a --filter "until=24h"`
 
-安全起见，这个命令默认不会删除那些未被任何容器引用的数据卷，如果需要同时删除这些数据卷，你需要显式的指定 --volumns 参数。比如你可能想要执行下面的命令：
+安全起见，这个命令默认不会删除那些未被任何容器引用的数据卷，如果需要同时删除这些数据卷，你需要显式的指定 `--volumns` 参数。比如你可能想要执行下面的命令：
 `docker system prune --all --force --volumns`
 
 ###  清理 Containerd 镜像
@@ -119,5 +85,3 @@ rm -rf /var/log/*.gz
 # 删除 /var/log 轮转日志
 rm -rf /var/log/*.1
 ```
-
-最后差不多清理大概10G文件
