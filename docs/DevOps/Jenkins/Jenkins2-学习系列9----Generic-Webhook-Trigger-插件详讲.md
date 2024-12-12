@@ -1,5 +1,5 @@
 **Generic Webhook Trigger** 是一款Jenkins插件，下文简称GWT，安装后会暴露出来一个公共API，
-GWT插件接收到 JSON 或 XML 的 HTTP POST 请求后，根据我们配置的规则决定触发哪个Jenkins项目。
+GWT插件接收到 JSON 或 XML 的 HTTP 请求后，根据我们配置的规则决定触发哪个Jenkins项目。
 
 插件安装后在Job配置页面会多出一个"Generic WebHook Trigger"选项
 勾选后有很多参数配置，详细介绍GWT各参数的含义我们下面会讲到
@@ -21,7 +21,7 @@ pipeline {
     triggers {
         GenericTrigger(
             genericVariables: [
-              [key: 'ref', value: '$. ref']
+              [key: 'ref', value: '$.ref']
             ],
             token: 'secret' ,
             causeString: ' Triggered on $ref' ,

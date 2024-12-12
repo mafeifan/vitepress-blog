@@ -13,7 +13,7 @@
 
 可能会发现有两个E-mail Notification，一个是`Extended E-mail Notification`另一个是`E-mail Notification`。前者是安装Jenkins时顺便安装的插件，后者是自带的。
 
-自带的E-mail Notification功能较弱，我们配置 Extended E-mail Notification，配置项比较多，不同的点问号图标。
+自带的E-mail Notification功能较弱，我们配置 Extended E-mail Notification，配置项比较多，不懂的点问号图标。
 
 > ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-15374369d68c3237.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 

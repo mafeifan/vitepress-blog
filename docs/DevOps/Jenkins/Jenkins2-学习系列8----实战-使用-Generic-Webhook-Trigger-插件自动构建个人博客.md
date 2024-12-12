@@ -7,7 +7,7 @@
 
 **更新 2019-07-14**
 
-关于webhook触发job，其实有更简单的办法，在job的配置页面
+关于 webhook 触发job，其实有更简单的办法，在job的配置页面
 勾选`Build Triggers`选项卡的`Trigger builds remotely (e.g., from scripts)`，填入一个token，但是有时候会报
 "Error 403 No valid crumb was included in the request"个人觉得还是Generic Webhook Trigger插件好用
 
@@ -18,23 +18,47 @@
 
 如果返回'Authentication required'请检查地址中的token是否正确，还需要保证在Jenkins的'Configure Global Security'配置页面勾选了'Allow anonymous read access'。
 
-需求：我的博客是用hexo搭建的，每次提交完代码都需要在托管的服务器上执行手动发布命令
+## 使用参数化构建完成流水线动态传参
+
+1. `Generic Webhook Trigger`中定义一个Request parameters，name 填 env_name
+env_name 是参数，值可以是qa或dev
+
+2. 开启参数化流水线，为了接收参数，作为流水线变量
+![image.png](https://hexo-blog.pek3b.qingstor.com/WechatIMG63.jpg)
+
+
+3. 流水线脚本中要接收这个参数
+
+以 powershell 为例，当然也可以是 shell
+```powershell
+cd C:\JenkinsWorkSpace\CKFM\Framework
+C:\Users\k64145621\AppData\Local\anaconda3\envs\pyAppium312\python.exe run.py %ENV_NAME%
+```
+
+4. 最终效果
+* 当触发地址 `http://JENKINS_URL/generic-webhook-trigger/invoke?token=Mobile_UI_GITLAB-20240927&env_name=qa`  运行 python run.py qa
+* 当触发地址 `http://JENKINS_URL/generic-webhook-trigger/invoke?token=Mobile_UI_GITLAB-20240927&env_name=dev` 运行 python run.py dev
+
+
+## 使用`Generic Webhook Trigger`完成提交代码自动触发流水线
+
+需求：我的博客是用 hexo 搭建的，每次提交完代码都需要在托管的服务器上执行手动发布命令
 `deploy.sh`
 ```bash
 git pull
 npm install
 hexo g # 生成静态文件
 ```
-现在我需要Jenkins的Generic Webhook Trigger插件来帮我自动完成这些工作。
+现在我需要Jenkins的`Generic Webhook Trigger`插件来帮我自动完成这些工作。
 
-Generic Webhook Trigger 是 Jenkins 提供的一款插件，装好这个插件后会暴露出一个URL地址，格式如 `JENKINS_URL/generic-webhook-trigger/invoke`。
+`Generic Webhook Trigger`是 Jenkins 提供的一款插件，装好这个插件后会暴露出一个URL地址，格式如 `JENKINS_URL/generic-webhook-trigger/invoke`。
 
 我们往这个地址发请求，请求体或请求头带上要构建的job名称，分支名称等信息，这个插件可以正则提取出这些信息，当作变量进而触发构建。
 
 大致流程如下图：
 ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-f018c0080855947f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-1. 在Jenkins插件管理页面搜索该插件
+1. 在 Jenkins 插件管理页面搜索该插件
 ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-d77b6049e189a7dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 2. 安装之后新建一个item，类型选freestyle，pipeline都行，在 Build Trigger 选项卡中会看到多出了一项 "Generic Webhook Trigger"，勾选之后多出了很多信息。这里只填写Token
@@ -63,8 +87,8 @@ pipeline {
     }
 }
 ```
-4. 来到Gitee/Github，添加一个webhook地址，如果你的Jenkins地址是http://110.110.110.110:8080，job名称为gitee-hexo-blog-pipeline，
-那么根据规则，Generic Webhook Trigger的地址是` http://110.110.110.110:8080/generic-webhook-trigger/invoke?token=gitee-hexo-blog-pipeline`
+4. 来到Gitee/Github，添加一个webhook地址，如果你的Jenkins地址是`http://110.110.110.110:8080`，job名称为gitee-hexo-blog-pipeline，
+那么根据规则，Generic Webhook Trigger的地址是`http://110.110.110.110:8080/generic-webhook-trigger/invoke?token=gitee-hexo-blog-pipeline`
 配置完成，点测试，看返回内容是否是成功的。
 ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-7621263f95c91bad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
