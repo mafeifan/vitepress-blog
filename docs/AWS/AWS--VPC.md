@@ -48,7 +48,8 @@ VPC（Amazon Virtual Private Cloud）是用户在 Region 中自定义的虚拟�
 
 #### 多地域部署系统
 
-VPC是地域级别的资源，不支持跨地域部署。当有多地域部署系统的需求时，必须使用多个VPC。可以通过使用高速通道、VPN网关、云企业网等产品实现跨地域VPC间互通。
+VPC是地域级别的资源，不支持跨地域部署。当有多地域部署系统的需求时，必须使用多个VPC。
+可以通过使用高速通道、VPN网关、云企业网等产品实现跨地域VPC间互通。
 
 ![](http://pek3b.qingstor.com/hexo-blog/20220126134054.png)
 
@@ -57,7 +58,7 @@ VPC是地域级别的资源，不支持跨地域部署。当有多地域部署�
 
 当 VPC 创建完成后主路由表 和 Main network ACL 会自动创建。
 
-用户可以在公有云上创建一个或者多个VPC，每个部门一个VPC。对于需要连通的部门创建VPC连接。
+用户可以在公有云上创建一个或者多个VPC，比如，一个大公司里每个部门分配一个VPC。对于需要连通的部门创建VPC连接。
 
 IP段用CIDR表示
 
@@ -82,14 +83,11 @@ IP段用CIDR表示
 
 我们一般创建两种子网 Private Subnet 和 Public Subnet。
 
-简单来说，不能直接访问 internet 的 Subnet 就是 Private Subnet，能直接访问 internet 的就是 Public Subnet。
+简单来说，不能直接访问 internet 互联网的 Subnet 就是 Private Subnet，能直接访问 internet 的就是 Public Subnet。
 
 当然 Private Subnet 也可以通过 NAT 的方式访问 internet
 
 当我们在一个 VPC 中创建 Subnet 时需要给 Subnet 选择一个 AZ（Availability Zone），一个 Subnet 只能选择建在一个 AZ 中。
-
-
-
 
 ![](http://pek3b.qingstor.com/hexo-blog/20220124180035.png)
 
@@ -99,8 +97,8 @@ IP段用CIDR表示
 
 实现图上的功能，创建两个子网
 
-一个是 Public Subnet，可以访问因特网，另一个是 Private Subnet
-一个是 Private Subnet，不能访问因特网
+* 一个是 Public Subnet，可以访问因特网，另一个是 Private Subnet
+* 一个是 Private Subnet，不能访问因特网
 
 ### 创建VPC
 
@@ -170,7 +168,7 @@ VPC选择finley-vpc
 
 ![](http://pek3b.qingstor.com/hexo-blog/20220124213225.png)
 
-申请弹性IP，得到公网IP：52.197.152.165并关联给finley-public-ec2
+申请弹性IP，得到公网IP：52.197.152.165 并关联给 finley-public-ec2
 
 | 实例名 | 公有 IPv4 地址 | 私有 IPv4 地址
 | :-----| :---- | :---- | 
@@ -227,9 +225,11 @@ NAT 网关是一种网络地址转换 (NAT) 服务。可以使用 NAT 网关，�
 
 路由器将互联网流量从私有子网中的实例发送到 NAT 网关。NAT 网关通过使用自身的弹性 IP 地址作为源 IP 地址，将流量发送到互联网网关。
 
-### 创建NAT网关
+### 创建 NAT网关
 
 NAT网关要创建在公有子网当中， 选择一个公有子网，创建成功后等待状态变为可用
+
+参考：[计算机网络](https://weread.qq.com/web/reader/af532c005a007caf51371b1kf4b32ef025ef4b9ec30acd6)
 
 ![](http://pek3b.qingstor.com/hexo-blog/20220709070009.png)
 

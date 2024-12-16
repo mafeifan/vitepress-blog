@@ -101,6 +101,7 @@ export default defineConfig({
           text: 'AWS云系列',
           collapsed: false,
           items: [
+            {link: '/AWS/AWS--VPC', text: 'AWS--VPC'},
             {link: '/AWS/AWS--EC2-userdata', text: 'AWS--EC2-userdata'},
             {link: '/AWS/EKS/aws-load-balancer-controller高级使用', text: 'aws-load-balancer-controller高级使用'},
           ]
