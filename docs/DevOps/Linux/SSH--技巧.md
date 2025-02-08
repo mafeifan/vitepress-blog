@@ -217,7 +217,7 @@ autossh和ssh功能差不多, 但是多一个自动断线重连功能, 因此搭
 
 使用命令和ssh类似:
 
-```
+```bash
 $ sudo apt install autossh
 $ autossh -M 7788 -NfR 1234:127.0.0.1:22 root@ip_B
 ```
