@@ -133,7 +133,7 @@ docker -H tcp://remote:2375 ps
 
 ### docker:dind 
 * docker:dind 是基于 docker:cli, 包含了 docker:cli 的所有功能,并在此基础上增加了运行 Docker daemon 所需的额外组件
-* 额外组件有 git, iptables(IPv4 防火墙), ip6tables(IPv6 防火墙), openssl(SSL 支持), xz, zfs, pigz, e2fsprogs 等文件系统
+* 额外组件有 git, iptables(IPv4 防火墙), ip6tables(IPv6 防火墙), openssl(SSL 支持), xz, zfs, pigz, e2fsprogs 等文件系统工具
 * 额外组件还有 dockerd (Docker daemon), containerd, ctr, runc 这些容器运行时工具
 * 暴露端口 EXPOSE 2375 2376  # Docker daemon API 端口
 * 特有的存储卷, VOLUME /var/lib/docker  # Docker 持久化存储
