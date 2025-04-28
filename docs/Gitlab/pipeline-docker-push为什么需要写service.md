@@ -40,6 +40,7 @@ Docker 采用典型的 C/S（客户端/服务器）架构
 
 ### 组件说明
 
+
 #### 客户端 (Client)
 
 * Docker CLI (docker 命令)
@@ -48,7 +49,7 @@ Docker 采用典型的 C/S（客户端/服务器）架构
 * 其他第三方工具
 * 服务器 (Server)
 
-#### Docker daemon (dockerd)
+#### 服务端 Docker daemon (dockerd)
 * 容器运行时 (containerd)
 * 存储驱动
 * 网络驱动
@@ -113,25 +114,25 @@ docker ps
 docker -H tcp://remote:2375 ps
 ```
 
-## 进一步深
+## 进一步
 
-### 了解镜像 docker 和 docker:dind 的具体区别
+### 深入了解镜像 docker 和 docker:dind 的具体区别
 
 打开 `https://hub.docker.com/_/docker` 仔细阅读
 
-发现docker镜像 `docker:28`, `docker:dind`, `docker:28-dind` 是等价的
+发现 docker镜像 `docker:28`, `docker:dind`, `docker:28-dind` 是等价的
 
-而 `docker:cli`, `docker:28-cli` 也是等价的
+而 `docker:cli`, `docker:28-cli` 也是等价的，只不过 tag 不一样
 
-进一步查看他们的Dockerfile: [docker:dind](https://github.com/docker-library/docker/blob/master/28/dind/Dockerfile) 和 [docker:cli](https://github.com/docker-library/docker/blob/master/28/cli/Dockerfile)
+进一步查看他们的 Dockerfile: [docker:dind](https://github.com/docker-library/docker/blob/master/28/dind/Dockerfile) 和 [docker:cli](https://github.com/docker-library/docker/blob/master/28/cli/Dockerfile)
 直接扔给 Gemini 帮忙分析对比，对于 Docker28 版本的 Dockerfile 得出以下结论：
 
 ### docker:cli
 * docker:cli 是基于 alpine:3.21
-* docker:cli 安装的有 docker 命令行工具, buildx插件，docker-compose插件
+* docker:cli 安装的有 docker 命令行工具, buildx插件,docker-compose插件
 
 ### docker:dind 
-* docker:dind 是基于 docker:cli, 包含了 docker:cli 的所有功能，并在此基础上增加了运行 Docker daemon 所需的额外组件。
+* docker:dind 是基于 docker:cli, 包含了 docker:cli 的所有功能,并在此基础上增加了运行 Docker daemon 所需的额外组件
 * 额外组件有 git, iptables(IPv4 防火墙), ip6tables(IPv6 防火墙), openssl(SSL 支持), xz, zfs, pigz, e2fsprogs 等文件系统
 * 额外组件还有 dockerd (Docker daemon), containerd, ctr, runc 这些容器运行时工具
 * 暴露端口 EXPOSE 2375 2376  # Docker daemon API 端口
@@ -155,3 +156,9 @@ docker -H tcp://remote:2375 ps
 * docker:dind:
   * 需要暴露 Docker daemon 端口
   * 需要配置网络隔离
+
+## 参考
+
+https://docs.gitlab.com/ci/services/
+
+https://docs.docker.com/reference/cli/dockerd/
