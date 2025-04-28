@@ -374,8 +374,14 @@ export default defineConfig({
           text: 'Git学习系列',
           collapsed: false,
           items: [
-            {link: '/Tools/Git/Git-和-GitHub：从入门到实践1-Git-和-GitHub-基础简介', text: 'Git-和-GitHub-基础简介'},
-            {link: '/Tools/Git/Git-和-GitHub：从入门到实践2-Git-和-GitHub-基础配置', text: 'Git-和-GitHub-基础配置'},
+            {
+              link: '/Tools/Git/Git-和-GitHub：从入门到实践1-Git-和-GitHub-基础简介',
+              text: 'Git-和-GitHub-基础简介'
+            },
+            {
+              link: '/Tools/Git/Git-和-GitHub：从入门到实践2-Git-和-GitHub-基础配置',
+              text: 'Git-和-GitHub-基础配置'
+            },
             {
               link: '/Tools/Git/Git-和-GitHub：从入门到实践3-Git-分支简介、Git-和-GitHub-日常操作',
               text: 'Git-分支简介、Git-和-GitHub-日常操作'
@@ -384,7 +390,10 @@ export default defineConfig({
               link: '/Tools/Git/Git-和-GitHub：从入门到实践4-Git 进阶-比较、回滚、撤销、分支合并和冲突解决',
               text: 'Git 进阶：比较、回滚、撤销、分支合并和冲突解决'
             },
-            {link: '/Tools/Git/Git-和-GitHub：从入门到实践5-分支策略管理', text: 'Git 进阶：分支策略管理'},
+            {
+              link: '/Tools/Git/Git-和-GitHub：从入门到实践5-分支策略管理',
+              text: 'Git 进阶：分支策略管理'
+            },
           ]
         }
       ],
@@ -394,13 +403,34 @@ export default defineConfig({
           collapsed: false,
           items: [
             // {text: 'docker方式安装gitlab', link: '/Gitlab/mgt/install-docker方式安装gitlab'},
-            {text: '安装-1-首次启动Gitlab', link: '/Gitlab/安装-1-首次启动Gitlab'},
-            {text: '安装-2-结合nginx配置https证书', link: '/Gitlab/安装-2-结合nginx配置https证书'},
-            {text: '安装-3-配置邮件发送', link: '/Gitlab/安装-3-配置邮件发送'},
-            {text: '规范-GitLab工作流快速入门', link: '/Gitlab/规范-GitLab工作流快速入门'},
-            {text: 'pipeline-技巧总结', link: '/Gitlab/pipeline-技巧总结'},
-            {text: 'runner的executor该如何选择', link: '/Gitlab/runner-runner的executor该如何选择'},
-            {text: 'pipeline-自己执行git-commit', link: '/Gitlab/pipeline-自己执行git-commit'},
+            {
+              text: '安装--1-首次启动Gitlab',
+              link: '/Gitlab/安装-1-首次启动Gitlab'
+            },
+            {
+              text: '安装--2-结合nginx配置https证书',
+              link: '/Gitlab/安装-2-结合nginx配置https证书'},
+            {
+              text: '安装--3-配置邮件发送',
+              link: '/Gitlab/安装-3-配置邮件发送'},
+            {
+              text: '规范--GitLab工作流快速入门',
+              link: '/Gitlab/规范-GitLab工作流快速入门'},
+            {
+              text: 'pipeline--技巧总结',
+              link: '/Gitlab/pipeline-技巧总结'},
+            {
+              text: 'pipeline--自己执行git-commit',
+              link: '/Gitlab/pipeline-自己执行git-commit'
+            },
+            {
+              text: 'pipeline--docker-push为什么需要写service',
+              link: '/Gitlab/pipeline-docker-push为什么需要写service'
+            },
+            {
+              text: 'runner--executor该如何选择',
+              link: '/Gitlab/runner-runner的executor该如何选择'
+            }
           ]
         }
       ],
