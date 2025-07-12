@@ -70,3 +70,15 @@ git config --global core.excludesfile ~/.gitignore
 使用`git config --list`查看当前git的配置信息,注意配置文件可能存在多处
 
 使用`git config --list --show-origin`显示文件出处
+
+#### 快速重写 git history
+
+有时候 git commit 会不一致，公司邮箱和个人邮箱容器混用,最简单方法是使用 git-filter-repo
+
+```bash
+pip3 install git-filter-repo --break-system-packages
+git filter-repo --force --email-callback  'return b"mafeifan@qq.com"'
+git filter-repo --force --name-callback  'return b"mafeifan"'
+```
+
+[详见](https://www.git-tower.com/learn/git/faq/git-filter-repo)

@@ -394,6 +394,14 @@ export default defineConfig({
               link: '/Tools/Git/Git-和-GitHub：从入门到实践5-分支策略管理',
               text: 'Git 进阶：分支策略管理'
             },
+            {
+              link: '/Tools/Git/Git-常用操作及技巧总结',
+              text: 'Git-常用操作及技巧总结'
+            },
+            {
+              link: '/Tools/Git/搭建Git服务器并感受hook使用',
+              text: '搭建Git服务器并感受hook使用'
+            },
           ]
         }
       ],
