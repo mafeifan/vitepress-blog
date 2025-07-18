@@ -1,5 +1,6 @@
 ### pipeline支持的指令
-显然，基本结构满足不了现实多变的需求。所以，Jenkins pipeline通过各种指令(directive) 来丰富自己。指令可以被理解为对Jenkins pipeline基本结构的补充。
+
+基本结构满足不了现实多变的需求。所以，Jenkins pipeline通过各种指令(directive) 来丰富自己。指令可以被理解为对Jenkins pipeline基本结构的补充。
 
 Jenkins pipeline支持的指令有:
 
