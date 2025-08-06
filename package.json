@@ -12,5 +12,8 @@
   },
   "dependencies": {
     "vitepress-plugin-rss": "^0.2.6"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
