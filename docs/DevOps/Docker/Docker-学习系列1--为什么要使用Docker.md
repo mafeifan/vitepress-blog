@@ -36,7 +36,7 @@ docker run 后面可以带很多参数,[见官网](https://docs.docker.com/engin
 
 5. 打开浏览器输入 `localhost:8088` 正常的话项目已经成功跑起来了
 6. 切换PHP版本，在容器内的终端内输入 `phpenv命令` 列出当前可选择的PHP版本
-```shell
+```bash
 # phpenv versions
   5.3
   5.3.29
@@ -48,7 +48,7 @@ docker run 后面可以带很多参数,[见官网](https://docs.docker.com/engin
 * 5.6.3 (set by /opt/phpenv/version)
 ```
 执行 phpenv global 5.4
-```shell
+```bash
 # phpenv global 5.4
 # php -v
 PHP 5.4.35 (cli) (built: Dec 14 2014 00:35:12)
@@ -58,7 +58,7 @@ Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies
     with Xdebug v2.2.6, Copyright (c) 2002-2014, by Derick Rethans
 ```
 启动 nginx
-```shell
+```bash
 # webserver start
 Starting PHP-FPM (PHP version 5.3) server.
 Starting Nginx server.

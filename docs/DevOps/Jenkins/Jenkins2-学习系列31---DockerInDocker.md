@@ -4,7 +4,7 @@
 
 解决方案：把宿主机的docker和docker.sock映射到运行Jenkins的容器内，通过挂载卷的方式把/usr/bin/docker,/var/run/docker.sock挂载出来。
 修改Dockerfile或者docker-compose文件
-```shell script
+```bash
 volumes:
  - /var/run/docker.sock:/var/run/docker.sock
  - /usr/bin/docker:/usr/bin/docker

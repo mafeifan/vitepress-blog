@@ -7,7 +7,7 @@
 使用起来比较简单，以v7版本为例
 
 1. 运行下面的命令
-```shell script
+```bash
 composer require spatie/laravel-medialibrary
 
 php artisan vendor:publish --provider="Spatie\MediaLibrary\MediaLibraryServiceProvider" --tag="migrations"

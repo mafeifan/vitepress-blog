@@ -34,13 +34,13 @@ certbot 提供了一个 hook，可以编写一个 Shell 脚本，让脚本调用
 --manual-auth-hook：在执行命令的时候调用一个 hook 文件
 
 ### 安装生成工具
-```shell script
+```bash
 sudo apt update
 sudo apt-get install letsencrypt
 ```
 
 ### 生成证书文件
-```shell script
+```bash
 sudo certbot --server https://acme-v02.api.letsencrypt.org/directory -d *.example.com --manual --preferred-challenges dns-01 certonly --agree-tos --manual-public-ip-logging-ok
 ```
 

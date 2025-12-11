@@ -354,25 +354,25 @@ foreach($article->tags as $tag)
 
 laravel创建模型的命令大家都很熟悉：
 
-```shell
+```bash
 php artisan make:model Company
 ```
 
 不过你应该了解另外几个很常用的参数：
 
-```shell
+```bash
 php artisan make:model Company -m
 ```
 
-```shell
+```bash
 php artisan make:model Company -mc
 ```
 
-```shell
+```bash
 php artisan make:model Company -mcr
 ```
 
-```shell
+```bash
 php artisan make:model Company -mcrf
 ```
 
@@ -383,7 +383,7 @@ php artisan make:model Company -mcrf
 
 实际上上述几个情况，也可以通过 -a 来实现
 
-```shell
+```bash
 php artisan make:model Company -a
 ```
 

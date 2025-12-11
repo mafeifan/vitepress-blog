@@ -5,7 +5,7 @@ Docker Desktop v3.0 已于前两周正式发布，从这个版本起，Docker �
 
 本文已`hub-tool v0.2.0`为准
 
-```shell
+```bash
 A tool to manage your Docker Hub images
 
 Usage:
@@ -47,7 +47,7 @@ Use "hub-tool [command] --help" for more information about a command.
 对于免费用户每 6 小时只允许 pull 200 次 `200 container image requests per 6 hours`
 详情或最新政策见[官网](https://www.docker.com/pricing)
 
-```shell
+```bash
 > hub-tool account info
 Username:	finleyma
 Full name:
@@ -64,7 +64,7 @@ Limits:
 ```
 
 
-```shell
+```bash
 > hub-tool account rate-limiting
   Limit:     200, 6 hours window
   Remaining: 200, 6 hours window
@@ -74,7 +74,7 @@ Limits:
 
 查看repo列表和删除repo
 
-```shell
+```bash
 > hub-tool repo ls
 REPOSITORY                                 DESCRIPTION    LAST UPDATE      PULLS    STARS    PRIVATE
 finleyma/simplewhale                                      7 weeks ago      9        0        false
@@ -86,12 +86,12 @@ finleyma/my-first-flask-app                               3 years ago      58   
 ```
 
 列出repo的所有tag
-```shell
+```bash
 > hub-tool tag ls finleyma/express 
 ```
 
 查看镜像详情
-```shell
+```bash
 > hub-tool tag inspect finleyma/express
 ```
 

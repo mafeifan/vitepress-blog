@@ -6,7 +6,7 @@
 2. 搭建内部使用的镜像仓库，把镜像同步进来
 
 流程也非常简单，docker pull先拉下来，然后重新打tag，最后push到我们自己的仓库
-```shell
+```bash
 sudo docker pull registry.cn-hangzhou.aliyuncs.com/lfy_ruoyi/ruoyi-visual-monitor:v2
 docker images
 docker tag eb5aeb93fe3b finleyma/ruoyi-visual-monitor:v2

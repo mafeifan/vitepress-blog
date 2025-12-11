@@ -1,6 +1,6 @@
 ## 配置别名
 
-```shell
+```bash
 alias tf="terraform"
 alias tfa="terraform apply"
 alias tfp="terraform plan"

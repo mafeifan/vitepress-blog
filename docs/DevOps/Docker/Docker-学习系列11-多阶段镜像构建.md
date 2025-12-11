@@ -30,7 +30,7 @@ CMD ["nginx", "-g", "daemon off;"]
 第二阶段：启动一个nginx容器，托管第一阶段的静态文件
 
 
-```shell script
+```bash
 # 编译阶段
 FROM golang:1.10.3
 
@@ -52,7 +52,7 @@ ENTRYPOINT ["/server"]
 这个 Dockerfile 的玄妙之处就在于 COPY 指令的 --from=0 参数，从前边的阶段中拷贝文件到当前阶段中，多个FROM语句时，0代表第一个阶段。
 除了使用数字，我们还可以给阶段命名，比如：
 
-```shell
+```bash
 # 编译阶段 命名为 builder
 FROM golang:1.10.3 as builder
 

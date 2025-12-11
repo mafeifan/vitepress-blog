@@ -51,7 +51,7 @@ firebase连APN需要我们在apple后台生成验权文件，就是P8或P12，�
 可以直接用`curl`命令调用`https://fcm.googleapis.com/v1/projects/${project-id}/messages:send`发送消息
 `${project-id}` 替换成firebase中project setting页面中生成的
 
-```shell script
+```bash
 curl -X POST -H "Authorization: Bearer ya29.ElqKBGN2Ri_Uz...HnS_uNreA" -H "Content-Type: application/json" -d '{
   "message": {
     "topic" : "my-topic",

@@ -78,8 +78,7 @@ Step 2/4 : COPY . .
 #### 如果某层无法应用层缓存，则后续层都不能从层缓存加载
 在以下示例中，前后两次构建过程的C层均未更改，尽管如此，由于上层并不是从层缓存中加载，因此后置的C层仍然无法从缓存中加载：
 
-![50-03-3cb3e531-ba7f-4705-8408-e920da6f3c38](https://gitee.com/finley/upic/raw/master/uPic/2020/05/25/50-03-3cb3e531-ba7f-4705-8408-e920da6f3c38.png)
-
+![](https://pek3b.qingstor.com/hexo-blog/2025/12/11/21-38-05-79503e54c8f50738fa83d81278c7bc86-50-03-3cb3e531-ba7f-4705-8408-e920da6f3c38-150f68.png)
 
 层缓存对下面的Dockerfile意味着什么？
 ```dockerfile
@@ -93,9 +92,9 @@ ENTRYPOINT ["python", "server.py"]
 如果COPY命令的任何文件改变了，则会使后续所有层缓存失效：我们需要重新运行pip install。
 但是，如果server.py更改了，但requirements.txt却没有更改，为什么我们必须重做pip安装？毕竟，pip安装仅使用requirements.txt。
 
-推及到现代编程语言：前端的依赖包文件paakcage.json, dotnet的项目管理文件dotnetdemo.csproj等，一般很少变更；随时变动的业务代码，导致后续的层缓存失效(后续层每次都要重新下载&安装依赖)。
+推及到现代编程语言：前端的依赖包文件package.json, dotnet的项目管理文件dotnetdemo.csproj等，一般很少变更；随时变动的业务代码，导致后续的层缓存失效(后续层每次都要重新下载&安装依赖)。
 
-因此，您要做的是仅复制实际需要运行下一步的那些文件，以最大程度地减少缓存失效的机会。
+因此，要做的是仅复制实际需要运行下一步的那些文件，以最大程度地减少缓存失效的机会。
 
 ```dockerfile
 FROM python:3.7-slim-buster
@@ -105,7 +104,7 @@ COPY server.py .
 ENTRYPOINT ["python", "server.py"]
 ```
 
-如果您想通过重用之前缓存的层来进行快速构建，则需要适当地编写Dockerfile：
+如果想通过重用之前缓存的层来进行快速构建，则需要适当地编写Dockerfile：
 
 * 仅复制下一步所需的文件，以最大程度地减少构建过程中的缓存失效。
 * 尽量将文件可能变更的新增(ADD命令)、拷贝(COPY命令) 延迟到Dockerfile的后部。

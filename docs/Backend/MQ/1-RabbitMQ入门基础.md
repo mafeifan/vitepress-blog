@@ -40,7 +40,7 @@ RabbitMQ支持MacOS，Linux，Windows等多平台
 
 参考的官网`https://www.rabbitmq.com/install-debian.html`
 
-```shell script
+```bash
 sudo apt-get install curl gnupg debian-keyring debian-archive-keyring apt-transport-https -y
 # primary RabbitMQ signing key
 curl -fsSL https://github.com/rabbitmq/signing-keys/releases/download/2.0/rabbitmq-release-signing-key.asc | sudo apt-key add -

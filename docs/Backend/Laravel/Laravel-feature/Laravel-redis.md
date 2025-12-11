@@ -35,14 +35,14 @@ foreach ($unPaid as $order) {
 
 3. 
 打开两个终端，先在命令行里测试功能，一个命令行中
-```shell
+```bash
 redis-cli
 psubscribe __keyevent@0__:expired
 ```
 
 另一个，存key，并设置过期时间
 
-```shell
+```bash
 redis-cli
 setex name 10 finley
 ```
@@ -50,7 +50,7 @@ setex name 10 finley
 过10s后会发现第一个终端有数据产生
 大致是:
 
-```shell
+```bash
 127.0.0.1:6379> psubscribe __keyevent@0__:expired
 Reading messages... (press Ctrl-C to quit)
 1) "pmessage"

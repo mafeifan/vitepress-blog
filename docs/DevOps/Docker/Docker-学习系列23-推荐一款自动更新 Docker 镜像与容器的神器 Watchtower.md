@@ -13,7 +13,7 @@ Watchtower 是一个可以实现自动化更新 Docker 基础镜像与容器的�
 
 ### 快速开始
 Watch­tower 本身被打包为 Docker 镜像，因此可以像运行任何其他容器一样运行它：
-```shell script
+```bash
 docker run -d \
     --name watchtower \
     -v /var/run/docker.sock:/var/run/docker.sock \
@@ -25,7 +25,7 @@ docker run -d \
 
 ### 选项参数
 
-```shell script
+```bash
 $ docker run --rm containrrr/watchtower -h
 
 Watchtower automatically updates running Docker containers whenever a new image is released.
@@ -81,7 +81,7 @@ Flags:
 
 官方给出的默认启动命令在长期使用后会堆积非常多的标签为 none 的旧镜像，如果放任不管会占用大量的磁盘空间。要避免这种情况可以加入 --cleanup 选项，这样每次更新都会把旧的镜像清理掉。
 
-```shell script
+```bash
 docker run -d \
     --name watchtower \
     --restart unless-stopped \
@@ -92,7 +92,7 @@ docker run -d \
 
 --cleanup 选项可以简写为 -c
 
-```shell script
+```bash
 docker run -d \
     --name watchtower \
     --restart unless-stopped \
@@ -107,7 +107,7 @@ docker run -d \
 容器更新列表
 假设我们只想更新 nginx、redis 这两个容器，我们可以把容器名称追加到启动命令的最后面，就像下面这个例子：
 
-```shell script
+```bash
 docker run -d \
     --name watchtower \
     --restart unless-stopped \
@@ -118,7 +118,7 @@ docker run -d \
 
 博主觉得把需要更新的容器名称写在启动命令中不利于管理，于是想了个更好的方法，建立一个更新列表文件。
 
-```shell script
+```bash
 $ cat ~/.watchtower.list
 aria2-pro
 unlockmusic
@@ -128,7 +128,7 @@ mtg
 
 通过变量的方式去调用这个列表：
 
-```shell script
+```bash
 docker run -d \
     --name watchtower \
     --restart unless-stopped \
@@ -143,7 +143,7 @@ docker run -d \
 
 给容器添加 com.centurylinklabs.watchtower.enable 这个 LA­BEL 并设置它的值为 false，或者在启动命令中加入 --label com.centurylinklabs.watchtower.enable=false 参数可以排除相应的容器。下面这个例子是博主的 openwrt-mini 镜像的容器启动命令，Watch­tower 将永远忽略它的更新，即使它包含在自动更新列表中。
 
-```shell script
+```bash
 docker run -d \
     --name openwrt-mini \
     --restart always \
@@ -156,7 +156,7 @@ docker run -d \
 
 当容器启动命令中加入 --label com.centurylinklabs.watchtower.enable=true 参数，并且给 Watch­tower 加上 --label-enable 选项时，Watch­tower 将只更新这些包含此参数的容器。
 
-```shell script
+```bash
 docker run -d \
     --name watchtower \
     --restart unless-stopped \
@@ -167,7 +167,7 @@ docker run -d \
 
 --label-enable 可以简写为 -e
 
-```shell script
+```bash
 docker run -d \
     --name watchtower \
     --restart unless-stopped \
@@ -183,7 +183,7 @@ docker run -d \
 
 --interval, -i - 设置更新检测时间间隔，单位为秒。比如每隔 1 个小时检查一次更新：
 
-```shell script
+```bash
 docker run -d \
     --name watchtower \
     --restart unless-stopped \
@@ -194,7 +194,7 @@ docker run -d \
 
 --schedule, -s - 设置定时检测更新时间。格式为 6 字段 Cron 表达式，而非传统的 5 字段，即第一位是秒。比如每天凌晨 2 点检查一次更新：
 
-```shell script
+```bash
 docker run -d \
     --name watchtower \
     --restart unless-stopped \
@@ -209,7 +209,7 @@ docker run -d \
 
 对于 foreground 模式，需要加上 --run-once 这个专用的选项。下面的例子 Docker 会运行一次 Watch­tower 并检查 aria2-pro 容器的基础镜像更新，最后删掉本次运行创建的 Watch­tower 容器。
 
-```shell script
+```bash
 docker run --rm \
     -v /var/run/docker.sock:/var/run/docker.sock \
     containrrr/watchtower -c \
@@ -219,7 +219,7 @@ docker run --rm \
 
 --run-once 可以简写为 -R
 
-```shell script
+```bash
 docker run --rm \
     -v /var/run/docker.sock:/var/run/docker.sock \
     containrrr/watchtower -cR \

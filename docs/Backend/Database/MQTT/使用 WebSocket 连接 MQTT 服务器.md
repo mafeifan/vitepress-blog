@@ -26,7 +26,7 @@ WebSocket 使得客户端和服务器之间的数据交换变得更加简单，�
 
 ### 在当前目录安装
 
-```shell
+```bash
 npm install mqtt --save
 ```
 
@@ -178,7 +178,7 @@ EMQ 内置自签名证书，默认已经启动了加密的 WebSocket 连接，�
 
 打开 `etc/emqx.conf` 配置文件，修改以下配置：
 
-```shell
+```bash
 # wss 监听地址
 listener.wss.external = 8084
 
@@ -197,7 +197,7 @@ listener.wss.external.certfile = etc/certs/cert.pem
 
 使用 Nginx 来反向代理并加密 WebSocket 可以减轻 EMQ X 服务器计算压力，同时实现域名复用，同时通过 Nginx 的负载均衡可以分配多个后端服务实体。
 
-```shell
+```bash
 # 建议 WebSocket 也绑定到 443 端口
 listen 443, 8084;
 server_name example.com;

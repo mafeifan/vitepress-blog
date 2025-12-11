@@ -121,7 +121,7 @@ Kubernetes为每个pod创建一个Network Namespace，其中该pod中的所有�
 这个例子来自docker官网 `https://docs.docker.com/get-started/07_multi_container/`
 
 下面的命令，创建了名称为todo-app的网络，起了个mysql容器，这个容器在网络中的名称是mysql，由--network-alias指定
-```shell script
+```bash
 docker network create todo-app
 docker run -d \
      --network todo-app --network-alias mysql \
@@ -133,12 +133,12 @@ docker exec -it <mysql-container-id> mysql -u root -p
 ```
 
 下面我们启动netshoot容器并加入同一网络，进入容器，使用dig命令来通过主机名查看IP地主
-```shell script
+```bash
 docker run -it --network todo-app nicolaka/netshoot
 dig mysql
 ```
 返回内容类似
-```shell script
+```bash
  ; <<>> DiG 9.14.1 <<>> mysql
  ;; global options: +cmd
  ;; Got answer:

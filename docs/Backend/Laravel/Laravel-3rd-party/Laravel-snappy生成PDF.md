@@ -12,7 +12,7 @@ wkhtmltopdf下载后之后就是一个bin二进制文件，提供了非常多的
 这里介绍下怎么在Laravel6中使用laravel-snappy并生成pdf文件
 
 1. 首先下载安装wkhtmltopdf，以Ubuntu为例，来到https://wkhtmltopdf.org/downloads.html下载对应的版本
-```shell
+```bash
 # 下载安装包
 wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.
 bionic_amd64.deb

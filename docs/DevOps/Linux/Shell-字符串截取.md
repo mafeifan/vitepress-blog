@@ -11,7 +11,7 @@
 |`${string%*chars}`	|从 string 字符串第一次出现 *chars 的位置开始，截取 *chars 左边的所有字符。|
 |`${string%%*chars}`	|从 string 字符串最后一次出现 *chars 的位置开始，截取 *chars 左边的所有字符。|
 
-```shell script
+```bash
 GITHUB_REF=refs/tags/v1.3.0
 
 # 按长度截取，格式 ${string: start :length}
@@ -41,7 +41,7 @@ echo ${GITHUB_REF##*/}
 请注意`*`的位置，因为要截取 chars 左边的字符，而忽略 chars 右边的字符，所以`*`应该位于 chars 的右侧。其他方面`%`和`#`的用法相同，这里不再赘述，仅举例说明：
 
 
-```shell script
+```bash
 url="http://c.biancheng.net/index.html"
 
 # 结果为 http://c.biancheng.net
