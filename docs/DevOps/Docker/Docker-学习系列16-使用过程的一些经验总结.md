@@ -93,6 +93,6 @@ docker image prune # 删除 dangling 或所有未被使用的镜像
 13. docker diff 容器名或ID，可以查看容器发生的文件系统的变化信息
  如下图，我在容器里新建了个demo.txt文件，在docker diff中可以查看出来
 A 添加， C 修改， D 删除
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-82443f79715cc69e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-82443f79715cc69e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 参考：http://blog.51cto.com/13954634/2294107

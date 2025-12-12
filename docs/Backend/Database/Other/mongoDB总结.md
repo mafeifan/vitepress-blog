@@ -33,10 +33,10 @@ db.createUser(
 )
 ```
 2. 查看某角色的权限信息
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-4a3121c1bda44842.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-4a3121c1bda44842.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 https://docs.mongodb.com/manual/reference/command/usersInfo/#examples
 3. 检查某用户是否可以登录某数据库 ，先use进该库，然后 `db.auth('user', 'pass')`
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-c9b9d9fc394cba39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-c9b9d9fc394cba39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 工具
 客户端工具我就推荐一个 Studio 3T

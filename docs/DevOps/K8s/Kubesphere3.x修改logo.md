@@ -40,11 +40,11 @@ mv logo.svg assets/
 kubesphere本身支持多语言，语言文件在dist目录。以locale开头，比如打开locale-en.6ea577bc5b07101a8d52.json
 搜索'KS_DESCRIPTION'替换掉描述文本
 
-![](http://pek3b.qingstor.com/hexo-blog/微信图片_20220108183704.png)
+![](https://pek3b.qingstor.com/hexo-blog/微信图片_20220108183704.png)
 
-![](http://pek3b.qingstor.com/hexo-blog/20220108184418.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220108184418.png)
 
-![](http://pek3b.qingstor.com/hexo-blog/20220303172934.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220303172934.png)
 
 ## 参考
 https://stackoverflow.com/questions/42793382/exec-commands-on-kubernetes-pods-with-root-access

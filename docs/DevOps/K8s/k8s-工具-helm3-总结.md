@@ -6,7 +6,7 @@ Creating my-nginx
 ```
 会生成同名目录，打开后，里面有一些配置文件
 
-![](http://pek3b.qingstor.com/hexo-blog/20211017122822.png)
+![](https://pek3b.qingstor.com/hexo-blog/20211017122822.png)
 
 
 ```bash
@@ -88,7 +88,7 @@ To access NGINX from outside the cluster, follow the steps below:
     echo "http://${SERVICE_IP}:${SERVICE_PORT}"
 ```
 
-![](http://pek3b.qingstor.com/hexo-blog/20211017112705.png)
+![](https://pek3b.qingstor.com/hexo-blog/20211017112705.png)
 
 ```bash
 helm create my-nginx

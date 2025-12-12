@@ -22,7 +22,7 @@ window.onstorage = () => {
 购物车的完整例子，你可以开多个tab实验：
 [https://jsbin.com/radekilosu/1/edit?html,css,js,output](https://jsbin.com/radekilosu/1/edit?html,css,js,output)
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-cba1808d6be4635a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-cba1808d6be4635a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 另外事件e上还带有很多信息，方便做更多控制。
 

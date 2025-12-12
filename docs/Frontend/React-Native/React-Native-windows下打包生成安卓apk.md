@@ -9,7 +9,7 @@
 lias -keyalg RSA -keysize 2048 -validity 10000`
 有个小坑是生成key的路径是D盘，因为在当前C盘生成的话在windows下可能会有权限问题。
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-54d89723e11f1f26.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-54d89723e11f1f26.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 然后按照这个 [教程](http://facebook.github.io/react-native/docs/signed-apk-android.html)，改动一些配置文件。
 
@@ -76,6 +76,6 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-4.3-all.zip
 
 ### 执行最后的打包命令 `./gradlew assembleRelease`
 切换到android目录 打包成功画面
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-c8d051c756f5e652.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-c8d051c756f5e652.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 注意事项：打包过程会占用大量内存，把WebStorm等大的程序关掉。

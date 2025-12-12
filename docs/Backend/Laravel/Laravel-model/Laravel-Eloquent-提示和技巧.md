@@ -114,9 +114,7 @@ Eloquent有很多功能，结合了两种方法，比如“请做X，否则做Y�
 ### 5\. 模型属性：timestamps, appends等。
 
 Eloquent模型有一些“参数”，以该类的属性形式出现。最受欢迎的可能是这些：
-> [![file](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-5fc3681a1d623e65.png!large?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)](https://iocaffcdn.phphub.org/uploads/images/201811/17/26261/K1MFHx3Nwo.png!large) 
-
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-f4bacab0a31ddc64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-f4bacab0a31ddc64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 更多请查看默认[abstract Model class](https://github.com/laravel/framework/blob/5.6/src/Illuminate/Database/Eloquent/Model.php)的代码，并查看所有使用的特征。
 

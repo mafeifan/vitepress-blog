@@ -40,13 +40,13 @@ argocd-initial-admin-secret \
 -o jsonpath="{.data.password}" | base64 -d
 
 ```
-![](http://pek3b.qingstor.com/hexo-blog/20220506183701.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220506183701.png)
 
 登录并创建新app。登录名默认是admin
 
-![](http://pek3b.qingstor.com/hexo-blog/20220506183735.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220506183735.png)
 
-![](http://pek3b.qingstor.com/hexo-blog/20220506193055.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220506193055.png)
 
 除了dashboard图形创建，也可以使用yaml文件创建
 
@@ -69,7 +69,7 @@ spec:
 
 点击sync，同步app，然后看到已经执行成功了，也就是说argocd帮我们运行了git仓库中的k8s清单文件。
 
-![](http://pek3b.qingstor.com/hexo-blog/20220506193544.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220506193544.png)
 
 检查下
 ```bash
@@ -95,7 +95,7 @@ this is app v1
 
 开启自动同步，点击 APP DETAILS -> SYNC POLICY，点击 ENABLE AUTO-SYNC
 
-![](http://pek3b.qingstor.com/hexo-blog/20220506195301.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220506195301.png)
 
 编辑 myapp 资源文件，将镜像的版本从 v1 改为 v2，点击 Commit changes，提交更改。
 
@@ -115,7 +115,7 @@ this is app v2
 
 在回滚的时候需要禁用 AUTO-SYNC 自动同步，点击 OK 确认即可。
 
-![](http://pek3b.qingstor.com/hexo-blog/20220506201922.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220506201922.png)
 
 等待一会可以看到此时已经回滚成功，此时 Pod 是 v1 版本的，并且由于此时线上的版本并不是 Git 仓库中最新的版本，因此此时同步状态是 OutOfSync。
 
@@ -160,7 +160,7 @@ curl vm2:30688
 
 ## 示例2
 
-![](http://pek3b.qingstor.com/hexo-blog/20220508093505.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220508093505.png)
 
 优化后的工作流：
 * 创建两个仓库，分别是代码仓库Flask-demo和清单仓库Flask-demo-kustomize

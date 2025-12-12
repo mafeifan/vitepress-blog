@@ -1,10 +1,10 @@
 在[上节](/DevOps/Docker/Docker-学习系列13-实现-基于pxc-的mysql-多节点主主同步)中我们创建了 mysql 集群。
 实际工作中，我们不希望让某一数据库节点处理所有的请求，这样的话单个负载高，性能差。
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-6b9dcf8b92b5f9b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-6b9dcf8b92b5f9b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 在这里我们使用haproxy作为负载均衡的中间件，类似的还有LVS，但是好像不支持虚拟机，在docker中用不了。
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-84aec2631cb05277.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-84aec2631cb05277.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 实现流程：
 1. 下载镜像 `docker pull haproxy`
@@ -71,11 +71,11 @@ listen proxy-mysql
 `docker exec -it h1 bash`
 `haproxy -f /usr/local/etc/haproxy/`
 6. 宿主机打开  `http://localhost:4001/dbs` 这是haproxy 提供的图形界面
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-3bcd4c134d733d46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-3bcd4c134d733d46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 可以看到每个mysql节点运行状态是绿色，说明正常。
 7. 测试，停掉一个数据库节点 `docker stop pxc_node1` ，发现有一个变红了。
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-ef6c1883613f0363.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-ef6c1883613f0363.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 8. 项目中可以使用配置的 4002 来连接数据库，这样请求会被分发到各个子节点。
 
 ### 总结：

@@ -9,21 +9,21 @@ ansible绝大多数模块都天然具有 **幂等** 特性，只有极少数模�
 
 ### ansible-doc 命令
 
-![](http://pek3b.qingstor.com/hexo-blog/20220213201733.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220213201733.png)
 
 学习ansible模块时，可以先用ansible-doc命令，阅读相关模块的说明文档
 比如我想通过ansible执行拷贝文件操作，先用`ansible-doc -l | grep 'copy'`过滤出所有包含copy的模块名。
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-543f9d30fefcc6f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-543f9d30fefcc6f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 `ansible-doc copy` 查看copy模块的使用详情
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-0de2d6d2b6002cb9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-0de2d6d2b6002cb9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 `ansible-doc -s copy` 查看copy模块的精简信息
 
 ### 常见模块命令
 
-![](http://pek3b.qingstor.com/hexo-blog/20220213201952.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220213201952.png)
 
 Ad-Hoc 执行方式，可以通过shell或者command模块来执行命令。一条条来执行
 

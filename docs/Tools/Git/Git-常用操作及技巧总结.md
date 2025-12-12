@@ -5,7 +5,7 @@
 合并本地多个还没有push过的commit
 使用 git rebase , 比如合并最近两次的commit 。`git rebase HEAD~2 `
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-b3a4fc7bd865db42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-b3a4fc7bd865db42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 -i 出现交互界面 
 * pick：正常选中 
@@ -32,12 +32,12 @@ git fetch
 # 查看提交历史，获取最后一次提交的commit id
 git log origin/develop
 ```
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-a96518a543af4b4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-a96518a543af4b4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ```
 # 查看具体的提交内容
 git show 2678b99db5be1d6870feecde243dffb6e59d4bcd
 ```
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-45ad2acc277ab22e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-45ad2acc277ab22e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ```
 # 只查看更新的文件
 git diff --name-only 2678b99db5be1d6870feecde243dffb6e59d4bcd

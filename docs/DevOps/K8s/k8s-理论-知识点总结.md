@@ -2,9 +2,9 @@
 
 组件图
 
-![](http://pek3b.qingstor.com/hexo-blog/20220122141009.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220122141009.png)
 
-![](http://pek3b.qingstor.com/hexo-blog/20220122141413.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220122141413.png)
 
 * Control Plane组件：etcd, kube-controller-manager, kube-scheduler, kube-apiserver
 * node组件：kubelet, kube-proxy, container runtime

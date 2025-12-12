@@ -1,6 +1,6 @@
 今天我们来爬取专供初学者练习爬虫的网站 [http://books.toscrape.com/](http://books.toscrape.com/)
 这是一个图书网站，默认有50页，每页会展示20本书，我们要一次性把所有图书的标题和价格全部抓取下来。
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-a9e30e5c213f396a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-a9e30e5c213f396a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 过程其实非常简单
 1. 新建项目 `scrapy startproject book`

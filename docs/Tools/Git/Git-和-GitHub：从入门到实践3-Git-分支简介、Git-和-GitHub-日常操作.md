@@ -20,7 +20,7 @@ Git 中有三个工作区域与上述三种状态相对应，如下图 1 所示�
 
 ##### 图 1\. 三个工作区域和三种状态
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-6ee1e6b481a3f8e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-6ee1e6b481a3f8e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 *   工作目录（Working Directory）：工作目录是我们常用的使用或修改代码的目录，它可以从 Git 仓库目录中 checkout 出特定的分支或者版本来使用。在工作目录的修改如果未添加到暂存区，那么该修改仍处在已修改状态。
@@ -49,7 +49,7 @@ Git 中有三个工作区域与上述三种状态相对应，如下图 1 所示�
 
 ##### 图 2\. 查看分支
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-e6dbd62c90f4805c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-e6dbd62c90f4805c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 注意：
@@ -61,7 +61,7 @@ Git 中有三个工作区域与上述三种状态相对应，如下图 1 所示�
 
 ##### 图 3\. 查看分支对应的 commit
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-e717736302a3a33a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-e717736302a3a33a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 理解 origin
 
@@ -69,13 +69,13 @@ Git 中有三个工作区域与上述三种状态相对应，如下图 1 所示�
 
 ##### 图 4\. 查看本地仓库指向的远端仓库
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-e4e836bdd8edd3cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-e4e836bdd8edd3cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 基于此机制，我们也可以 clone 其它的仓库到同一个本地目录。如图 5 所示，执行 `git remote add remote-sample git@github.com:caozhi/sample-project.git` 命令添加一个本地仓库 remote-sample 向我的另一个远端仓库`git@github.com:caozhi/sample-project.git`，再通过 `git remote -v` 命令我们可以看到新建的本地仓库 remote-sample 向以及指向的远端仓库。
 
 ##### 图 5\. 添加本地仓库
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-77b23973730eefad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-77b23973730eefad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 注意，在本地代码库中建立多个 remote 仓库的映射对于大多数开发者来说，不是一个最佳实践，因为这样会使得本地开发环境比较混乱。一般只有在做持续集成时，为了方便在同一个代码目录下编译打包项目，才推荐在本地建立多个远端仓库的映射。
 
@@ -87,13 +87,13 @@ HEAD 针是指向当前工作分支中的最新的分支或者 commit。Git 通�
 
 ##### 图6\. 切换HEAD指针指向的分支
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-c6fc67a77ee6687f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-c6fc67a77ee6687f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 我们再执行 `git checkout 075c130` 尝试 checkout 一个历史 commit，如图 7 所示，此时可以看到 Git 会为我们创建一个 detached 的分支，该分支并不指向一个实际存在的分支。执行 `git log` 命令也能看到，HEAD 针指向了 `075c130` 这个 commit，而非一个分支。
 
 ##### 图7\. 切换HEAD指针指向任意 commit
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-f43bcd4d27a4cd69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-f43bcd4d27a4cd69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 理解 push
 
@@ -103,7 +103,7 @@ HEAD 针是指向当前工作分支中的最新的分支或者 commit。Git 通�
 
 ##### 图 8\. push 失败
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-efd5e562366b49f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-efd5e562366b49f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 理解 fetch, pull
 
@@ -126,45 +126,45 @@ fetch 和 pull 操作都可以用来同步远端代码到本地。在多数开�
 
 ##### 图 9\. 查看分支
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-2b28dedf87ae784c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-2b28dedf87ae784c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 *   创建本地分支：`git branch branchname`，如图 10 所示。创建本地分支时时会基于当前的分支去创建，因此需要注意当前工作分支是什么分支。
 
 #### 图 10\. 创建本地分支
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-4cb6e7a1dd561f9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-4cb6e7a1dd561f9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 *   推送本地分支到远端：`git push origin branchname:remote_branchname`，如图 11 和 图 12 所示。技术上本地分支 `branchname` 和远端分支 `remote_branchname` 必是相同的名字，但实践中为了方便记忆，最好使用相同的名字。
 
 ##### 图 11\. 推送本地分支到远端
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-e3961cdb55693788.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-e3961cdb55693788.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ##### 图 12\. 在 GitHub 上查看推送的分支
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-fe268b52c6173a43.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-fe268b52c6173a43.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 *   切换工作分支：`git checkout branchname`，如图 13 所示：
 
 ##### 图 13\. 切换工作分支
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-013745aa5be5c50f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-013745aa5be5c50f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 *   删除本地分支：git branch -d branchname，如图 14 所示：
 
 ##### 图 14\. 删除本地分支
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-da944546931ad6ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-da944546931ad6ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 *   删除远端分支：git push :remote_branchname，如图 15 和图 16 所示：
 
 ##### 图 15\. 删除远端分支
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-96d675bc58b10441.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-96d675bc58b10441.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ##### 图 16\. 在 GitHub 上查看被删除的分支
 
-![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-04b5d41e69935b71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-04b5d41e69935b71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### GitHub 分支操作
 
@@ -172,31 +172,31 @@ fetch 和 pull 操作都可以用来同步远端代码到本地。在多数开�
 
 ##### 图 17\. GitHub 中创建分支
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-8b7673729e484662.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-8b7673729e484662.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ##### 图 18\. 查看创建的分支
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-82e2cd98529aafc4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-82e2cd98529aafc4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 在 GitHub 上我们也可以直接删除分支。首先我们进入代码库的 **branches **页面，该页面列出了我们所有的分支, 如图 19 和图 20 所示:
 
 ##### 图 19\. 进入 branches 页面
 
->  ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-bb833af4035c193a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>  ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-bb833af4035c193a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 在 **branches **页面，我们找到想要删除的分支，点击分支条目后方的垃圾箱按钮，即可删除该分支，如图 20、图 21 和 图 22 所示:
 
 ##### 图 20\. 在 GitHub 上删除分支
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-e41dfd9804655045.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-e41dfd9804655045.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ##### 图 21\. 删除分支后
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-dbef9a6a858333a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-dbef9a6a858333a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ##### 图 22\. 代码库主界面再次查看该分支
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-521cc9948fcb0f69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-521cc9948fcb0f69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 分支的其它进阶操作，如合并分支、比较分支差异等我们将在下一篇进行介绍。
 
@@ -223,37 +223,37 @@ Log 命令用于查看代码库的提交历史。结合 log 命令提供的各�
 
 ##### 图 23\. log 的 --oneline 选项
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-a7b5c106afc66bae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-a7b5c106afc66bae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 *   `-p` 选项：列出 commit 里的文件差异，如图 24 所示：
 
 ##### 图 24\. log 的 -p 选项
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-76724f2794b7a100.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-76724f2794b7a100.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 *   `-number` 选项：只列出 number 数的 commit 历史，如图 25 所示：
 
 ##### 图 25\. log 的-number 选项
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-87d8f58a106ddcd4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-87d8f58a106ddcd4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 *   `--name-only` 选项：列出每条 commit 所修改的文件名。此选项只列出修改的文件名，不列出修改类型，如图 26 所示：
 
 ##### 图 26\. log 的 --name-only 选项
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-327e2422258494e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-327e2422258494e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 *   `--name-status` 选项：列出每条 commit 所修改的文件名和对应的修改类型，如图 27 所示：
 
 ##### 图 27\. log 的 --name-status 选项
 
->  ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-bfb7bf6b291472e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>  ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-bfb7bf6b291472e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 *   `--stat` 选项：列出每条 commit 所修改的统计信息，如图 28 所示：
 
 ##### 图 28\. log 的 --stat 选项
 
->  ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-a2c223075bd04336.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>  ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-a2c223075bd04336.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### Blame 操作
 
@@ -261,7 +261,7 @@ Blame 命令是一个非常实用但是鲜为人知的命令，它可以用来�
 
 ##### 图 29\. git blame 操作
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-4626853419ecfd81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-4626853419ecfd81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 我们也可以添加 `-L` 选项控制只显示我们所关心的行。如清单 1 所示：
 
@@ -277,7 +277,7 @@ git blame -L 20,-5 filename
 
 ##### 图 30\. 执行 git blame -L
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-edc3e9c269309cf7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-edc3e9c269309cf7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### Status 操作
 
@@ -285,7 +285,7 @@ git blame -L 20,-5 filename
 
 ##### 图 31\. 无修改时执行 git status 操作
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-bd77061b0624de77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-bd77061b0624de77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 当我们对当前分支进行了更改时，`git status` 会根据被修改文件的状态显示不同的信息，如图 32 所示：
 
@@ -295,7 +295,7 @@ git blame -L 20,-5 filename
 
 ##### 图 32\. 有修改时执行 git status
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-3fc3bcdd9e0a67fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-3fc3bcdd9e0a67fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### Diff 操作
 
@@ -305,19 +305,19 @@ Diff 操作用于查看比较两个 commit 或者两个不同代码区域的文�
 
 ##### 图 33\. 比较工作区和暂存区
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-5f6ce0c047fdbde5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-5f6ce0c047fdbde5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 *   `--cached` 选项：比较暂存区和代码库的差异，例如图 34 所示：
 
 ##### 图 34\. 比较暂存区和本地代码库
 
->  ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-d5dab72b8a8aaf32.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>  ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-d5dab72b8a8aaf32.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 *   在命令后面指定特定的文件名，也可以比较特定文件的差异，如图 35 所示：
 
 ##### 图 35\. 比较工作区和暂存区
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-86ec2169a8b0d326.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-86ec2169a8b0d326.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 结束语
 

@@ -7,7 +7,7 @@
 * --rm：容器停止运行后，自动删除容器文件
 * --name：容器的名字为 my-nginx
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-e508e54965926b10.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-e508e54965926b10.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 docker run 其实等于 docker create + start 
 因为tag为 1.15 的 nginx 镜像并不在本地，会先下载再运行
@@ -36,7 +36,7 @@ COPY . /usr/share/nginx/html
 
 制作镜像 `docker build -t my-nginx .`，名称为 my-nginx，完整镜像名格式是：name:tag
 参见 [文档](https://docs.docker.com/engine/reference/commandline/build/#tag-an-image--t)
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-62d5bde15f851d61.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-62d5bde15f851d61.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 根据镜像运行一个容器
 `docker run --name my-nginx -d  -p 8088:80 my-nginx:latest`

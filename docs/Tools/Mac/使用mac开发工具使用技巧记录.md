@@ -21,7 +21,7 @@ Video Speed Controller https://chrome.google.com/webstore/detail/video-speed-con
 
 ### 快速跳转
 Zsh支持目录的快速跳转，我们可以使用 d 这个命令，列出最近访问过的各个目录，然后选择目录前面的数字进行快速跳转：
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-2d32861afd1b9953.gif?imageMogr2/auto-orient/strip)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-2d32861afd1b9953.gif?imageMogr2/auto-orient/strip)
 
 ### 重复上一条命令
 输入 r ，可以很便捷的重复执行上一条命令。

@@ -17,13 +17,13 @@ ${env.JOB_NAME}：${env.BUILD_NUMBER}</a>"</p>
 1. 安装插件，略
 2. 安装后管理页面多了 "Managed files" 菜单项， 进入后点 Add a new Config
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-3b823b34199a1f50.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-3b823b34199a1f50.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 Type 选择 "Extended Email Publisher Groovy Template"
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-3b71864f1d85542d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-3b71864f1d85542d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ID 可以自行填写
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-8de53661c7fef6b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-8de53661c7fef6b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 Content 填写如下
 ```html

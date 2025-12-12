@@ -58,7 +58,7 @@ export class LoggerService {
 provide 属性提供了provider 的token，也叫令牌，表示在构造函数中指定的类型。
 也就是说，当constructor(private productService: ProductService){...} 指定了ProductService，就会去找token是productService的provider。
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-e0c7e676cf107d65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-e0c7e676cf107d65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ##### Provider 的几种写法
 1.  useClass
@@ -141,7 +141,7 @@ providers: [{
 
 ### 提供器的作用域
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-a37ba3f3dfbed696.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-a37ba3f3dfbed696.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 provide声明在App模块中，则对所有模块可见
 
@@ -157,9 +157,9 @@ provide声明在某组件中，只对该组件及其子组件可见。其他组�
 // })
 ```
 就会报错
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-4f119ed6952a8c3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-4f119ed6952a8c3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-8315605b71ca31e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-8315605b71ca31e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 > 为什么在组件中没有写@Injectable也能直接注入service？
 我们知道定义组件要写@Component装饰器，定义管道要写@Pipe装饰器，他们都是Injectable的子类。

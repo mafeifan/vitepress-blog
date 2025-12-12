@@ -100,10 +100,10 @@ document.body.style.removeProperty('--primary');
 ```
 
 操作前
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-68d6ac8771aecf06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-68d6ac8771aecf06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 操作后
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-67ec33b8b16308eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-67ec33b8b16308eb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 响应式布局
 可以结合媒体查询实现不同的尺寸采用不同的变量值
@@ -129,7 +129,7 @@ a {
 }
 ```
 
-> ![示例](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-a69dcd4f77849b46.gif?imageMogr2/auto-orient/strip)
+> ![示例](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-a69dcd4f77849b46.gif?imageMogr2/auto-orient/strip)
 
 ### 参考
 [https://www.cnblogs.com/bibibobo/p/6140659.html](https://www.cnblogs.com/bibibobo/p/6140659.html)

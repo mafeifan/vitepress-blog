@@ -14,9 +14,9 @@ BusyBox 是一个集成了三百多个最常用Linux命令和工具的软件。
 6. 我想查看正在运行的容器 `docker ps`
 没有任何输出
 试试 `docker ps -a` 可以看到刚刚运行过的容器了，注意 status 列
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-d2b328d30cc4fd03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-d2b328d30cc4fd03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 7. 如果想以交互式方式运行容器，并进入容器终端，就用 `docker run -it busybox sh` 注意 -it 一般是同时出现的
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-cd0c5ba98c0a9f31.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-cd0c5ba98c0a9f31.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ::: tip
 * `-t`  tty的缩写 终端控制台
@@ -35,20 +35,20 @@ BusyBox 是一个集成了三百多个最常用Linux命令和工具的软件。
 [prakhar1989/static-site](https://hub.docker.com/r/prakhar1989/static-site/) 是作者维护的镜像
 `--rm  当退出容器时自动移除`
 这里容器启动会显示了 nginx is running，但没有告诉更多的信息
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-48370494e43ee722.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-48370494e43ee722.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 按 ctrl+c 退出
 10. 使用  `docker run -d -P --name static-site prakhar1989/static-site`
 -d  放到后台运行
 -P 将容器内应用运行使用的端口暴露出来 （ Publish all exposed ports to random ports）
 --name 给容器起个名字
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-7fcb7ac5b3b368cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-7fcb7ac5b3b368cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 端口有了，可以打开站点了，还可以使用 `docker run -p 8888:80 prakhar1989/static-site` 指定端口
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-8372f40ed3291b96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-8372f40ed3291b96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 同时运行了两个容器
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-6e2b30efb61a838f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-6e2b30efb61a838f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 11. 暂停容器用 `docker stop static-site` static-site 是我们给运行时给容器起的名字，也可以用ID
 12. 后面内容是使用 Dockerfile 构建自己的镜像并上传到AWS。由于之前讲过而且aws国内使用不方便，此处略过。
@@ -63,7 +63,7 @@ ead0e804a67b        none                null                local
 默认使用的是 bridge 桥接。使用 `docker network inspect bridge` 在 Containers 下面看到正在使用该网络方式的所有容器。默认所有的容器都会使用bridge，通过刚才的命令还可以看到每个容器分配到的内部IP。 一般是 172.17.0.xx。 为了安全及方便，我们需要使某几个容器之间使用自己的桥接网络，如何做到呢？
 
 14. 使用 `docker network` 创建一个新的bridge网络，比如 `docker network create foodtrucks-net`
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-91bd41ce9bebd25f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-91bd41ce9bebd25f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 15. 运行 Elasticsearch 容器并把刚创建的网络分配给他
 `docker run -d --name es --net foodtrucks-net -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.3.2`
 16. 然后运行Python Flask 容器，并进到bash终端

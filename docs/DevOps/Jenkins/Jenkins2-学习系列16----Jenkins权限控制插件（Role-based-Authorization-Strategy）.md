@@ -3,13 +3,13 @@
 使用Role-based Authorization Strategy插件，使得不同的账号有不同的权限，不同的项目。可以非常轻松实现上面的需求。
 
 1. 安装过程略，安装后来到Jenkins管理，发现了很多选项，勾选"Role-Based Strategy"并保存
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-1b5294b72106d208.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-1b5294b72106d208.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 2. 安装成功后会多出一个"Manage and Assign Roles"菜单项
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-20bbde56df0e2caa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-20bbde56df0e2caa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 点击后，有三个选项，分别表示管理角色，分配用户给角色和角色策略宏
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-1af37d6c7f3648f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-1af37d6c7f3648f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 3.  我们先添加一个角色，可以添加三种类型的角色，分别是全局角色(比较简单粗暴)，基于项目的(常用) 和 基于节点的(不常用)
 
@@ -28,10 +28,10 @@ Job：任务相关的权限
 - Workspace：允许查看Jenkins任务的工作空间内容的权限
 - Update：允许用户更新构建历史的属性，如手动更新某次构建失败的原因
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-4bc5ef5b6ae93234.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-4bc5ef5b6ae93234.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 4. 然后我们来到分配角色，已经提前创建好了名为sinuo-admin用户，然后把他分配给project-admin角色
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-ed6bb26fc2d8b9b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-ed6bb26fc2d8b9b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 5. 浏览器新开一个隐身窗口，使用sinuo-admin测试登录，正常的话，他应该只能看到以sinuo开头的项目名称
 

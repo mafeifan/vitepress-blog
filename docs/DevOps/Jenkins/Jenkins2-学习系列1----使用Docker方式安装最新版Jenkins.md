@@ -49,7 +49,7 @@ services:
 
 留意并复制红框中的密码
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/2019/8/24/16cc3eaa69000662?w=1240&h=606&f=png&s=478129)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/2019/8/24/16cc3eaa69000662?w=1240&h=606&f=png&s=478129)
 
 浏览器打开Jenkins地址，地址应该是服务器ip:8088
 
@@ -58,16 +58,16 @@ services:
 :::
 
 粘贴刚复制的密码，点Continue
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/2019/8/24/16cc3eaa6915503b?w=1240&h=907&f=png&s=139020)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/2019/8/24/16cc3eaa6915503b?w=1240&h=907&f=png&s=139020)
 
 安装插件，建议选第一个
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/2019/8/24/16cc3eaa69463235?w=1240&h=981&f=png&s=190192)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/2019/8/24/16cc3eaa69463235?w=1240&h=981&f=png&s=190192)
 
 安装完成后会自动跳转到管理员用户界面
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/2019/8/24/16cc3eaa695b87a7?w=1240&h=909&f=png&s=76171)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/2019/8/24/16cc3eaa695b87a7?w=1240&h=909&f=png&s=76171)
 
 最终来到了欢迎页面
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/2019/8/24/16cc3eaa697012dd?w=1240&h=671&f=png&s=99707)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/2019/8/24/16cc3eaa697012dd?w=1240&h=671&f=png&s=99707)
 
 
 #### 修改时区

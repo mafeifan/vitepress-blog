@@ -13,11 +13,11 @@
 
 1. 进入菜单：系统管理 –> 脚本命令行
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-b90963e1c5398965.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-b90963e1c5398965.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 2. 在输入框中，粘贴如下代码：
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-8bda2f5302733cfb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-8bda2f5302733cfb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ```java
  import jenkins.model.Jenkins

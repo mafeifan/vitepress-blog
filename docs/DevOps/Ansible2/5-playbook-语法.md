@@ -1,6 +1,6 @@
 ### playbook
 
-![](http://pek3b.qingstor.com/hexo-blog/20220213202141.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220213202141.png)
 
 使用 Ansible 时，绝大部分时间将花费在编写playbook上。
 playbook 英文直译是剧本的意思，是一个Ansible术语，它指的是用于配置管理的脚本。
@@ -21,7 +21,7 @@ host就是inventory中定义的主机
 
 tasks下定义一系列的task任务列表，依次执行，如果执行某任务失败了，后续的任务不会执行
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-7deca4044e5f29db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-7deca4044e5f29db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 示例
 playbook.yml
@@ -84,11 +84,11 @@ playbook.yml
 通过 `ansible-playbook -h` 获取所有参数列表
 首先`ansible-playbook -C playbook.yml`检查语法。这里我故意写错了，在 -name同级添加了 hosts，这是不允许的，所以报错了。Ansible 的错误提示还是很方便的。
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-e4945f8ff7acc851.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-e4945f8ff7acc851.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 修改后：
  
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-dd163c683cf0e542.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-dd163c683cf0e542.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### playbook 中的配置项
 playbook 除了`hosts`和`tasks`还有其他配置项：
@@ -99,7 +99,7 @@ playbook 除了`hosts`和`tasks`还有其他配置项：
 
 配置
 playbook 例子，包含了1个play，3个tasks，1个handlers
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-8d5e07278c31d6c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-8d5e07278c31d6c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### notify 和 handler
 ansible中几乎所有的模块都具有幂等性，这意味着被控主机的状态是否发生改变是能被捕捉的，即每个任务的 changed=true或changed=false。

@@ -7,8 +7,7 @@
 
 有些网站页面需要输入正确的用户名和密码才能打开
 
-![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a14be72019cf437bab3466456da0827a~tplv-k3u1fbpfcp-watermark.image)
-
+![](https://pek3b.qingstor.com/hexo-blog/2025/12/12/21-57-34-e9611290714e980c9556bab44da8dd16-Weixin)
 实现方法也比较简单
 
 ```
@@ -27,8 +26,7 @@ sudo nginx -t && sudo nginx -s reload
 ## 显示目录文件列表
 
 场景：有个存放每日备份数据库或日志的目录，希望显示列表，方便下载文件
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d07ab6b8a0fe4a3d92c87bf0766afca3~tplv-k3u1fbpfcp-watermark.image)
-
+![](https://pek3b.qingstor.com/hexo-blog/2025/12/12/21-57-34-e9611290714e980c9556bab44da8dd16-Weixin)
 ```
 location / {
    root /data/www/file                   //指定实际目录绝对路径；

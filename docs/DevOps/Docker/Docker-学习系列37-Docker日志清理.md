@@ -60,9 +60,9 @@ crictl rmi --prune
 cd /
 ncdu
 ```
-![](http://pek3b.qingstor.com/hexo-blog/20211015220703.png)
+![](https://pek3b.qingstor.com/hexo-blog/20211015220703.png)
 
-![](http://pek3b.qingstor.com/hexo-blog/20211015215917.png)
+![](https://pek3b.qingstor.com/hexo-blog/20211015215917.png)
 
 ### 删除 journal 日志
 ```

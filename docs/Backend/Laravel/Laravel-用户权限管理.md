@@ -94,17 +94,17 @@ class Permission extends Model
 
 ```
 3. 添加记录，这里我们添加一个admin的role和名为edit_form的permission，并且让admin拥有edit_form权限。
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-d5bf911740335823.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-d5bf911740335823.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 执行完 $role->givePermission($permission);会发现permission_role表多了一条记录
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-7155bfcd3593a6b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-7155bfcd3593a6b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 添加role和user的关系，将id为1的用户角色修改为admin。
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-d3c1e183e6939926.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-d3c1e183e6939926.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 会发现role_user表多了一条记录
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-0839d6b4e4e155e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-0839d6b4e4e155e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 > `$user->roles()->detach($role);` 可以删除这条记录
 `$user->roles()->attach($role);` 新增记录
 4. 修改AuthServiceProvider.php，从数据库从读取所有的permission信息并设置Gate。让配置生效。

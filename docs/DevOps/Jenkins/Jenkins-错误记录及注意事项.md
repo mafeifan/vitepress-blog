@@ -50,7 +50,7 @@ tar -xzvf dist.gz
 
 配置Gmail
 勾选 SSL，端口填写 465
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-5252e11e4087c7c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-5252e11e4087c7c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 首次登陆 Google 会阻止，建议调低安全
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-c3f6ff50feddb0c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-c3f6ff50feddb0c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

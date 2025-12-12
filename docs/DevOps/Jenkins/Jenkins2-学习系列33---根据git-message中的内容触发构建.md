@@ -27,7 +27,7 @@ name 起做 commit_message的变量名
 
 可以这么理解
 
-![](http://pek3b.qingstor.com/hexo-blog/20220515215616.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220515215616.png)
 
 4. Optional filter 部分是可选的，如果指定了，则只有匹配到的才会触发构建。
 
@@ -37,7 +37,7 @@ Expression填写: 正则`^\[CI]`
 
 Text填写上面指定的变量：$commit_message
 
-![](http://pek3b.qingstor.com/hexo-blog/20220515215756.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220515215756.png)
 
 ## 参考
 

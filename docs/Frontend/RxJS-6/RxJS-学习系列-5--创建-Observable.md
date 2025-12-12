@@ -18,7 +18,7 @@ fromEvent(button, 'click')
 
 上面例子中的`fromEvent`就是基于Event 建立 Observable，fromEvent 的第一个参数要传入 DOM 对象，第二个参数传入要监听的事件名。
 创建 Observable 有很多操作符
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-4d9152d109b45dc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-4d9152d109b45dc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 使用`Create`操作符从头开始创建一个Observable， 这个接收一个回调函数，把observer作为参数
 

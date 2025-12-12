@@ -74,7 +74,7 @@ namespace:  20 bytes
 
 登录dashboard的时候,选择令牌，粘贴刚才的token
 
-![](http://pek3b.qingstor.com/hexo-blog/20220823134444.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220823134444.png)
 
 或者选择 Kubeconfig 文件,路径如下：
 
@@ -82,6 +82,3 @@ namespace:  20 bytes
 * Win: %UserProfile%\.kube\config
 
 点击登陆，进入Kubernetes Dashboard
-
-![](https://pek3b.qingstor.com/hexo-blog/692a2f2613664123b050c139bb1dcb30~tplv-k3u1fbpfcp-watermark.image)
-

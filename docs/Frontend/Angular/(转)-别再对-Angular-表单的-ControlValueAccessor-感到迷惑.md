@@ -38,7 +38,7 @@ interface ControlValueAccessor {
 
 下图是`Angular 表单控件`如何通过`ControlValueAccessor`来和`原生表单控件`交互的（译者注：`formControl`和**你写的或者 Angular 提供的`CustomControlValueAccessor`**两个都是要绑定到 native DOM element 的指令，而`formControl`指令需要借助`CustomControlValueAccessor`指令/组件，来和 native DOM element 交换数据。）：
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-6472dba47b83db3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-6472dba47b83db3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 再次强调，不管是使用响应式表单显式创建还是使用模板驱动表单隐式创建，`ControlValueAccessor`都总是和 Angular 表单控件进行交互。
@@ -271,7 +271,7 @@ registerOnTouched(fn) {  }
 
 现在我们把上面描述的功能做成一张交互式图：
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-8bd2e8cc37f7ce0e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-8bd2e8cc37f7ce0e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 如果你把简单封装和`controlValueAccessor`封装进行比较，你会发现父子组件交互方式是不一样的，尽管封装的组件与`slider`组件的交互是一样的。你可能注意到`formControl`指令实际上简化了与父组件交互的方式。这里我们使用`writeValue`来向子组件写入数据，而在简单封装方法中使用`ngOnChanges`；调用`this.onChange`方法输出数据，而在简单封装方法中使用`this.valueChange.emit(ui.value)`。
 

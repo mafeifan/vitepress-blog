@@ -91,7 +91,7 @@ server {
 
 ### Role
 
-![](http://pek3b.qingstor.com/hexo-blog/20220213202526.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220213202526.png)
 
 role 需要一个特定的目录结构，执行时会自动加载定义好的文件如 vars_files,tasks,handles 等
 
@@ -138,7 +138,7 @@ roles目录中多个为`geerlingguy.redis`的目录。可以在各种操作系�
 
 我们可以研究别人写好的role
 
-![](http://pek3b.qingstor.com/hexo-blog/20220215175839.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220215175839.png)
 
 ## 参考
 https://www.kancloud.cn/willseecloud/ansible/2092474

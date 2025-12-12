@@ -18,7 +18,7 @@
   border: 1px solid #00f;
 }
 ```
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-0d48f8a95672bd63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-0d48f8a95672bd63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## ::ng-deep
 在Angular中，对组件的样式规则进行了内部封装，即为组件定义的样式规则都只在组件内部才能生效，不进不出，所以组件样式通常只会作用于组件自身的 HTML 上。因此可以使用`::ng-deep`来强制一个样式对各级子组件的视图也生效。
@@ -30,7 +30,7 @@
 ```
 可以看到不止父组件中的h4标签中的字体颜色改变了，子组件中的也改变了。
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-dbd489ae83ce64f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-dbd489ae83ce64f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 > 但是需要注意的是，在我们的项目中，不止写入上面样式代码相关的组件和其子组件样式改变了，其他的不相关的组件h4标签颜色也发生了改变。:ng-deep 等于污染了全局样式
 

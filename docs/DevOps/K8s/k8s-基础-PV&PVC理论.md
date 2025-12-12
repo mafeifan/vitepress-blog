@@ -142,7 +142,7 @@ cosmota                        web-uploads                                     B
 
 PVC是在Kubernetes中一种抽象的存储卷类型，代表了某个具体类型存储的数据卷表达。其设计意图是分离存储与应用编排，将存储细节抽象出来并实现存储的编排。这样Kubernetes中存储卷对象独立于应用编排而单独存在，在编排层面使应用和存储解耦。
 
-![](http://pek3b.qingstor.com/hexo-blog/20220301191948.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220301191948.png)
 
 
 ## PV和PVC使用说明

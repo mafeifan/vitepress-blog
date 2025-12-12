@@ -6,16 +6,16 @@
 用了一阵发现有几个好处：
 1. 开源，[github上](https://github.com/easysoft/zsite)有源码
 2. 定制化比较高，特别是后台有个可视化功能很好用
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-7b71d56062f8cb30.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-7b71d56062f8cb30.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 而且还可以为页面添加自定义css和js。
 直接线上编辑文件，添加 JS 或 CSS。
 
 总结出的问题，针对7.1版本
 1. 编辑模板注意区分，桌面版和移动版
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-6c72fd2d39a4097e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-6c72fd2d39a4097e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 2. 编辑移动版header的地址是 /system/tmp/template/mobile/block/header.html.php
 比如想改logo，这里有个小bug
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-fe4331ac694168d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-fe4331ac694168d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 不过客户给我发了个 http://2070.wangzhan31.com/ 。。
 一看就是流水线出来的，还有这个 http://m.hnjjjs.com/ 等于一个模子刻出来的。

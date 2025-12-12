@@ -5,7 +5,7 @@
 这时可以使用ngrok工具。他可以分配给你一个公网的二级域名，来绑定你本地的正在跑的http服务。
 比如我本地跑了一个vue cli搭建的程序，跑起来后默认是 http://localhost:8080 。
 当我安装 ngnok 后，执行 `./ngrok http 8080` (Windows系统下可能是ngrok.exe)
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-cc1e87db8b1f6b6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-cc1e87db8b1f6b6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 如图：工具随机分配给我了http和https两个地址，这个时候无论是手机还是电脑，还是其他地方的小伙伴访问 http://100a13a1.ngrok.io 就可以看到我本机上的 localhost:8080
 打开web interface对应的地址，可以看到请求和响应内容，方便调试。

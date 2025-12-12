@@ -66,7 +66,7 @@ def createVersion() {
 ```
 
 这里已经建好 [jenkins-shared-library](https://github.com/mafeifan/jenkins-shared-library)，文件结构如下：
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-3cbd29a376ce5773.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-3cbd29a376ce5773.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 vars 目录下的全局变量可以直接在pipeline中使用，即当写`sayHello('world')`，实际调用的是`sayHello.groovy`中的call函数
 
@@ -79,7 +79,7 @@ src目录中的类，可以使用Groovy中的@Grab注解，自动下载第三方
 
 2. Jenkins 管理后台配置仓库地址和版本等 进入 Jenkins 的Manage Jenkins -> Configure System -> Global Pipeline Libraries 配置页面
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-54128b9572a8a015.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-54128b9572a8a015.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 3. Jenkins 项目的pipeline中引入共享库(可以指定仓库版本和具体class)
    新建一pipeline类型的job。 Pipeline内容如下:
@@ -116,7 +116,7 @@ def createVersion() {
 ```
 
 查看构建日志，发现Jenkins首先拉取共享库代码，执行成功。
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-6ab66c2595a6266a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-6ab66c2595a6266a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 指定加载
 

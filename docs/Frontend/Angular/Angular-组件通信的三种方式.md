@@ -2,7 +2,7 @@
 
 这个教程适合初学者看，这里介绍的是最常见的三种通信方式。
 如图，下面的页面里有个名为side-bar的组件，组件内部有个toggle方法，可以控制显示或隐藏，这个需要其他组件来调用toggle的方法。
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-898700d3f6b5dec2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-898700d3f6b5dec2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 我们可以通过以下三种方式来实现：
 1. 传递一个组件的引用给另一个组件
 2. 通过子组件发送EventEmitter和父组件通信

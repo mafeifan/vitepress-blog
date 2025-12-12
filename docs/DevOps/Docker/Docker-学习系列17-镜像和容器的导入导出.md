@@ -11,15 +11,15 @@
 发现如下特点：
 1. 镜像压缩包比容器要大。
 2. 目录结构不太一样
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-37618c92dcfda9b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-37618c92dcfda9b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 3. 容器压缩包 是很典型的Linux目录结构，还找到当初build时被ADD进的源码文件
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-440be0e9b46bf3cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-440be0e9b46bf3cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 4. 镜像压缩包 其实就是分层的文件系统。Docker镜像就是由这样一层层的文件叠加起来。
 打开压缩包内的 repositories，
 内容为 `{"finleyma/express":{"latest":"dda6ce6f2c43f673353e2ce232b31d11ff15b444e338a0ef8f34b6ef74093d6c"}}`
 既这个镜像的名称，tag是latest，id为dda6ce6f2c43f673353e2ce232b31d11ff15b444e338a0ef8f34b6ef74093d6c
 而且tar内有相同ID的目录。
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-22f93b16b5988b5f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-22f93b16b5988b5f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 json文件的内容如下：里面记录着这一层容器文件的元信息，通过parent，还能知道依赖的上一层的文件系统是什么。
 ```json
@@ -80,10 +80,10 @@ json文件的内容如下：里面记录着这一层容器文件的元信息，�
 }
 ```
 打开lay.tar, 对于的原来就是当初dockerfile中的`ADD . /app/`
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-f785d326c181fb7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-f785d326c181fb7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 那 node_modules 跑哪了，你很快就能猜测到，肯定在上一层文件中。事实确实是这样的。`ADD . /app/` 之前对于的命令是 `RUN npm install`
->  ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-6f374d61861a539a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>  ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-6f374d61861a539a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 所以写`dockerfile`时，一行命令对于一层文件系统，要充分利用这样机制，层的数量尽可能少，只安装必要的依赖包。
 

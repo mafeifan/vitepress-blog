@@ -1,7 +1,7 @@
 Jenkins的所有数据文件都存在文件中，Jenkins备份就是备份JENKINS_HOME目录。默认路径是`/var/lib/jenkins`，或者到Jenkins的配置文件中查看`cat /etc/default/jenkins | grep "home"`。
 
 JENKINS_HOME目录 结构如下：
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-445eaff1e931e26a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-445eaff1e931e26a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 > 其中 workspace, builds 和 fingerprints目录是不需要备份的
 
@@ -13,11 +13,11 @@ JENKINS_HOME目录 结构如下：
 thin-backup 安装好后，管理页面会多出一个菜单项，进入后是 thin-backup 设置页面，
 非常简答，立即备份，恢复和配置
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-b704a1e3ac8f043b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-b704a1e3ac8f043b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 配置页面中可以设置备份路径，备份周期，最大备份数量等等
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-49ac95452fb906ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-49ac95452fb906ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 备份周期的填写要符合Jenkins trigger cron语法，我填写的是 `H 23 * * 6` 即每周6的23点任意分钟执行
 

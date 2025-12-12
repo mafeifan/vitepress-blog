@@ -9,7 +9,7 @@
 
 ### 浏览器允许的并发资源数限制，如何突破?
 不同浏览器的并发请求数目限制不同
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-284ff99a9fc922bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-284ff99a9fc922bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 因为浏览器的并发请求数目限制是针对同一域名的。
 * 所以可以多设置子个域名来突破限制，比如简书的图片子域名`upload-images.jianshu.io`，
@@ -53,14 +53,14 @@ setTimeout(() => console.log(2))
 console.log(3)
 ```
 显示顺序是: 3 2 1
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-0450453b908032c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-0450453b908032c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 实例2
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-576eec8887000e66.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-576eec8887000e66.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 显示顺序: d c a b 或 d c a b
 这是由于ajax的success回调函数被放入异步队列的时间是不确定的，当然如果是本地测试，有可能的顺序是 d a...
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-3a0e9435dd388e77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-3a0e9435dd388e77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 关于$ajax的底层
 jquery的 $ajax 实际上是对 [XMLHttpRequest](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest) 对象的封装
@@ -107,7 +107,7 @@ window.onerror = function(errorMessage, scriptURI, lineNo, columnNo, error) {
 
 console.log(a);
 ```
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-e0916fe24ed7df34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-e0916fe24ed7df34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 提交异常
 ```javascript

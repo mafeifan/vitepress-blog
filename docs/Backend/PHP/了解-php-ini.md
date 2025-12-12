@@ -9,7 +9,7 @@ php.ini 有点复杂
 会看到如下信息：
 主配置文件是: `/usr/local/etc/php/7.1/php.ini`
 额外的配置文件: `/usr/local/etc/php/7.1/conf.d` 
-     ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-41c1e13c0a3173cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+     ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-41c1e13c0a3173cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 你还可以在 `/usr/local/etc/php/7.1/php-fpm.d/www.conf` 此文件下面定义配置项。这个文件被 [php-fpm.conf] 包含
  * [php-fpm.conf](http://php.net/manual/zh/install.fpm.configuration.php) 是php-fpm进程服务的配置文件
 ```
@@ -20,17 +20,17 @@ php.ini 有点复杂
 ```
  * `www.conf` 这是php-fpm进程服务的扩展配置文件 (php-fpm.d目录下)
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-3c1ea4934d74cb69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-3c1ea4934d74cb69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 可修改范围
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-0cd7abe8a63bf5b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-0cd7abe8a63bf5b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 [核心配置选项说明](http://php.net/manual/zh/ini.core.php)
 
 ### 针对项目使用配置项
 在项目入口目录新建 `.user.ini`
 
 ### 查看命令行模式下加载哪些ini文件
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-5da7950228e4f032.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-5da7950228e4f032.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 参考
 http://php.net/configuration.file

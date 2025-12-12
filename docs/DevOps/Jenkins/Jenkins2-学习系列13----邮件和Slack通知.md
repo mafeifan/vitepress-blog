@@ -7,7 +7,7 @@
 来到Jenkins的Configure System
 
 1. 首先在配置页面搜索 Location 配置 Jenkins 管理员的邮箱
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-3f2e6a645cc2a99c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-3f2e6a645cc2a99c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 2. 搜索'E-mail Notification'
 
@@ -15,12 +15,12 @@
 
 自带的E-mail Notification功能较弱，我们配置 Extended E-mail Notification，配置项比较多，不懂的点问号图标。
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-15374369d68c3237.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-15374369d68c3237.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 3. 来到Pipeline项目的配置页面，
 通过点击 Pipeline Syntax 来到 Snippet Generator， 生成pipeline脚本。
 Step 选择 mailtext: Extended Email。
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-cd2e596c076a09a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-cd2e596c076a09a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 修改pipeline，添加发送邮件的步骤，放到pipeline的post部分的always块内，你也可以改为failure
 ```groovy
@@ -38,7 +38,7 @@ ${env.JOB_NAME}：${env.BUILD_NUMBER}</a>"</p>
 
 
 效果如下：
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-bc6e26e081f58b82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-bc6e26e081f58b82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 你也可以使用全局配置默认subject和content，使用方法如下:
 ```groovy
@@ -81,12 +81,12 @@ Slack 号称邮件杀手，是一款国外很火的消息聚合平台服务，�
 根据提示没有账号的话先申请账号
 
 3. Slack 端集成 Jenkin CI，首先，网页端登录slack，进到自己的workspace，然后添加Jenkins应用，需要选择一个要推送通知的频道
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-a5ee5d7ea2cb6a3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-a5ee5d7ea2cb6a3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 4.  根据指引配置就可以了，非常人性，下图在FreeStyle类型的项目中可配
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-b7f463bfb9da4cb9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-b7f463bfb9da4cb9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-88657094ea253303.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-88657094ea253303.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 5. 如果需要通过Pipeline代码触发
 ```groovy
@@ -96,10 +96,10 @@ post {
   }
 ```
 更多参数还是参见非常好用的Pipeline Syntax 的 Snippet Generator
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-8c634186b527adc4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-8c634186b527adc4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 效果：
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-2a055f985f9cf673.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-2a055f985f9cf673.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 ### 钉钉通知
@@ -111,7 +111,7 @@ Slack 有时候国内速度访问比较慢，如果公司喜欢用钉钉，也�
 ### 问题
 使用邮件，想把构建日志作为邮件内容发送出去，但是使用 `${env.BUILD_LOG}` 返回 null，可以改为`\${BUILD_LOG}` groovy 会展开所有的变量，然后留给email ext 处理这个变量
 网上也有人问了类似的[问题](https://stackoverflow.com/questions/48081510/cant-access-build-log-in-jenkins-pipeline)，可以使用 `currentBuild.rawBuild.getLog(15)` 获取最后的15行日志，不过需要在 scriptApproval 页面批准下 `method org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper getRawBuild`
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-e3d683b62140b2fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-e3d683b62140b2fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 ### 参考

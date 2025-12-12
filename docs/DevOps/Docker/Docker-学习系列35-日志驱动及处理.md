@@ -8,7 +8,7 @@ Docker默认支持如下日志驱动。有直接写文件的，有使用云服�
 
 https://docs.docker.com/config/containers/logging/configure/
 
-![](http://pek3b.qingstor.com/hexo-blog/Screen-Shot-2017-09-11-at-3.08.50-PM.png)
+![](https://pek3b.qingstor.com/hexo-blog/Screen-Shot-2017-09-11-at-3.08.50-PM.png)
 
 
 ### AWS ECS
@@ -73,7 +73,7 @@ json-file本身是没有记录上下文信息的。集中存储到日志中心�
 
 fluentd也有不少通过docker daemon查询或是解析容器目录下config.v2.json获取metadata的 filter 插件。
 
-![](http://pek3b.qingstor.com/hexo-blog/20220814121433.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220814121433.png)
 
 参考 https://www.fluentd.org/plugins
 

@@ -18,9 +18,6 @@ Laravel 集合是 Laravel 框架中一个十分有用的工具。
 $newCollection = collect([1, 2, 3, 4, 5]);
 dd($newCollection);
 
-用 dd() 帮助函数来在浏览器中显示集合。看起来大概会是这样子。
-> ![image.png](https://cdn.learnku.com/uploads/images/201903/26/1/1L5ErpgwUZ.png!large)
-
 ## Eloquent ORM 集合
 Eloquent ORM 的调用会以集合的形式返回数据
 ```php
@@ -35,9 +32,6 @@ public function getUsers()
 ```
 该控制器方法会返回一个如下显示的所有用户的 Laravel 集合。
 
-
-> ![image.png](https://cdn.learnku.com/uploads/images/201903/26/1/CwtWfv8gs6.png!large)
->
 你可以通过箭头符号便捷的访问集合属性。至于实例，想要获取 $users 集合的第一个用户的名字，我们可以这样做。
 
 ```php    

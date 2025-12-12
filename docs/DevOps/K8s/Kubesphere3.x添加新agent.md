@@ -124,7 +124,7 @@ CMD ["node","-v"]
 等待一会儿，如果没有报错，则配置完成。可以点击此页下的“View Configuration”检查配置是否生效。
 如果还没生效，Path中填写`/var/jenkins_home/casc_configs/jenkins.yaml` 重新apply
 
-![](http://pek3b.qingstor.com/hexo-blog/20211116183447.png)
+![](https://pek3b.qingstor.com/hexo-blog/20211116183447.png)
 
 ## 检查agent
 
@@ -132,7 +132,7 @@ Manage Jenkins - Manage Nodes and Clouds - Configure Clouds
 
 发现nodejs16配置项已经有了，内容就是之前yaml中描述的那样
 
-![](http://pek3b.qingstor.com/hexo-blog/20211116183522.png)
+![](https://pek3b.qingstor.com/hexo-blog/20211116183522.png)
 
 ## 参考
 https://github.com/kubesphere/devops-agent/blob/v3.2.0/nodejs/Dockerfile

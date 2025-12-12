@@ -608,7 +608,7 @@ Ansible-console：2.0+新增，可交互执行命令，支持tab  (了解)
 > Playbook采用YAML语言编写
 ```
 ### playbook图解
-![](http://pek3b.qingstor.com/hexo-blog/20220213165752.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220213165752.png)
 ```
 用户通过 ansible 命令直接调用yml语言写好的 playbook,playbook 由多条 play 组成
 每条play都有一个任务(task)相对应的操作,然后调用模块 modules，应用在主机清单上,通过 ssh 远程连接

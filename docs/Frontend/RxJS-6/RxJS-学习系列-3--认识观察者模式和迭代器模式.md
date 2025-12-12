@@ -269,7 +269,7 @@ function* getNumbers(words) {
 ## Observable
 在了解 Observer 跟 Iterator 后，不知道大家有没有发现其实 Observer 跟 Iterator 有个共通的特性，就是他们都是渐进式(progressive) 的取得数据，差别只在于 Observer 是生产者(Producer)推送数据(push)，而 Iterator 是消费者(Consumer)拉数据(pull)!
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-48b8319d3a3ad25c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-48b8319d3a3ad25c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 Observable 其实就是这两个 Pattern 思想的结合，Observable 具备生产者推送数据的特性，同时能像数组，拥有数组处理数据的方法(map, filter...)！
 

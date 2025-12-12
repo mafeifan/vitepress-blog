@@ -49,7 +49,7 @@ echo $(date) >> hook.log
 
 ## 使用托管网站的web-hook
 以bitbucket为例，我在上面创建一个nodejs项目叫git-deploy-demo，暴露一个接口叫deploy，必须是post方法。项目跑在我自己的主机叫cloud。每次push代码，我让他调用这个deploy接口
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-6a41eb3e26a43784.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-6a41eb3e26a43784.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 关于deploy接口，接收调用后执行update.sh脚本
 ```
 const exec = require('child_process').exec;

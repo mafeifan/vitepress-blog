@@ -27,7 +27,7 @@ Velero 由运行在集群上的服务端和一个运行在本地的命令行客�
 * BackupController 会向 API Server 查询相关数据。
 * BackupController 将查询到的数据备份到远端的对象存储。
 
-![](http://pek3b.qingstor.com/hexo-blog/20220310205710.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220310205710.png)
 
 ## 安装
 
@@ -80,7 +80,7 @@ Backup completed with status: Completed. You may check for more information usin
 
 打开S3页面查看备份结果
 
-![](http://pek3b.qingstor.com/hexo-blog/20220310221227.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220310221227.png)
 
 ```bash
 

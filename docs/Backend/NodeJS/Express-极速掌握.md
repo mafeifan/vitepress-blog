@@ -63,12 +63,12 @@ app.post('/', urlencodedParser, function(request, response) {
 });
 ```
 * 不带 app.use(bodyParser.json()); 不支持下面的提交
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-96e45d1ac26a9649.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-96e45d1ac26a9649.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 也就是
 `Content-Type: application/json`
 
 * 带 var urlencodedParser = bodyParser.urlencoded({ extended: false })
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-e26b7c5f791141fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-e26b7c5f791141fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 

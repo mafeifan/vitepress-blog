@@ -77,7 +77,7 @@ and the repository exists.
 
 ##### 图 1\. 查看提交历史
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-bab7a7b3620fb88c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-bab7a7b3620fb88c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 然后我们可以通过 `git reset --hard commit_id` 命令恢复当前代码库到目标 commit 的状态，如清单 4 所示：
@@ -115,14 +115,14 @@ drwxr-xr-x   3 caozhi  staff   96  8  5 10:48 src
 
 ##### 图 2\. 增量方式
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-b75b39e3f05cecab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-b75b39e3f05cecab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 而 Git 采用的是类似于快照流（Streams of Snapshot）的方式来存储数据。Git 在一个文件发生修改时会生成一个新的完整的文件对象，当然旧的文件对象也会保留下来作为历史版本。对于未发生更改的文件，Git 在新版本的代码库中只是保留了一个链接指向之前存储的文件。例如图 3 （截取自 ProGit 一书）所示版本 2 中，对 A 文件和 C 文件都进行了修改，Git 生成了两个新的完整的文件对象 A1 和 C1，而 B 文件未发生更改，那么版本 2 中就只记录了一个指向 B 文件的链接。基于文件对象 A1 和 C1 以及连接 B，Git 就生成了一个版本 2 的快照。
 
 ##### 图 3\. 快照方式
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-4b3a3fca9868a5bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-4b3a3fca9868a5bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 代码库的存储和复制并非版本控制系统的瓶颈所在，分析文件的差异、查看代码库的各历史版本常常是真正的瓶颈所在。基于这种快照流的设计，Git 可以快速地获取到某一时刻的代码库所有文件，同时也可以快速地进行文件各个历史版本的差异比对，甚至是各历史版本或者各分支的代码库整体差异比对。想像一下如果是传统的增量存储方式，一个代码库经过长期的开发，假设代码库已经有 10 万个文件，每个文件平均经历了 100 次修改，那么要检索最新的代码库和原始的代码库的差异，就需要检索出 1000 万个增量才能最终成功比对，这需要难以想象的时间成本。而 Git 就不存在这个问题，Git 只需要检索出最新的代码库快照和原始代码库快照直接进行比对即可，再依托于 Git 的 diff 算法（Myers 算法），Git 可以高效快速地检索出二者的差异来。
 
@@ -299,17 +299,17 @@ GitHub 是全球最大的开源代码托管平台，在开源界有着不可撼�
 
 ##### 图 4\. 添加仓库或组织
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-1a8f16bcce596244.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-1a8f16bcce596244.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 *   如果是开源项目，可以很容易 Fork 其它开源项目的代码库到自己的账号下；也可以向别人发起 Pull Request 请求，请求作者将 Fork 下来之后的代码修改合并到原代码库中。如图 5 和图 6 所示，我们可以将 Linux 的源码库 Fork 到自己的账户或组织下。
 
 ##### 图 5\. Fork Linux 代码库
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-95da95447b0a7fd4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-95da95447b0a7fd4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ##### 图 6\. 选择 Fork 的目标
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-d5b30fdf2bdfddfb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-d5b30fdf2bdfddfb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 *   Pull Request 提供了强大的代码评审、代码合并的机制。通过创建 Pull Request 向开源项目的作者或者管理者发起合并自己代码的请求，我们可以轻松地向开源项目贡献代码。代码评审和 Pull Request 将在随后的系列文章中详细介绍。

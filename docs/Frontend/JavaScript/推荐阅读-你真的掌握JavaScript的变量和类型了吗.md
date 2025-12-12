@@ -87,13 +87,13 @@ console.log(str);  
 
 `JavaScript`中的原始类型的值被直接存储在栈中，在变量定义时，栈就为其分配好了内存空间。
 
-![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-bc1320c29cae77f7?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-bc1320c29cae77f7?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 由于栈中的内存空间的大小是固定的，那么注定了存储在栈中的变量就是不可变的。
 
 在上面的代码中，我们执行了`str += '6'`的操作，实际上是在栈中又开辟了一块内存空间用于存储`'ConardLi6'`，然后将变量`str`指向这块空间，所以这并不违背`不可变性的`特点。
 
-![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-cabe683bdd16f68e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-cabe683bdd16f68e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 2.2 引用类型
 
@@ -116,7 +116,7 @@ var obj3 = function(){...}
 var obj4 = [1,2,3,4,5,6,7,8,9]
 ```
 
-![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-5aefda71ecd07b3e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-5aefda71ecd07b3e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 > 由于内存是有限的，这些变量不可能一直在内存中占用资源，这里推荐下这篇文章JavaScript中的垃圾回收和内存泄漏，这里告诉你`JavaScript`是如何进行垃圾回收以及可能会发生内存泄漏的一些场景。
 
@@ -155,7 +155,7 @@ console.log(name); 
 // ConardLi;
 ```
 
-![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-c994a015cd331cf7?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-c994a015cd331cf7?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 内存中有一个变量`name`，值为`ConardLi`。我们从变量`name`复制出一个变量`name2`，此时在内存中创建了一个块新的空间用于存储`ConardLi`，虽然两者值是相同的，但是两者指向的内存空间完全不同，这两个变量参与任何操作都互不影响。
 
@@ -169,7 +169,7 @@ console.log(obj.name); 
 // code秘密花园
 ```
 
-![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-650b33f0096626d9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-650b33f0096626d9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 当我们复制引用类型的变量时，实际上复制的是栈中存储的地址，所以复制出来的`obj2`实际上和`obj`指向的堆中同一个对象。因此，我们改变其中任何一个变量的值，另一个变量都会受到影响，这就是为什么会有深拷贝和浅拷贝的原因。
 
@@ -177,7 +177,7 @@ console.log(obj.name); 
 
 当我们在对两个变量进行比较时，不同类型的变量的表现是不同的：
 
-![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-aec290ffc09101b7?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-aec290ffc09101b7?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ```
 var name = 'ConardLi';
@@ -243,7 +243,7 @@ console.log(obj.name); // ConardLi
 
 ## 三、分不清的null和undefined
 
-![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-19f51a9f1707c589?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-19f51a9f1707c589?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 在原始类型中，有两个类型`Null`和`Undefined`，他们都有且仅有一个值，`null`和`undefined`，并且他们都代表无和空，我一般这样区分它们：
 
@@ -453,7 +453,7 @@ Function.prototype.myCall  =  function  (context)  {      
     judgeFloat(0.1, 0.2);
     judgeFloat(0.6, 0.7);
 ```
-![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-4cacaaab9ea38a60?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-4cacaaab9ea38a60?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 5.1 精度丢失
 
@@ -521,7 +521,7 @@ Function.prototype.myCall  =  function  (context)  {      
 
 三种精度的浮点数各个部分位数如下：
 
-![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-c27871083c821744?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 "image")
+![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-c27871083c821744?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 <figcaption style="margin: 10px 0px 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 0.7em; color: rgb(153, 153, 153); line-height: inherit; text-align: center;">image</figcaption>
 
@@ -541,7 +541,7 @@ Function.prototype.myCall  =  function  (context)  {      
 
 所以：
 
-![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-97cb514efa3f24d5?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 "image")
+![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-97cb514efa3f24d5?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 <figcaption style="margin: 10px 0px 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 0.7em; color: rgb(153, 153, 153); line-height: inherit; text-align: center;">image</figcaption>
 
@@ -729,7 +729,7 @@ console.log( typeof num.toString() ); //string
 
 如果发生了隐式转换，那么各种类型互转符合下面的规则：
 
-![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-9b777cfcd203dfe9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-9b777cfcd203dfe9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 7.2 if 语句和逻辑语句
 
@@ -944,7 +944,7 @@ const obj = {};obj.toString() // [object Object]
 
 我们可以直接调用`Object`原型上未被覆盖的`toString()`方法，使用`call`来改变`this`指向来达到我们想要的效果。
 
-![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-d253867e43d6bf5b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-d253867e43d6bf5b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 8.4 jquery
 

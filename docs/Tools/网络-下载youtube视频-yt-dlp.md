@@ -22,6 +22,6 @@ yt-dlp https://www.youtube.com/watch?v=MXdFMjm3vTs --cookies-from-browser chrome
 
 ## 追加播放列表序号
 
-![](http://pek3b.qingstor.com/hexo-blog/20220304160239.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220304160239.png)
 
 yt-dlp --verbose  -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "https://www.youtube.com/playlist?list=PLliocbKHJNwvBSh4DeBDHgq_8xINNzrt4" --cookies-from-browser chrome --proxy socks5://127.0.0.1:7890 --extractor-args youtubetab:skip=authcheck

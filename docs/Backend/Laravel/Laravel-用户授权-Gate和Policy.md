@@ -96,7 +96,7 @@ $factory->define(App\Post::class, function (Faker $faker) {
 });
 ```
 Post表内容
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-f3ca21de1f0d860a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-f3ca21de1f0d860a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 2. routes/web.php添加
 `Route::resource('posts', 'PostsController');`
@@ -145,10 +145,10 @@ Post表内容
 ```
 5. 访问 `/posts/1`。会报403。这是因为我们是用user_id为2登录。
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-555198e22bd1e106.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-555198e22bd1e106.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 6. 如果注释 `$this->authorize('update-post', $post);`，就会显示：
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-28a14f6b24e744ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-28a14f6b24e744ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 7. 视图中判断Policy，如果post的user_id是当前登录用户，显示编辑链接。
 ```

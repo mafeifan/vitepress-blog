@@ -20,7 +20,7 @@ sudo apt-get install open-iscsi
 sudo systemctl enable --now iscsid
 ```
 
-![](http://pek3b.qingstor.com/hexo-blog/20220301180107.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220301180107.png)
 
 OpenEBS 提供了三种存储引擎选择：Jiva，cStor 和 Local PV。
 

@@ -222,7 +222,7 @@ Route::get('test-broadcast', function(){
 坑2 使用广播必须开启队列
 :::
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/images/2019/10/26/e5cdb6bcb0936c418bd0bac123d8ec0f.png)
+![image.png](https://pek3b.qingstor.com/hexo-blog/images/2019/10/26/e5cdb6bcb0936c418bd0bac123d8ec0f.png)
 
 执行 `php artisan queue:listen --tries=1`
 
@@ -232,13 +232,13 @@ Route::get('test-broadcast', function(){
 `your-host/test-broadcast`
 
 浏览器network中可以看到有数据过来了
-![image.png](https://hexo-blog.pek3b.qingstor.com/images/2019/10/26/85b5d805ad869d1b6e999a3f9d58579c.png)
+![image.png](https://pek3b.qingstor.com/hexo-blog/images/2019/10/26/85b5d805ad869d1b6e999a3f9d58579c.png)
 
 队列也能看到变化
-![image.png](https://hexo-blog.pek3b.qingstor.com/images/2019/10/26/47bb178349bbde797b09b97f01a2a0a5.png)
+![image.png](https://pek3b.qingstor.com/hexo-blog/images/2019/10/26/47bb178349bbde797b09b97f01a2a0a5.png)
 
 laravel-echo-server
-![image.png](https://hexo-blog.pek3b.qingstor.com/images/2019/10/26/0ab692b65bfa3d122eee340ebf6d960c.png)
+![image.png](https://pek3b.qingstor.com/hexo-blog/images/2019/10/26/0ab692b65bfa3d122eee340ebf6d960c.png)
 
 
 ::: warning
@@ -248,7 +248,7 @@ Laravel 会自动给Channel加前缀，默认把这行掉
 `config/database.php`
 `'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),`
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/images/2019/10/26/0981fce6958cba6c6eb4846d06eec6b9.png)
+![image.png](https://pek3b.qingstor.com/hexo-blog/images/2019/10/26/0981fce6958cba6c6eb4846d06eec6b9.png)
 
 
 ### 正式环境

@@ -135,14 +135,14 @@
 
 按照计算后的结果排序
 
-![](http://pek3b.qingstor.com/hexo-blog/20220710174715.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220710174715.png)
 
 7. 为Index patterns起ID
 
 Index patterns的ID用于visualize的引用，建议自己指定，系统自己指定的是一个uuid，建议自动指定，这样识别度比较高。
 我的做法是和 alias 或 index 名字一致
 
-![](http://pek3b.qingstor.com/hexo-blog/20220729090252.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220729090252.png)
 
 8. 修改Index patterns的Time Field
 

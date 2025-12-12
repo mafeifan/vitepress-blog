@@ -1,6 +1,6 @@
 1. 安装 `https://github.com/laracasts/flash`
 该扩展用于方便的输出提示信息
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-dc7261a9121b50c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-dc7261a9121b50c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 2. 复写登录逻辑，因为给user表新增了is_active字段
 打开 `\app\Http\Controllers\Auth\LoginController.php`
 大致添加如下：

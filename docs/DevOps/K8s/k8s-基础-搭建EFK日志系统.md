@@ -280,12 +280,12 @@ spec:
 
 浏览器访问 Kibana
 
-![](http://pek3b.qingstor.com/hexo-blog/20220506183304.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220506183304.png)
 
 在虚拟机里设置了端口转发，所以宿主机访问地址是：localhost:32256
 
 
-![](http://pek3b.qingstor.com/hexo-blog/20220314212805.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220314212805.png)
 
 ## 部署 Fluentd
 
@@ -297,7 +297,7 @@ Fluentd 通过一组给定的数据源抓取日志数据，处理后（转换成
 * 结构化并且标记这些数据
 * 然后根据匹配的标签将数据发送到多个目标服务去
 
-![](http://pek3b.qingstor.com/hexo-blog/20220314213044.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220314213044.png)
 
 ### 配置
 一般来说我们是通过一个配置文件来告诉 Fluentd 如何采集、处理数据的，下面简单和大家介绍下 Fluentd 的配置方法。
@@ -657,15 +657,15 @@ statefulset.apps/es-cluster   1/1     72m   elasticsearch   docker.elastic.co/el
 
 Fluentd 启动成功后，我们可以前往 Kibana 的 Dashboard 页面中，点击左侧的Discover，可以看到如下配置页面：
 
-![](http://pek3b.qingstor.com/hexo-blog/20220314215213.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220314215213.png)
 
 在这里可以配置我们需要的 Elasticsearch 索引，前面 Fluentd 配置文件中我们采集的日志使用的是 logstash 格式，这里只需要在文本框中输入`logstash-*`即可匹配到 Elasticsearch 集群中的所有日志数据，然后点击下一步，进入以下页面：
 
-![](http://pek3b.qingstor.com/hexo-blog/20220314215318.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220314215318.png)
 
 在该页面中配置使用哪个字段按时间过滤日志数据，在下拉列表中，选择`@timestamp`字段，然后点击`Create index pattern`，创建完成后，点击左侧导航菜单中的 `Discover`，然后就可以看到一些直方图和最近采集到的日志数据了：
 
-![](http://pek3b.qingstor.com/hexo-blog/20220314215627.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220314215627.png)
 
 发现日志集中时间在晚上9点多，因为我这是本地虚拟机里的测试集群，随用随开。
 
@@ -692,7 +692,7 @@ spec:
 
 Pod 创建并运行后，回到 Kibana Dashboard 页面，在上面的Discover页面搜索栏中输入`kubernetes.pod_name:counter`，就可以过滤 Pod 名为 counter 的日志数据：
 
-![](http://pek3b.qingstor.com/hexo-blog/20220314222751.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220314222751.png)
 
 我们也可以通过其他元数据来过滤日志数据，比如 您可以单击任何日志条目以查看其他元数据，如容器名称，Kubernetes 节点，命名空间等。
 

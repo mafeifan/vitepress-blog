@@ -76,7 +76,7 @@ https://github.com/webmodules/jsonp/blob/master/index.js
 
 jsonp 源码实现
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-a2dc23b48a861f9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-a2dc23b48a861f9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 * 1、ajax和jsonp这两种技术在调用方式上“看起来”很像，目的也一样，都是请求一个url，然后把服务器返回的数据进行处理，因此jquery和ext等框架都把jsonp作为ajax的一种形式进行了封装；

@@ -23,17 +23,17 @@
 Name: 给Docker主机起个别名
 Docker Host URI： 如 `tcp://192.168.10.10:2375` ，连接本机Docker，如果连其他主机上的Docker服务端，需要Docker宿主机开放远程访问，具体见[Docker 学习系列21 远程连接Docker]([https://www.jianshu.com/p/90b10c6d729d](https://www.jianshu.com/p/90b10c6d729d)
 )
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-f4ec2bce59d0ee51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-f4ec2bce59d0ee51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 集成Docker插件后，在管理Jenkins页面中会多出一个Docker入口
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-445753b14661b058.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-445753b14661b058.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 点击后能看到配置过的分配给Jenkins实例的Docker服务器列表
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-dc64e4ec0a66e443.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-dc64e4ec0a66e443.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 再点进去能看到正在运行的容器和拥有的镜像
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-b486164e0d72d04d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-b486164e0d72d04d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #### Cloud 构建Docker镜像并上传到指定仓库
 接下来我们新建一个 freestyle 项目
@@ -46,19 +46,19 @@ Docker Host URI： 如 `tcp://192.168.10.10:2375` ，连接本机Docker，如果
 * Cloud：选择刚刚配置的 Docker Cloud 名字
 * Image： 要打包上传的镜像名
 *  Registry Credentials： 注意这里，要添加一个类型是username/password的可以登录docker仓库的credentials
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-166fb30323dc7d57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-166fb30323dc7d57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 3. 构建，查看输出信息
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-66d51c93000106f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-66d51c93000106f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 4. 检查
 Docker Hub 可以看到刚刚上传的镜像
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-9af5097fc19165dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-9af5097fc19165dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 同时Docker Cloud中也多出了一个刚刚打包的镜像
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-4830bce63f8e93bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-4830bce63f8e93bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #### 参考
 [https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file](https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file)

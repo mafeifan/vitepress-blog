@@ -17,7 +17,7 @@ k8s 由 controller-manager, scheduler, api server, coreDNS 等组件组成。还
 
 > 注意 Docker Desktop 带的 k8s 版本要和 images.properties 文件中提供的一致
 
-![](http://pek3b.qingstor.com/hexo-blog/20220129195250.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220129195250.png)
 
 ## 命令介绍
 

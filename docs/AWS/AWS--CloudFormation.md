@@ -18,11 +18,11 @@
 
 ## 什么是CloudFormation
 
-![](http://pek3b.qingstor.com/hexo-blog/20220128220418.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220128220418.png)
 
 所谓堆栈资源，表示一种依赖关系，比如要使用ALB资源，那么就需要实例资源。使用实例要先创建安全组。 堆栈资源最终是一个资源集合。
 
-![](http://pek3b.qingstor.com/hexo-blog/20220128221644.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220128221644.png)
 
 ## CloudFormation模板
 
@@ -140,13 +140,13 @@ AWS比较牛逼的是提供了`AWS CloudFormation Designer`可视化工具来拖
 
 并且官方提供了很多[示例模板](https://docs.aws.amazon.com/zh_cn/AWSCloudFormation/latest/UserGuide/cfn-sample-templates.html)，你可以直接拿来改改就能用。
 
-![](http://pek3b.qingstor.com/hexo-blog/20220128224812.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220128224812.png)
 
 ## 实战
 
 如果已经有模板，可以直接上传到S3，然后填S3地址读取
 
-![](http://pek3b.qingstor.com/hexo-blog/20220128225917.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220128225917.png)
 
 ## 参考
 

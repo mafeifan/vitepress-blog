@@ -11,7 +11,7 @@ Scrapy：是一个由Python语言编写的开源的网络爬虫框架，特点�
 网上搜索 `sudo mv /usr/local/include /usr/local/include_old`
 重新执行安装命令，安装成功后再恢复即可
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-720c7aa0691241f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-720c7aa0691241f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 创建一个项目
 `scrapy startproject tutorial`
@@ -56,7 +56,7 @@ class QuotesSpider(scrapy.Spider):
 ```
 来到项目的根目录，执行`scrapy crawl quotes`
 显示过程
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-5993574519d08165.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-5993574519d08165.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 结果：发现多出了两个 html 文件，等于我们把网页抓取下来了。
 

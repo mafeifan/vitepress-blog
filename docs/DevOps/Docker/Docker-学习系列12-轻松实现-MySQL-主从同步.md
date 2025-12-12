@@ -3,7 +3,7 @@ Docker 的一大好处是在本地可以很方便快速的搭建负载均衡，�
 本节在本地搭建 mysql 的一主一从的集群环境。
 
 关于主从同步的流程图，放张网上找的流程图
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-9bd1d2570613f8de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-9bd1d2570613f8de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 以mysql5.7为例
 
@@ -92,7 +92,7 @@ docker run --name mysql_slave -d -p 3308:3306 -e MYSQL_ROOT_PASSWORD=123456 \
 `GRANT REPLICATION SLAVE ON *.* to 'backup'@'%' identified by '123456';`
 查看状态，记住File、Position的值，在 Slave 中将用到
 `show master status;`
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-b1ffc7e43d23e527.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-b1ffc7e43d23e527.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 进入slave容器
 `docker exec -it mysql_slave bash`
@@ -103,7 +103,7 @@ docker run --name mysql_slave -d -p 3308:3306 -e MYSQL_ROOT_PASSWORD=123456 \
 `start slave`
 查看状态，如果 Slave_SQL_Running_State 是 Slave has read all relay log; waiting for more updates 表示正常运行。
 `show slave status \G`
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-bb110847401decb9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-bb110847401decb9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 5. 测试同步，在master上新建一个数据库
 `docker exec mysql_master mysql -uroot -p123456 -e "CREATE DATABASE test"`

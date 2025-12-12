@@ -25,7 +25,7 @@ pipeline的内容包含执行编译、打包、测试、输出测试报告等步
 
 如下图，声明式pipeline的语法结构概览，粗线边框的表示必需的
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-0179c7d94aa620db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-0179c7d94aa620db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 例1   一个最简单的声明式pipeline
 

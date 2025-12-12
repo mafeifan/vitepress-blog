@@ -2,7 +2,7 @@
 
  原理也非常简单：
 1. 前天在请求头中添加 Authorization，如下
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-ea6a4988a773de40.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-ea6a4988a773de40.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 2. 后台取到值，然后去用户表的api_token列进行匹配，如果查到说明验证成功，并且返回相关信息。
 
 Laravel本身自带几种验证方式，下面介绍下token认证的实现的方法。
@@ -37,7 +37,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 2.  `'driver' => 'token'` 实际调用的是`\vendor\laravel\framework\src\Illuminate\Auth\TokenGuard.php`
 上面说到我们需要在request里提供api_token参数，为了区别是哪个用户，需要在user表添加api_token字段
 
-  ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-613f209f9c859b58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+  ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-613f209f9c859b58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 3. 认证过程调用的是getTokenForRequest方法
 ```
@@ -105,10 +105,10 @@ class AddApiTokenToUsers extends Migration
 ```
 
 5. 打开navicat进到user表里，更新users的api_token。
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-9c4143b8d15b29e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-9c4143b8d15b29e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 6. 打开postman
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-1ae37e4bab785fcc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-1ae37e4bab785fcc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 注意这里的header，key是Authorization，值就是Bearer+空格+刚才数据库里设的api_token
 
 这样就能返回内容啦，修改其他用户的token能返回相应的用户信息，说明认证成功，功能基本完成！

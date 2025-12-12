@@ -11,7 +11,7 @@ Node：8.5.0
 
 [Android Studio 3.0](https://developer.android.com/studio/index.html) (注意这个不是必须的，我主要是用他来安装android sdk)
 这个安装过程会比较慢，而且加上sdk等大约会占2G的空间。按照网站的视频安装就行，安装完就可以启动一个安卓程序了。
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-a039542495aeea8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-a039542495aeea8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 注意sdk的安装路径，我们要保证命令行可以直接运行adb。
 我是在环境变量里添加了`C:\Users\{替换成你的计算机名}\AppData\Local\Android\Sdk\platform-tools`
@@ -24,27 +24,27 @@ Node：8.5.0
 [具体文档](https://docs.expo.io/versions/latest/introduction/faq.html)
 实测发现不太稳定。可能会受到不同的电脑环境和环境变量的影响。
 这里要注意一点ADB的配置
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-f3b2f18fc7823445.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-f3b2f18fc7823445.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 大致流程：
 1. 用 `create-react-native-app` 创建一个项目，比如名叫RN_First
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-2f3ff77e28e19ab5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-2f3ff77e28e19ab5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 2. 用Expo XDE打开这个项目并运行
 运行后界面如下，
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-92de03c0fbe3efe4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-92de03c0fbe3efe4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 3. 打开Genymotion并运行安卓模拟器
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-7429cf9dd1cb86c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-7429cf9dd1cb86c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 4. 然后在expo里选择Device-Open on Android，成功的话可以在安卓模拟器看到启动expo并打开了我们的RN项目
 
 如果修改代码，比如App.js，会立即发生变化。
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-ec7bedcc531af94a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-ec7bedcc531af94a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-656ad0cefa1382ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-656ad0cefa1382ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 
@@ -61,7 +61,7 @@ Node：8.5.0
 
 #### 关于模拟器里调试：
 ios里按cmd+R，对于安卓，点击菜单按钮
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-4cc227ac866dbb1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-4cc227ac866dbb1e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 #### 总结：

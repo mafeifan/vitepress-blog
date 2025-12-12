@@ -4,7 +4,7 @@ chrome浏览器是世界上最适合开发人员使用的浏览器的，没有�
 从 chrome70起，我们可以在控制台上方可以放一个动态表达式，用于实时监控它的值。
 1. 点击 "Create Live Expression" 眼睛图标，打开动态表达式界面。
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-e4a3a085d16f78a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-e4a3a085d16f78a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 2. 输入要监控的表达式，比如查看当前的时间戳，输入 Date.now()
 3. 会发现当前时间戳会一直变动。也就是表示式被重新计算了，Live Expression 的执行频率是250毫秒。
@@ -19,7 +19,7 @@ chrome浏览器是世界上最适合开发人员使用的浏览器的，没有�
 我们可以把页面上的某元素节点作为全局变量。
 1. 比如当前页面有一个按钮，我们审核该元素，右键选择 "store as global variable"
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-1df3bd44f51b2314.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-1df3bd44f51b2314.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 2. console面板中会显示该元素的引用名称，一般是 temp1 temp2。
 3. 在console中输入  `monitorEvents(temp1)` 会监视并打印出该元素的所有事件。

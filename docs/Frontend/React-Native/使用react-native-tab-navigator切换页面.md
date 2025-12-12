@@ -5,7 +5,7 @@ https://github.com/react-community/react-navigation
 https://github.com/wix/react-native-navigation
 https://github.com/happypancake/react-native-tab-navigator
 以react-native-tab-navigator为例，实现下面的tab切换效果很容易：
-![demo.gif](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-1c57c3369afc42dc.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![demo.gif](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-1c57c3369afc42dc.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 完整代码如下，其实就是把文档中的例子稍微调整下。
 ```javascript
 import React from 'react';

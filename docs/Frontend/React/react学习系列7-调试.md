@@ -42,4 +42,4 @@ const EnhanceDemo = withHeader(Demo);
 ```
 调试面板 react 显示类似如下
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-eb85d36dfa61406a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-eb85d36dfa61406a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

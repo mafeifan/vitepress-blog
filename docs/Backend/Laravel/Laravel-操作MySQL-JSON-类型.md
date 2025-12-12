@@ -1,7 +1,7 @@
 MySQL5.7.8 起支持定义JSON类型
 
 这里已经建了一张表，叫 my_json，注意 meta 是 json 类型
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-6e7befe83c621926.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-6e7befe83c621926.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 建立相关的模型
 ```
@@ -78,7 +78,7 @@ $result = MyJson::query()->find(4)->meta;
 ```
 
 存到数据库里会自动转为JSON
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-975be772256a93d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-975be772256a93d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 总结：使用 Laravel 操作 MySQL 的 json类型还是很方便的，主要是建立表时要考虑好

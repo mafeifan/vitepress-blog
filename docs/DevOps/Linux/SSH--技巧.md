@@ -17,7 +17,7 @@ Host cloud  alias
 
 ## 执行远程命令
 `ssh cloud "df -h"`
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-6e4fb3bd80600312.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-6e4fb3bd80600312.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 #### 用分号分隔多个命令，用引号引起来
@@ -30,7 +30,7 @@ $ ssh -t cloud top
 比如 `sudo`  开头的可能需要用户输入密码，需要 TTY。
 添加 -t 参数后，ssh 会保持登录状态，直到你退出需要交互的命令。
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-1832a664f7095765.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-1832a664f7095765.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 再举个实际例子：
 `ssh -t flux sudo -u fueladminprd ssh 192.168.1.100`
@@ -64,7 +64,7 @@ $ ssh cloud "echo 'haha'
 可以用单引号或双引号开头，然后写上几行命令，最后再用相同的引号来结束。
 `>` 开头的就是输入下一行命令
 如果需要在命令中使用引号，可以混合使用单双引号。
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-2f98740683ad8e74.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-2f98740683ad8e74.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #### 在命令中使用变量
 在远程服务器执行 `ls node`，本地定义变量a，传入到命令中。达到一样的效果。
@@ -75,13 +75,13 @@ $ ssh cloud bash -c " '
 > ls $a
 > ' "
 ```
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-69eb868388ebdc0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-69eb868388ebdc0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 执行本地脚本
 本地创建demo.sh，内容是：`ls node`
 运行 `ssh cloud < demo.sh`
 通过重定向 stdin，本地的脚本 demo.sh 在远程服务器上被执行。
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-a7b56ec7fbce3520.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-a7b56ec7fbce3520.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #### 为脚本传入参数
 修改 demo.sh 内容为：
@@ -93,7 +93,7 @@ echo $2
 ```
 执行 `ssh cloud 'bash -s'< demo.sh aa bb cc`
 bash 就是 $0 第一个参数。
->  ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-2454d65cbf062ad0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>  ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-2454d65cbf062ad0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 想查看更多配置，打`man ssh_config`
 

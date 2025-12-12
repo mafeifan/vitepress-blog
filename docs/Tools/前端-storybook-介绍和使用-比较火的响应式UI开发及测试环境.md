@@ -16,15 +16,15 @@ storybook本身提供了很多组件，也可以添加自己的组件作为story
 2. 来到一个已存在的react项目，可以是由creat-react-app创建的
 在根目录执行 getstorybook 命令
 会出现如下画面
-![安装storybook](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-127db4f08f7bf556.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![安装storybook](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-127db4f08f7bf556.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 发现这个命令实际修改了package.json，对比如下
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-9ff7bf4290c954c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-9ff7bf4290c954c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 然后又多出来个名为`.storybook`的目录，里面有附件组件文件 `addons.js` 和 `config.js`
 
 3. 安装后根据提示执行 `yarn run storybook` 启动storybook服务，浏览器打开 http://localhost:9009
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-d7e860d0ab76d9e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-d7e860d0ab76d9e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 4. 这个页面是咋生成的呢，我们打开`\src\stories\index.js`一看便知
 ```javascript

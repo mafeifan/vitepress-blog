@@ -23,9 +23,9 @@ CMD ["npm", "start"]
 > 镜像层数尽可能少 
 
 这里推荐一款工具 [dive](https://github.com/wagoodman/dive) 可以方便的查看镜像层详情，评估镜像的质量，如浪费了多少空间
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-55f0d75dadb7a82d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-55f0d75dadb7a82d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-8e13a73e2041219c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-8e13a73e2041219c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 如果作为镜像审查之后，可以进行如下命令操作:
 ```

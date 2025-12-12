@@ -1,4 +1,4 @@
-![](http://pek3b.qingstor.com/hexo-blog/20220530213702.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220530213702.png)
 
 ## 创建EC2
 ```yaml
@@ -107,7 +107,7 @@ service aws-kinesis-agent restart
 tail -f /var/log/aws-kinesis-agent/aws-kinesis-agent.log
 ```
 
-![](http://pek3b.qingstor.com/hexo-blog/20220530230216.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220530230216.png)
 
 
 ## 生成日志
@@ -175,7 +175,7 @@ isfree tinyint
 
 ```
 
-![](http://pek3b.qingstor.com/hexo-blog/20220530225738.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220530225738.png)
 
 ```sql
 CREATE EXTERNAL TABLE IF NOT EXISTS `my_db`.`log-game` (
@@ -198,6 +198,6 @@ TBLPROPERTIES ('has_encrypted_data'='false');
 注意引号
 
 
-![](http://pek3b.qingstor.com/hexo-blog/20220530230947.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220530230947.png)
 
-![](http://pek3b.qingstor.com/hexo-blog/20220530231040.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220530231040.png)

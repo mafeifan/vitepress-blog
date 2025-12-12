@@ -16,7 +16,7 @@ GitHub 是一个代码托管平台，如果开发者想要在本地进行开发�
 
 ##### 图 1\. Git Bash
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-8fbb7bd4ddd34b12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-8fbb7bd4ddd34b12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 对于 Mac 和 Linux 用户，只需通过对应的包管理工具安装即可，如清单 1 所示：
@@ -34,12 +34,12 @@ GitHub 提供了两种克隆方式：HTTPS 和 SSH。我们可以点击仓库页
 
 ##### 图 2\. 查看 HTTPS 克隆链接
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-363a4b5bc4090d80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-363a4b5bc4090d80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 ##### 图 3\. 查看 SSH 克隆链接
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-df49141b06c7bf3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-df49141b06c7bf3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 由此我们可以获得两个 URL：
@@ -84,41 +84,41 @@ To https://github.com/caozhi/repo-for-developerworks.git
 使用 SSH 方式进行克隆，需要一步额外的配置 SSH-KEY 的操作。首先需要本地生成一个 SSH Key。我们可以借助 ssh-keygen 工具生成一对 RSA 的秘钥：私钥 id_rsa 和公钥 id_rsa.pub。生成的秘钥文件会默认放在 home 目录下的 .ssh 目录下，如图 4 所示：
 ##### 图 4\. 使用 ssh-keygen 生成 RSA 秘钥
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-d661d82aee2699bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-d661d82aee2699bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 先将 `id_rsa.pub` 公钥文件的内容复制到剪贴板，如图 5 所示，使用 `cat id_rsa.pub` 命令可以查看公钥内容，随后将该公钥导入到 GitHub 里的账户之下。
 
 ##### 图 5\. 查看 id_rsa.pub 公钥文件
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-4be399c862e5e47e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-4be399c862e5e47e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 在 GitHub 页面右上角的头像里点击展开一个下拉菜单，点击 **Settings** 可以打开个设置页面，如图 6 所示：
 
 ##### 图 6\. 打开 GitHub 设置
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-4b9c763f68af2725.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-4b9c763f68af2725.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 打开 **SSH and GPG keys **的配置页面，点击右上角的 **New SSH key** 按钮，如图 7 所示：
 
 ##### 图 7\. 打开 SSH and GPG keys 的配置页面
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-0062406fdac85fac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-0062406fdac85fac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 在打开的页面中先设置一个您想导入的公钥的名称，再将前面复制的公钥内容粘贴到大文本框中，点击 **Add SSH key** 即可，如图 8 所示：
 
 ##### 图 8\. 输入 Key 的名称及其内容
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-5143176619d5deea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-5143176619d5deea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 页面自动跳转回 **SSH and GPG keys** 设置页面，您可以看到在我的账号下成功新增了一个 SSH Key，如图 9 所示：
 
 ##### 图 9\. 查看已经添加的 Key
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-63956f5dea65ec3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-63956f5dea65ec3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 此时我们可以使用 SSH 的方式进行代码克隆，还可以使用 `ssh -T` 命令检测是否配置成功, 如清单 4 和 5 所示：
@@ -165,7 +165,7 @@ Hi caozhi! You've successfully authenticated, but GitHub does not provide shell 
 
 ##### 图 10\. local_path 为空
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-01f1cea644abbc4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-01f1cea644abbc4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 从截图可以看到，`git clone` 命令在 `clone_demo` 目录中创建了一个 `repo-for-developerworks` 的代码库目录。
@@ -174,7 +174,7 @@ Hi caozhi! You've successfully authenticated, but GitHub does not provide shell 
 
 ##### 图 11\. local_path 参数为指定路径
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-ed1d0d5f68062f17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-ed1d0d5f68062f17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 从截图可以看到，`git clone` 命令在 `clone_demo` 目录中新建了一个我们指定的 `local_dev-repo` 目录，并将其作为本地代码库的根目录。
@@ -183,7 +183,7 @@ Hi caozhi! You've successfully authenticated, but GitHub does not provide shell 
 
 ##### 图 12\. local_path 参数为当前目录
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-d1db7788f850cbfa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-d1db7788f850cbfa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 我们知道一般操作系统将一个英文句点表示当前目录，因此从截图可以看出，当 `local_path` 指定为当前目录时，`git clone`命令会直接将当前目录作为本地代码库的根目录。
@@ -194,7 +194,7 @@ Hi caozhi! You've successfully authenticated, but GitHub does not provide shell 
 
 ##### 图 13\. 克隆特定分支
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-593ee8304b605e81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-593ee8304b605e81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 ## Git 的基本配置
@@ -217,7 +217,7 @@ Hi caozhi! You've successfully authenticated, but GitHub does not provide shell 
 
 ##### 图 14\. 查看 commit 的 user 信息
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-fa49188e5985bb8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-fa49188e5985bb8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 我们可以配置 `user.name` 和 `user.email` 的值来配置 user 信息，如清单 6 所示:
 
@@ -235,7 +235,7 @@ Git 提供了很多有用的命令，我们可以将一些比较常用的命令�
 
 ##### 图 15\. 短名称的日志
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-fb2eba79af6f3d71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-fb2eba79af6f3d71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 当然还可以设置一些其它的别名，如清单 7 所示:
@@ -253,7 +253,7 @@ git config --global alias.cm "commit"
 
 ##### 图 16\. 查看配置
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-12dd3b3b603e5fb1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-12dd3b3b603e5fb1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 ### 使用 Config 文件进行配置
@@ -262,7 +262,7 @@ git config --global alias.cm "commit"
 
 ##### 图 17\. ~/.gitconfig 文件里的配置
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-84715d6b24cc170b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-84715d6b24cc170b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 设置 Git 忽略提交规则
 
@@ -304,7 +304,7 @@ web.xml` |
 
 ##### 图 18\. 强制添加被忽略的文件
 
-> ![image](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-9d9e0ed5a39de51c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-9d9e0ed5a39de51c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 *   GitHub 有一个十分详细的针对数十种项目及语言的 `.gitignore` 文件列表模板，可以在 [https://github.com/github/gitignore](https://github.com/github/gitignore) 找到它。

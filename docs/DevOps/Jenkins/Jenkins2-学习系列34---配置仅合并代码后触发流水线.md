@@ -7,7 +7,7 @@
 3. 开启 Print post content 和 Print contributed variables in job log选项，可以看到接收到的payload和自定义变量
 4. gitlab或github配置merge request事件的webhook
 
-![](http://pek3b.qingstor.com/hexo-blog/20220515220805.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220515220805.png)
 5. 创建merge request，观察数据
 
 合并后GitLab的webhook触发了， 我们需要对比开启请求和合并请求的数据。找不同，找特点。

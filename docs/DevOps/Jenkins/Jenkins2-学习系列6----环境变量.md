@@ -29,7 +29,7 @@ pipeline {
 那么，env变量都有哪些可用属性呢?
 通过访问`<Jenkins master的地址>/pipeline-syntax/globals#env`来获取完整列表。
 在列表中，当一个变量被声明为"For a multibranch project"时，代表只有多分支项目才会有此变量。
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-baabcdac51cce97a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-baabcdac51cce97a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 下面我们简单介绍几个在实际工作中经常用到的变量:
 
@@ -234,7 +234,7 @@ pipeline {
 ## 自定义全局环境变量
 定义全局环境变量可以跨pipeline使用
 进入Jenkins -- Manage Jenkins -- 找到Global properties -- 勾选Environment variables
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-76eb6395b3d648ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-76eb6395b3d648ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 自定义全局环境变量会被加入env属性列表中，所以使用时可以直接用`${env.g_name}`引用。
 

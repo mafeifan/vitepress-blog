@@ -78,7 +78,7 @@ GET demo/_search
 
 我们发现，即便不指定time_zone也是可以的，这应该是opensearch配置了时区是浏览器时区的原因。
 
-![](http://pek3b.qingstor.com/hexo-blog/20220801211150.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220801211150.png)
 
 ## 参考
 

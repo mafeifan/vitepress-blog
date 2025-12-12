@@ -35,7 +35,7 @@ Scripting and testing glue
 不想本地安装Groovy环境的话，可以打开 [groovy-playground](https://groovy-playground.appspot.com/) 运行线上groovy代码，查看结果
 该网站可能需要会科学上网。
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-ca84076103ec0b8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-ca84076103ec0b8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #### 必要的Groovy语法知识
 

@@ -253,7 +253,7 @@ cd RED_HAWK
 php rhawk.php
 ```
 
-![](http://pek3b.qingstor.com/hexo-blog/20220414162035.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220414162035.png)
 
 ## nikto 网站脆弱性检测
 

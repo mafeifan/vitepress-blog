@@ -4,7 +4,7 @@
 运行一个GraphQL API Server
 
  GraphiQL is a great tool for debugging and inspecting a server, so we recommend running it whenever your application is in development mode.
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-ae8bf77deba55f92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-ae8bf77deba55f92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 index.js
 ```javascript
@@ -59,47 +59,47 @@ module.exports = Schema;
 注意点:
 * 上篇讲过GraphQL只是一套规范，目前官方只提供了[JS版本](https://github.com/graphql/graphql-js/)，其他PHP，Go等其他语言都是社区实现的。
 * 当只有一种操作，并且是query，可以省去query操作名关键字
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-2928b5b3ced22f6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-2928b5b3ced22f6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 * 可以看到字段和字段参数要指定类型，因为GraphQL是强类型的。
 * 因为指定了参数类型是string，输入时必须要用双引号
 * 注意看调试面板的请求
 
 GraphQL API server运行时，只要构造http请求就可以，传入不同的query参数，也能得到和在GraphiQL同样的结果
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-f76b1204746cf6c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-f76b1204746cf6c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 2. 查询
 #### 2.1 变量
 所有声明的变量都必须是标量、枚举型或者输入对象类型。
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-6d937f374056b15b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-6d937f374056b15b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ##### 默认变量
 使用默认值
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-55957feac27c24e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-8e668183138b2727.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-55957feac27c24e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-8e668183138b2727.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 覆盖默认值
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-1b8eebdd9b7bfa3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-1b8eebdd9b7bfa3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 类型后面带个感叹号表示参数必填
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-1f3285a728d391fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-1f3285a728d391fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 #### 2.2 别名
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-39a33f88bdd5a0ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-39a33f88bdd5a0ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #### 2.3 片段
 提取公众的部分
 上面的查询，将共同的字段：id和name，提取成fragment
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-a1a8b719b43f5dc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-a1a8b719b43f5dc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #### 2.4 指令
 GraphQL内置两个核心指令，`@skip` 和 `@include`
 `@skip(if: Boolean)` 如果参数为 true，跳过此字段。
 ? 貌似参数必须要写默认值 ?
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-01a5121f75f1e147.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-01a5121f75f1e147.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-76756467cbc651cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-76756467cbc651cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 3. 修改 Mutation
 [详见](https://github.com/mafeifan/learn-graphql/blob/master/src/5.mutation.js)
@@ -111,10 +111,10 @@ GraphQL内置两个核心指令，`@skip` 和 `@include`
 
 打开 https://developer.github.com/v4/explorer/
 先打开右侧的Docs浏览所有Query，发现有个名为search的query
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-cb2163116690fab1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-cb2163116690fab1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 他返回的是个 SearchResultItemConnection!类型，接着点进去
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-d86141339b1cfecc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-d86141339b1cfecc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 你会发现所有已Connection结尾的类型，其结果都包含pageInfo, edges, nodes
 

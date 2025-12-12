@@ -13,18 +13,18 @@ doctrine
 
 1. 配置数据库
 /app/config/parameters.yml
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-34476a8d5b7896d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-34476a8d5b7896d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 为保证数据库字符集
 app/config/config.yml
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-b74eea805de1d7dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-b74eea805de1d7dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 2. 执行 `php bin/console doctrine:database:create`
 数据库就创建好啦~
 
 3. 创建一个 Entity 类
 进到命令交互终端 `php bin/console doctrine:generate:entity` 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-78d4d9054d69c2de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-78d4d9054d69c2de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 首先让你输入Entity名称，输入首字母会有自动提示哦。
 entity 有点类似模型，

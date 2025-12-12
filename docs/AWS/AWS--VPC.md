@@ -1,7 +1,7 @@
 亚马逊 AWS(Amazon Web Service) 占据全球四成公有云市场份额(2021年统计)，排名第一
 
 包含的产品多余牛毛
-![](http://pek3b.qingstor.com/hexo-blog/20220228110738.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220228110738.png)
 
 很多国外用户都在使用AWS的产品，著名的有S3，EC2，所有有必要了解一下。
 
@@ -36,7 +36,7 @@ VPC（Amazon Virtual Private Cloud）是用户在 Region 中自定义的虚拟�
 
 我们可以在 VPC 中选择 IP 网段，创建 Subnet，指定 Route Table，控制 ACL（Access Control list），设置网关等。
 
-![](http://pek3b.qingstor.com/hexo-blog/20220228124658.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220228124658.png)
 
 #### 多业务系统隔离
 
@@ -44,17 +44,17 @@ VPC（Amazon Virtual Private Cloud）是用户在 Region 中自定义的虚拟�
 
 同样可以通过使用高速通道、VPN网关、云企业网等产品实现同地域VPC间互通。
 
-![](http://pek3b.qingstor.com/hexo-blog/20220126133256.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220126133256.png)
 
 #### 多地域部署系统
 
 VPC是地域级别的资源，不支持跨地域部署。当有多地域部署系统的需求时，必须使用多个VPC。
 可以通过使用高速通道、VPN网关、云企业网等产品实现跨地域VPC间互通。
 
-![](http://pek3b.qingstor.com/hexo-blog/20220126134054.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220126134054.png)
 
 
-![](http://pek3b.qingstor.com/hexo-blog/20220124175501.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220124175501.png)
 
 当 VPC 创建完成后主路由表 和 Main network ACL 会自动创建。
 
@@ -89,11 +89,11 @@ IP段用CIDR表示
 
 当我们在一个 VPC 中创建 Subnet 时需要给 Subnet 选择一个 AZ（Availability Zone），一个 Subnet 只能选择建在一个 AZ 中。
 
-![](http://pek3b.qingstor.com/hexo-blog/20220124180035.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220124180035.png)
 
 ## 实战
 
-![](http://pek3b.qingstor.com/hexo-blog/20220124175651.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220124175651.png)
 
 实现图上的功能，创建两个子网
 
@@ -116,7 +116,7 @@ name: finley-internet-gateway
 
 分别为 public, private, public&private（私网通过NAT访问公网）
 
-![](http://pek3b.qingstor.com/hexo-blog/20220124205316.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220124205316.png)
 
 | subnet id | IPV4 CIDR | AZ | 用途
 | :-----| :---- | :---- | 
@@ -124,7 +124,7 @@ name: finley-internet-gateway
 | finley-private| 192.168.2.0/24 | ap-northeast-1d | 部署数据库
 | finley-private&public | 192.168.1.0/24| ap-northeast-1c| 部署应用程序
 
-![](http://pek3b.qingstor.com/hexo-blog/20220124210016.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220124210016.png)
 
 ### 创建两个路由表
 
@@ -138,7 +138,7 @@ name: finley-public
 
 编辑路由表
 
-![](http://pek3b.qingstor.com/hexo-blog/20220124212059.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220124212059.png)
 
 ```
 # 第一条表示到192.168.*.*的请求会发送至VPC中
@@ -150,13 +150,13 @@ name: finley-public
 
 编辑子网关联
 
-![](http://pek3b.qingstor.com/hexo-blog/20220124212211.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220124212211.png)
 
 创建第二个路由
 
 name: finley-private
 
-![](http://pek3b.qingstor.com/hexo-blog/20220124212410.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220124212410.png)
 
 编辑子网关联，选择finley-private&public
 
@@ -166,7 +166,7 @@ name: finley-private
 
 VPC选择finley-vpc
 
-![](http://pek3b.qingstor.com/hexo-blog/20220124213225.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220124213225.png)
 
 申请弹性IP，得到公网IP：52.197.152.165 并关联给 finley-public-ec2
 
@@ -177,7 +177,7 @@ VPC选择finley-vpc
 
 > EIP（Elastic IP）是AWS提供的静态公共IP，可以从internet上访问到。实例即便被删除IP也会保留
 
-![](http://pek3b.qingstor.com/hexo-blog/20220124214203.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220124214203.png)
 
 SSH `ssh -i "aws-ty-2022.pem" ubuntu@52.197.152.165` 登录实例
 
@@ -231,7 +231,7 @@ NAT网关要创建在公有子网当中， 选择一个公有子网，创建成�
 
 参考：[计算机网络](https://weread.qq.com/web/reader/af532c005a007caf51371b1kf4b32ef025ef4b9ec30acd6)
 
-![](http://pek3b.qingstor.com/hexo-blog/20220709070009.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220709070009.png)
 
 ### 
 
@@ -244,7 +244,7 @@ NAT网关要创建在公有子网当中， 选择一个公有子网，创建成�
 
 此时finley-private-ec2可以访问互联网了，是通过NAT关联的IP
 
-![](http://pek3b.qingstor.com/hexo-blog/20220124211624.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220124211624.png)
 
 ### 通过终端节点让私有网络访问aws服务(S3)
 
@@ -254,15 +254,15 @@ VPC 终端节点使您能够在 Virtual Private Cloud (VPC) 与支持的服务�
 
 实现私有地址访问公有服务，这里我们让私有子网中的实例访问S3服务，首先创建终端节点
 
-![](http://pek3b.qingstor.com/hexo-blog/20220125223600.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220125223600.png)
 
 实际上是添加了一条路由表信息
 
-![](http://pek3b.qingstor.com/hexo-blog/20220125223815.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220125223815.png)
 
 访问S3并下载文件成功
 
-![](http://pek3b.qingstor.com/hexo-blog/20220125232150.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220125232150.png)
 
 ### VPC peering 对等连接
 

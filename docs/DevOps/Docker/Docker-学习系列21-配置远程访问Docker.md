@@ -63,7 +63,7 @@ sudo systemctl start docker
 sudo kill -SIGHUP $(pidof dockerd)
 ```
 你会发现dockerd其实暴露了很多API接口，比如获取和操作images，container的，还暴露了一个_ping接口，用于测试连通性，直接使用
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-bd3c144478b66781.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-bd3c144478b66781.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 `curl http://ip:2375/_ping` 如果连通正常，返回OK
 

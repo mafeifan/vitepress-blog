@@ -11,7 +11,7 @@ Percona XtraDB Cluster 完全兼容MySQL。
 
 ### 常见MySQL集群方案
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-b3a31222b9e4f607.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-b3a31222b9e4f607.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### Percona XtraDB Cluster优缺点
 优点：
@@ -42,7 +42,7 @@ Percona XtraDB Cluster 完全兼容MySQL。
 `docker run -d -p 33012:3306 -e MYSQL_ROOT_PASSWORD=root -e CLUSTER_NAME=pxc_cluster -e CLUSTER_JOIN=pxc_node1 --name=pxc_node3 --net=pxc-network   --ip=172.18.0.4 pxc`
 7. 接下来可以创建第N个节点，注意参数如容器名称 --name 和映射的端口别冲突；
 8. 测试：本地连接这三个节点，在其中一个创建demo数据，其他节点都自动同步数据过去了
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-a15a5fd679269219.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-a15a5fd679269219.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 注意
 1. 启动第一个节点后记得使用docker logs查看启动状态，然后使用navicat等工具测试连接，等第一个mysql运行成功后再运行第二个容器。否则第二个起不来，需要重新启动容器。

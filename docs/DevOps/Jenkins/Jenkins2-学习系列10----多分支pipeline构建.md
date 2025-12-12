@@ -2,7 +2,7 @@ Updated: 2019-08-15
 
 如果希望通过 Webhook 触发 multibranch pipeline 项目需要安装 [multibranch-scan-webhook-trigger-plugin](https://github.com/jenkinsci/multibranch-scan-webhook-trigger-plugin) 插件
 安装完之后，配置界面多出一个 Scan by webhook 选项
->  ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-e92092542fbe64a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>  ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-e92092542fbe64a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 实际中一个项目的代码仓库可能会有很多分支，比如develop，master等。Jenkins 支持创建多分支pipeline的任务。
 
@@ -12,13 +12,13 @@ Updated: 2019-08-15
 Tab中有很多配置项，比如 General，Branch Sources，Build Configuration等
 
 * Scan Multibranch Pipeline Triggers  触发 扫描分支频率，最低是1分钟
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-70b55405bde1054a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-70b55405bde1054a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 * Orphaned Item 孤儿任务，所谓孤儿任务即代码仓库中该分支被删除，但是Jenkins分支中还保留着。
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-02395b9767e6ad5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-02395b9767e6ad5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-a5c114379d09880c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-a5c114379d09880c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 * Health metric  健康指标
 我也不清楚有什么用，望指教
@@ -28,7 +28,7 @@ Tab中有很多配置项，比如 General，Branch Sources，Build Configuration
 :::
 
 根据发现的分支数量，比如这里3个就自动创建了3个pipeline项目，点进去后可以像pipeline任务一样进行详细配置。
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-300c5c35bc88c3f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-300c5c35bc88c3f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 #### 使用 when 指令判断多分支
@@ -166,7 +166,7 @@ env.BRANCH_NAME 为当前 pipeline 的分支名
 
 Multibranch Pipeline Events 的作用是什么
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-d174a685122cfa4c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-d174a685122cfa4c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 #### 参考

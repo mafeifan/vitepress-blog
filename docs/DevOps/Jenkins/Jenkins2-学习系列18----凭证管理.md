@@ -3,11 +3,11 @@
 
 #### 添加凭证
 添加凭证步骤（需要有凭证权限，这里使用超级管理员身份）
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-1a7215e023c630cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-1a7215e023c630cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-815d7322790bb209.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-815d7322790bb209.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-224bc365af22dddc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-224bc365af22dddc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 参数：
 * Kind | 凭证类型

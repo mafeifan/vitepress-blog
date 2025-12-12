@@ -114,11 +114,11 @@ export VERSION=1.0LTS
 $ source test.sh
 $ docker-compose config
 ```
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-32568b72759201b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-32568b72759201b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 此时 docker-compose.yml 中的环境变量应用的都是测试环境相关的设置。
 而在生产环境下，执行下面的命令：
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-eae5c194a7265e94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-eae5c194a7265e94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 此时 docker-compose.yml 中的环境变量应用的都是生产环境相关的设置。
 
@@ -174,7 +174,7 @@ web:
 3. 使用 docker-compose run 命令可以在服务上运行一次性命令，如 `docker-compose run web env` 查看服务为web的环境变量
 :::
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-6592bccf4e94da2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-6592bccf4e94da2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 参考：
 * https://www.cnblogs.com/sparkdev/p/9826520.html

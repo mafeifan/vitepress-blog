@@ -4,7 +4,7 @@ GWT插件接收到 JSON 或 XML 的 HTTP 请求后，根据我们配置的规则
 插件安装后在Job配置页面会多出一个"Generic WebHook Trigger"选项
 勾选后有很多参数配置，详细介绍GWT各参数的含义我们下面会讲到
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-9d63ff9d0be3ca2d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-9d63ff9d0be3ca2d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 插件安装后在pipeline也可以使用 GenericTrigger 指令完成相同的配置
 
@@ -41,7 +41,7 @@ pipeline {
 ```
 注意：在创建完成后，需要手动执行一次， 这样pipeline的触发条件オ会生效。
 然后我们用 Postman 发起一次 HTTP POST 请求。
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-8795c75afd706922.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-8795c75afd706922.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 或者直接用curl命令 `curl -vs http://140.xxx.xxx.xxx/generic-webhook-trigger/invoke\?token\=first-pipeline\&foo\=bar`
 
@@ -112,16 +112,16 @@ GWT 插件提供了三个供日调试打印日志的参数
 #### 实例
 只有commit message 包含 new build 才触发
 
-![](http://pek3b.qingstor.com/hexo-blog/20220225160036.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220225160036.png)
 
-![](http://pek3b.qingstor.com/hexo-blog/20220225160059.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220225160059.png)
 
 测试，触发成功，payload 从 gitee 的webhook中复制
-![](http://pek3b.qingstor.com/hexo-blog/20220225160718.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220225160718.png)
 
 #### 测试
 
 修改请求，header头添加信息，地址添加参数，发现 GWT 返回的结果中已经成功识别了。
 至于多了0的参数，原因未详。
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-d6299a967eb18bad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-d6299a967eb18bad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

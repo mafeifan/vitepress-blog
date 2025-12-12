@@ -20,10 +20,10 @@ dingtalk，需要降级使用1.9版本，具体方法：
 打开 http://updates.jenkins-ci.org/download/plugins
 这里列出了所有可安装的插件，然后搜索ding，进到 http://updates.jenkins-ci.org/download/plugins/dingding-notifications/
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/images/8927A9AE-180C-46C9-B454-9C249E0F3AB8.png)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/images/8927A9AE-180C-46C9-B454-9C249E0F3AB8.png)
 
 点1.9下载，得到文件`dingding-notifications.hpi`
 然后回到Jenkins插件管理页面上传即可
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/images/A7167A31-ABF0-4B28-A260-BCDE48311634.png)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/images/A7167A31-ABF0-4B28-A260-BCDE48311634.png)
 

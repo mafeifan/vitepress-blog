@@ -19,7 +19,7 @@ pipeline {
 }
 ```
 然后在Jenkins 构建页面中就可以直接查看和下载制品
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-d2f84760216093f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-d2f84760216093f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #### archiveArtifacts 指令
 参数：
@@ -29,7 +29,7 @@ pipeline {
 * onlyIfSuccessful  |  布尔  |  只在构建成功时进行归档
 * allowEmptyArchive |  布尔 |  如果归档文件没有返回任何结果，不构建失败
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-09b0265b57e691c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-09b0265b57e691c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #### 制品管理软件
 制品多了话需要管理，单靠Jenkins有点力不从心了，需要专门的制品管理软件，目前流行的有[Nexus Repository OSS](https://www.sonatype.com/download-oss-sonatype) 和 [Artifactory](https://jfrog.com/open-source/)
@@ -60,7 +60,7 @@ docker run -d --name nexus3 --restart=always \
 
 第一次启动 Nexus 的默认帐号是 admin 密码是 通过 `docker exec -it nexus3 cat /nexus-data/admin.password` 获取，登录以后点击页面上方的齿轮按钮进行设置。
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-f8a2dbb16d4c1645.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-f8a2dbb16d4c1645.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 创建一个私有仓库的方法： Repository->Repositories 点击右边菜单 Create repository 选择 docker (hosted)
 
@@ -72,7 +72,7 @@ Hosted -> Deployment policy: 请选择 Allow redeploy 否则无法上传 Docker 
 
 详细内容请自行查看 Nexus 文档
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-1b372b24c25ff95b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-1b372b24c25ff95b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 #### 参考

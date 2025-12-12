@@ -6,7 +6,7 @@ Category： 必填，只能输入大小写，字符长度3到10
 Price：必填，只能输入不超过100的数字
 * 显示要求：
 错误在表单上放统一显示
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-7fe3ee295b67474f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-7fe3ee295b67474f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 我们可以借助Angular的formControl来实现，这里我们基于FormControl创建一个子类ProductFormControl来提高可复用性
 

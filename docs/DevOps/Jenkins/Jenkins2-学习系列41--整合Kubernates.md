@@ -7,11 +7,11 @@
 
 1. Jenkins 安装 Kubernetes 插件
 
-![](http://pek3b.qingstor.com/hexo-blog/20211010180457.png)
+![](https://pek3b.qingstor.com/hexo-blog/20211010180457.png)
 
 安装后系统设置里Configure Clouds -  Add new cloud 选择Kubernetes
 
-![](http://pek3b.qingstor.com/hexo-blog/20211010180532.png)
+![](https://pek3b.qingstor.com/hexo-blog/20211010180532.png)
 
 ## 参考
 

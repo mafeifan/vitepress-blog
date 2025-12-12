@@ -11,7 +11,7 @@
 
 目前 AWS 提供的 serverless service 其实很多，下图是目前比较常见的几个：
 
-![](http://pek3b.qingstor.com/hexo-blog/20220712222012.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220712222012.png)
 
 但要如何判断 AWS service 是否为 serverless? 只要评估一下上一个 section 提到的四个原则，如果都满足，表示这个服务属于 serverless(例如：Lambda、SNS、SQS)，只要有一项不满足，则该服务不属于 serverless(例如：EC2、Kinesis)
 

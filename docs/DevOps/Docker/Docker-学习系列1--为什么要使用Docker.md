@@ -32,7 +32,7 @@ docker run 后面可以带很多参数,[见官网](https://docs.docker.com/engin
 
 完整的命令如下：
 `docker run -t -i  -p 8088:80 -v D:/projects/live-ranking-api:/var/www -d "eriksencosta/php-dev:latest" /bin/bash`
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-55b0e9da91db9375.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-55b0e9da91db9375.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 5. 打开浏览器输入 `localhost:8088` 正常的话项目已经成功跑起来了
 6. 切换PHP版本，在容器内的终端内输入 `phpenv命令` 列出当前可选择的PHP版本

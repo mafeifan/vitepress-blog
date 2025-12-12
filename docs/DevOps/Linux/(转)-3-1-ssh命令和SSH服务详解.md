@@ -52,7 +52,7 @@ RSA key fingerprint is f3:f8:e2:33:b4:b1:92:0d:5b:95:3b:97:d9:3a:f0:cf.
 Are you sure you want to continue connecting (yes/no)? yes
 ```
 或者windows端使用图形界面ssh客户端工具时：
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-44c2c87431a884f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-44c2c87431a884f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 在说明身份验证过程前，先看下known_hosts文件的格式。以~/.ssh/known_hosts为例。
 ```
 [root@xuexi ~]# cat ~/.ssh/known_hosts
@@ -102,7 +102,7 @@ host key的指纹可由ssh-kegen计算得出。例如，下面分别是主机A(1
 ```
 更详细的主机认证过程是：先进行密钥交换(DH算法)生成session key(rfc文档中称之为shared secret)，然后从文件中读取host key，并用host key对session key进行签名，然后对签名后的指纹进行判断。(In SSH, the key exchange is signed with the host key to provide host authentication.来源：https://tools.ietf.org/html/rfc4419)
 过程如下图：
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-86fe0dc3e967103c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-86fe0dc3e967103c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #####1.3.2 身份验证过程
 主机验证通过后，将进入身份验证阶段。SSH支持多种身份验证机制，它们的验证顺序如下：gssapi-with-mic,hostbased,publickey,keyboard-interactive,password，但常见的是密码认证机制(password)和公钥认证机制(public key)。当公钥认证机制未通过时，再进行密码认证机制的验证。这些认证顺序可以通过ssh配置文件(注意，不是sshd的配置文件)中的指令PreferredAuthentications改变。

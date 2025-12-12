@@ -18,11 +18,11 @@ stage('debug') {
 
 当我们新建的项目为freestyle或pipeline类型，在配置页面的General的tab中会发现有一个选项为
 "This project is parameterized" 表示该项目类型为可参数化的，勾选之后，可以添加很多类型的参数，如下图
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-c22fca2d7c47dd00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-c22fca2d7c47dd00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 比如我这里添加一个Boolean Parameter，参数名称为is_print_env，默认不显示环境变量信息，即不希望执行`sh "printenv"`
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-e963d69b1f3b2065.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-e963d69b1f3b2065.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 修改之前的pipeline，根据is_print_env的取值走不同的逻辑。
 
@@ -42,7 +42,7 @@ stage('debug') {
 ```
 
 保存之后来到该项目的首页，左侧功能列表中会发现之前的"Build now"变为了"Build with parameters"。点击后，刚才的Boolean Parameter参数配置就可视化了。
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-6df22c9d072d2a8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-6df22c9d072d2a8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 如果勾选了，就会输出所有的环境变量
 
@@ -71,7 +71,7 @@ pipeline {
 ```
 > 保存后需要手动执行一次，才能在页面中看到效果
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-3b549cd0e67b6434.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-3b549cd0e67b6434.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 被传入的参数会放到名为params的对象中，在pipeline中可以直接使用，比如params.userFlag就是引用parameters指令中定义的userFlag参数
 
@@ -158,8 +158,8 @@ pipeline {
 }
 ```
 
->  ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-bd04203f203a1cbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>  ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-bd04203f203a1cbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 无论是中止还是通过，job日志中都记录了谁操作的，这对审计非常友好
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-367e3421572a798d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-367e3421572a798d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

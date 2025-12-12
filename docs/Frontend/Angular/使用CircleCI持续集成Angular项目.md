@@ -88,5 +88,5 @@ workflows:
 
 当然，你可以直接通过SSH将项目传到站点服务器部署。也需要在后台配置下访问服务器的Key。
 #### 效果：
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-2a865e72eb496816.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-2a865e72eb496816.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 

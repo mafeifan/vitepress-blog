@@ -59,14 +59,14 @@ http://reactpatterns.com/
 
 https://github.com/CompuIves/codesandbox-client
 react在线编辑器，方便的分享你的react项目
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-66d4e3432c63e022.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-66d4e3432c63e022.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 https://devhints.io/react
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-ec79c7a0fca13244.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-ec79c7a0fca13244.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 [js.coach](https://js.coach/)
 找js包的网站
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-5c045fb0cc5e190d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-5c045fb0cc5e190d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 
@@ -78,5 +78,5 @@ https://egghead.io
 sublime 支持jsx语法高亮。
 不要安装 [sublime-react](https://github.com/facebookarchive/sublime-react) 那个已被弃用了。
 安装 [babel](https://github.com/babel/babel-sublime)，然后按照上面的教程，完美支持
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-a4a76c13f8c2a14f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-a4a76c13f8c2a14f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 

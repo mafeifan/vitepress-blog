@@ -64,7 +64,7 @@ quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.26.1
 * 名称: raco-bird
 * 描述: 同步docker hub的finleyma/raco-bird到harbor
 
-![](http://pek3b.qingstor.com/hexo-blog/20211010174053.png)
+![](https://pek3b.qingstor.com/hexo-blog/20211010174053.png)
 
 * 源资源过滤器: finleyma/raco-bird
 * Ta: latest
@@ -74,7 +74,7 @@ quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.26.1
 点击"复制"按钮
 
 
-![](http://pek3b.qingstor.com/hexo-blog/20211010174341.png)
+![](https://pek3b.qingstor.com/hexo-blog/20211010174341.png)
 
 4. 使用工具 [image-syncer](https://github.com/AliyunContainerService/image-syncer)
 

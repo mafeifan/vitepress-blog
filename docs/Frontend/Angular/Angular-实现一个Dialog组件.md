@@ -7,7 +7,7 @@
 2. 打开一个全新的 Angular 项目，然后执行创建组件命令
 `ng g c --name base-dialog`
 得到三个初始化的文件
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-585eaf3bcce06985.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-585eaf3bcce06985.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 3. 首先制作遮盖层，就是铺满整个屏幕的div
 `base-dialog.component.html`
@@ -32,7 +32,7 @@
 ```
 
 效果：遮盖整个屏幕
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-610898eab7cdd783.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-610898eab7cdd783.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 默认情况下，遮盖层是不显示的
 
@@ -114,6 +114,6 @@
 * dialogRef 是这个组件的引用别名
 * `<ng-container class="dialog-body">` 类似Vue中的插槽，之内的html会替换组件内部的`<ng-content select=".dialog-body"></ng-content>`
 效果如下，点击show按钮，显示弹窗，点击弹窗中的关闭按钮，恢复原样。
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-49c407ee12e64483.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-49c407ee12e64483.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 6. 其实大部分功能已经完成了，剩下的是样式美化和添加一些额外功能，比如现在是居中显示，示例中加入了从底部显示，用到了CSS3中的动画。

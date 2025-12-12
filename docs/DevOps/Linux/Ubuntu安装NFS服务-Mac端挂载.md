@@ -101,7 +101,7 @@ umount /Users/mafei/nfs
 2. 点击右侧的Login Items,系统启动项
 3. 点击下面的+号，添加一个新的挂载，位置是已经挂载的目录
 
-![](http://pek3b.qingstor.com/hexo-blog/20220105215837.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220105215837.png)
 
 ## Linux客户端挂载
 

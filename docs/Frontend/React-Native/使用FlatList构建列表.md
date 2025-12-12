@@ -24,7 +24,7 @@ renderItem表示渲染每条数据的回调方法。这里用Text组件包裹下
     );
   }
 ```
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-4f30af489d705534.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-4f30af489d705534.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 3. 最终把这个方法嵌到View中展示
 完整代码如下：
 ```javascript
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
 ```
 文章里还介绍了比FlatList稍微复杂些的 [SectionList](http://facebook.github.io/react-native/docs/sectionlist.html) 组件。当需要对item进行分组，支持设置每个分组的header，footer。
 这个非常适合用来做通讯录，城市地址
-![demo.gif](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-c1a854d8e45b1da0.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![demo.gif](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-c1a854d8e45b1da0.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 参考文档：
 

@@ -35,7 +35,7 @@ CMD ["npm", "start"]
 * --rm：这个参数是说容器退出后随之将其删除。默认情况下，为了排障需求，退出的容器并不会立即删除，除非手动 docker rm。我们这里只是随便执行个命令，看看结果，不需要排障和保留结果，因此使用 --rm 可以避免浪费空间。
 * ash：因为我们的Node的基础镜像是10.8.0-alpine， alpine的交互式 Shell是ash不是bash，使用bash会提示not found。注意这个细节。
 会发现整个项目文件都在容器内。
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-b0ac3d1703181ffa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-b0ac3d1703181ffa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 简单总结使用Docker的好处：
 1. 使用版本方便，比如服务器上跑着node6，而你的项目需要node8以上。使用docker因为是隔离环境
@@ -43,7 +43,7 @@ CMD ["npm", "start"]
 
 问题：容器内的 node_modules 是本来就有还是容器执行 npm install 产生的呢？
 答案：是构建的时候打包进镜像内了。我们看一下体积，有20M而且进到容器内， ls -l node_modules 时间也是打包的什么，并不是当前时间。
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-aee960c96b2a23bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-aee960c96b2a23bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 ### 参考：

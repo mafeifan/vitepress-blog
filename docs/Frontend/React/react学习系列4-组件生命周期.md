@@ -1,6 +1,6 @@
 组件的生命周期非常重要。[官方文档](https://reactjs.org/docs/react-component.html) 已经就讲的比较清楚了
 找了半天发现下面的图最清晰直观(点击放大)：
-![20160815095219530.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-a9ddeb87a9ab8a5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![20160815095219530.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-a9ddeb87a9ab8a5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 需要注意几点：
 1. 初始化阶段的getInitialState()方法在es6里的写法中被constructor()取代。[详见](https://reactjs.org/docs/react-without-es6.html#setting-the-initial-state)

@@ -23,7 +23,7 @@ create-react-app 支持执行 `npm run reject` 将相关配置文件释放到根
             ]
           },
 ```
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-9c99e308a7678c47.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-9c99e308a7678c47.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 4.  打开 `webpack.config.prod.js` 添加如下(这是我参考下面的针对的css配置，需要更进一步测试)这是因为prod环境下，所有的css都被 [ExtractTextPlugin](https://doc.webpack-china.org/plugins/extract-text-webpack-plugin) 插件提取到同一个样式文件中，开发环境则是动态的创建style标签并插入到html的header中。
 ```
             {

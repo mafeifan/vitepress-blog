@@ -32,6 +32,6 @@ babel-preset-env ， eslint-plugin-compat， stylelint-no-unsupported-browser-fe
   ]
 }
 ```
-![20170928175559.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-b9a44eafc7ed0e5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![20170928175559.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-b9a44eafc7ed0e5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 更进一步根据浏览器可以获得[特性](http://caniuse.com/)，比如最新的chrome浏览器支持原生的promise，而IE不支持，babel根据browserslist配置项就会动态的转义。不用在一个个进行配置了。

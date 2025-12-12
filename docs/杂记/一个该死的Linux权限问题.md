@@ -3,7 +3,7 @@
 环境很快就搭建起来了，本地浏览器访问主机IP后确始终显示不出来页面。
 我配置的是8001端口，难道防火墙限制了？
 这个主机是天猫聚石塔用的，查了文档果然有如下说明：
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-c4da1d731796a102.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-c4da1d731796a102.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 好吧，我不得不换成80端口。
 然后我再刷新浏览器竟然显示 "File not found"。

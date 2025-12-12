@@ -1,6 +1,6 @@
 ## 查看网关的命令
 
-![](http://pek3b.qingstor.com/hexo-blog/20220225201307.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220225201307.png)
 
 * ip route show
 * route -n
@@ -10,7 +10,7 @@
 
 1. 偏好设置 - 添加 NAT 网络
 
-![](http://pek3b.qingstor.com/hexo-blog/20220225200638.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220225200638.png)
 
 2. 对每一个虚拟机进行网络设置，选择 NAT 网络
 
@@ -22,7 +22,7 @@
 
 3. 解决方式是使用端口转发
 
-![](http://pek3b.qingstor.com/hexo-blog/20220225210713.png)
+![](https://pek3b.qingstor.com/hexo-blog/20220225210713.png)
 
 不用重启虚拟机可以直接测试
 

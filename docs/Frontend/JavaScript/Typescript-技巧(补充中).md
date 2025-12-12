@@ -107,9 +107,9 @@ interface Person {
 当我们需要定义一组有共同特点的变量，可以使用枚举类型。
 比如我们要实现下面的页面，这个页面有两处地方要实现点击切换视图的效果，一个是包含Ad Creative，Images和Videos分类的Tab，一个是显示方式Grid还是table。
 点击不同的按钮，页面切换不同的效果。
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-9a48948affd06ae0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-9a48948affd06ae0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-10545116200db60e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-10545116200db60e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 代码实现
 ```

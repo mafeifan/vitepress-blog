@@ -160,7 +160,7 @@ return [
 
 前端效果如下：
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/images/2019/11/20/4fd14c21dd7fdcdeb9ab38b4dd86a81c.png)
+![image.png](https://pek3b.qingstor.com/hexo-blog/images/2019/11/20/4fd14c21dd7fdcdeb9ab38b4dd86a81c.png)
 
 ### 后端
 切换时需要请求api，然后把新的语言存到session中，还需要创建一个中间件，请求过来时候，判断下从session中读语言

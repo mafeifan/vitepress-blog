@@ -1,10 +1,10 @@
 ### 使用 scrapy shell 提取数据
 scrapy shell 是 scrapy 提供的命令行工具，可以方便的调试
 比如执行 `scrapy shell "http://quotes.toscrape.com/page/1/"`
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-79c1c404426c8463.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-79c1c404426c8463.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 提示我们会暴露出来很多有用的对象，比如response对象包含了css和xpath方法，可以进一步提取页面的title。
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-ed913510d4e548a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-ed913510d4e548a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 修改上节中建立的 `quotes_spider.py`
 我们分别提取 text, author 和 tags

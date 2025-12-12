@@ -17,7 +17,7 @@ Jenkins设计之初就支持master-slave的分支式架构。最佳实践是不�
 在早先版本的Jenkins中，代理节点被称为从节点(slave) ，其代表了所有非主节点的系统。这类系统由主系统管理，按需分配或指定执行特定的任务。例如，我们可以分配不同的代理节点针对不同的操作系统构建任务，或者可以分配多个代理节点并发地运行测试任务。
 为了减少系统负载，降低安全风险，通常在子系统上只会安装一个轻量级的Jenkins客户端应用来处理任务，这个客户端应用对资源访问是受限的。
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-97ed71c29d20c975.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-97ed71c29d20c975.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 Jenkins支持创建传统Slave，比如通过SSH方式添加一个机器作为Slave，配置一个或多个Executor，此Slave一般保持长连接状态，等待构建任务的分配和运行。这种类型的Slave往往直接挂载物理机或虚拟机，通过Jenkins UI可以查看Slave的状态，并对Slave进行管理。
 
@@ -46,12 +46,12 @@ Jenkins支持创建传统Slave，比如通过SSH方式添加一个机器作为Sl
 8. 检查连通性， `ssh -p 4522 jenkins@slave机器的IP`
 9. Jenkins - manage - manage nodes 添加节点
 
->  ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-0ca64b6ba31e4519.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>  ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-0ca64b6ba31e4519.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
->  ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-39905a4184d77b0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>  ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-39905a4184d77b0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 成功的话可以看到Slave机器的信息
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-f77c208f48134ec1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-f77c208f48134ec1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 并且Slave的`/home/jenkins`中你会看到`remoting.jar`和remoting目录
 
@@ -61,7 +61,7 @@ General 选项卡：勾选"Restrict where this project can be run"，Label Expre
 Build 选项卡：添加 Execute shell，内容填在slave中执行的命令，如`ps -ef`
 最后保存，build，查看 Console Output 结果。应该和直接在slave上执行的结果一致。
 
-> ![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-557272ff5d41c9e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+> ![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-557272ff5d41c9e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 如果新建的job类型是pipeline，等价的写法如下：
 ```groovy

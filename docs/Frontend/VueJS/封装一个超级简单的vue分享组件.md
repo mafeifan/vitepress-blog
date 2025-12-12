@@ -3,7 +3,7 @@
 开发网页经常遇到分享功能，这时候可以利用现成的工具比如 [JiaThis](http://www.jiathis.com/customize)，通过几步简单配置就实现分享共享功能啦。
 
 比如我想生成图标式的分享
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-ce0c540b62d344cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-ce0c540b62d344cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 得到的基础代码如下：
 ```
@@ -92,6 +92,6 @@ template内，注意 [inline-template](https://cn.vuejs.org/v2/guide/components.
       </div>
     </share>
 ```
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-a89fd4c102ef0604.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-a89fd4c102ef0604.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 

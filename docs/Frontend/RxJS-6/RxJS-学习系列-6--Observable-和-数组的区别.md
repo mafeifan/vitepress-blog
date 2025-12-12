@@ -44,7 +44,7 @@ Array.prototype.map = function(callback) {
 
 每一次的 operator 的运算都会建立一个新的数组，并在每个元素都运算完后返回这个新数组，我们可以用下面这张动态图表示运算过程
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-872292e72dde44c6.gif?imageMogr2/auto-orient/strip)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-872292e72dde44c6.gif?imageMogr2/auto-orient/strip)
 
 Observable operator 的运算方式跟数组的是完全的不同，虽然 Observable 的 operator 也都会回传一个新的 observable，但因为元素是渐进式取得的关系，所以每次的运算是一个元素运算到底，而不是运算完全部的元素再返回。
 
@@ -100,7 +100,7 @@ newIterator.next(); // { done: false, value: 2 }
 
 虽然上面这段代码是一个非常简单的示范，但可以看得出来每一次 map 虽然都会返回一个新的 Iterator，但实际上在做元素运算时，因为渐进式的特性会使一个元素运算到底，Observable 也是相同的概念，我们可以用下面这张动态图表示运算过程
 
-![image.png](https://hexo-blog.pek3b.qingstor.com/upload_images/71414-4b20a6ebaaacdc16.gif?imageMogr2/auto-orient/strip)
+![image.png](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-4b20a6ebaaacdc16.gif?imageMogr2/auto-orient/strip)
 
 渐进式取值的观念在 Observable 中其实非常的重要，这个特性也使得 Observable 相较于 Array 的 operator 在做运算时来的高效很多，尤其是在处理大量资料的时候会非常明显！
 (想像一下我们今天要切五万个大蛋糕，你会选择切完一个请一个人拿走，还是全部切完再拿给所有人呢？哪个会比较有效率呢？)
