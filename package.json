@@ -1,7 +1,7 @@
 {
   "devDependencies": {
-    "postcss": "^8.4.32",
-    "vitepress": "^1.0.2"
+    "postcss": "^8.5.6",
+    "vitepress": "^1.6.4"
   },
   "scripts": {
     "start": "vitepress dev docs --host",
@@ -11,7 +11,7 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
-    "vitepress-plugin-rss": "^0.2.6"
+    "vitepress-plugin-rss": "^0.2.10"
   },
   "engines": {
     "node": ">=20.0.0"
