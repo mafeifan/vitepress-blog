@@ -49,10 +49,12 @@ $("button").click(function(){
 ### loop 循环播放
 借助animate API最后一个callback参数，可以轻松实现无尽播放动画的效果。
 
+```html
 <iframe height="265" style="width: 100%;" scrolling="no" title="jquery animation loop" src="https://codepen.io/mafeifan/embed/ExPJpRo?height=265&theme-id=light&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/mafeifan/pen/ExPJpRo'>jquery animation loop</a> by finley
   (<a href='https://codepen.io/mafeifan'>@mafeifan</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+```
 
 
 ### 使用场景
