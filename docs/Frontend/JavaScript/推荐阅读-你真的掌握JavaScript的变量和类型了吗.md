@@ -50,13 +50,13 @@ ECMAScript标准规定了`7`种数据类型，其把这`7`种数据类型又分�
 以字符串为例，我们在调用操作字符串的方法时，没有任何方法是可以直接改变字符串的：
 
 ```
-var str = 'ConardLi';
+varstr='ConardLi';
 str.slice(1);str.substr(1);
 str.trim(1);
 str.toLowerCase(1);
-str[0] = 1;
-console.log(str);  
-// ConardLi
+str[0]=1;
+console.log(str);
+//ConardLi
 ```
 
 在上面的代码中我们对`str`调用了几个方法，无一例外，这些方法都在原字符串的基础上产生了一个新字符串，而非直接去改变`str`，这就印证了字符串的不可变性。
@@ -64,9 +64,9 @@ console.log(str);  
 那么，当我们继续调用下面的代码：
 
 ```
-str += '6';
-console.log(str);  
-// ConardLi6
+str+='6';
+console.log(str);
+//ConardLi6
 ```
 
 你会发现，`str`的值被改变了，这不就打脸了字符串的不可变性么？其实不然，我们从内存上来理解：
@@ -110,10 +110,10 @@ console.log(str);  
 相对于上面具有不可变性的原始类型，我习惯把对象称为引用类型，引用类型的值实际存储在堆内存中，它在栈中只存储了一个固定长度的地址，这个地址指向堆内存中的值。
 
 ```
-var obj1 = {name:"ConardLi"}
-var obj2 = {age:18}
-var obj3 = function(){...}
-var obj4 = [1,2,3,4,5,6,7,8,9]
+varobj1={name:"ConardLi"}
+varobj2={age:18}
+varobj3=function(){...}
+varobj4=[1,2,3,4,5,6,7,8,9]
 ```
 
 ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-5aefda71ecd07b3e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -123,12 +123,12 @@ var obj4 = [1,2,3,4,5,6,7,8,9]
 当然，引用类型就不再具有`不可变性`了，我们可以轻易的改变它们：
 
 ```
-obj1.name = "ConardLi6";obj2.age = 19;obj4.length = 0;console.log(obj1); //{name:"ConardLi6"}console.log(obj2); // {age:19}console.log(obj4); // []
+obj1.name="ConardLi6";obj2.age=19;obj4.length=0;console.log(obj1);//{name:"ConardLi6"}console.log(obj2);//{age:19}console.log(obj4);//[]
 ```
 
 以数组为例，它的很多方法都可以改变它自身。
 
-*   `pop()` 删除数组最后一个元素，如果数组为空，则不改变数组，返回undefined，改变原数组，返回被删除的元素
+*   `pop()`删除数组最后一个元素，如果数组为空，则不改变数组，返回undefined，改变原数组，返回被删除的元素
 
 *   `push()`向数组末尾添加一个或多个元素，改变原数组，返回新数组的长度
 
@@ -149,10 +149,10 @@ obj1.name = "ConardLi6";obj2.age = 19;obj4.length = 0;console.log(obj1); 
 当我们把一个变量的值复制到另一个变量上时，原始类型和引用类型的表现是不一样的，先来看看原始类型：
 
 ```
-var name = 'ConardLi';
-var name2 = name;name2 = 'code秘密花园';
-console.log(name); 
-// ConardLi;
+varname='ConardLi';
+varname2=name;name2='code秘密花园';
+console.log(name);
+//ConardLi;
 ```
 
 ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-c994a015cd331cf7?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -162,11 +162,11 @@ console.log(name); 
 复制一个引用类型：
 
 ```
-var obj = {name:'ConardLi'};
-var obj2 = obj;
-obj2.name = 'code秘密花园';
-console.log(obj.name); 
-// code秘密花园
+varobj={name:'ConardLi'};
+varobj2=obj;
+obj2.name='code秘密花园';
+console.log(obj.name);
+//code秘密花园
 ```
 
 ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-650b33f0096626d9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -180,12 +180,12 @@ console.log(obj.name); 
 ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-aec290ffc09101b7?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ```
-var name = 'ConardLi';
-var name2 = 'ConardLi';
-console.log(name === name2); 
-// truevar obj = {name:'ConardLi'};
-var obj2 = {name:'ConardLi'};
-console.log(obj === obj2); // false
+varname='ConardLi';
+varname2='ConardLi';
+console.log(name===name2);
+//truevarobj={name:'ConardLi'};
+varobj2={name:'ConardLi'};
+console.log(obj===obj2);//false
 ```
 
 对于原始类型，比较时会直接比较它们的值，如果值相等，即返回`true`。
@@ -197,9 +197,9 @@ console.log(obj === obj2); // false
 借助下面的例子，我们先来看一看什么是值传递，什么是引用传递：
 
 ```
-let name = 'ConardLi';
-function changeValue(name){  
-   name = 'code秘密花园';
+letname='ConardLi';
+functionchangeValue(name){
+   name='code秘密花园';
 }
 changeValue(name);
 console.log(name);
@@ -210,13 +210,13 @@ console.log(name);
 很明显，上面的执行结果是`'ConardLi'`，即函数参数仅仅是被传入变量复制给了的一个局部变量，改变这个局部变量不会对外部变量产生影响。
 
 ```
-let obj = { name:'ConardLi' };
-function changeValue(obj){  
-   obj.name = 'code秘密花园';
+letobj={ name:'ConardLi' };
+functionchangeValue(obj){
+   obj.name='code秘密花园';
 }
 changeValue(obj);
-console.log(obj.name); 
-// code秘密花园
+console.log(obj.name);
+//code秘密花园
 ```
 
 上面的代码可能让你产生疑惑，是不是参数是引用类型就是引用传递呢？
@@ -226,15 +226,15 @@ console.log(obj.name); 
 同样的，当函数参数是引用类型时，我们同样将参数复制了一个副本到局部变量，只不过复制的这个副本是指向堆内存中的地址而已，我们在函数内部对对象的属性进行操作，实际上和外部变量指向堆内存中的值相同，但是这并不代表着引用传递，下面我们再按一个例子：
 
 ```
-let obj = {};
-function changeValue(obj){  
-  obj.name = 'ConardLi';  
-  obj = {
+letobj={};
+functionchangeValue(obj){
+  obj.name='ConardLi';
+  obj={
      name:'code秘密花园'
   };
 }
 changeValue(obj);
-console.log(obj.name); // ConardLi
+console.log(obj.name);//ConardLi
 ```
 
 可见，函数参数传递的并不是变量的`引用`，而是变量拷贝的副本，当变量是原始类型时，这个副本就是值本身，当变量是引用类型时，这个副本是指向堆内存的地址。所以，再次记住：
@@ -278,12 +278,12 @@ console.log(obj.name); // ConardLi
 直接使用`Symbol()`创建新的`symbol`变量，可选用一个字符串用于描述。当参数为对象时，将调用对象的`toString()`方法。
 
 ```
-var sym1 = Symbol();  
-// Symbol() var sym2 = Symbol('ConardLi');  
-// Symbol(ConardLi)var sym3 = Symbol('ConardLi');  
-// Symbol(ConardLi)
-var sym4 = Symbol({name:'ConardLi'}); 
-// Symbol([object Object])console.log(sym2 === sym3);  // false
+varsym1=Symbol();
+//Symbol()varsym2=Symbol('ConardLi');
+//Symbol(ConardLi)varsym3=Symbol('ConardLi');
+//Symbol(ConardLi)
+varsym4=Symbol({name:'ConardLi'});
+//Symbol([objectObject])console.log(sym2===sym3);//false
 ```
 
 我们用两个相同的字符串创建两个`Symbol`变量，它们是不相等的，可见每个`Symbol`变量都是独一无二的。
@@ -293,9 +293,9 @@ var sym4 = Symbol({name:'ConardLi'}); 
 > 使用给定的key搜索现有的symbol，如果找到则返回该symbol。否则将使用给定的key在全局symbol注册表中创建一个新的symbol。
 
 ```
-var sym1 = Symbol.for('ConardLi');
-var sym2 = Symbol.for('ConardLi');
-console.log(sym1 === sym2); // true
+varsym1=Symbol.for('ConardLi');
+varsym2=Symbol.for('ConardLi');
+console.log(sym1===sym2);//true
 ```
 
 **2.原始类型**
@@ -303,13 +303,13 @@ console.log(sym1 === sym2); // true
 注意是使用`Symbol()`函数创建`symbol`变量，并非使用构造函数，使用`new`操作符会直接报错。
 
 ```
-new Symbol(); // Uncaught TypeError: Symbol is not a constructor
+newSymbol();//UncaughtTypeError:Symbolisnotaconstructor
 ```
 
 我们可以使用`typeof`运算符判断一个`Symbol`类型：
 
 ```
-typeof Symbol() === 'symbol'typeof Symbol('ConardLi') === 'symbol'
+typeofSymbol()==='symbol'typeofSymbol('ConardLi')==='symbol'
 ```
 
 **3.不可枚举**
@@ -319,16 +319,16 @@ typeof Symbol() === 'symbol'typeof Symbol('ConardLi') === 'symbol'
 > 可以调用Object.getOwnPropertySymbols()用于专门获取Symbol属性。
 
 ```
-var obj = {  
-  name:'ConardLi',  
+varobj={
+  name:'ConardLi',
   [Symbol('name2')]:'code秘密花园'
 }
-Object.getOwnPropertyNames(obj); // ["name"]
-Object.keys(obj); // ["name"]
-for (var i in obj) {   
-  console.log(i); // name
+Object.getOwnPropertyNames(obj);//["name"]
+Object.keys(obj);//["name"]
+for(variinobj){
+  console.log(i);//name
 }
-Object.getOwnPropertySymbols(obj)  // [Symbol(name)]
+Object.getOwnPropertySymbols(obj) //[Symbol(name)]
 ```
 
 ### 4.2 Symbol的应用场景
@@ -340,17 +340,17 @@ Object.getOwnPropertySymbols(obj)  // [Symbol(name)]
 在`React`的`ReactElement`对象中，有一个`$$typeof`属性，它是一个`Symbol`类型的变量：
 
 ```
-var REACT_ELEMENT_TYPE =  
-(typeof Symbol === 'function' && Symbol.for && Symbol.for('react.element')) 
-||  0xeac7;
+varREACT_ELEMENT_TYPE=
+(typeofSymbol==='function'&&Symbol.for&&Symbol.for('react.element'))
+||0xeac7;
 ```
 
 `ReactElement.isValidElement`函数用来判断一个React组件是否是有效的，下面是它的具体实现。
 
 ```
-ReactElement.isValidElement = function (object) {  
-  return typeof object === 'object' && object !== null 
-&& object.$$typeof === REACT_ELEMENT_TYPE;
+ReactElement.isValidElement=function(object){
+  returntypeofobject==='object'&&object!==null
+&&object.$$typeof===REACT_ELEMENT_TYPE;
 };
 ```
 
@@ -359,17 +359,17 @@ ReactElement.isValidElement = function (object) {  
 如果你的服务器有一个漏洞，允许用户存储任意`JSON`对象， 而客户端代码需要一个字符串，这可能会成为一个问题：
 
 ```
-// JSON
-let expectedTextButGotJSON = {  
-  type: 'div',  
-  props: {    
-    dangerouslySetInnerHTML: {      
-    __html: '/* put your exploit here */'    
-  }, 
+//JSON
+letexpectedTextButGotJSON={
+  type:'div',
+  props:{
+    dangerouslySetInnerHTML:{
+    __html:'/*putyourexploithere*/'
+  },
  },
 };
-let message = { text: expectedTextButGotJSON };
-<p> {message.text}</p>
+letmessage={text:expectedTextButGotJSON};
+<p>{message.text}</p>
 ```
 
 而`JSON`中不能存储`Symbol`类型的变量，这就是防止`XSS`的一种手段。
@@ -379,16 +379,16 @@ let message = { text: expectedTextButGotJSON };
 借助`Symbol`类型的不可枚举，我们可以在类中模拟私有属性，控制变量读写：
 
 ```
-const privateField = Symbol();
-class myClass {  
-constructor(){    
-  this[privateField] = 'ConardLi';  
-}  
-getField(){    
-    return this[privateField];  
-}  
-setField(val){    
-  this[privateField] = val;  
+constprivateField=Symbol();
+classmyClass{
+constructor(){
+  this[privateField]='ConardLi';
+}
+getField(){
+    returnthis[privateField];
+}
+setField(val){
+  this[privateField]=val;
   }
 }
 ```
@@ -400,17 +400,17 @@ setField(val){    
 例如下面的场景，我们模拟实现一个`call`方法：
 
 ```
-Function.prototype.myCall  =  function  (context)  {      
-  if  (typeof this  !==  'function')  {        
-    return undefined;  // 用于防止 Function.prototype.myCall() 直接调用      
-  }      
-  context = context || window;      
-  const fn = Symbol();      
-  context[fn] = this;     
-  const args = [...arguments].slice(1);      
-  const result = context[fn](...args);      
-  delete context[fn];     
-  return result;    
+Function.prototype.myCall = function (context) {
+  if (typeofthis !== 'function') {
+    returnundefined; //用于防止Function.prototype.myCall()直接调用
+  }
+  context=context||window;
+  constfn=Symbol();
+  context[fn]=this;
+ constargs=[...arguments].slice(1);
+  constresult=context[fn](...args);
+  deletecontext[fn];
+ returnresult;
 }
 		
 ```
@@ -533,11 +533,11 @@ Function.prototype.myCall  =  function  (context)  {      
 
 为了节省存储空间，在计算机中它是以科学计数法表示的，也就是
 
-`1.100110011001100...` X 2-4
+`1.100110011001100...`X 2-4
 
 如果这里不好理解可以想一下十进制的数：
 
-`1100`的科学计数法为`11` X 102
+`1100`的科学计数法为`11`X 102
 
 所以：
 
@@ -595,7 +595,7 @@ Function.prototype.myCall  =  function  (context)  {      
 
 所以JavaScript能表示的最大数字即位
 
-`1.111...`X 21023 这个结果转换成十进制是`1.7976931348623157e+308`,这个结果即为`Number.MAX_VALUE`。
+`1.111...`X 21023这个结果转换成十进制是`1.7976931348623157e+308`,这个结果即为`Number.MAX_VALUE`。
 
 ### 5.7 最大安全数字
 
@@ -617,13 +617,13 @@ JavaScript中`Number.MAX_SAFE_INTEGER`表示最大安全数字,计算结果是`9
 
 在`ECMAScript`关于类型的定义中，只给出了`Object`类型，实际上，我们平时使用的很多引用类型的变量，并不是由`Object`构造的，但是它们原型链的终点都是`Object`，这些类型都属于引用类型。
 
-*   `Array` 数组
+*   `Array`数组
 
-*   `Date` 日期
+*   `Date`日期
 
-*   `RegExp` 正则
+*   `RegExp`正则
 
-*   `Function` 函数
+*   `Function`函数
 
 ### 6.1 包装类型
 
@@ -648,9 +648,9 @@ console.log(typeof 'ConardLi'); // string
 > 引用类型和包装类型的主要区别就是对象的生存期，使用new操作符创建的引用类型的实例，在执行流离开当前作用域之前都一直保存在内存中，而自基本类型则只存在于一行代码的执行瞬间，然后立即被销毁，这意味着我们不能在运行时为基本类型添加属性和方法。
 
 ```
-var name = 'ConardLi'
-name.color = 'red';
-console.log(name.color); // undefined
+varname='ConardLi'
+name.color='red';
+console.log(name.color);//undefined
 ```
 
 ### 6.2 装箱和拆箱
@@ -779,7 +779,7 @@ false
 `NaN`和其他任何类型比较永远返回`false`(包括和他自己)。
 
 ```
-NaN == NaN // false
+NaN==NaN//false
 ```
 
 *   **2.Boolean**
@@ -805,7 +805,7 @@ null == false // false
 `String`和`Number`比较，先将`String`转换为`Number`类型。
 
 ```
-123 == '123' // true'' == 0 // true
+123=='123'//true''==0//true
 ```
 
 *   **4.null和undefined**
@@ -834,7 +834,7 @@ undefined == false // false
 来看看下面这个比较：
 
 ```
-[] == ![] // true
+[]==![]//true
 ```
 
 `!`的优先级高于`==`，`![]`首先会被转换为`false`，然后根据上面第三点，`false`转换成`Number`类型`0`，左侧`[]`转换为`0`，两侧比较相等。
@@ -880,7 +880,7 @@ typeof undefined  // undefined
 你还可以用它来判断函数类型：
 
 ```
-typeof function(){}  // function
+typeoffunction(){}//function
 ```
 
 **不适用场景**
@@ -925,7 +925,7 @@ new RegExp() instanceof RegExp // true
 所以，使用`instanceof`来检测数据类型，不会很准确，这不是它设计的初衷：
 
 ```
-[] instanceof Object // truefunction(){}  instanceof Object // true
+[]instanceofObject//truefunction(){}instanceofObject//true
 ```
 
 另外，使用`instanceof`也不能检测基本数据类型，所以`instanceof`并不是一个很好的选择。
@@ -934,10 +934,10 @@ new RegExp() instanceof RegExp // true
 
 上面我们在拆箱操作中提到了`toString`函数，我们可以调用它实现从引用类型的转换。
 
-> 每一个引用类型都有`toString`方法，默认情况下，`toString()`方法被每个`Object`对象继承。如果此方法在自定义对象中未被覆盖，`toString()` 返回 `"[object type]"`，其中`type`是对象的类型。
+> 每一个引用类型都有`toString`方法，默认情况下，`toString()`方法被每个`Object`对象继承。如果此方法在自定义对象中未被覆盖，`toString()`返回`"[object type]"`，其中`type`是对象的类型。
 
 ```
-const obj = {};obj.toString() // [object Object]
+constobj={};obj.toString()//[objectObject]
 ```
 
 注意，上面提到了`如果此方法在自定义对象中未被覆盖`，`toString`才会达到预想的效果，事实上，大部分引用类型比如`Array、Date、RegExp`等都重写了`toString`方法。

@@ -1,4 +1,4 @@
-[browserslist ](https://github.com/ai/browserslist) 是一个开源项目
+[browserslist](https://github.com/ai/browserslist)是一个开源项目
 见到有些package.json里会有如下的配置参数
 ```
  "browserslist": [
@@ -11,7 +11,7 @@
 ```
 应该不难猜出来，这代表这个项目的浏览器兼容情况。
 白话就是我这个项目兼容绝大多数的，最新的和iOS7系统下的浏览器。不兼容Android 3.2系统以下和Firefox20以下的浏览器
-像这些" [> 1%](http://browserl.ist/?q=%3E+1%25)", "[last 2 versions](http://browserl.ist/?q=last+2+versions)" 都是查询参数。
+像这些"[> 1%](http://browserl.ist/?q=%3E+1%25)", "[last 2 versions](http://browserl.ist/?q=last+2+versions)" 都是查询参数。
 查询参数很强大，比如我想查看中国人使用浏览器的情况请输入 `> 1% in CN`。竟然还有IE8 ~>_<~。对比美国`> 1% in US`的。
 具体参数列表见[官方文档](https://github.com/ai/browserslist#queries)
 

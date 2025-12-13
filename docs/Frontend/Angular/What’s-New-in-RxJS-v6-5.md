@@ -87,7 +87,7 @@ clicksElsewhere$
 在线例子：[https://stackblitz.com/edit/partition-65](https://stackblitz.com/edit/partition-65)
 
 ### combineLatest 被废弃
-combineLatest 目前只会保留 `combineLatest([a, b, c])` 这一种使用方法，原因可以看 [这里](https://github.com/reactivex/rxjs/commit/6661c79).
+combineLatest 目前只会保留 `combineLatest([a, b, c])` 这一种使用方法，原因可以看[这里](https://github.com/reactivex/rxjs/commit/6661c79).
 
 ### Schedulers
 

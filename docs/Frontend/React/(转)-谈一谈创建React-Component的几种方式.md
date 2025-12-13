@@ -37,7 +37,7 @@ var Greeting = React.createClass({
 module.exports = Greeting;
 ```
 
-这段代码，包含了组件的几个关键组成部分，这种方式下，组件的props、state等都是以对象属性的方式组合在一起，其中默认属props和初始state都是返回对象的函数，propTypes则是个对象。这里还有一个值得注意的事情是，在createClass中，React对属性中的所有函数都进行了`this`绑定，也就是如上面的`hanleClick`其实相当于`handleClick.bind(this)` 。
+这段代码，包含了组件的几个关键组成部分，这种方式下，组件的props、state等都是以对象属性的方式组合在一起，其中默认属props和初始state都是返回对象的函数，propTypes则是个对象。这里还有一个值得注意的事情是，在createClass中，React对属性中的所有函数都进行了`this`绑定，也就是如上面的`hanleClick`其实相当于`handleClick.bind(this)`。
 
 ## 2.component
 
@@ -218,7 +218,7 @@ Button.propTypes = {
 
 ## createClass vs Component
 
-对于`React.createClass` 和 `extends React.Component`本质上都是用来创建组件，他们之间并没有绝对的好坏之分，只不过一个是ES5的语法，一个是ES6的语法支持，只不过createClass支持定义[PureRenderMixin](https://facebook.github.io/react/docs/pure-render-mixin.html),这种写法官方已经不再推荐，而是建议使用PureComponent。
+对于`React.createClass`和`extends React.Component`本质上都是用来创建组件，他们之间并没有绝对的好坏之分，只不过一个是ES5的语法，一个是ES6的语法支持，只不过createClass支持定义[PureRenderMixin](https://facebook.github.io/react/docs/pure-render-mixin.html),这种写法官方已经不再推荐，而是建议使用PureComponent。
 
 ## pureComponent vs Component
 
@@ -228,9 +228,9 @@ Button.propTypes = {
 
 1.  `Component`包含内部state，而`Stateless Functional Component`所有数据都来自props，没有内部state;
 
-2.  `Component` 包含的一些生命周期函数，`Stateless Functional Component`都没有，因为`Stateless Functional component`没有`shouldComponentUpdate`,所以也无法控制组件的渲染，也即是说只要是收到新的props，`Stateless Functional Component`就会重新渲染。
+2.  `Component`包含的一些生命周期函数，`Stateless Functional Component`都没有，因为`Stateless Functional component`没有`shouldComponentUpdate`,所以也无法控制组件的渲染，也即是说只要是收到新的props，`Stateless Functional Component`就会重新渲染。
 
-3.  `Stateless Functional Component` <a>不支持Refs</a>
+3.  `Stateless Functional Component`<a>不支持Refs</a>
 
 # 选哪个？
 

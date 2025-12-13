@@ -1,5 +1,5 @@
 ### 响应式表单
-[`FormControl`](https://angular.cn/api/forms/FormControl) 的 `valueChanges` 属性和 `statusChanges` 属性包含了会发出变更事件的可观察对象。
+[`FormControl`](https://angular.cn/api/forms/FormControl)的`valueChanges`属性和`statusChanges`属性包含了会发出变更事件的可观察对象。
 [例子](https://stackblitz.com/edit/angular-form-rxjs-demo)
 ```javascript
 import { Component, OnInit } from '@angular/core';

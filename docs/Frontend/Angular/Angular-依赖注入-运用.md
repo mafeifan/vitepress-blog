@@ -6,7 +6,7 @@
 
 ```typescript
 import { Injectable } from '@angular/core';
-// 在 Angular 中，要把一个类定义为服务，就要用 `@Injectable` 装饰器来提供元数据
+// 在 Angular 中，要把一个类定义为服务，就要用`@Injectable` 装饰器来提供元数据
 
 @Injectable({
   // we declare that this service should be created

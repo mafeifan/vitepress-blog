@@ -82,8 +82,8 @@
 
 ### JavaScript 操作
 ```
-var rootStyles = getComputedStyle(document.documentElement);
-var value = rootStyles.getPropertyValue('--variableName');
+varrootStyles = getComputedStyle(document.documentElement);
+varvalue = rootStyles.getPropertyValue('--variableName');
 
 // 获取某个元素中定义的属性变量 
 value = element.style.getPropertyValue('--variableName');

@@ -1,4 +1,4 @@
-更新： 2018-5月起 jiathis关闭分享功能，请使用  [http://sharesdk.mob.com/](http://sharesdk.mob.com/) 或搜索其他社会化分享类库
+更新： 2018-5月起 jiathis关闭分享功能，请使用 [http://sharesdk.mob.com/](http://sharesdk.mob.com/) 或搜索其他社会化分享类库
 
 开发网页经常遇到分享功能，这时候可以利用现成的工具比如 [JiaThis](http://www.jiathis.com/customize)，通过几步简单配置就实现分享共享功能啦。
 

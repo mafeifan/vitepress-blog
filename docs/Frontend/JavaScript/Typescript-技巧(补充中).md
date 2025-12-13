@@ -13,8 +13,8 @@ foo.bar = 123; // Error: Property 'bar' does not exist on type '{}'
 foo.bas = 'Hello World'; // Error: Property 'bas' does not exist on type '{}'
 ```
 
-这是因为 TypeScript 在解析 `let foo = {}` 这段赋值语句时，会进行“类型推断”：它会认为等号左边 `foo` 的类型即为等号右边 `{}` 的类型。
-由于 `{}` 本没有任何属性，因此，像上面那样给 `foo` 添加属性时就会报错。
+这是因为 TypeScript 在解析`let foo = {}`这段赋值语句时，会进行“类型推断”：它会认为等号左边`foo`的类型即为等号右边`{}`的类型。
+由于`{}`本没有任何属性，因此，像上面那样给`foo`添加属性时就会报错。
 
 最好的解决方案就是在为变量赋值的同时，添加属性及其对应的值：
 ```

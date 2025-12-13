@@ -52,16 +52,16 @@ drwxr-xr-x  13 caozhi  staff  416  8  4 23:43 .git
 -rw-r--r--   1 caozhi  staff   56  8  4 23:43 helloworld.sh
 drwxr-xr-x   3 caozhi  staff   96  8  4 23:43 src
 ```
-注意代码库中 `.git` 目录中包含了代码库所有的存储对象和记录。如果想要备份或复制一个代码库，则只需要将这个目录拷贝下来即可。
+注意代码库中`.git`目录中包含了代码库所有的存储对象和记录。如果想要备份或复制一个代码库，则只需要将这个目录拷贝下来即可。
 
-因此该代码库中只有 `.gitignore`、`README.md`、`helloworld.sh` 以及 `src` 目录是代码库所管理的源文件。我们将除 `.git` 目录之外的所有文件全部删除，如清单 2 所示：
+因此该代码库中只有`.gitignore`、`README.md`、`helloworld.sh`以及`src`目录是代码库所管理的源文件。我们将除`.git`目录之外的所有文件全部删除，如清单 2 所示：
 
-##### 清单 2\. 删除除 `.git` 目录之外的全部源文件
+##### 清单 2\. 删除除`.git`目录之外的全部源文件
 `caozhi@ repo-for-developerworks$ rm -rf .gitignore README.md helloworld.sh src`
 
-接下来我们断掉电脑的网络连接使得本地代码库无法与服务器进行交互，以验证是否所有的文件可以只从本地就进行恢复。断网之后执行 `git pull` 尝试与服务器进行同步，命令结果提示：`Network is down`，如清单 3 所示：
+接下来我们断掉电脑的网络连接使得本地代码库无法与服务器进行交互，以验证是否所有的文件可以只从本地就进行恢复。断网之后执行`git pull`尝试与服务器进行同步，命令结果提示：`Network is down`，如清单 3 所示：
 
-##### 清单 3\. 断网之后尝试 `git pull` 同步代码
+##### 清单 3\. 断网之后尝试`git pull`同步代码
 
 ```
 caozhi@ repo-for-developerworks$ git pull
@@ -71,7 +71,7 @@ fatal: Could not read from remote repository.
 Please make sure you have the correct access rights
 and the repository exists.
 ```
-不用担心代码库被破坏，如前所述，`.git` 目录中包含有代码库所有的文件对象和记录，因此我们可以很容易的通过命令将其进行恢复。
+不用担心代码库被破坏，如前所述，`.git`目录中包含有代码库所有的文件对象和记录，因此我们可以很容易的通过命令将其进行恢复。
 
 首先，虽然文件被删除且网络无法连接，我们依然可以查询到历史提交记录，如图 1 所示：
 
@@ -80,9 +80,9 @@ and the repository exists.
 > ![image](https://pek3b.qingstor.com/hexo-blog/upload_images/71414-bab7a7b3620fb88c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-然后我们可以通过 `git reset --hard commit_id` 命令恢复当前代码库到目标 commit 的状态，如清单 4 所示：
+然后我们可以通过`git reset --hard commit_id`命令恢复当前代码库到目标 commit 的状态，如清单 4 所示：
 
-##### 清单 4\. 执行 `git reset --hard` 命令
+##### 清单 4\. 执行`git reset --hard`命令
 ```
 caozhi@ repo-for-developerworks$ git reset --hard d774ecf5575bd5434e0cfadfcda0aef0ab147c92
 HEAD is now at d774ecf changes
@@ -99,7 +99,7 @@ drwxr-xr-x   3 caozhi  staff   96  8  5 10:48 src
 
 从运行结果我们可以看出，代码库中被删除的文件已经被恢复回来，而且是在无任何网络连接、没有和服务器进行交互的情况下进行的恢复！
 
-通过这个实验相信您对 Git 克隆了完整的代码库副本有更加直观的理解。如有兴趣，您也可尝试通过 `git reset` 命令将代码库恢复到任意目标 commit 的状态。本文就不再赘述。
+通过这个实验相信您对 Git 克隆了完整的代码库副本有更加直观的理解。如有兴趣，您也可尝试通过`git reset`命令将代码库恢复到任意目标 commit 的状态。本文就不再赘述。
 
 ## Git 基础特性
 
@@ -143,7 +143,7 @@ Git 中所有数据对象（详见下文）在存储前都会计算 SHA-1 校验
 
 本节仍然以 repo-for-developerworks 为例子。
 
-前文提到，代码库中.git 目录存储了代码库的所有文件和信息。我们可以查看 `.git` 目录结构，如清单 5 所示：
+前文提到，代码库中.git 目录存储了代码库的所有文件和信息。我们可以查看`.git`目录结构，如清单 5 所示：
 
 ##### 清单 5\. 查看 Git 目录结构
 
@@ -164,16 +164,16 @@ caozhi@.git$ tree -L 1
 ├── packed-refs
 └── refs
 ```
-在本系列的随后文章中会对该目录每个子项进行深入介绍，您现在只需关注 `objects` 目录。`objects` 目录存储了本地仓库的所有数据对象，Git 存储的数据对象一共有以下四种：
+在本系列的随后文章中会对该目录每个子项进行深入介绍，您现在只需关注`objects`目录。`objects`目录存储了本地仓库的所有数据对象，Git 存储的数据对象一共有以下四种：
 
 *   Tree：类似 Unix 文件系统的文件组织方式，Tree 对象中记录了多个 Blob 对象或者其它子 Tree 对象哈希值、文件名目录名等元数据。通过 Tree 对象可以还原出代码库的目录结构。
 *   Commit：记录一个 commit 的所有信息。
 *   Blob：记录了代码库源文件的内容，不记录源文件的如文件名一类的元数据。
 *   Tag：为某一个时刻的代码库打一个 Tag，方便检索特定的版本。Tag 在 Git 中也是以一种数据对象的方式进行存储。
 
-`objects` 目录下存放了多个以 2 位字符命名的目录，在这些目录下又存放了 38 位字符命名的文件，2 位的前缀和 38 位的文件名就组成了 Git 中的一个数据对象的哈希值，如清单 6 所示：
+`objects`目录下存放了多个以 2 位字符命名的目录，在这些目录下又存放了 38 位字符命名的文件，2 位的前缀和 38 位的文件名就组成了 Git 中的一个数据对象的哈希值，如清单 6 所示：
 
-##### 清单 6\. 查看 `objects` 目录结构
+##### 清单 6\. 查看`objects`目录结构
 
 ```
 caozhi@ objects $ tree -L 2
@@ -208,7 +208,7 @@ caozhi@ objects $ tree -L 2
 8 directories, 8 files
 ```
 
-清单 7 的脚本核心使用了 `git cat-file -t` 命令来查看对象文件的类型。由此可以看出，在 Git 内部使用哈希值作为文件名来存储所有的数据对象。
+清单 7 的脚本核心使用了`git cat-file -t`命令来查看对象文件的类型。由此可以看出，在 Git 内部使用哈希值作为文件名来存储所有的数据对象。
 
 ##### 清单 7\. 执行脚本列出对象文件及其对应的类型
 
@@ -234,7 +234,7 @@ done
 ./22/783d07955986cab0d2195eb131d8e0047acb59 tag
 ```
 
-另外可以看到 `16d0e292…` 这个对象表示其是一个 commit。结合提交历史记录可以看到，这个哈希值确实对应于一个 commit id，如清单 8 所示：
+另外可以看到`16d0e292…`这个对象表示其是一个 commit。结合提交历史记录可以看到，这个哈希值确实对应于一个 commit id，如清单 8 所示：
 
 ##### 清单 8\. 查看提交历史
 
@@ -255,7 +255,7 @@ Date:   Fri Aug 3 22:15:02 2018 +0800
     Create a shell script
 … ## Ignored some useless history
 ```
-在清单 9 中可以看到 `6d1f98e1…` 这个对象是一个 blob 对象：
+在清单 9 中可以看到`6d1f98e1…`这个对象是一个 blob 对象：
 
 ##### 清单 9\. 查看 blob 对象的类型和内容
 
@@ -276,7 +276,7 @@ echo hello world!
  
 echo hello world again!
 ```
-查看该文件内容，可以看到 `6d1f98e1…` 其实是 `helloworld.sh` 这个源代码的内容，但对象 `6d1f98e1…` 是 `helloworld.sh` 的上一个版本，而在随后查看的 `d4eec9c1…` 才是其最新版本。从这里也能看到 Git 在存储文件不同版本时，确实是存储了各历史版本全量的文件而非其增量。
+查看该文件内容，可以看到`6d1f98e1…`其实是`helloworld.sh`这个源代码的内容，但对象`6d1f98e1…`是`helloworld.sh`的上一个版本，而在随后查看的`d4eec9c1…`才是其最新版本。从这里也能看到 Git 在存储文件不同版本时，确实是存储了各历史版本全量的文件而非其增量。
 
 注意：实际操作中也可以使用哈希值的前八位缩写，如：`git cat-file -t 6d1f98e1`。如有兴趣，您可以尝试一下。
 

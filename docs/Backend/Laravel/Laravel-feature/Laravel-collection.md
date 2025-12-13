@@ -2,18 +2,18 @@ Laravel 集合是 Laravel 框架中一个十分有用的工具。
 
 ## 集合（Collection)
 
-`Illuminate\Support\Collection` 类了提供一个便捷的操作数组的封装。
+`Illuminate\Support\Collection`类了提供一个便捷的操作数组的封装。
 
 集合 `Collection` 类实现了部分 PHP 和 Laravel 的接口，例如：
 
-`ArrayAccess` - 用于操作数组对象的接口。
-`IteratorAggregate` - 用于创建外部迭代器的接口。
+`ArrayAccess`- 用于操作数组对象的接口。
+`IteratorAggregate`- 用于创建外部迭代器的接口。
 `JsonSerializable`
 
 ## 创建一个新的集合
-一个集合可以使用 collect() 帮助函数基于一个数组被创建或者直接通过 `Illuminate\Support\Collection` 类实例化。
+一个集合可以使用collect()帮助函数基于一个数组被创建或者直接通过`Illuminate\Support\Collection`类实例化。
 
-一个非常简单的使用 collect() 帮助函数的示例：
+一个非常简单的使用collect()帮助函数的示例：
 
 $newCollection = collect([1, 2, 3, 4, 5]);
 dd($newCollection);
