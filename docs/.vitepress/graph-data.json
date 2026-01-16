@@ -1,0 +1,57 @@
+{
+  "Terraform": [
+    "1--get-start.md",
+    "dynamic.md",
+    "state.md",
+    "tip.md"
+  ],
+  "Docker": [
+    "Alpine使用中国时区.md",
+    "Docker-学习系列1--为什么要使用Docker.md",
+    "Docker-学习系列2--保存对容器的修改.md",
+    "Docker-学习系列3--提交并分享自己的镜像.md",
+    "Docker-学习系列4--简单总结-docker-curriculum.md",
+    "Docker-学习系列5--nginx-容器.md",
+    "Docker-学习系列6--Docker-Compose-中的环境变量使用注意事项.md",
+    "Docker-学习系列7--容器化Node项目.md",
+    "Docker-学习系列9--Docker的技术原理介绍.md",
+    "Docker-学习系列10-开源图形化管理系统.md"
+  ],
+  "Jenkins": [
+    "Jenkins2-学习系列1----使用Docker方式安装最新版Jenkins.md",
+    "Jenkins2-学习系列2----Pipeline-介绍及基础.md",
+    "Jenkins2-学习系列3----Groovy语法介绍.md",
+    "Jenkins2-学习系列11----参数化构建.md",
+    "Jenkins2-学习系列12----创建和使用共享库.md",
+    "Jenkins2-学习系列40---使用Configuration-as-Code.md"
+  ],
+  "K8s": [
+    "k8s-理论-快速入门.md",
+    "k8s-基础-部署容器化Web应用.md",
+    "k8s-基础-nginx-ingress的使用.md",
+    "k8s-工具-helm3-总结.md",
+    "k8s-基础-认证与授权.md"
+  ],
+  "Ansible2": [
+    "1-介绍与使用场景.md",
+    "2-安装与配置.md",
+    "5-playbook-语法.md",
+    "7-playbook-role.md"
+  ],
+  "GithubActions": [
+    "入门.md",
+    "Docker构建镜像和推送到docker-hub.md",
+    "使用缓存加速构建.md"
+  ],
+  "Linux": [
+    "SSH--无密码登录.md",
+    "文本处理-awk.md",
+    "网络知识-基础.md"
+  ],
+  "Prometheus": [
+    "1.产品介绍.md",
+    "2.安装部署.md",
+    "5.PromQL语法上.md",
+    "11.Grafana可视化.md"
+  ]
+}
