@@ -231,8 +231,6 @@ EKS Pod Identity Agent 作为 DaemonSet 运行在每个节点上,通过以下方
 eks-pod-identity-agent 收到请求后，将使用传递过来的 oidc token 访问 EKS 新增的 AssumeRoleForPodIdentity API 获取所需的 AWS sts token，然后将获取到的 sts token 返回给客户端。
 
 
-
-
 5. 应用调用的 AWS SDK 使用获取到的 sts token 访问应用所需的 AWS 云产品 API。
 
 ## 简单描述：
