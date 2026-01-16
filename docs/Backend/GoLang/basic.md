@@ -28,6 +28,32 @@
 在 Go 中，方法可以有指针接收者（func (f *Family)）或值接收者（func (f Family)）。
 如果你希望无论调用者是结构体变量还是指针，都能统一处理，通常会使用指针接收者。
 
+## 下面两个写法等价吗
+
+```bash
+type Person struct {
+	Name string
+	Age  int
+}
+
+// 方法 - 表示这是 Person 的行为
+func (p Person) say() {
+  fmt.Println("hello world")
+}
+
+// 函数 - 表示这是一个独立的操作
+func say(p Person) {
+  fmt.Println("hello world")
+}
+
+// 方法调用 - 面向对象风格
+person.say()
+
+// 函数调用 - 函数式风格  
+say(person)
+```
+
+
 
 ## any
 
