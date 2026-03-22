@@ -11,6 +11,9 @@ hero:
       text: AWS-学习系列
       link: /AWS/AWS--EC2-userdata
     - theme: alt
+      text: AI-学习系列
+      link: /AI/提示词工程-Prompt-Engineering
+    - theme: alt
       text: Jenkins2-学习系列
       link: /DevOps/Jenkins/Jenkins2-学习系列1----使用Docker方式安装最新版Jenkins
     - theme: alt
