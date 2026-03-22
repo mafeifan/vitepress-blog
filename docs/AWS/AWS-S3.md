@@ -37,7 +37,9 @@ AWS S3 讲解
       └── 成本优化
 ```
   ---
-  详细大纲
+  
+
+### 详细大纲
 
   1. 什么是 Amazon S3？
 
@@ -49,13 +51,16 @@ AWS S3 讲解
 
   2. 存储类别对比
 
-  | 存储类                        | 适用场景             | 访问延迟 | 成本 |
-  |-------------------------------|----------------------|----------|------|
-  | S3 Standard                   | 频繁访问的数据       | 毫秒级   | 高   |
-  | S3 Intelligent-Tiering        | 访问模式未知/变化    | 毫秒级   | 中   |
-  | S3 Glacier Instant Retrieval  | 极少访问，毫秒级检索 | 毫秒级   | 低   |
-  | S3 Glacier Flexible Retrieval | 长期归档             | 分钟级   | 更低 |
-  | S3 Glacier Deep Archive       | 合规归档             | 小时级   | 最低 |
+| 存储类型 | 访问速度 | 可用区 (AZ) | 最小存储时长 | 典型使用场景 |
+|---------|---------|------------|-------------|-------------|
+| S3 Standard | 毫秒级 | ≥ 3 | 无 | 热数据、网站托管、内容分发 |
+| S3 Intelligent-Tiering | 毫秒级 | ≥ 3 | 无* | 访问模式未知或多变的数据 |
+| S3 Express One Zone | 个位数毫秒级 | 1 | 无 | 机器学习、实时分析、高性能计算 |
+| S3 Standard-IA | 毫秒级 | ≥ 3 | 30 天 | 备份、灾难恢复、不常访问但需即时获取 |
+| S3 One Zone-IA | 毫秒级 | 1 | 30 天 | 可再生数据的次级备份、不常访问且非关键数据 |
+| S3 Glacier Instant Retrieval | 毫秒级 | ≥ 3 | 90 天 | 季度访问一次的长期档案（如医疗影像）|
+| S3 Glacier Flexible Retrieval | 分钟/小时 | ≥ 3 | 90 天 | 离线备份、数小时内可接受的归档 |
+| S3 Glacier Deep Archive | 12 - 48 小时 | ≥ 3 | 180 天 | 合规性存档（存储 7-10 年，极少访问）|
 
   3. 关键功能
 
@@ -99,3 +104,12 @@ AWS S3 讲解
   2. 重点：存储类别选择 + 成本优化 + 安全性
   3. 互动：展示 AWS Console 实际操作
   4. 结尾：常见坑点 + 最佳实践清单
+
+### S3 常见命令
+
+同步时，删除目标路径中源路径没有的文件，适合CICD流水线部署
+
+* aws s3 sync /home/data/ s3://my-bucket/backup/ --delete
+
+生成一个 1 小时 (3600 秒) 有效的下载链接。适合临时分享
+* aws s3 presign s3://my-bucket/private-file.pdf --expires-in 3600
