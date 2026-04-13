@@ -1,5 +1,5 @@
 ---
-date: 9/4/2026
+date: 2026-04-09
 ---
 
 ## 前提
@@ -94,7 +94,7 @@ ref 是 “Reference”（引用/索引）的缩写。
 
 3. 实际例子
 
-看你提供的返回结果：
+看上面的返回结果：
 
 * button "百度一下" [ref=e28]
 
@@ -106,8 +106,8 @@ ref 是 “Reference”（引用/索引）的缩写。
 > 
 > 注意： 这些 ID 通常是临时的。如果你刷新了页面或者页面发生了动态跳转，旧的 ref 就会失效，系统会生成一套全新的 ref 标识。
 
- Chrome Profile 注意
-> chrome 安全限制，使用 --remote-debugging-port 时，不能使用默认的 -user-data-dir
+### Chrome Profile 注意
+> Chrome 安全限制，使用 --remote-debugging-port 时，不能使用默认的 --user-data-dir
 
 ## 实战
 
@@ -152,7 +152,7 @@ pkill -9 -f "Google Chrome"
 
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
   --remote-debugging-port=9222 \
-  --user-data-dir="$HOME/chrome-debug-default"
+  --user-data-dir="$HOME/chrome-debug-default" \
   --profile-directory="Default"
 
 # 验证
@@ -175,7 +175,7 @@ curl -s http://127.0.0.1:9222/json/version
 agent-browser --cdp 9222 open https://x.com/compose/post
 ```
 
-## 接下来
+## 其他
 
 ### 安装 skill
 `npx skills add vercel-labs/agent-browser`
