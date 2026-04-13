@@ -2,6 +2,10 @@
 date: 9/4/2026
 ---
 
+## 前提
+
+阅读 https://github.com/vercel-labs/agent-browser
+
 ## 安装
 ```bash
 npm install -g agent-browser
@@ -174,6 +178,6 @@ agent-browser --cdp 9222 open https://x.com/compose/post
 ## 接下来
 
 ### 安装 skill
-https://skills.sh/vercel-labs/agent-browser/agent-browser
+`npx skills add vercel-labs/agent-browser`
 
 

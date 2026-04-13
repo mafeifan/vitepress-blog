@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "agent-browser": {
+      "name": "Agent Browser",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=agent-browser",
+      "source": "skillhub",
+      "version": "0.2.0"
+    }
+  }
+}
