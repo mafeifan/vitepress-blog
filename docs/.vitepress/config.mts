@@ -73,6 +73,7 @@ export default defineConfig({
         text: 'Tools',
         items: [
           {text: 'Git学习系列', link: '/Tools/Git/Git-和-GitHub：从入门到实践1-Git-和-GitHub-基础简介'},
+          {text: 'Mac', link: '/Tools/Mac/zsh-theme-推荐'},
           {text: 'Other', link: '/Tools/优质免费软件推荐'},
         ]
       },
@@ -351,6 +352,16 @@ export default defineConfig({
             }
           ]
         }],
+      '/Tools/Mac/': [
+        {
+          text: 'Mac',
+          collapsed: false,
+          items: [
+            {link: '/Tools/Mac/使用mac开发工具使用技巧记录', text: '使用mac开发工具使用技巧记录'},
+            {link: '/Tools/Mac/zsh-theme-推荐', text: 'zsh theme 仓库推荐'},
+          ]
+        }
+      ],
       '/Tools/Other/': [
         {
           text: 'Other',
