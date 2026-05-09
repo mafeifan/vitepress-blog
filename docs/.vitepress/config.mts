@@ -104,6 +104,7 @@ export default defineConfig({
             {link: '/AWS/AWS-S3-filesystem', text: 'AWS-S3-文件系统'},
             {link: '/AWS/AWS--VPC', text: 'AWS--VPC'},
             {link: '/AWS/AWS--EC2-userdata', text: 'AWS--EC2-userdata'},
+            {link: '/AWS/AWS--Lambda', text: 'AWS--Lambda'},
             {link: '/AWS/EKS/aws-load-balancer-controller高级使用', text: 'aws-load-balancer-controller高级使用'},
             {link: '/AWS/EKS/Amazon EKS Pod Identity 探索', text: 'Amazon EKS Pod Identity 探索'},
           ]
